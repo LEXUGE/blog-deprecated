@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<head>
+<title>Win10硬盘安装Ubuntu</title>
+<link rel="shortcut  icon" type="image/x-icon" href="image/favicon.ico" media="screen"  />
+</head>
+
+<body background="image/background-l.jpg" link="white" alink="white" vlink="white">
+<center><font color="white"><h1 style="font-family:verdana">Win10硬盘安装Ubuntu</h1></font></center>
+<center><font color="white"><p style="font-family:verdana"><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
+<center>
+<textarea rows="30" cols="110">
+官网镜像下载地址:
+http://www.ubuntu.com/download/
+使用EasyBCD，新建启动引导文件，并重写MBR
+覆盖为：
+title Install Ubuntu 14.04.4 LTS
+root (hd0,1)
+kernel (hd0,1)/vmlinuz boot=casper iso-scan/filename=/ubuntu-14.04.4-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8
+initrd (hd0,1)/initrd.lz
+镜像名称和放置盘符驱动器号可更改
+从iso中提取initrd.lz和vmlinuz（在casper文件夹下，vmlinuz.efi改为vmlinuz）
+在boot引导项编辑界面多点几次Save Satting（点一次，下方出现成功操作提示后再点，一般两次即可）
+重启，选择新添加的启动引导项
+进入Ubuntu安装环境，按Ctrl+Alt+T组合键，输入:sudo umount -l /isodevice 从而取消挂载iso镜像
+接下来的安装步骤参考:
+http://jingyan.baidu.com/article/76a7e409bea83efc3b6e1507.html
+接下来的步骤上述链接中也有
+安装完毕后重启，进入Win10，添加启动引导项
+模式为GRUB（兼容）
+名称为Ubuntu（可更改）
+分区为刚刚新建的/boot分区（大小190Mib）
+添加完毕后如之前在boot引导项编辑界面多点几次Save Satting（点一次，下方出现成功操作提示后再点，一般两次即可）
+重启，就可进入Ubuntu
+成功！
+</textarea>
+</center>
+</body>
+</html>
