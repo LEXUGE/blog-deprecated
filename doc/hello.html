@@ -11,9 +11,13 @@ body
 </head>
 
 <body link="white" alink="white" vlink="white">
-<div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">  
-<img src="image/background.jpg" height="100%" width="100%"/>  
-</div>
+<div id="formbackground" style="position:absolute; z-index:-1;"><img src="image/background.jpg" height="100%" width="100%"/></div>
+<script type="text/javascript">
+$(function(){
+    $('#formbackground').height($(window).height());
+    $('#formbackground').width($(window).width());
+});
+</script>
 <center><font color="white"><h1>Welcome</h1></font></center>
 <center><font color="white"><p>欢迎来到LEXUGE的技术Blog，这里有大量的经验分享、心得体会和编程技巧。</p></font></center>
 <center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
