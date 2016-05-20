@@ -1,4 +1,19 @@
 ﻿<!DOCTYPE html>
+<style type="text/css">
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}         
+</style>
 <head>
 <title>BFS走迷宫</title>
 <link rel="shortcut  icon" type="image/x-icon" href="image/favicon.ico" media="screen"  />
@@ -10,11 +25,13 @@ body
 </style>
 </head>
 
-<body background="image/background-l.jpg" link="white" alink="white" vlink="white">
+<body link="white" alink="white" vlink="white">
+<div id="div1"><img src="image/background.jpg" /></div>
+<div>
 <center><font color="white"><h1>BFS走迷宫</h1></font></center>
 <center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
 <center>
-<textarea rows="80" cols="130">
+<textarea rows="25" cols="82">
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>//链接头文件
@@ -89,5 +106,6 @@ void main()//主程序
 }
 </textarea>
 </center>
+</div>
 </body>
 </html>
