@@ -1,7 +1,22 @@
 ﻿<!DOCTYPE html>
+<style type="text/css">
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}         
+</style>
 <head>
 <title>音乐播放厅</title>
-<link rel="shortcut  icon" type="image/x-icon" href="doc/image/favicon.ico" media="screen"  />
+<link rel="shortcut  icon" type="image/x-icon" href="image/favicon.ico" media="screen"  />
 <style>
 body
 {
@@ -10,7 +25,9 @@ body
 </style>
 </head>
 
-<body background="doc/image/music.jpg" link="white" alink="white" vlink="white">
+<body link="white" alink="white" vlink="white">
+<div id="div1"><img src="image/background.jpg" /></div>
+<div>
 <center><font color="white"><h1>音乐播放厅</h1></font></center>
 <center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
 <center>
@@ -27,5 +44,6 @@ Your browser does not support the audio element.
 Your browser does not support the audio element.
 </audio>
 </center>
+</div>
 </body>
 </html>
