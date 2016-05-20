@@ -1,4 +1,19 @@
 ﻿<!DOCTYPE html>
+<style type="text/css">
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}         
+</style>
 <head>
 <title>Vim+Gcc开发环境搭建</title>
 <link rel="shortcut  icon" type="image/x-icon" href="image/favicon.ico" media="screen"  />
@@ -10,11 +25,13 @@ body
 </style>
 </head>
 
-<body background="image/background-l.jpg" link="white" alink="white" vlink="white">
+<body link="white" alink="white" vlink="white">
+<div id="div1"><img src="image/background.jpg" /></div>
+<div>
 <center><font color="white"><h1>Vim+Gcc开发环境搭建</h1></font></center>
 <center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
 <center>
-<textarea rows="70" cols="80">
+<textarea rows="25" cols="82">
 为了还原最原始的C开发环境，使用Vim+Gcc来协作开发
 
 下载：
@@ -64,5 +81,6 @@ Vim
 如成功运行，恭喜你，搭建成功！
 </textarea>
 </center>
+</div>
 </body>
 </html>
