@@ -1,4 +1,19 @@
 ﻿<!DOCTYPE html>
+<style type="text/css">
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}         
+</style>
 <head>
 <title>Welcome</title>
 <link rel="shortcut  icon" type="image/x-icon" href="image/favicon.ico" media="screen"  />
@@ -10,7 +25,9 @@ body
 </style>
 </head>
 
-<body background="image/background.jpg" link="white" alink="white" vlink="white">
+<body>
+<div id="div1"><img src="image/background.jpg" /></div>
+<div>
 <center><font color="white"><h1>Welcome</h1></font></center>
 <center><font color="white"><p>欢迎来到LEXUGE的技术Blog，这里有大量的经验分享、心得体会和编程技巧。</p></font></center>
 <center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
@@ -23,5 +40,6 @@ body
 <hr width=60% color="white">
 <center><font color="white"><p>有任何的意见或建议欢迎发邮件至<a href="Mailto:LEXUGEyky@outlook.com">LEXUGEyky@outlook.com</a></p></font></center>
 <center><font color="white"><p>©2016 LEXUGE</p></font></center>
+</div>
 </body>
 </html>
