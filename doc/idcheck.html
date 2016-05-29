@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<style type="text/css">
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}         
+</style>
+<head>
+<title>C语言身份证校验码计算</title>
+<link rel="shortcut  icon" type="image/x-icon" href="/doc/image/favicon.ico" media="screen"  />
+<style>
+body
+{
+  font-family:"微软雅黑";
+}
+</style>
+</head>
+
+<body link="white" alink="white" vlink="white">
+<div id="div1"><img src="/doc/image/background.jpg" /></div>
+<div>
+<center><font color="white"><h1>C语言身份证校验码计算</h1></font></center>
+<center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
+<center>
+<textarea rows="高" cols="宽">
+#include <stdio.h>
+void main()
+{
+  char s[18]={' '};
+  int a[17]={7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2};
+  int x[11]={1,0,10,9,8,7,6,5,4,3,2};
+  int i=0,ans=0;
+  printf("please input ID(17):");
+  scanf("%s",&s);
+  for (i=0;i<17;i++)
+	ans=ans+(s[i]-'0')*a[i];
+  ans=ans%11;
+  if (x[ans]==10) printf("ID:%sX\n",s);
+  else printf("ID:%s%d\n",s,x[ans]);
+  getch();
+}
+</textarea>
+</center>
+</div>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//lexuge.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</body>
+</html>
