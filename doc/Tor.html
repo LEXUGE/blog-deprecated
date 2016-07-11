@@ -35,9 +35,9 @@ body
 <center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
 <center>
 <textarea rows="25" cols="82">
-Tor究竟是如何运行的呢？其实很简单。你用Tor client（客户端）发送一个加密网络请求，
-随机指向一台Tor node（节点）帮你传送到目标主机上。node把这个请求解密，再换种方式
-加密，再随机发送到第二台node……这样重复经过3个node，最后到达目标主机。
+Tor究竟是如何运行的呢？其实很简单。你用Tor client（客户端）发送一个多层加密网络请求，
+随机指向一台Tor node（节点）帮你传送到目标主机上。node把这个请求的最外层解密，
+再随机发送到第二台node……这样重复经过3个node，最后到达目标主机。
 什么意思呢？简单的说就是你要发一封匿名信，你不自己送，也不叫邮差送。而在大街上随
 便找一个陌生人，陌生人再找另外一个陌生人，最后经过3个陌生人之手，达到对方手中。
 这样，检测难度就会更大，block的风险就会越小。
@@ -53,7 +53,8 @@ Tor究竟是如何运行的呢？其实很简单。你用Tor client（客户端�
 
 3.给bridges@torproject.org 发送一封邮件（用纯文本格式），邮件
 的标题和正文写上get bridges（注意当中有空格）。这样就可以获得
-bridge（网桥）中继，也就是node。
+bridge（网桥）中继，也就是node。如需指定网桥类型在get bridges
+后面加上类型即可。如：get bridges obfs3(在正文中也要这么写)
 
 获得了这些后，我们就要开始设置了。
 首先，安装好Tor（卸载时直接删除其文件夹即可）。
