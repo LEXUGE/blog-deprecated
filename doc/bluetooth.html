@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<SCRIPT language=javascript> 
+function click() {if (event.button==2) {alert('无权访问核心源代码！');}}document.onmousedown=click 
+</SCRIPT>  
+<style type="text/css">
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}         
+</style>
+<head>
+<title>E63蓝牙上网</title>
+<link rel="shortcut  icon" type="image/x-icon" href="/doc/image/favicon.ico" media="screen"  />
+<style>
+body
+{
+  font-family:"微软雅黑";
+}
+</style>
+</head>
+
+<body link="white" alink="white" vlink="white">
+<div id="div1"><img src="/doc/image/background.jpg" /></div>
+<div>
+<center><font color="white"><h1>E63蓝牙上网</h1></font></center>
+<center><font color="white"><p><a href="https://lexuge.github.io/">Blog | LEXUGE</a></p></font></center>
+<center>
+<textarea rows="25" cols="82">
+对于国行的E63来说，并不配备有Wi-Fi功能，所以，就得近肯能的使用其他的
+免费数据连接来代替这一功能，其中最棒的选择就是Bluetooth连接。但是，Bluetooth连接
+只能创建两个终端的Peer to Peer连接或多个终端之间的LAN。这并不能获得外部数据。如何
+解决这一致命问题呢？可以使用另一台终端，其可直接访问Internet（比如笔记本），如同
+代理服务器一样，把E63用Bluetooth发送过来的网络请求进行执行，再把外部传回来的信息
+通过Bluetooth传回给E63，实现E63直接访问Internet的效果。示意图如下：
+
+发送：
+     蓝牙        网络连接
+E63  --->  笔记本  --->  Internet
+
+接收：
+     蓝牙        网络连接
+E63  <---  笔记本  <---  Internet
+
+思路就是这样，那么，该如何实现呢？
+以Windows为例，有以下教程：
+1.下载Hiisi 1.6.3 （在文章末尾，这是Bluetooth代理套件，有客户端和服务端）
+2.下载并安装JRE（Java运行环境），已有的可跳过本步骤，在CMD中输入java –version
+可验证是否正确配置该环境
+3（重要！！！）.在E63上新创建一个接入点，连接名称可命名为BLUETOOTH（命名随意）其他基本默认，分别如下：
+
+数据承载方式：分组数据
+接入点名称：无
+用户名：无
+提示输入密码：否
+密码：****
+鉴定：普通
+主页：无
+
+然后点击选项->高级设置，设置如下：
+
+网络类型：IPv4
+手机IP地址：自动
+DNS地址：自动
+代理服务器地址：127.0.0.1
+代理端口号码：1234
+
+4.解压Hiisi 1.6.3，将hiisi1.6.3\hiisi\bin目录中的jad、jar两个文件提取，放置到E63的
+E盘安装（注意！！！安装时一定先运行hiisi.JAD,而不是JAR！)
+5.打开蓝牙的设置，在“COM 端口”选项卡中，单击添加->确定，记下前面的端口号，比如：COM19
+6.进入Hiisi 1.6.3\Pihatonttu目录。右击->编辑，将COM XXXX改成你刚刚记下的端口号
+7.将E63与电脑建立Bluetooth连接，建议添加信任设备
+8.在Bluetooth设置的选项中将笔记本设为可见设备
+9.现在运行Pihatonttu.cmd，若提示端口已被占用，请检查占用情况
+10.在E63上找到刚刚安装的Hiisi Proxy，并打开
+11.选择允许Hiisi Proxy使用网络或收发数据，并选择Bluetooth Mode（蓝牙模式）
+12.会寻找蓝牙设备，搜寻完后，选择你的设备名，完毕后，会搜索端口，选择端口
+13.此时，我们要确保连接是否工作，按选项->Setting,勾选Check now，按OK
+这时，系统会检测，若出现：Bluetooth connection is available，恭喜你，连接成功
+若出现Bluetooth connection is not available，请单击选项->Restart，再重复13步
+
+接下来就可以网上冲浪啦（注意！！！请不要按Exit退出，按左边的房子按键退出，可确保
+代理程序在后台运行
+
+以后，只需打开Pihatonttu.cmd，然后手机端连接即可
+此外，在访问Internet的时候有几点要注意：
+这是通过代理服务器访问，速度较慢，请缓慢操作
+并不是非常稳定，并且服务端需要处理数据，请缓慢操作
+
+出现断线情况可按照13步检测并重启
+By LEXUGE
+</textarea>
+<font color="white"><a href="/download/Hiisi1.6.3.rar">Hiisi 1.6.3</a><br></font>
+</center>
+</div>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//lexuge.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</body>
+</html>
