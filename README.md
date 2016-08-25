@@ -1,2 +1,0 @@
-# LEXUGE.github.io
-Blog
