@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>BLOG|LEXUGE</title>
+    <description>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 25 Aug 2016 17:15:58 +0800</pubDate>
-    <lastBuildDate>Thu, 25 Aug 2016 17:15:58 +0800</lastBuildDate>
+    <pubDate>Fri, 26 Aug 2016 08:33:09 +0800</pubDate>
+    <lastBuildDate>Fri, 26 Aug 2016 08:33:09 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Fedora 启动U盘制作和安装教程</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Fedora是一个不错的Linux发行版，它界面清爽，安装简洁，稳定性高，驱动自适应性能强。由社区开发维护，Red Hat公司资助。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;下面就来介绍如何制作Fedora启动U盘(Windows下)
+&lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot;&gt;UUI启动U盘制作工具官网&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;在上面的链接下载Universal USB installer，这是一款windows上的专业Linux启动U盘制作工具，非常适合Fedora的严苛要求。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Step1.选择要制作的Linux发行版，我们选择Fedora&lt;/li&gt;
+  &lt;li&gt;Step2.选择镜像文件&lt;/li&gt;
+  &lt;li&gt;Step3.选择U盘（建议勾选格式化选项）&lt;/li&gt;
+  &lt;li&gt;Step4.默认
+单击Create，开始制作，制作完成后，启动U盘制作教程结束
+弹出U盘，重启，选择U盘引导
+出现Fedora Live字样时回车，出现Welcome to Fedora，建议先Try Fedora，连接WLAN后再
+Install to Hard Drive
+安装语言选择简体中文
+后面的个性化配置不讲了，重点是分区配置
+若是只安装Fedora，进入我要分配分区，在此进行分区配置，若有原先操作系统，就删除那些分区，新手建议使用Fedora的自动分区方案，建议选择LVM，若会分区就手动操作
+接下来的设置用户就不再烦述
+安装完成，享受Linux之乐趣吧！&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Thu, 25 Aug 2016 16:33:52 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/25/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/25/welcome-to-jekyll.html</guid>
+        <pubDate>Fri, 26 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://example.com/jekyll/update/2016/08/26/Fedora-%E5%90%AF%E5%8A%A8U%E7%9B%98%E5%88%B6%E4%BD%9C%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</link>
+        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/Fedora-%E5%90%AF%E5%8A%A8U%E7%9B%98%E5%88%B6%E4%BD%9C%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</guid>
         
         
         <category>jekyll</category>
@@ -40,7 +49,13 @@
     
       <item>
         <title>Welcome</title>
-        <description>&lt;p&gt;WELCOME!&lt;/p&gt;
+        <description>&lt;p&gt;欢迎来到我的BLOG，这是一个以计算机技术为主的个人BLOG，当然也有一些生活感悟之类的。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;We believe that writing is about content, about what you want to say – not about fancy formatting.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我们坚信写作写的是内容，所思所想，而不是花样格式。&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 25 Aug 2016 00:00:00 +0800</pubDate>
         <link>http://example.com/jekyll/update/2016/08/25/Welcome.html</link>
