@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BFS走迷宫</title>
+  <meta name="description" content="```c #include #include #include //链接头文件">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://example.com/jekyll/update/2016/08/26/BFS%E8%B5%B0%E8%BF%B7%E5%AE%AB.html">
+  <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="http://example.com/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">BLOG|LEXUGE</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">BFS走迷宫</h1>
+    <p class="post-meta"><time datetime="2016-08-26T08:54:00+08:00" itemprop="datePublished">Aug 26, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;conio.h&gt;//链接头文件
+</span>
+<span class="k">struct</span> <span class="n">ser</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">trace</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">hx</span><span class="p">,</span><span class="n">hy</span><span class="p">;</span>
+<span class="p">};</span><span class="c1">//定义结构体ser，用于存储每个点的坐标，是否为障碍，和上一个点的坐标
+</span><span class="k">struct</span> <span class="n">rec</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+<span class="p">};</span><span class="c1">//定义结构体bs，用于存储当前进入搜索队列bs数组的点的坐标，有了坐标也可以访问用来a数组的这个节点从而获取更多的信息
+</span><span class="k">struct</span> <span class="n">ser</span> <span class="n">a</span><span class="p">[</span><span class="mi">11</span><span class="p">][</span><span class="mi">11</span><span class="p">];</span><span class="c1">//二维的地图节点信息
+</span><span class="k">struct</span> <span class="n">rec</span> <span class="n">bs</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span><span class="c1">//搜索队列
+</span><span class="kt">int</span> <span class="n">dic</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="c1">//方向数组，上下左右的顺序存放
+</span><span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">xb</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//xb用来更进bs搜索数组的节点存放（也就是搜索队列的尾）
+</span>
+<span class="kt">void</span> <span class="n">bfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">di</span><span class="p">,</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">out</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span><span class="p">);</span><span class="c1">//函数声明段
+</span>
+<span class="kt">void</span> <span class="nf">out</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span><span class="p">)</span><span class="c1">//输出函数，输出为(n,m)-(x,x)-(x,x)-……-(1,1)，原理为递归
+</span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">((</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span><span class="c1">//如果当前坐标为起点就输出起点坐标，结束
+</span>  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"(%d,%d)"</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+    <span class="n">getch</span><span class="p">();</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="c1">//退出整个程序，函数原型位于stdlib.h
+</span>  <span class="p">}</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"(%d,%d)-"</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="c1">//否则输出当前点的坐标
+</span>  <span class="n">out</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">].</span><span class="n">hx</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">].</span><span class="n">hy</span><span class="p">);</span><span class="c1">//输出当前点的前一个节点
+</span><span class="p">}</span>
+<span class="kt">void</span> <span class="nf">bfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">di</span><span class="p">,</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">y</span><span class="p">)</span><span class="c1">//宽度优先搜索，程序核心
+</span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">nx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ny</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//nx为下一个肯能节点的行，ny为下一个肯能节点的列
+</span>  <span class="k">if</span> <span class="p">((</span><span class="n">x</span><span class="o">==</span><span class="n">n</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="n">m</span><span class="p">))</span> <span class="n">out</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="c1">//如果到达终点就递归输出路径（调用out函数）
+</span>  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//以上下左右的顺序来搜索当前结点的四周的肯能节点
+</span>  <span class="p">{</span>
+    <span class="n">nx</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="n">dic</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span><span class="c1">//肯能节点的行
+</span>    <span class="n">ny</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">dic</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span><span class="c1">//肯能节点的列
+</span>    <span class="k">if</span> <span class="p">((</span><span class="n">nx</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">nx</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">ny</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">ny</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">].</span><span class="n">trace</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span><span class="c1">//如果肯能在地图范围内且肯能节点非障碍
+</span>    <span class="p">{</span>
+      <span class="o">++</span><span class="n">xb</span><span class="p">;</span><span class="c1">//搜索队列的尾下标加一
+</span>      <span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">].</span><span class="n">trace</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//把当前点标为不能走，以防止走回头路从而产生无穷无尽的搜索
+</span>      <span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">].</span><span class="n">hx</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+      <span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">].</span><span class="n">hy</span><span class="o">=</span><span class="n">y</span><span class="p">;</span><span class="c1">//肯能节点的前一个节点为当前结点
+</span>      <span class="n">bs</span><span class="p">[</span><span class="n">xb</span><span class="p">].</span><span class="n">x</span><span class="o">=</span><span class="n">nx</span><span class="p">;</span>
+      <span class="n">bs</span><span class="p">[</span><span class="n">xb</span><span class="p">].</span><span class="n">y</span><span class="o">=</span><span class="n">ny</span><span class="p">;</span><span class="c1">//将肯能节点添加到搜索队列
+</span>    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="o">++</span><span class="n">di</span><span class="p">;</span><span class="c1">//搜索队列的头（也就是当前搜索点）加一
+</span>  <span class="n">bfs</span><span class="p">(</span><span class="n">di</span><span class="p">,</span><span class="n">bs</span><span class="p">[</span><span class="n">di</span><span class="p">].</span><span class="n">x</span><span class="p">,</span><span class="n">bs</span><span class="p">[</span><span class="n">di</span><span class="p">].</span><span class="n">y</span><span class="p">);</span><span class="c1">//遍历到下一个同层级或下一个层级的节点
+</span><span class="p">}</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span><span class="c1">//主程序
+</span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">dic</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span><span class="n">dic</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">dic</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">dic</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">dic</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">dic</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">dic</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">dic</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//以上下左右的顺序初始化dic数组
+</span>  <span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m</span><span class="p">);</span><span class="c1">//输入当前迷宫的大小
+</span>  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//输入二维的迷宫地图
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">trace</span><span class="p">);</span><span class="c1">//输入当前结点，存放到当前结点的是否可行走信息中
+</span>      <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">x</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="c1">//记录当前结点的行
+</span>      <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">y</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="c1">//记录当前结点的列
+</span>    <span class="p">}</span>
+  <span class="n">bs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">bs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//搜索队列的第一个点为起点
+</span>  <span class="n">bfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="c1">//宽度优先搜索第一个点周围的所有肯能节点
+</span><span class="p">}</span>
+
+</code></pre>
+</div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">BLOG|LEXUGE</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>BLOG|LEXUGE</li>
+          <li><a href="mailto:LEXUGEyky@outlook.com">LEXUGEyky@outlook.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/LEXUGE"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">LEXUGE</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a personal website.It is LEXUGE&#39;s BLOG.Welcome to my website!
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
