@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Aug 2016 14:54:44 +0800</pubDate>
-    <lastBuildDate>Fri, 26 Aug 2016 14:54:44 +0800</lastBuildDate>
+    <pubDate>Fri, 26 Aug 2016 16:27:07 +0800</pubDate>
+    <lastBuildDate>Fri, 26 Aug 2016 16:27:07 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -239,9 +239,9 @@ bridge（网桥）中继，也就是node。如需指定网桥类型在get bridge
 &lt;p&gt;接下来就交给大家了，如是通过邮件得到的就是英文版本，有不懂得单词
 翻译一下。&lt;/p&gt;
 
-&lt;p&gt;如果想获得中文版本的Tor，需要登录Tor官网：
-https://www.torproject.org/ （被block）
-https://www.theonionrouter.com/ （目前可用）
+&lt;p&gt;如果想获得中文版本的Tor，需要登录Tor官网：&lt;br /&gt;
+https://www.torproject.org/ （被block）&lt;br /&gt;
+https://www.theonionrouter.com/ （目前可用）&lt;br /&gt;
 在Download Tor的页面中把English改成简体字，然后下载
 获取网桥过程与使用过程参照上述。&lt;/p&gt;
 </description>
@@ -360,16 +360,16 @@ https://www.theonionrouter.com/ （目前可用）
   &lt;li&gt;Step2.选择镜像文件&lt;/li&gt;
   &lt;li&gt;Step3.选择U盘（建议勾选格式化选项）&lt;/li&gt;
   &lt;li&gt;Step4.默认
-单击Create，开始制作，制作完成后，启动U盘制作教程结束
-弹出U盘，重启，选择U盘引导
-出现Fedora Live字样时回车，出现Welcome to Fedora，建议先Try Fedora，连接WLAN后再
-Install to Hard Drive
-安装语言选择简体中文
-后面的个性化配置不讲了，重点是分区配置
-若是只安装Fedora，进入我要分配分区，在此进行分区配置，若有原先操作系统，就删除那些分区，新手建议使用Fedora的自动分区方案，建议选择LVM，若会分区就手动操作
-接下来的设置用户就不再烦述
-安装完成，享受Linux之乐趣吧！&lt;/li&gt;
+单击Create，开始制作，制作完成后，启动U盘制作教程结束&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;弹出U盘，重启，选择U盘引导&lt;br /&gt;
+出现Fedora Live字样时回车，出现Welcome to Fedora，建议先Try Fedora，连接WLAN后再Install to Hard Drive&lt;br /&gt;
+安装语言选择简体中文&lt;br /&gt;
+后面的个性化配置不讲了，重点是分区配置&lt;br /&gt;
+若是只安装Fedora，进入我要分配分区，在此进行分区配置，若有原先操作系统，就删除那些分区，新手建议使用Fedora的自动分区方案，建议选择LVM，若会分区就手动操作&lt;br /&gt;
+接下来的设置用户就不再烦述&lt;br /&gt;
+安装完成，享受Linux之乐趣吧！&lt;/p&gt;
 </description>
         <pubDate>Fri, 26 Aug 2016 07:45:00 +0800</pubDate>
         <link>http://example.com/jekyll/update/2016/08/26/Fedora-%E5%90%AF%E5%8A%A8U%E7%9B%98%E5%88%B6%E4%BD%9C%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</link>
