@@ -6,9 +6,89 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Aug 2016 14:15:09 +0800</pubDate>
-    <lastBuildDate>Fri, 26 Aug 2016 14:15:09 +0800</lastBuildDate>
+    <pubDate>Fri, 26 Aug 2016 14:54:44 +0800</pubDate>
+    <lastBuildDate>Fri, 26 Aug 2016 14:54:44 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>如何在Github上搭建Jekyll博客</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll 官网&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;Jekyll 国内镜像&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jekyll的安装过程还是比较坎坷的&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先安装RubyGems
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo dnf install rubygems
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装完成后你得安装一些devel包，包括ruby-devel, libffi-devel, libxml2-devel, libyaml-devel等&lt;/li&gt;
+  &lt;li&gt;完成后执行以下命令
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;如果全程无报错，那么恭喜你，你已经成功一大半了，试试这个
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll -v
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;如果正常返回版本号的话，输入以下命令
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;系统会提示你安装bundle，安装完成后，整个安装过程就OK了！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;OK,接下来，我们就要搭建第一个自己的第一个BLOG了&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先在Github上创建一个仓库，名字为{username}.github.io&lt;/li&gt;
+  &lt;li&gt;完了之后执行下面命令(你已经安装完并配置了GIT)
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo git clone {你的仓库git地址}
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;接下来，我们就要来生成BLOG了，使用下面的命令
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new blog
+cd blog
+jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;现在，你的BLOG已经在http://localhost:4000/上了！&lt;/li&gt;
+  &lt;li&gt;只要将你的_site文件夹里的内容复制进GIT仓库，并执行以下命令(在GIT仓库的目录下）就可以在{username}.github.io访问了
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo git add --all
+sudo git commit -m &quot;提交信息&quot;
+sudo git push
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;完成！
+    &lt;blockquote&gt;
+      &lt;p&gt;建议使用&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve --watch&lt;/code&gt;模式，这样系统一检测到改动就会自动生成，无需build&lt;br /&gt;
+请将文章写在_posts文件夹下&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By LEXUGE&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 26 Aug 2016 14:24:00 +0800</pubDate>
+        <link>http://example.com/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html</link>
+        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>E63蓝牙上网</title>
