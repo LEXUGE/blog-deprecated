@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 Aug 2016 12:31:45 +0800</pubDate>
-    <lastBuildDate>Sun, 28 Aug 2016 12:31:45 +0800</lastBuildDate>
+    <pubDate>Sun, 28 Aug 2016 12:40:11 +0800</pubDate>
+    <lastBuildDate>Sun, 28 Aug 2016 12:40:11 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -63,7 +63,7 @@ sudo make install
 
 &lt;p&gt;现在，我们来介绍如何攻击&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;su
-airmon -ng start {你的接口，在第一步中可以找到}
+airmon-ng start {你的接口，在第一步中可以找到}
 cd /usr/local/sbin
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
