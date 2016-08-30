@@ -6,9 +6,64 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Aug 2016 08:15:00 +0800</pubDate>
-    <lastBuildDate>Tue, 30 Aug 2016 08:15:00 +0800</lastBuildDate>
+    <pubDate>Tue, 30 Aug 2016 09:13:45 +0800</pubDate>
+    <lastBuildDate>Tue, 30 Aug 2016 09:13:45 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>在Fedora上使用TC3.0</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://download.pchome.net/development/linetools/detail-9113.html&quot;&gt;Turbo C3.0英文原版安装包&lt;/a&gt;&lt;br /&gt;
+如何在Linux上使用Turbo C3.0呢？&lt;br /&gt;
+我们将下载的安装包解压在/home/{username}/TurboC3.0中&lt;br /&gt;
+现在我们需要安装DOSBOX来模拟DOS环境:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo dnf install dosbox.x86_64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;安装完毕后我们打开dosbox，默认的提示符是Z，我们使用mount命令来挂载,使在dosbox内的程序将/home/{username}/TurboC3.0作为C:\&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mount c /home/{username}/TurboC3.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;打开C:\&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;c:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;进行安装:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在安装界面中SOURCE drive选择C，也相当于/home/{username}/TurboC3.0&lt;br /&gt;
+其余默认&lt;br /&gt;
+最后选择start installation&lt;br /&gt;
+完成后，TurboC3.0主程序会在/home/{username}/TurboC3.0/TC/BIN/TC.EXE&lt;/p&gt;
+
+&lt;p&gt;再次打开DOSBOX&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mount c /home/{username}/TurboC3.0
+c:
+cd /tc/bin
+tc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;OK,可以编写程序进行测试，如果不行，可以&lt;strong&gt;更改函数库路径&lt;/strong&gt;解决&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;祝你成功！&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Aug 2016 08:41:00 +0800</pubDate>
+        <link>http://example.com/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html</link>
+        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>使用mdk3+aircrack-ng攻击路由器</title>
