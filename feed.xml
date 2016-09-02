@@ -6,9 +6,31 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Aug 2016 09:13:45 +0800</pubDate>
-    <lastBuildDate>Tue, 30 Aug 2016 09:13:45 +0800</lastBuildDate>
+    <pubDate>Fri, 02 Sep 2016 20:11:00 +0800</pubDate>
+    <lastBuildDate>Fri, 02 Sep 2016 20:11:00 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>资源下载</title>
+        <description>&lt;p&gt;这里提供一些软件的资源下载：&lt;br /&gt;
+&lt;a href=&quot;/download/C2Doom.rar&quot;&gt;C2Doom&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/download/EDIT.rar&quot;&gt;EDIT文本编辑器(源代码+EXE+说明)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/download/TC3.0&quot;&gt;TC3.0&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/download/GAMEOX.rar&quot;&gt;GAMEOX(源代码+EXE+说明)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/download/Hiisi1.6.3.rar&quot;&gt;Hiisi1.6.3.rar&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/download/wwgc_manufacturers_kit.zip&quot;&gt;Google Cardboard图纸&lt;/a&gt;&lt;br /&gt;
+欢迎下载！&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Sep 2016 00:00:00 +0800</pubDate>
+        <link>http://example.com/jekyll/update/2016/09/02/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.html</link>
+        <guid isPermaLink="true">http://example.com/jekyll/update/2016/09/02/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>在Fedora上使用TC3.0</title>
@@ -655,27 +677,6 @@ https://www.theonionrouter.com/ （目前可用）&lt;br /&gt;
         <pubDate>Fri, 26 Aug 2016 07:45:00 +0800</pubDate>
         <link>http://example.com/jekyll/update/2016/08/26/Fedora-%E5%90%AF%E5%8A%A8U%E7%9B%98%E5%88%B6%E4%BD%9C%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</link>
         <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/Fedora-%E5%90%AF%E5%8A%A8U%E7%9B%98%E5%88%B6%E4%BD%9C%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome</title>
-        <description>&lt;p&gt;欢迎来到我的BLOG，这是一个以计算机技术为主的个人BLOG，当然也有一些生活感悟之类的。&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;We believe that writing is about content, about what you want to say – not about fancy formatting.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我们坚信写作写的是内容，所思所想，而不是花样格式。&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 25 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/25/Welcome.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/25/Welcome.html</guid>
         
         
         <category>jekyll</category>
