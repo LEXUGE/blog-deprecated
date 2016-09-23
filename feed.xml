@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Sep 2016 18:03:17 +0800</pubDate>
-    <lastBuildDate>Fri, 23 Sep 2016 18:03:17 +0800</lastBuildDate>
+    <pubDate>Fri, 23 Sep 2016 18:12:22 +0800</pubDate>
+    <lastBuildDate>Fri, 23 Sep 2016 18:12:22 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -34,7 +34,8 @@
 &lt;/ul&gt;
 
 &lt;p&gt;reboot&lt;br /&gt;
-OK，这个问题就完美解决了!&lt;/p&gt;
+OK，这个问题就完美解决了!&lt;br /&gt;
+PS:资源下载已搬迁至about页面&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Sep 2016 17:38:00 +0800</pubDate>
         <link>http://example.com/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html</link>
