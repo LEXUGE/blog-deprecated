@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>资源下载</title>
-  <meta name="description" content="这里提供一些软件的资源下载： C2Doom EDIT文本编辑器(源代码+EXE+说明) TurboC3.0 GAMEOX(源代码+EXE+说明) Hiisi1.6.3.rar Google Cardboard图纸 欢迎下载！">
+  <title>Fedora关闭合上笔记本屏幕挂起</title>
+  <meta name="description" content="与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。 如何解决这个问题呢？ 我们需要编辑/etc/systemd/logind.conf这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令： chmod a+w /etc/systemd/login...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://example.com/jekyll/update/2016/09/02/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.html">
+  <link rel="canonical" href="http://example.com/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="http://example.com/feed.xml">
 </head>
 
@@ -57,19 +57,34 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">资源下载</h1>
-    <p class="post-meta"><time datetime="2016-09-02T00:00:00+08:00" itemprop="datePublished">Sep 2, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline">Fedora关闭合上笔记本屏幕挂起</h1>
+    <p class="post-meta"><time datetime="2016-09-23T17:38:00+08:00" itemprop="datePublished">Sep 23, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>这里提供一些软件的资源下载：<br />
-<a href="/download/C2Doom.rar">C2Doom</a><br />
-<a href="/download/EDIT.rar">EDIT文本编辑器(源代码+EXE+说明)</a><br />
-<a href="/download/TC3.0.exe">TurboC3.0</a><br />
-<a href="/download/GAMEOX.rar">GAMEOX(源代码+EXE+说明)</a><br />
-<a href="/download/Hiisi1.6.3.rar">Hiisi1.6.3.rar</a><br />
-<a href="/download/wwgc_manufacturers_kit.zip">Google Cardboard图纸</a><br />
-欢迎下载！</p>
+    <p>与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。<br />
+如何解决这个问题呢？</p>
+<ul>
+  <li>我们需要编辑<code class="highlighter-rouge">/etc/systemd/logind.conf</code>这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
+    <div class="highlighter-rouge"><pre class="highlight"><code>chmod a+w /etc/systemd/logind.conf
+</code></pre>
+    </div>
+  </li>
+  <li>这样我们就有了更改配置文件的权限</li>
+  <li>接下来我们打开并编辑它
+    <div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/systemd/logind.conf
+</code></pre>
+    </div>
+  </li>
+  <li>找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
+    <div class="highlighter-rouge"><pre class="highlight"><code>HandleLidSwitch=ignore
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>reboot<br />
+OK，这个问题就完美解决了!</p>
 
   </div>
 

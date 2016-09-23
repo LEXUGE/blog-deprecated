@@ -6,24 +6,39 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Sep 2016 07:37:59 +0800</pubDate>
-    <lastBuildDate>Sat, 17 Sep 2016 07:37:59 +0800</lastBuildDate>
+    <pubDate>Fri, 23 Sep 2016 18:03:17 +0800</pubDate>
+    <lastBuildDate>Fri, 23 Sep 2016 18:03:17 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>资源下载</title>
-        <description>&lt;p&gt;这里提供一些软件的资源下载：&lt;br /&gt;
-&lt;a href=&quot;/download/C2Doom.rar&quot;&gt;C2Doom&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;/download/EDIT.rar&quot;&gt;EDIT文本编辑器(源代码+EXE+说明)&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;/download/TC3.0.exe&quot;&gt;TurboC3.0&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;/download/GAMEOX.rar&quot;&gt;GAMEOX(源代码+EXE+说明)&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;/download/Hiisi1.6.3.rar&quot;&gt;Hiisi1.6.3.rar&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;/download/wwgc_manufacturers_kit.zip&quot;&gt;Google Cardboard图纸&lt;/a&gt;&lt;br /&gt;
-欢迎下载！&lt;/p&gt;
+        <title>Fedora关闭合上笔记本屏幕挂起</title>
+        <description>&lt;p&gt;与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。&lt;br /&gt;
+如何解决这个问题呢？&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;我们需要编辑&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/logind.conf&lt;/code&gt;这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod a+w /etc/systemd/logind.conf
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;这样我们就有了更改配置文件的权限&lt;/li&gt;
+  &lt;li&gt;接下来我们打开并编辑它
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim /etc/systemd/logind.conf
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HandleLidSwitch=ignore
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;reboot&lt;br /&gt;
+OK，这个问题就完美解决了!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 02 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/09/02/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/09/02/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.html</guid>
+        <pubDate>Fri, 23 Sep 2016 17:38:00 +0800</pubDate>
+        <link>http://example.com/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html</link>
+        <guid isPermaLink="true">http://example.com/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html</guid>
         
         
         <category>jekyll</category>
