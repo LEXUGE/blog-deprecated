@@ -77,7 +77,15 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
 </span>
 <span class="kt">int</span> <span class="n">start</span><span class="p">();</span>
 <span class="kt">int</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
 
+<span class="kt">int</span> <span class="nf">prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
@@ -94,21 +102,23 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
   <span class="n">printf</span><span class="p">(</span><span class="s">"RSA tool</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">"please input two prime number:"</span><span class="p">);</span>
   <span class="n">scanf</span><span class="p">(</span><span class="s">"%d %d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">((</span><span class="n">prime</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">!=</span><span class="mi">1</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">prime</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">!=</span><span class="mi">1</span><span class="p">))</span> <span class="p">{</span><span class="n">printf</span><span class="p">(</span><span class="s">"number(s) is(are) not the prime number!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);}</span>
   <span class="n">n</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
   <span class="n">l</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
   <span class="n">srand</span><span class="p">((</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
   <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">temp</span><span class="o">=</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">3</span><span class="p">);</span>
+    <span class="n">temp</span><span class="o">=</span><span class="p">(</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">temp</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="n">e</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span><span class="k">break</span><span class="p">;}</span>
   <span class="p">}</span>
-  <span class="n">srand</span><span class="p">((</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"(E,N)=(%d,%d)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
   <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">temp</span><span class="o">=</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">3</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">((</span><span class="n">temp</span><span class="o">*</span><span class="n">e</span><span class="o">%</span><span class="n">l</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">temp</span><span class="o">!=</span><span class="n">e</span><span class="p">))</span> <span class="p">{</span><span class="n">d</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span><span class="k">break</span><span class="p">;}</span>
+    <span class="n">srand</span><span class="p">((</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+    <span class="n">temp</span><span class="o">=</span><span class="p">(</span><span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(((</span><span class="n">temp</span><span class="o">*</span><span class="n">e</span><span class="p">)</span><span class="o">%</span><span class="n">l</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">temp</span><span class="o">!=</span><span class="n">e</span><span class="p">))</span> <span class="p">{</span><span class="n">d</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span><span class="k">break</span><span class="p">;}</span>
   <span class="p">}</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">"(E,N)=(%d,%d)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+
   <span class="n">printf</span><span class="p">(</span><span class="s">"(D,N)=(%d,%d)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
