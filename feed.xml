@@ -6,9 +6,46 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Oct 2016 13:28:01 +0800</pubDate>
-    <lastBuildDate>Sat, 01 Oct 2016 13:28:01 +0800</lastBuildDate>
+    <pubDate>Tue, 04 Oct 2016 16:39:20 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Oct 2016 16:39:20 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>人</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;纠正&lt;br /&gt;
+很多时候，生活中总有人会提出我们看来亦或愚蠢亦或无知乃至无可救药的想法、意见。&lt;br /&gt;
+本能总会趋势我们去纠正他的观点。何必呢？世界上，宇宙中，有多少人会提出愚蠢无知无可救药的想法，何必理会之？&lt;br /&gt;
+再者，难道我们的观点一定正确？何必当这个可能传达错误思想的“传教士”？&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;人脉&lt;br /&gt;
+朋友，重要亦或不重要。&lt;br /&gt;
+只有在你需要时渴望，当你不危急时，这个朋友真的需要吗？&lt;br /&gt;
+没有朋友的，别傻了！即使一个朋友在危难之时伸出援助之手，有何尝不是为了下次你对他的雪中送炭？&lt;br /&gt;
+你真的需要朋友吗？&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;才艺&lt;br /&gt;
+所有的艺人，演员，事实上都没有为社会作出过任何贡献，但因为审美需要，我们需要他们。&lt;br /&gt;
+而你们学艺术干什么？你们难道尽靠所谓的”梦想“就想倚仗这些世俗烂摊亦或自学成才？&lt;br /&gt;
+的确，人渣变成精英需要经过这个阶段，可是，人家是为了艺术本身。而你呢?是为了博取人渣羡慕的目光。&lt;br /&gt;
+社会需要精英，同样也需要人渣，不要自为人渣还盲目向成为精英。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 04 Oct 2016 16:10:00 +0800</pubDate>
+        <link>http://example.com/jekyll/update/2016/10/04/%E4%BA%BA.html</link>
+        <guid isPermaLink="true">http://example.com/jekyll/update/2016/10/04/%E4%BA%BA.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>RSA密钥生成（C语言）</title>
@@ -603,80 +640,6 @@ By LEXUGE&lt;/p&gt;
         <pubDate>Fri, 26 Aug 2016 14:04:00 +0800</pubDate>
         <link>http://example.com/jekyll/update/2016/08/26/E63%E8%93%9D%E7%89%99%E4%B8%8A%E7%BD%91.html</link>
         <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/E63%E8%93%9D%E7%89%99%E4%B8%8A%E7%BD%91.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Tor的介绍及使用</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Tor究竟是如何运行的呢？其实很简单。你用Tor client（客户端）发送一个多层加密网络请求，
-随机指向一台Tor node（节点）帮你传送到目标主机上。node把这个请求的最外层解密，
-再随机发送到第二台node……这样重复经过3个node，最后到达目标主机。
-什么意思呢？简单的说就是你要发一封匿名信，你不自己送，也不叫邮差送。而在大街上随
-便找一个陌生人，陌生人再找另外一个陌生人，最后经过3个陌生人之手，达到对方手中。
-这样，检测难度就会更大，block的风险就会越小。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;但是，正是因为安全性高，所以，设置起来也是三种方法中最难的。
-现在，就来教大家一种永久的使用方法。&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;注册一个Yahoo！邮箱（必须是Yahoo！邮箱，除非你能使用Gmail）&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;发送主题为“help”的纯文本邮件到gettor@torproject.org，收到
-回复后根据邮件的提示再回复一次，即可在你的邮箱中收取Tor的软件
-包。切记要用纯文本的邮件格式。（获得的为英文版，如想获得中文
-版请参照Blog最后，不保证能访问）&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;给bridges@torproject.org 发送一封邮件（用纯文本格式），邮件
-的标题和正文写上get bridges（注意当中有空格）。这样就可以获得
-bridge（网桥）中继，也就是node。如需指定网桥类型在get bridges
-后面加上类型即可。如：get bridges obfs3(在正文中也要这么写)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;获得了这些后，我们就要开始设置了。
-首先，安装好Tor（卸载时直接删除其文件夹即可）。&lt;/p&gt;
-
-&lt;p&gt;然后在安装完成后勾选运行（默认勾选），进入设置页面。&lt;/p&gt;
-
-&lt;p&gt;它首先会询问你当前连接互联网是否受限，因为我们被block了，所以
-在Connect（直接连接）与Configure（配置）中选则Configure。&lt;/p&gt;
-
-&lt;p&gt;进入下一步，他会询问你ISP（电信运营商）有没有屏蔽互联网接入
-因为被block了，所以我们选择Yes（是），点击Next（下一步）。&lt;/p&gt;
-
-&lt;p&gt;下面到了最关键的一步，我们要设置node了，这时候我们需要用到之前
-发送邮件得到的bridges，复制邮件中所有的bridges（通常是3个）
-通常是这样的格式：IP地址:端口 hash值校验码（数字与大写字母混合）
-复制好后我们在这一步中选择Enter custon bridges（自定义网桥中继）
-在文本框中粘贴我们复制的bridges。单击Next（下一步）&lt;/p&gt;
-
-&lt;p&gt;最后，他会询问我们是否通过代理连接，这通常是在公司等内部网络使用
-我们不需要，选择No（否），最后点击Connect（连接）&lt;/p&gt;
-
-&lt;p&gt;这时，Tor会开始连接，耐心等待后就可以了。
-成功后会跳出浏览器，显示Congratulations（成功）&lt;/p&gt;
-
-&lt;p&gt;接下来就交给大家了，如是通过邮件得到的就是英文版本，有不懂得单词
-翻译一下。&lt;/p&gt;
-
-&lt;p&gt;如果想获得中文版本的Tor，需要登录Tor官网：&lt;br /&gt;
-https://www.torproject.org/ （被block）&lt;br /&gt;
-https://www.theonionrouter.com/ （目前可用）&lt;br /&gt;
-在Download Tor的页面中把English改成简体字，然后下载
-获取网桥过程与使用过程参照上述。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 26 Aug 2016 08:59:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/26/Tor%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/Tor%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8.html</guid>
         
         
         <category>jekyll</category>
