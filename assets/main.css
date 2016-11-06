@@ -138,8 +138,6 @@ pre {
  */
 .icon > svg {
   display: inline-block;
-  width: 16px;
-  height: 16px;
   vertical-align: middle; }
   .icon > svg path {
     fill: #828282; }
@@ -190,11 +188,8 @@ pre {
         line-height: 0;
         padding-top: 10px;
         text-align: center; }
-        .site-nav .menu-icon > svg {
-          width: 18px;
-          height: 15px; }
-          .site-nav .menu-icon > svg path {
-            fill: #424242; }
+        .site-nav .menu-icon > svg path {
+          fill: #424242; }
       .site-nav .trigger {
         clear: both;
         display: none; }

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Fedora关闭合上笔记本屏幕挂起</title>
-  <meta name="description" content="与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。 如何解决这个问题呢？ 我们需要编辑/etc/systemd/logind.conf这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令： chmod a+w /etc/systemd/login...">
+  <title>ArchLinux下安装QQ</title>
+  <meta name="description" content="QQ一直是Linux用户的一个难题 今天我们就叫大家使用Longene WINE QQ来实现QQ的使用 wine QQ deb包下载 下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压 完成后得到/opt和/usr目录 把/opt/下的logene 文件夹 移动到...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html">
+  <link rel="canonical" href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -61,35 +61,27 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Fedora关闭合上笔记本屏幕挂起</h1>
-    <p class="post-meta"><time datetime="2016-09-23T17:38:00+08:00" itemprop="datePublished">Sep 23, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline">ArchLinux下安装QQ</h1>
+    <p class="post-meta"><time datetime="2016-11-06T15:45:00+08:00" itemprop="datePublished">Nov 6, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。<br />
-如何解决这个问题呢？</p>
+    <p>QQ一直是Linux用户的一个难题<br />
+今天我们就叫大家使用Longene WINE QQ来实现QQ的使用<br />
+<a href="http://www.longene.org/download/WineQQ7.8-20151109-Longene.deb">wine QQ deb包下载</a><br />
+下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压<br />
+完成后得到/opt和/usr目录</p>
 <ul>
-  <li>我们需要编辑<code class="highlighter-rouge">/etc/systemd/logind.conf</code>这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
-    <div class="highlighter-rouge"><pre class="highlight"><code>chmod a+w /etc/systemd/logind.conf
-</code></pre>
-    </div>
-  </li>
-  <li>这样我们就有了更改配置文件的权限</li>
-  <li>接下来我们打开并编辑它
-    <div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/systemd/logind.conf
-</code></pre>
-    </div>
-  </li>
-  <li>找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
-    <div class="highlighter-rouge"><pre class="highlight"><code>HandleLidSwitch=ignore
-</code></pre>
-    </div>
-  </li>
+  <li>把/opt/下的logene 文件夹 移动到系统/opt/下</li>
+  <li>在把 usr/bin/下的 qq 移动到你的系统 /usr/bin下</li>
 </ul>
 
-<p>reboot<br />
-OK，这个问题就完美解决了!<br />
-PS:资源下载已搬迁至about页面</p>
+<p>完毕后进行测试：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sh /opt/longene/qq/qq.sh
+</code></pre>
+</div>
+<p>帐号密码都能输入，不存在常规wine下安装qq 无法输入的问题，能正常聊天和文件传输，比较稳定！</p>
+
 
   </div>
 

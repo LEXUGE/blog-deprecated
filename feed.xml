@@ -1,18 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>BLOG|LEXUGE</title>
-    <description>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!
-</description>
-    <link>http://example.com/</link>
-    <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Oct 2016 12:42:40 +0800</pubDate>
-    <lastBuildDate>Wed, 05 Oct 2016 12:42:40 +0800</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title>人</title>
-        <description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-11-06T15:46:41+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">ArchLinux下安装QQ</title><link href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html" rel="alternate" type="text/html" title="ArchLinux下安装QQ" /><published>2016-11-06T15:45:00+08:00</published><updated>2016-11-06T15:45:00+08:00</updated><id>/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ</id><content type="html" xml:base="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html">&lt;p&gt;QQ一直是Linux用户的一个难题&lt;br /&gt;
+今天我们就叫大家使用Longene WINE QQ来实现QQ的使用&lt;br /&gt;
+&lt;a href=&quot;http://www.longene.org/download/WineQQ7.8-20151109-Longene.deb&quot;&gt;wine QQ deb包下载&lt;/a&gt;&lt;br /&gt;
+下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压&lt;br /&gt;
+完成后得到/opt和/usr目录&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;把/opt/下的logene 文件夹 移动到系统/opt/下&lt;/li&gt;
+  &lt;li&gt;在把 usr/bin/下的 qq 移动到你的系统 /usr/bin下&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;完毕后进行测试：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh /opt/longene/qq/qq.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;帐号密码都能输入，不存在常规wine下安装qq 无法输入的问题，能正常聊天和文件传输，比较稳定！&lt;/p&gt;</content><summary type="html">QQ一直是Linux用户的一个难题
+今天我们就叫大家使用Longene WINE QQ来实现QQ的使用
+wine QQ deb包下载
+下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压
+完成后得到/opt和/usr目录
+
+  把/opt/下的logene 文件夹 移动到系统/opt/下
+  在把 usr/bin/下的 qq 移动到你的系统 /usr/bin下</summary></entry><entry><title type="html">人</title><link href="/jekyll/update/2016/10/04/%E4%BA%BA.html" rel="alternate" type="text/html" title="人" /><published>2016-10-04T16:10:00+08:00</published><updated>2016-10-04T16:10:00+08:00</updated><id>/jekyll/update/2016/10/04/%E4%BA%BA</id><content type="html" xml:base="/jekyll/update/2016/10/04/%E4%BA%BA.html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;纠正&lt;br /&gt;
 很多时候，生活中总有人会提出我们看来亦或愚蠢亦或无知乃至无可救药的想法、意见。&lt;br /&gt;
@@ -33,23 +40,10 @@
 的确，人渣变成精英需要经过这个阶段，可是，人家是为了艺术本身。而你呢?是为了博取人渣羡慕的目光。&lt;br /&gt;
 社会需要精英，同样也需要人渣，不要自为人渣还盲目向成为精英。&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 04 Oct 2016 16:10:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/10/04/%E4%BA%BA.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/10/04/%E4%BA%BA.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>RSA密钥生成（C语言）</title>
-        <description>&lt;blockquote&gt;
+&lt;/ul&gt;</content><summary type="html">纠正
+很多时候，生活中总有人会提出我们看来亦或愚蠢亦或无知乃至无可救药的想法、意见。
+本能总会趋势我们去纠正他的观点。何必呢？世界上，宇宙中，有多少人会提出愚蠢无知无可救药的想法，何必理会之？
+再者，难道我们的观点一定正确？何必当这个可能传达错误思想的“传教士”？</summary></entry><entry><title type="html">RSA密钥生成（C语言）</title><link href="/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90-C%E8%AF%AD%E8%A8%80.html" rel="alternate" type="text/html" title="RSA密钥生成（C语言）" /><published>2016-10-01T09:43:00+08:00</published><updated>2016-10-01T09:43:00+08:00</updated><id>/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90(C%E8%AF%AD%E8%A8%80)</id><content type="html" xml:base="/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90-C%E8%AF%AD%E8%A8%80.html">&lt;blockquote&gt;
   &lt;p&gt;RSA公钥加密算法是1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。1987年首次公布，当时他们三人都在麻省理工学院工作。RSA就是他们三人姓氏开头字母拼在一起组成的。
 RSA是目前最有影响力的公钥加密算法，它能够抵抗到目前为止已知的绝大多数密码攻击，已被ISO推荐为公钥数据加密标准。
 今天只有短的RSA钥匙才可能被强力方式解破。到2008年为止，世界上还没有任何可靠的攻击RSA算法的方式。只要其钥匙的长度足够长，用RSA加密的信息实际上是不能被解破的。但在分布式计算和量子计算机理论日趋成熟的今天，RSA加密安全性受到了挑战。
@@ -116,23 +110,10 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sat, 01 Oct 2016 09:43:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90-C%E8%AF%AD%E8%A8%80.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90-C%E8%AF%AD%E8%A8%80.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>《监视者》影评</title>
-        <description>&lt;blockquote&gt;
+&lt;/div&gt;</content><summary type="html">RSA公钥加密算法是1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。1987年首次公布，当时他们三人都在麻省理工学院工作。RSA就是他们三人姓氏开头字母拼在一起组成的。
+RSA是目前最有影响力的公钥加密算法，它能够抵抗到目前为止已知的绝大多数密码攻击，已被ISO推荐为公钥数据加密标准。
+今天只有短的RSA钥匙才可能被强力方式解破。到2008年为止，世界上还没有任何可靠的攻击RSA算法的方式。只要其钥匙的长度足够长，用RSA加密的信息实际上是不能被解破的。但在分布式计算和量子计算机理论日趋成熟的今天，RSA加密安全性受到了挑战。
+RSA算法基于一个十分简单的数论事实：将两个大质数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</summary></entry><entry><title type="html">《监视者》影评</title><link href="/jekyll/update/2016/09/30/%E7%9B%91%E8%A7%86%E8%80%85-%E5%BD%B1%E8%AF%84.html" rel="alternate" type="text/html" title="《监视者》影评" /><published>2016-09-30T19:29:00+08:00</published><updated>2016-09-30T19:29:00+08:00</updated><id>/jekyll/update/2016/09/30/%E3%80%8A%E7%9B%91%E8%A7%86%E8%80%85%E3%80%8B%E5%BD%B1%E8%AF%84</id><content type="html" xml:base="/jekyll/update/2016/09/30/%E7%9B%91%E8%A7%86%E8%80%85-%E5%BD%B1%E8%AF%84.html">&lt;blockquote&gt;
   &lt;p&gt;《监视者们》翻拍自香港电影《跟踪》，是由赵义硕，金秉瑞联合执导，薛景求，郑雨盛，韩孝珠，李俊昊等主演的动作剧情片。&lt;br /&gt;
 该片描写了隐蔽真实身份的监视专家们与每次受到危机四伏的追踪却都能幸运逃脱的秘密犯罪者之间惊心动魄的对决。以监视特定对象的警察内部特殊组织部门监视班为背景，讲述特殊犯罪科监视班队员与银行盗窃团伙之间发生的故事。于2013年7月3日在韩国上映，票房突破550万，并受邀参展多伦多国际电影节。2014年9月16日在中国大陆上映，并更名为《绝密跟踪》。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -143,23 +124,17 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
        “影子”正准备第二次洗劫银行。穿着风衣，手提卡其色公文包，低头匆匆走向交易所。黄组长在交易所附近的街道上不断搜查嫌疑人。他扫视到了“影子”，敏锐的职业习惯让他多加注意了几眼这个行色匆匆的人。随后，“花猪”上了的士，但一上车就脱去了紫色羽绒大衣，整换了头型——作为一个行事有道的惯犯，这一反常举动引起了“影子”冥冥之中的注意。很快，“影子”登上了交易所的顶楼——站在至高点指挥全盘犯罪计划。正当他用高倍单筒望远镜扫视四周时，又发现了那位反常的女子——“花猪”——她又换了一套外衣，改变了头饰与发型——更为反常的是，她的上下车地点仅相隔几步之遥。任何人都不会用这种方式打的士，“影子”想到，这正是警方惯用的搜查方式。最后一个举动，使“影子”肯定了，她，就是警察——“花猪”跟随“影子”同伙的车辆跑去。&lt;br /&gt;
        这一段的情节紧凑连贯，细节缜密，小说意味极强，也是整部电影中极其精彩的一段。原片对这一段的节奏感控制的很恰当，很详细的描写出了“影子”当时的眼神。从而刻画出了人物心理，而并不是像国内二三流电视剧，滥用心理独白。&lt;br /&gt;
        事实上，这篇电影中有很多的黑客元素（不关于技术方面）。可以说，黑客在理想化状态中就是如同“影子”般冷漠、冷酷、冷静的，计划缜密，天衣无缝。从另一种角度来解析，也有另一层含义——不要相信自己以外的任何人。&lt;br /&gt;
-       &lt;strong&gt;人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。&lt;/strong&gt;&lt;/p&gt;
+       &lt;strong&gt;人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">《监视者们》翻拍自香港电影《跟踪》，是由赵义硕，金秉瑞联合执导，薛景求，郑雨盛，韩孝珠，李俊昊等主演的动作剧情片。
+该片描写了隐蔽真实身份的监视专家们与每次受到危机四伏的追踪却都能幸运逃脱的秘密犯罪者之间惊心动魄的对决。以监视特定对象的警察内部特殊组织部门监视班为背景，讲述特殊犯罪科监视班队员与银行盗窃团伙之间发生的故事。于2013年7月3日在韩国上映，票房突破550万，并受邀参展多伦多国际电影节。2014年9月16日在中国大陆上映，并更名为《绝密跟踪》。
 
-</description>
-        <pubDate>Fri, 30 Sep 2016 19:29:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/09/30/%E7%9B%91%E8%A7%86%E8%80%85-%E5%BD%B1%E8%AF%84.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/09/30/%E7%9B%91%E8%A7%86%E8%80%85-%E5%BD%B1%E8%AF%84.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Fedora关闭合上笔记本屏幕挂起</title>
-        <description>&lt;p&gt;与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。&lt;br /&gt;
+
+       影片的剧情可谓是非常刺激的。开篇，就是黄组长对“花猪”的考验，使得整部片子的节奏感特别强。记忆力超群的“花猪”成功经受住了黄组长的考量——快速回忆了地铁上黄组长经历与周围发生的一切细节。事实上，这让我想到了丢东西后瞬时对脑海中所有场景的回忆。回忆之快，超乎想象。
+       “注意力错觉，也叫非注意盲视。人们通常只会记住自己所关注的东西，你看到了地铁里的一切，但是你只记住了你关注的东西“。生活中我们总会忽视、忘记什么。大脑是选择性记忆的，这就是因为我们并没有关注而导致忘记。
+       追踪影子的那一段是异常精彩的。
+       “影子”正准备第二次洗劫银行。穿着风衣，手提卡其色公文包，低头匆匆走向交易所。黄组长在交易所附近的街道上不断搜查嫌疑人。他扫视到了“影子”，敏锐的职业习惯让他多加注意了几眼这个行色匆匆的人。随后，“花猪”上了的士，但一上车就脱去了紫色羽绒大衣，整换了头型——作为一个行事有道的惯犯，这一反常举动引起了“影子”冥冥之中的注意。很快，“影子”登上了交易所的顶楼——站在至高点指挥全盘犯罪计划。正当他用高倍单筒望远镜扫视四周时，又发现了那位反常的女子——“花猪”——她又换了一套外衣，改变了头饰与发型——更为反常的是，她的上下车地点仅相隔几步之遥。任何人都不会用这种方式打的士，“影子”想到，这正是警方惯用的搜查方式。最后一个举动，使“影子”肯定了，她，就是警察——“花猪”跟随“影子”同伙的车辆跑去。
+       这一段的情节紧凑连贯，细节缜密，小说意味极强，也是整部电影中极其精彩的一段。原片对这一段的节奏感控制的很恰当，很详细的描写出了“影子”当时的眼神。从而刻画出了人物心理，而并不是像国内二三流电视剧，滥用心理独白。
+       事实上，这篇电影中有很多的黑客元素（不关于技术方面）。可以说，黑客在理想化状态中就是如同“影子”般冷漠、冷酷、冷静的，计划缜密，天衣无缝。从另一种角度来解析，也有另一层含义——不要相信自己以外的任何人。
+       人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。</summary></entry><entry><title type="html">Fedora关闭合上笔记本屏幕挂起</title><link href="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html" rel="alternate" type="text/html" title="Fedora关闭合上笔记本屏幕挂起" /><published>2016-09-23T17:38:00+08:00</published><updated>2016-09-23T17:38:00+08:00</updated><id>/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7</id><content type="html" xml:base="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html">&lt;p&gt;与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。&lt;br /&gt;
 如何解决这个问题呢？&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;我们需要编辑&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/logind.conf&lt;/code&gt;这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
@@ -182,22 +157,22 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
 
 &lt;p&gt;reboot&lt;br /&gt;
 OK，这个问题就完美解决了!&lt;br /&gt;
-PS:资源下载已搬迁至about页面&lt;/p&gt;
-</description>
-        <pubDate>Fri, 23 Sep 2016 17:38:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
+PS:资源下载已搬迁至about页面&lt;/p&gt;</content><summary type="html">与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。
+如何解决这个问题呢？
+
+  我们需要编辑/etc/systemd/logind.conf这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
+    chmod a+w /etc/systemd/logind.conf
+
     
-      <item>
-        <title>在Fedora上使用TC3.0</title>
-        <description>&lt;blockquote&gt;
+  
+  这样我们就有了更改配置文件的权限
+  接下来我们打开并编辑它
+    vim /etc/systemd/logind.conf
+
+    
+  
+  找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
+    HandleLidSwitch=ignore</summary></entry><entry><title type="html">在Fedora上使用TC3.0</title><link href="/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html" rel="alternate" type="text/html" title="在Fedora上使用TC3.0" /><published>2016-08-30T08:41:00+08:00</published><updated>2016-08-30T08:41:00+08:00</updated><id>/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0</id><content type="html" xml:base="/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html">&lt;blockquote&gt;
   &lt;p&gt;Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -237,22 +212,7 @@ tc
 &lt;/div&gt;
 &lt;p&gt;OK,可以编写程序进行测试，如果不行，可以&lt;strong&gt;更改函数库路径&lt;/strong&gt;解决&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;祝你成功！&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Aug 2016 08:41:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>使用mdk3+aircrack-ng攻击路由器</title>
-        <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;祝你成功！&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。</summary></entry><entry><title type="html">使用mdk3+aircrack-ng攻击路由器</title><link href="/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html" rel="alternate" type="text/html" title="使用mdk3+aircrack-ng攻击路由器" /><published>2016-08-28T11:47:00+08:00</published><updated>2016-08-28T11:47:00+08:00</updated><id>/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8</id><content type="html" xml:base="/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html">&lt;blockquote&gt;
   &lt;p&gt;mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -384,22 +344,7 @@ Deauthentication/Disassociation Amok：&lt;br /&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;祝你成功！&lt;/p&gt;
-</description>
-        <pubDate>Sun, 28 Aug 2016 11:47:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Fedora系统升级方法</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://fedoraproject.org/wiki/DNF_system_upgrade&quot;&gt;Fedora官方教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;祝你成功！&lt;/p&gt;</content><summary type="html">mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用</summary></entry><entry><title type="html">Fedora系统升级方法</title><link href="/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="Fedora系统升级方法" /><published>2016-08-27T10:41:00+08:00</published><updated>2016-08-27T10:41:00+08:00</updated><id>/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95</id><content type="html" xml:base="/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html">&lt;p&gt;&lt;a href=&quot;http://fedoraproject.org/wiki/DNF_system_upgrade&quot;&gt;Fedora官方教程&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf upgrade --refresh
 $ sudo dnf install dnf-plugin-system-upgrade
 $ sudo dnf system-upgrade download --refresh --releasever=XX
@@ -407,22 +352,11 @@ $ sudo dnf system-upgrade reboot
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;releasever=XX&lt;/code&gt;中的XX为版本号&lt;/p&gt;
-</description>
-        <pubDate>Sat, 27 Aug 2016 10:41:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>为何选择Linux?</title>
-        <description>&lt;blockquote&gt;
+&lt;p&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;releasever=XX&lt;/code&gt;中的XX为版本号&lt;/p&gt;</content><summary type="html">Fedora官方教程
+$ sudo dnf upgrade --refresh
+$ sudo dnf install dnf-plugin-system-upgrade
+$ sudo dnf system-upgrade download --refresh --releasever=XX
+$ sudo dnf system-upgrade reboot</summary></entry><entry><title type="html">为何选择Linux?</title><link href="/jekyll/update/2016/08/27/%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9Linux.html" rel="alternate" type="text/html" title="为何选择Linux?" /><published>2016-08-27T09:35:00+08:00</published><updated>2016-08-27T09:35:00+08:00</updated><id>/jekyll/update/2016/08/27/%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9Linux</id><content type="html" xml:base="/jekyll/update/2016/08/27/%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9Linux.html">&lt;blockquote&gt;
   &lt;p&gt;Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。&lt;br /&gt;
 Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公布时间）。Linux存在着许多不同的Linux版本，但它们都使用了Linux内核。Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、视频游戏控制台、台式计算机、大型机和超级计算机。&lt;br /&gt;
 严格来讲，Linux这个词本身只表示Linux内核，但实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统。&lt;/p&gt;
@@ -463,22 +397,9 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
   &lt;li&gt;我使用的就是Fedora，没有任何的问题，得益于Redhat的强大。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;最后祝你：Linux使用愉快！&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 27 Aug 2016 09:35:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/27/%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9Linux.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/27/%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9Linux.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>如何在Github上搭建Jekyll博客</title>
-        <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;最后祝你：Linux使用愉快！&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。
+Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公布时间）。Linux存在着许多不同的Linux版本，但它们都使用了Linux内核。Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、视频游戏控制台、台式计算机、大型机和超级计算机。
+严格来讲，Linux这个词本身只表示Linux内核，但实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统。</summary></entry><entry><title type="html">如何在Github上搭建Jekyll博客</title><link href="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html" rel="alternate" type="text/html" title="如何在Github上搭建Jekyll博客" /><published>2016-08-26T14:24:00+08:00</published><updated>2016-08-26T14:24:00+08:00</updated><id>/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html">&lt;blockquote&gt;
   &lt;p&gt;Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -542,111 +463,4 @@ sudo git push
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;By LEXUGE&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 26 Aug 2016 14:24:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>E63蓝牙上网</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;对于国行的E63来说，并不配备有Wi-Fi功能，所以，就得近肯能的使用其他的
-免费数据连接来代替这一功能，其中最棒的选择就是Bluetooth连接。但是，Bluetooth连接
-只能创建两个终端的Peer to Peer连接或多个终端之间的LAN。这并不能获得外部数据。如何
-解决这一致命问题呢？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可以使用另一台终端，其可直接访问Internet（比如笔记本），如同
-代理服务器一样，把E63用Bluetooth发送过来的网络请求进行执行，再把外部传回来的信息
-通过Bluetooth传回给E63，实现E63直接访问Internet的效果。示意图如下：&lt;/p&gt;
-
-&lt;p&gt;发送：
-     蓝牙        网络连接
-E63  —&amp;gt;  笔记本  —&amp;gt;  Internet&lt;/p&gt;
-
-&lt;p&gt;接收：
-     蓝牙        网络连接
-E63  &amp;lt;—  笔记本  &amp;lt;—  Internet&lt;/p&gt;
-
-&lt;p&gt;思路就是这样，那么，该如何实现呢？
-以Windows为例，有以下教程：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;下载Hiisi 1.6.3 （在文章末尾，这是Bluetooth代理套件，有客户端和服务端）&lt;/li&gt;
-  &lt;li&gt;下载并安装JRE（Java运行环境），已有的可跳过本步骤，在CMD中输入java –version
-可验证是否正确配置该环境&lt;/li&gt;
-  &lt;li&gt;（重要！！！）.在E63上新创建一个接入点，连接名称可命名为BLUETOOTH（命名随意）其他基本默认，分别如下：&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;数据承载方式：分组数据 &lt;br /&gt;
-接入点名称：无&lt;br /&gt;
-用户名：无&lt;br /&gt;
-提示输入密码：否&lt;br /&gt;
-密码：&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;br /&gt;
-鉴定：普通&lt;br /&gt;
-主页：无&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;然后点击选项-&amp;gt;高级设置，设置如下：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;网络类型：IPv4&lt;br /&gt;
-手机IP地址：自动&lt;br /&gt;
-DNS地址：自动&lt;br /&gt;
-代理服务器地址：127.0.0.1&lt;br /&gt;
-代理端口号码：1234&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;解压Hiisi 1.6.3，将hiisi1.6.3\hiisi\bin目录中的jad、jar两个文件提取，放置到E63的
-E盘安装（注意！！！安装时一定先运行hiisi.JAD,而不是JAR！)&lt;/li&gt;
-  &lt;li&gt;打开蓝牙的设置，在“COM 端口”选项卡中，单击添加-&amp;gt;确定，记下前面的端口号，比如：COM19&lt;/li&gt;
-  &lt;li&gt;进入Hiisi 1.6.3\Pihatonttu目录。右击-&amp;gt;编辑，将COM XXXX改成你刚刚记下的端口号&lt;/li&gt;
-  &lt;li&gt;将E63与电脑建立Bluetooth连接，建议添加信任设备&lt;/li&gt;
-  &lt;li&gt;在Bluetooth设置的选项中将笔记本设为可见设备&lt;/li&gt;
-  &lt;li&gt;现在运行Pihatonttu.cmd，若提示端口已被占用，请检查占用情况&lt;/li&gt;
-  &lt;li&gt;在E63上找到刚刚安装的Hiisi Proxy，并打开&lt;/li&gt;
-  &lt;li&gt;选择允许Hiisi Proxy使用网络或收发数据，并选择Bluetooth Mode（蓝牙模式）&lt;/li&gt;
-  &lt;li&gt;会寻找蓝牙设备，搜寻完后，选择你的设备名，完毕后，会搜索端口，选择端口&lt;/li&gt;
-  &lt;li&gt;此时，我们要确保连接是否工作，按选项-&amp;gt;Setting,勾选Check now，按OK
-这时，系统会检测，若出现：Bluetooth connection is available，恭喜你，连接成功
-若出现Bluetooth connection is not available，请单击选项-&amp;gt;Restart，再重复13步&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;接下来就可以网上冲浪啦!&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;注意！！！请不要按Exit退出，按左边的房子按键退出，可确保
-代理程序在后台运行&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;以后，只需打开Pihatonttu.cmd，然后手机端连接即可
-此外，在访问Internet的时候有几点要注意：
-这是通过代理服务器访问，速度较慢，请缓慢操作
-并不是非常稳定，并且服务端需要处理数据，请缓慢操作&lt;/p&gt;
-
-&lt;p&gt;出现断线情况可按照13步检测并重启
-By LEXUGE&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 26 Aug 2016 14:04:00 +0800</pubDate>
-        <link>http://example.com/jekyll/update/2016/08/26/E63%E8%93%9D%E7%89%99%E4%B8%8A%E7%BD%91.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2016/08/26/E63%E8%93%9D%E7%89%99%E4%B8%8A%E7%BD%91.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;By LEXUGE&lt;/p&gt;</content><summary type="html">Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。</summary></entry></feed>
