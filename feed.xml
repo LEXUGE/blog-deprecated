@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-11-06T15:46:41+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">ArchLinux下安装QQ</title><link href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html" rel="alternate" type="text/html" title="ArchLinux下安装QQ" /><published>2016-11-06T15:45:00+08:00</published><updated>2016-11-06T15:45:00+08:00</updated><id>/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ</id><content type="html" xml:base="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html">&lt;p&gt;QQ一直是Linux用户的一个难题&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-11-13T15:10:36+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">ev3dev蓝牙联网</title><link href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html" rel="alternate" type="text/html" title="ev3dev蓝牙联网" /><published>2016-11-13T15:01:00+08:00</published><updated>2016-11-13T15:01:00+08:00</updated><id>/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91</id><content type="html" xml:base="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html">&lt;p&gt;&lt;a href=&quot;http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/&quot;&gt;官网原版教程&lt;/a&gt;&lt;br /&gt;
+ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。&lt;br /&gt;
+对于原版教程，做如下补充:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ev3dev与Linux蓝牙配对时，要用ev3搜索、配对&lt;/li&gt;
+  &lt;li&gt;Linux端的蓝牙本地服务IP地址一定要填写&lt;code class=&quot;highlighter-rouge&quot;&gt;10.42.0.1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;不要自动连接&lt;/li&gt;
+&lt;/ul&gt;</content><summary type="html">官网原版教程
+ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。
+对于原版教程，做如下补充:
+
+  ev3dev与Linux蓝牙配对时，要用ev3搜索、配对
+  Linux端的蓝牙本地服务IP地址一定要填写10.42.0.1
+  不要自动连接</summary></entry><entry><title type="html">ArchLinux下安装QQ</title><link href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html" rel="alternate" type="text/html" title="ArchLinux下安装QQ" /><published>2016-11-06T15:45:00+08:00</published><updated>2016-11-06T15:45:00+08:00</updated><id>/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ</id><content type="html" xml:base="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html">&lt;p&gt;QQ一直是Linux用户的一个难题&lt;br /&gt;
 今天我们就叫大家使用Longene WINE QQ来实现QQ的使用&lt;br /&gt;
 &lt;a href=&quot;http://www.longene.org/download/WineQQ7.8-20151109-Longene.deb&quot;&gt;wine QQ deb包下载&lt;/a&gt;&lt;br /&gt;
 下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压&lt;br /&gt;
@@ -399,68 +412,4 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
 
 &lt;p&gt;&lt;strong&gt;最后祝你：Linux使用愉快！&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。
 Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公布时间）。Linux存在着许多不同的Linux版本，但它们都使用了Linux内核。Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、视频游戏控制台、台式计算机、大型机和超级计算机。
-严格来讲，Linux这个词本身只表示Linux内核，但实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统。</summary></entry><entry><title type="html">如何在Github上搭建Jekyll博客</title><link href="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html" rel="alternate" type="text/html" title="如何在Github上搭建Jekyll博客" /><published>2016-08-26T14:24:00+08:00</published><updated>2016-08-26T14:24:00+08:00</updated><id>/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html">&lt;blockquote&gt;
-  &lt;p&gt;Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll 官网&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;Jekyll 国内镜像&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Jekyll的安装过程还是比较坎坷的&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;首先安装RubyGems
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo dnf install rubygems
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;安装完成后你得安装一些devel包，包括ruby-devel, libffi-devel, libxml2-devel, libyaml-devel等&lt;/li&gt;
-  &lt;li&gt;完成后执行以下命令
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;如果全程无报错，那么恭喜你，你已经成功一大半了，试试这个
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll -v
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;如果正常返回版本号的话，输入以下命令
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;系统会提示你安装bundle，安装完成后，整个安装过程就OK了！&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;OK,接下来，我们就要搭建第一个自己的第一个BLOG了&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;首先在Github上创建一个仓库，名字为{username}.github.io&lt;/li&gt;
-  &lt;li&gt;完了之后执行下面命令(你已经安装完并配置了GIT)
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo git clone {你的仓库git地址}
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;接下来，我们就要来生成BLOG了，使用下面的命令
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new blog
-cd blog
-jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;现在，你的BLOG已经在http://localhost:4000/上了！&lt;/li&gt;
-  &lt;li&gt;只要将你的_site文件夹里的内容复制进GIT仓库，并执行以下命令(在GIT仓库的目录下）就可以在{username}.github.io访问了
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo git add --all
-sudo git commit -m &quot;提交信息&quot;
-sudo git push
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;完成！
-    &lt;blockquote&gt;
-      &lt;p&gt;建议使用&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve --watch&lt;/code&gt;模式，这样系统一检测到改动就会自动生成，无需build&lt;br /&gt;
-请将文章写在_posts文件夹下&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By LEXUGE&lt;/p&gt;</content><summary type="html">Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。</summary></entry></feed>
+严格来讲，Linux这个词本身只表示Linux内核，但实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统。</summary></entry></feed>
