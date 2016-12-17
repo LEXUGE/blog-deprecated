@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-12-17T13:31:44+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">神奇动物在哪里</title><link href="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html" rel="alternate" type="text/html" title="神奇动物在哪里" /><published>2016-11-27T13:43:00+08:00</published><updated>2016-11-27T13:43:00+08:00</updated><id>/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C</id><content type="html" xml:base="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html">&lt;p&gt;&lt;img src=&quot;/image/神奇动物在哪里海报.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-12-17T13:55:34+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">GAMEOX详述</title><link href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html" rel="alternate" type="text/html" title="GAMEOX详述" /><published>2016-12-17T13:39:00+08:00</published><updated>2016-12-17T13:39:00+08:00</updated><id>/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;GAMEOX详述&lt;/strong&gt;&lt;br /&gt;
+Copyright (“2015-2016”) LEXUGE&lt;br /&gt;
+The software is using &lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPLv3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本软件是游戏“奥塞罗”的电子版&lt;br /&gt;
+游戏规则:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先选定棋盘大小，以及“O”方，“X”方谁先下&lt;/li&gt;
+  &lt;li&gt;软件会将棋盘初始化为四个角双方各有2枚棋子&lt;/li&gt;
+  &lt;li&gt;在下棋时，遵守以下规定：&lt;/li&gt;
+  &lt;li&gt;下子的地方必须是现存在己方棋子的前后左右&lt;/li&gt;
+  &lt;li&gt;当下完这颗子后，周围八格的敌方棋子全变为己方&lt;/li&gt;
+  &lt;li&gt;当棋盘被占满时，“O”，“X”双方谁存在的棋子多为胜利&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;此外，本软件无重大BUG将停止更新，最新版本为Linux版本，Windows版本将停止更新，目前仅保留最后一版的Windows版本可执行文件，有需要可源码编译&lt;/p&gt;</content><summary type="html">GAMEOX详述
+Copyright (“2015-2016”) LEXUGE
+The software is using GPLv3
+
+本软件是游戏“奥塞罗”的电子版
+游戏规则:
+
+  首先选定棋盘大小，以及“O”方，“X”方谁先下
+  软件会将棋盘初始化为四个角双方各有2枚棋子
+  在下棋时，遵守以下规定：
+  下子的地方必须是现存在己方棋子的前后左右
+  当下完这颗子后，周围八格的敌方棋子全变为己方
+  当棋盘被占满时，“O”，“X”双方谁存在的棋子多为胜利
+
+
+此外，本软件无重大BUG将停止更新，最新版本为Linux版本，Windows版本将停止更新，目前仅保留最后一版的Windows版本可执行文件，有需要可源码编译</summary></entry><entry><title type="html">神奇动物在哪里</title><link href="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html" rel="alternate" type="text/html" title="神奇动物在哪里" /><published>2016-11-27T13:43:00+08:00</published><updated>2016-11-27T13:43:00+08:00</updated><id>/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C</id><content type="html" xml:base="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html">&lt;p&gt;&lt;img src=&quot;/image/神奇动物在哪里海报.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;街上反常地下着大雨。我撑起伞，行走在街上。不知未何,手紧紧地握着伞柄。生怕被雨淋湿,忘却了刚才的一
@@ -378,16 +408,4 @@ Deauthentication/Disassociation Amok：&lt;br /&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;祝你成功！&lt;/p&gt;</content><summary type="html">mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用</summary></entry><entry><title type="html">Fedora系统升级方法</title><link href="/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html" rel="alternate" type="text/html" title="Fedora系统升级方法" /><published>2016-08-27T10:41:00+08:00</published><updated>2016-08-27T10:41:00+08:00</updated><id>/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95</id><content type="html" xml:base="/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html">&lt;p&gt;&lt;a href=&quot;http://fedoraproject.org/wiki/DNF_system_upgrade&quot;&gt;Fedora官方教程&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dnf upgrade --refresh
-$ sudo dnf install dnf-plugin-system-upgrade
-$ sudo dnf system-upgrade download --refresh --releasever=XX
-$ sudo dnf system-upgrade reboot
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;releasever=XX&lt;/code&gt;中的XX为版本号&lt;/p&gt;</content><summary type="html">Fedora官方教程
-$ sudo dnf upgrade --refresh
-$ sudo dnf install dnf-plugin-system-upgrade
-$ sudo dnf system-upgrade download --refresh --releasever=XX
-$ sudo dnf system-upgrade reboot</summary></entry></feed>
+&lt;p&gt;祝你成功！&lt;/p&gt;</content><summary type="html">mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用</summary></entry></feed>
