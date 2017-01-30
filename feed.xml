@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-01-24T21:33:31+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">reaver破解Wi-Fi密码</title><link href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html" rel="alternate" type="text/html" title="reaver破解Wi-Fi密码" /><published>2016-12-31T17:35:00+08:00</published><updated>2016-12-31T17:35:00+08:00</updated><id>/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81</id><content type="html" xml:base="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">&lt;p&gt;&lt;a href=&quot;https://github.com/t6x/reaver-wps-fork-t6x&quot;&gt;reaver最新版主页&lt;/a&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-01-30T15:23:51+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">Python有道词典终端版</title><link href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html" rel="alternate" type="text/html" title="Python有道词典终端版" /><published>2017-01-30T15:17:00+08:00</published><updated>2017-01-30T15:17:00+08:00</updated><id>/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88</id><content type="html" xml:base="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">&lt;p&gt;为提高作业工作效力，我运用有道词典API与Python编写了一个小程序&lt;br /&gt;
+输入英文，显示各种解释，直到输入&lt;code class=&quot;highlighter-rouge&quot;&gt;lexuge&lt;/code&gt;退出&lt;br /&gt;
+源代码：&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env python  &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#coding:utf-8  &lt;/span&gt;
+  
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib2&lt;/span&gt;  
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;  
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;  
+  
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Youdao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://fanyi.youdao.com/openapi.do'&lt;/span&gt;  
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'API'&lt;/span&gt;   
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyfrom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'keyfrom'&lt;/span&gt;  
+  
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'?keyfrom='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyfrom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;key='&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;type=data&amp;amp;doctype=json&amp;amp;version=1.1&amp;amp;q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+            &lt;span class=&quot;n&quot;&gt;json_result2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;basic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;    
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;json_result3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_result2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;uk-phonetic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt; 
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;translation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'翻译:'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'英式发音:'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_result3&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'解释:'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_result2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;explains&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    
+  
+&lt;span class=&quot;n&quot;&gt;youdao&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Youdao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  
+    &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;raw_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'lexuge'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;  
+    &lt;span class=&quot;n&quot;&gt;youdao&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_translation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><summary type="html">为提高作业工作效力，我运用有道词典API与Python编写了一个小程序
+输入英文，显示各种解释，直到输入lexuge退出
+源代码：
+#!/usr/bin/env python  
+#coding:utf-8  
+  
+import urllib2  
+import re  
+import json  
+  
+class Youdao:  
+    def __init__(self):  
+        self.url = 'http://fanyi.youdao.com/openapi.do'  
+        self.key = 'API'   
+        self.keyfrom = 'keyfrom'  
+  
+    def get_translation(self,words):  
+        url = self.url + '?keyfrom=' + self.keyfrom + '&amp;amp;key='+self.key + '&amp;amp;type=data&amp;amp;doctype=json&amp;amp;version=1.1&amp;amp;q=' + words  
+        result = urllib2.urlopen(url).read()  
+        json_result = json.loads(result)  
+        try : 
+            json_result2 = json_result[&quot;basic&quot;] 
+        except :
+            pass    
+        try :
+            json_result3 = json_result2[&quot;uk-phonetic&quot;]
+        except :
+            pass 
+        try :
+            json_result = json_result[&quot;translation&quot;]
+        except :
+            pass
+        for i in json_result:  
+            print u'翻译:'+i  
+        try :
+            print u'英式发音:'+json_result3
+        except :
+            pass
+        try : 
+            print u'解释:'+json_result2[&quot;explains&quot;][0]  
+        except :
+            pass
+    
+  
+youdao = Youdao()  
+while True:  
+    msg=raw_input()  
+    if msg == 'lexuge':  
+        break  
+    youdao.get_translation(msg)</summary></entry><entry><title type="html">reaver破解Wi-Fi密码</title><link href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html" rel="alternate" type="text/html" title="reaver破解Wi-Fi密码" /><published>2016-12-31T17:35:00+08:00</published><updated>2016-12-31T17:35:00+08:00</updated><id>/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81</id><content type="html" xml:base="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">&lt;p&gt;&lt;a href=&quot;https://github.com/t6x/reaver-wps-fork-t6x&quot;&gt;reaver最新版主页&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://github.com/wiire/pixiewps&quot;&gt;pixiewps主页&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://lexuge.github.io/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html&quot;&gt;mdk3攻击路由器&lt;/a&gt;&lt;br /&gt;
 借助最新的工具reaver可以破解WPA/WPA2（带有WPS）的路由器&lt;/p&gt;
@@ -285,42 +385,4 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
        “影子”正准备第二次洗劫银行。穿着风衣，手提卡其色公文包，低头匆匆走向交易所。黄组长在交易所附近的街道上不断搜查嫌疑人。他扫视到了“影子”，敏锐的职业习惯让他多加注意了几眼这个行色匆匆的人。随后，“花猪”上了的士，但一上车就脱去了紫色羽绒大衣，整换了头型——作为一个行事有道的惯犯，这一反常举动引起了“影子”冥冥之中的注意。很快，“影子”登上了交易所的顶楼——站在至高点指挥全盘犯罪计划。正当他用高倍单筒望远镜扫视四周时，又发现了那位反常的女子——“花猪”——她又换了一套外衣，改变了头饰与发型——更为反常的是，她的上下车地点仅相隔几步之遥。任何人都不会用这种方式打的士，“影子”想到，这正是警方惯用的搜查方式。最后一个举动，使“影子”肯定了，她，就是警察——“花猪”跟随“影子”同伙的车辆跑去。
        这一段的情节紧凑连贯，细节缜密，小说意味极强，也是整部电影中极其精彩的一段。原片对这一段的节奏感控制的很恰当，很详细的描写出了“影子”当时的眼神。从而刻画出了人物心理，而并不是像国内二三流电视剧，滥用心理独白。
        事实上，这篇电影中有很多的黑客元素（不关于技术方面）。可以说，黑客在理想化状态中就是如同“影子”般冷漠、冷酷、冷静的，计划缜密，天衣无缝。从另一种角度来解析，也有另一层含义——不要相信自己以外的任何人。
-       人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。</summary></entry><entry><title type="html">Fedora关闭合上笔记本屏幕挂起</title><link href="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html" rel="alternate" type="text/html" title="Fedora关闭合上笔记本屏幕挂起" /><published>2016-09-23T17:38:00+08:00</published><updated>2016-09-23T17:38:00+08:00</updated><id>/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7</id><content type="html" xml:base="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html">&lt;p&gt;与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。&lt;br /&gt;
-如何解决这个问题呢？&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;我们需要编辑&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/logind.conf&lt;/code&gt;这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod a+w /etc/systemd/logind.conf
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;这样我们就有了更改配置文件的权限&lt;/li&gt;
-  &lt;li&gt;接下来我们打开并编辑它
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim /etc/systemd/logind.conf
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HandleLidSwitch=ignore
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;reboot&lt;br /&gt;
-OK，这个问题就完美解决了!&lt;br /&gt;
-PS:资源下载已搬迁至about页面&lt;/p&gt;</content><summary type="html">与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。
-如何解决这个问题呢？
-
-  我们需要编辑/etc/systemd/logind.conf这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
-    chmod a+w /etc/systemd/logind.conf
-
-    
-  
-  这样我们就有了更改配置文件的权限
-  接下来我们打开并编辑它
-    vim /etc/systemd/logind.conf
-
-    
-  
-  找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
-    HandleLidSwitch=ignore</summary></entry></feed>
+       人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。</summary></entry></feed>
