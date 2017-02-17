@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-02-17T16:47:45+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>This is a personal website.It is LEXUGE's BLOG.Welcome to my website!</subtitle><entry><title type="html">Python有道词典终端版</title><link href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html" rel="alternate" type="text/html" title="Python有道词典终端版" /><published>2017-01-30T15:17:00+08:00</published><updated>2017-01-30T15:17:00+08:00</updated><id>/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88</id><content type="html" xml:base="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">&lt;p&gt;为提高作业工作效力，我运用有道词典API与Python编写了一个小程序&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-02-17T17:09:02+08:00</updated><id>//</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">Python有道词典终端版</title><link href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html" rel="alternate" type="text/html" title="Python有道词典终端版" /><published>2017-01-30T15:17:00+08:00</published><updated>2017-01-30T15:17:00+08:00</updated><id>/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88</id><content type="html" xml:base="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">&lt;p&gt;为提高作业工作效力，我运用有道词典API与Python编写了一个小程序&lt;br /&gt;
 输入英文，显示各种解释，直到输入&lt;code class=&quot;highlighter-rouge&quot;&gt;lexuge&lt;/code&gt;退出&lt;br /&gt;
 源代码：&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env python  &lt;/span&gt;
@@ -186,7 +186,7 @@ LEDIT是LEXUGE在Linux下用纯C制作，不依赖任何非标准函数库的终
 &lt;p&gt;Copyright (“2015-2016”) LEXUGE&lt;/p&gt;
 
 &lt;p&gt;Tips:在使用LEDIT编辑EDIT的文件时，请先使用&lt;code class=&quot;highlighter-rouge&quot;&gt;dos2unix&lt;/code&gt;命令来转换格式，在使用EDIT编辑LEDIT时，请在Linux平台先用&lt;code class=&quot;highlighter-rouge&quot;&gt;unix2dos&lt;/code&gt;来转换格式&lt;/p&gt;</content><summary type="html">LEDIT及EDIT简述</summary></entry><entry><title type="html">GAMEOX详述</title><link href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html" rel="alternate" type="text/html" title="GAMEOX详述" /><published>2016-12-17T13:39:00+08:00</published><updated>2016-12-17T13:39:00+08:00</updated><id>/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0</id><content type="html" xml:base="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">&lt;p&gt;&lt;strong&gt;GAMEOX详述&lt;/strong&gt;&lt;br /&gt;
-Copyright (“2015-2016”) LEXUGE&lt;br /&gt;
+Copyright (“2015-2017”) LEXUGE&lt;br /&gt;
 The software is using &lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPL&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;本软件是游戏“奥塞罗”的电子版&lt;br /&gt;
@@ -200,8 +200,8 @@ The software is using &lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;
   &lt;li&gt;当棋盘被占满时，“O”，“X”双方谁存在的棋子多为胜利&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;此外，本软件无重大BUG将停止更新，最新版本为Linux版本，Windows版本将停止更新，目前仅保留最后一版的Windows版本可执行文件，有需要可源码编译&lt;/p&gt;</content><summary type="html">GAMEOX详述
-Copyright (“2015-2016”) LEXUGE
+&lt;p&gt;2017-02-17 重大版本更新！GAMEOX采用最新智能判断算法，在一方无法下子的情况下自动计算胜负！另外，最新版为Linux版，Windows版已被删除，有需要请更改后源码编译&lt;/p&gt;</content><summary type="html">GAMEOX详述
+Copyright (“2015-2017”) LEXUGE
 The software is using GPL
 
 本软件是游戏“奥塞罗”的电子版
@@ -215,7 +215,7 @@ The software is using GPL
   当棋盘被占满时，“O”，“X”双方谁存在的棋子多为胜利
 
 
-此外，本软件无重大BUG将停止更新，最新版本为Linux版本，Windows版本将停止更新，目前仅保留最后一版的Windows版本可执行文件，有需要可源码编译</summary></entry><entry><title type="html">神奇动物在哪里</title><link href="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html" rel="alternate" type="text/html" title="神奇动物在哪里" /><published>2016-11-27T13:43:00+08:00</published><updated>2016-11-27T13:43:00+08:00</updated><id>/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C</id><content type="html" xml:base="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html">&lt;p&gt;&lt;img src=&quot;/image/神奇动物在哪里海报.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+2017-02-17 重大版本更新！GAMEOX采用最新智能判断算法，在一方无法下子的情况下自动计算胜负！另外，最新版为Linux版，Windows版已被删除，有需要请更改后源码编译</summary></entry><entry><title type="html">神奇动物在哪里</title><link href="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html" rel="alternate" type="text/html" title="神奇动物在哪里" /><published>2016-11-27T13:43:00+08:00</published><updated>2016-11-27T13:43:00+08:00</updated><id>/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C</id><content type="html" xml:base="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html">&lt;p&gt;&lt;img src=&quot;/image/神奇动物在哪里海报.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;街上反常地下着大雨。我撑起伞，行走在街上。不知未何,手紧紧地握着伞柄。生怕被雨淋湿,忘却了刚才的一
