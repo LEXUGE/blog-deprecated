@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Python有道词典终端版</title>
-  <meta name="description" content="为提高作业工作效力，我运用有道词典API与Python编写了一个小程序 输入英文，显示各种解释，直到输入lexuge退出 源代码： #!/usr/bin/env python #coding:utf-8 import urllib2 import re import json class Youdao: def ...">
+  <meta name="description" content="为提高作业工作效力，我运用有道词典API与Python编写了一个小程序 输入英文，显示各种解释，直到输入lexuge退出 源代码： ```python #!/usr/bin/env python – coding: UTF-8 – import codecs import re import urllib2 im...">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">
@@ -60,32 +60,41 @@
 输入英文，显示各种解释，直到输入<code class="highlighter-rouge">lexuge</code>退出<br />
 源代码：</p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#!/usr/bin/env python  </span>
-<span class="c">#coding:utf-8  </span>
-  
+<span class="c"># -- coding: UTF-8 -- </span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+<span class="kn">import</span> <span class="nn">re</span>  
 <span class="kn">import</span> <span class="nn">urllib2</span>  
 <span class="kn">import</span> <span class="nn">re</span>  
 <span class="kn">import</span> <span class="nn">json</span>  
-  
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">quote</span>
+
+<span class="nb">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setdefaultencoding</span><span class="p">(</span> <span class="s">"utf-8"</span> <span class="p">)</span>
+
 <span class="k">class</span> <span class="nc">Youdao</span><span class="p">:</span>  
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
         <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">'http://fanyi.youdao.com/openapi.do'</span>  
-        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s">'API'</span>   
-        <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">=</span> <span class="s">'keyfrom'</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s">'54293807'</span>   
+        <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">=</span> <span class="s">'LEXUGE-trans'</span>  
   
     <span class="k">def</span> <span class="nf">get_translation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">words</span><span class="p">):</span>  
-        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s">'?keyfrom='</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">+</span> <span class="s">'&amp;key='</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">+</span> <span class="s">'&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q='</span> <span class="o">+</span> <span class="n">words</span>  
-        <span class="n">result</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s">'?keyfrom='</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">+</span> <span class="s">'&amp;key='</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">+</span> <span class="s">'&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q='</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>  
+        <span class="n">result</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>   
         <span class="n">json_result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
         <span class="k">try</span> <span class="p">:</span> 
-            <span class="n">json_result2</span> <span class="o">=</span> <span class="n">json_result</span><span class="p">[</span><span class="s">"basic"</span><span class="p">]</span> 
+            <span class="n">json_result2</span> <span class="o">=</span> <span class="n">json_result</span><span class="p">[</span><span class="s">"basic"</span><span class="p">]</span>
+           
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span>    
         <span class="k">try</span> <span class="p">:</span>
             <span class="n">json_result3</span> <span class="o">=</span> <span class="n">json_result2</span><span class="p">[</span><span class="s">"uk-phonetic"</span><span class="p">]</span>
+       
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span> 
         <span class="k">try</span> <span class="p">:</span>
             <span class="n">json_result</span> <span class="o">=</span> <span class="n">json_result</span><span class="p">[</span><span class="s">"translation"</span><span class="p">]</span>
+      
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">json_result</span><span class="p">:</span>  
@@ -101,13 +110,19 @@
     
   
 <span class="n">youdao</span> <span class="o">=</span> <span class="n">Youdao</span><span class="p">()</span>  
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>  
-    <span class="n">msg</span><span class="o">=</span><span class="nb">raw_input</span><span class="p">()</span>  
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">msg</span><span class="o">=</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">u'输入你要翻译的单词,输入lexuge退出:'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
     <span class="k">if</span> <span class="n">msg</span> <span class="o">==</span> <span class="s">'lexuge'</span><span class="p">:</span>  
         <span class="k">break</span>  
     <span class="n">youdao</span><span class="o">.</span><span class="n">get_translation</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>  
 </code></pre>
 </div>
+
+<p>Tips:2017-3-5日更新:支持中英互译</p>
 
       </div>
     </main>
