@@ -75,8 +75,8 @@
 <span class="k">class</span> <span class="nc">Youdao</span><span class="p">:</span>  
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
         <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">'http://fanyi.youdao.com/openapi.do'</span>  
-        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s">'54293807'</span>   
-        <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">=</span> <span class="s">'LEXUGE-trans'</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s">'API KEY'</span>   
+        <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">=</span> <span class="s">'keyfrom'</span>  
   
     <span class="k">def</span> <span class="nf">get_translation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">words</span><span class="p">):</span>  
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s">'?keyfrom='</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">+</span> <span class="s">'&amp;key='</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">+</span> <span class="s">'&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q='</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>  
