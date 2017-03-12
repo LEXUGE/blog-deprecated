@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-12T14:39:37+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">普法战争</title><link href="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html" rel="alternate" type="text/html" title="普法战争" /><published>2017-03-05T11:32:00+08:00</published><updated>2017-03-05T11:32:00+08:00</updated><id>/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F</id><content type="html" xml:base="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html">&lt;p&gt;&lt;strong&gt;LEXUGE原创&lt;/strong&gt;，使用&lt;a href=&quot;https://www.gnu.org/licenses/fdl.txt&quot;&gt;GNU FDL协议&lt;/a&gt;发布&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-12T16:42:57+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">XCH - 化学方程式配平程序</title><link href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html" rel="alternate" type="text/html" title="XCH - 化学方程式配平程序" /><published>2017-03-12T16:24:00+08:00</published><updated>2017-03-12T16:24:00+08:00</updated><id>/jekyll/update/2017/03/12/XCH%20-%20%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F</id><content type="html" xml:base="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">&lt;p&gt;技术方法由&lt;strong&gt;LEXUGE原创&lt;/strong&gt;，使用&lt;a href=&quot;https://www.gnu.org/licenses/fdl.txt&quot;&gt;GNU FDL协议&lt;/a&gt;发布&lt;br /&gt;
+本软件遵守&lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPL协议&lt;/a&gt;发布&lt;br /&gt;
+本程序可以用来进行化学方程式配平，下载地址见About页面&lt;br /&gt;
+下面将介绍软件使用的核心算法：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;程序基于一条化学准则：配平后的化学方程式左右两边式量相等&lt;br /&gt;
+基于这条准则，程序通过分子式的个数作为终止条件来进行递归暴力搜索所有&lt;strong&gt;数学上可能&lt;/strong&gt;的系数。&lt;br /&gt;
+因为&lt;strong&gt;数学上可能&lt;/strong&gt;并不意味着正确，所以要将系数进行验证（通过用户提供的各个元素的在各个化学式原子数量进行验证），最后找到正确系数组。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;下面我们来看几组例子：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;H2O=H2+O2&lt;/strong&gt; 化学方程式配平：
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[lexuge@localhost XCH]$ ./XCH 
+XCH - Chemical Equation Balancer
+By LEXUGE
+Copyright (2017-2017) LEXUGE
+The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
+------Input------
+输入元素种类以及有几个分子式：
+2 3 //两个元素（H，O），三个分子式（H2O，H2，O2）
+输入每种元素包含的原子在方程式中各个分子式的个数：
+2 2 0 //H2O中有两个H原子，H2中有两个H原子，O2中没有H原子
+1 0 2 //同上，此处输入O的个数
+输入搜索最大值:
+100 //暴力搜索的系数最大值
+输入化学方程式的分子式量表达：
+18=2+32 //H2O的式量为2*1+16=18，H2的式量为2*1=1，O2的式量为2*16=32
+------Output------
+各分子式系数分别为：
+2 2 1 //表示：2H2O=2H2+O2
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;As2O3+Zn+HCl=AsH3+ZnCl2+H2O&lt;/strong&gt; 化学方程式配平：
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[lexuge@localhost XCH]$ ./XCH 
+XCH - Chemical Equation Balancer
+By LEXUGE
+Copyright (2017-2017) LEXUGE
+The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
+------Input------
+输入元素种类以及有几个分子式：
+5 6
+输入每种元素包含的原子在方程式中各个分子式的个数：
+2 0 0 1 0 0
+3 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 3 0 2
+0 0 1 0 2 0
+输入搜索最大值:
+20
+输入化学方程式的分子式量表达：
+198+65+36.5=78+136+18
+------Output------
+各分子式系数分别为：
+1 6 12 2 6 3 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">技术方法由LEXUGE原创，使用GNU FDL协议发布 本软件遵守GPL协议发布 本程序可以用来进行化学方程式配平，下载地址见About页面 下面将介绍软件使用的核心算法： 程序基于一条化学准则：配平后的化学方程式左右两边式量相等 基于这条准则，程序通过分子式的个数作为终止条件来进行递归暴力搜索所有数学上可能的系数。 因为数学上可能并不意味着正确，所以要将系数进行验证（通过用户提供的各个元素的在各个化学式原子数量进行验证），最后找到正确系数组。</summary></entry><entry><title type="html">普法战争</title><link href="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html" rel="alternate" type="text/html" title="普法战争" /><published>2017-03-05T11:32:00+08:00</published><updated>2017-03-05T11:32:00+08:00</updated><id>/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F</id><content type="html" xml:base="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html">&lt;p&gt;&lt;strong&gt;LEXUGE原创&lt;/strong&gt;，使用&lt;a href=&quot;https://www.gnu.org/licenses/fdl.txt&quot;&gt;GNU FDL协议&lt;/a&gt;发布&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;普法战争是欧洲传统意义上的一场新旧帝国之争，决定着欧洲的霸主是谁的问题。&lt;br /&gt;
 这场战争的成因并不是法国的主动进攻，很大一部分是德国（普鲁士）制造争端。德国人希望以此团结德意志名族。&lt;br /&gt;
@@ -236,18 +295,4 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
   &lt;li&gt;ev3dev与Linux蓝牙配对时，要用ev3搜索、配对&lt;/li&gt;
   &lt;li&gt;Linux端的蓝牙本地服务IP地址一定要填写&lt;code class=&quot;highlighter-rouge&quot;&gt;10.42.0.1&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;不要自动连接&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">官网原版教程 ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。 对于原版教程，做如下补充: ev3dev与Linux蓝牙配对时，要用ev3搜索、配对 Linux端的蓝牙本地服务IP地址一定要填写10.42.0.1 不要自动连接</summary></entry><entry><title type="html">ArchLinux下安装QQ</title><link href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html" rel="alternate" type="text/html" title="ArchLinux下安装QQ" /><published>2016-11-06T15:45:00+08:00</published><updated>2016-11-06T15:45:00+08:00</updated><id>/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ</id><content type="html" xml:base="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html">&lt;p&gt;QQ一直是Linux用户的一个难题&lt;br /&gt;
-今天我们就叫大家使用Longene WINE QQ来实现QQ的使用&lt;br /&gt;
-&lt;a href=&quot;http://www.longene.org/download/WineQQ7.8-20151109-Longene.deb&quot;&gt;wine QQ deb包下载&lt;/a&gt;&lt;br /&gt;
-下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压&lt;br /&gt;
-完成后得到/opt和/usr目录&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;把/opt/下的logene 文件夹 移动到系统/opt/下&lt;/li&gt;
-  &lt;li&gt;在把 usr/bin/下的 qq 移动到你的系统 /usr/bin下&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;完毕后进行测试：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh /opt/longene/qq/qq.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;帐号密码都能输入，不存在常规wine下安装qq 无法输入的问题，能正常聊天和文件传输，比较稳定！&lt;/p&gt;</content><author><name></name></author><summary type="html">QQ一直是Linux用户的一个难题 今天我们就叫大家使用Longene WINE QQ来实现QQ的使用 wine QQ deb包下载 下载了deb包后，打开，将data.tar.gz压缩包解压出来，再将data.tar.gz压缩包解压 完成后得到/opt和/usr目录 把/opt/下的logene 文件夹 移动到系统/opt/下 在把 usr/bin/下的 qq 移动到你的系统 /usr/bin下</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">官网原版教程 ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。 对于原版教程，做如下补充: ev3dev与Linux蓝牙配对时，要用ev3搜索、配对 Linux端的蓝牙本地服务IP地址一定要填写10.42.0.1 不要自动连接</summary></entry></feed>
