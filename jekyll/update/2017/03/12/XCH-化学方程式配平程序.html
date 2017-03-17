@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>XCH - 化学方程式配平程序</title>
-  <meta name="description" content="技术方法由LEXUGE原创，使用GNU FDL协议发布 本软件遵守GPL协议发布 本程序可以用来进行化学方程式配平，下载地址见About页面 下面将介绍软件使用的核心算法： 程序基于一条化学准则：配平后的化学方程式左右两边式量相等 基于这条准则，程序通过分子式的个数作为终止条件来进行递归暴力搜索所有数学上可能的系...">
+  <meta name="description" content="技术方法由LEXUGE原创，使用GNU FDL协议发布 本软件遵守GPL协议发布 本程序可以用来进行化学方程式配平，下载地址见About页面 下面将介绍软件使用的核心算法： 程序通过暴力搜索化学方程式的各个分子式的系数来求解，纯数学解决">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">
@@ -61,9 +61,7 @@
 本程序可以用来进行化学方程式配平，下载地址见About页面<br />
 下面将介绍软件使用的核心算法：</p>
 <blockquote>
-  <p>程序基于一条化学准则：配平后的化学方程式左右两边式量相等<br />
-基于这条准则，程序通过分子式的个数作为终止条件来进行递归暴力搜索所有<strong>数学上可能</strong>的系数。<br />
-因为<strong>数学上可能</strong>并不意味着正确，所以要将系数进行验证（通过用户提供的各个元素的在各个化学式原子数量进行验证），最后找到正确系数组。</p>
+  <p>程序通过暴力搜索化学方程式的各个分子式的系数来求解，纯数学解决</p>
 </blockquote>
 
 <p>下面我们来看几组例子：</p>
@@ -75,18 +73,16 @@ By LEXUGE
 Copyright (2017-2017) LEXUGE
 The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
 ------Input------
-输入元素种类以及有几个分子式：
-2 3 //两个元素（H，O），三个分子式（H2O，H2，O2）
+输入有几种元素种类,几个分子式，等号左边，右边的分子式个数：
+2 3 1 2 //拥有两种元素：H和O；三个分子式：H2O，H2，O2；左边有一个分子式：H2O；右边有两个分子式：H2和O2
 输入每种元素包含的原子在方程式中各个分子式的个数：
-2 2 0 //H2O中有两个H原子，H2中有两个H原子，O2中没有H原子
-1 0 2 //同上，此处输入O的个数
+2 2 0 //H2O中拥有2两个H原子，H2中有2个，O2中没有
+1 0 2 //同上
 输入搜索最大值:
-100 //暴力搜索的系数最大值
-输入化学方程式的分子式量表达：
-18=2+32 //H2O的式量为2*1+16=18，H2的式量为2*1=1，O2的式量为2*16=32
+100 //最大暴力搜索范围
 ------Output------
 各分子式系数分别为：
-2 2 1 //表示：2H2O=2H2+O2
+2 2 1 
 </code></pre>
     </div>
   </li>
@@ -97,8 +93,8 @@ By LEXUGE
 Copyright (2017-2017) LEXUGE
 The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
 ------Input------
-输入元素种类以及有几个分子式：
-5 6
+输入有几种元素种类,几个分子式，等号左边，右边的分子式个数：
+5 6 3 3
 输入每种元素包含的原子在方程式中各个分子式的个数：
 2 0 0 1 0 0
 3 0 0 0 0 1
@@ -106,9 +102,7 @@ The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
 0 0 1 3 0 2
 0 0 1 0 2 0
 输入搜索最大值:
-20
-输入化学方程式的分子式量表达：
-198+65+36.5=78+136+18
+50
 ------Output------
 各分子式系数分别为：
 1 6 12 2 6 3 
