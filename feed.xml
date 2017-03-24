@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-24T17:18:41+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">XCH - 化学方程式配平程序</title><link href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html" rel="alternate" type="text/html" title="XCH - 化学方程式配平程序" /><published>2017-03-12T16:24:00+08:00</published><updated>2017-03-12T16:24:00+08:00</updated><id>/jekyll/update/2017/03/12/XCH%20-%20%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F</id><content type="html" xml:base="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">&lt;p&gt;技术方法由&lt;strong&gt;LEXUGE原创&lt;/strong&gt;，使用&lt;a href=&quot;https://www.gnu.org/licenses/fdl.txt&quot;&gt;GNU FDL协议&lt;/a&gt;发布&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-24T21:33:31+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">Arch安装完全指南</title><link href="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="Arch安装完全指南" /><published>2017-03-24T17:34:00+08:00</published><updated>2017-03-24T17:34:00+08:00</updated><id>/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97</id><content type="html" xml:base="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html">&lt;p&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Main_page&quot;&gt;Arch Wiki&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.archlinux.org/&quot;&gt;Arch官网&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.archlinux.org/download/&quot;&gt;Arch下载页面&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wiki.archlinux.org/index.php/Installation_guide&quot;&gt;Arch Wiki安装教程&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&quot;/image/Arch桌面.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/image/Arch-scr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Arch Linux, a lightweight and flexible Linux® distribution that tries to Keep It Simple.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Arch是我最喜欢的Linux滚动发行版，在我心中的地位基本与Fedora一致。新手在安装Arch时会遇到大量的困难，当然，对于新手，我也不推荐你来使用Arch。事实上，只要你有过半年或几个月以上的Linux使用经验，你就一定能够顺利安装完成Arch，整个安装过程中你最大的问题是克服终端操作的心理障碍。&lt;br /&gt;
+下面，我们就开始吧！&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装之前：&lt;br /&gt;
+首先，我们在&lt;a href=&quot;https://www.archlinux.org/download/&quot;&gt;Arch下载页面&lt;/a&gt;下载Arch的Live CD并烧录进U盘。开机U盘启动Live CD。&lt;br /&gt;
+Arch的安装少不了网络。所以，在安装之前我们需要进行联网。&lt;br /&gt;
+这里我们不进行有线网络的教程（在启动Arch Live CD之前插入网线即可），下面我们连接无线网络：&lt;br /&gt;
+我们为了简便，创建一个shell脚本来进行连接。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;nano wifi.sh&lt;/code&gt;
+在nano编辑器的界面中，我们写入如下命令，并按Ctrl+O保存，Ctrl+X退出：
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/bash&lt;/span&gt;
+rfkill unblock wifi
+rfkill unblock all
+ip link &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;wlp2s0 up
+wpa_passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SSID&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &amp;gt; wifi.conf
+wpa_supplicant -B -i wlp2s0 -c wifi.conf
+dhcpcd wlp2s0
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;将SSID和password替换成你的Wi-Fi名称和密码。&lt;br /&gt;
+输入&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod a+x wifi.sh&lt;/code&gt;并执行&lt;code class=&quot;highlighter-rouge&quot;&gt;./wifi.sh&lt;/code&gt;来启动无线网络&lt;br /&gt;
+使用ping来验证网络：&lt;code class=&quot;highlighter-rouge&quot;&gt;ping -c 3 archlinux.org&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;磁盘分区与挂载：&lt;br /&gt;
+为了较为简便地进行分区，我们选用&lt;code class=&quot;highlighter-rouge&quot;&gt;cfdisk&lt;/code&gt;来进行分区。&lt;br /&gt;
+执行&lt;code class=&quot;highlighter-rouge&quot;&gt;cfdisk&lt;/code&gt;进入界面，根据情况选择分区表，下面是我们的分区方案：
+    &lt;ul&gt;
+      &lt;li&gt;设置一个分区 100M～3G（标记为boot）&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda1&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;设置一个分区 大小与你的内存相等 &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda2&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;将剩余的空间都用于一个分区 &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda3&lt;/code&gt;&lt;br /&gt;
+保存分区，退出&lt;br /&gt;
+在我们格式化之前，我们需要执行&lt;code class=&quot;highlighter-rouge&quot;&gt;reboot&lt;/code&gt;重启&lt;br /&gt;
+重启完毕后执行：
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkfs.ext4 /dev/sda1
+mkfs.ect4 /dev/sda3 
+mkswap /dev/sda2
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+        &lt;p&gt;这样我们就格式化完毕了&lt;/p&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;swapon /dev/sda2
+mount /dev/sda3 /mnt
+cd /mnt
+mkdir boot
+mount /dev/sda1 /mnt/boot
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+        &lt;p&gt;这样，我们就挂载上了分区&lt;br /&gt;
+至此，这部分完毕&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装ArchLinux：&lt;br /&gt;
+为了加速安装，我们添加清华大学的软件源，使用这条命令：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;nano /etc/pacman.d/mirrorlist&lt;/code&gt;&lt;br /&gt;
+在开头添加：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch&lt;/code&gt;&lt;br /&gt;
+使用&lt;code class=&quot;highlighter-rouge&quot;&gt;pacman -Syy&lt;/code&gt;更新软件源&lt;br /&gt;
+最后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;pacstrap /mnt base base-devel&lt;/code&gt;来安装系统&lt;br /&gt;
+安装完成后使用：&lt;code class=&quot;highlighter-rouge&quot;&gt;genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab&lt;/code&gt;建立挂载关系&lt;br /&gt;
+自此，系统就安装好了，但因为没有安装引导程序，&lt;strong&gt;切勿重启&lt;/strong&gt;&lt;br /&gt;
+首先我们进入新安装的系统：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;arch-chroot /mnt /bin/bash&lt;/code&gt;&lt;br /&gt;
+下载grub引导程序：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pacman -S grub&lt;/code&gt;&lt;br /&gt;
+然后在sda设备上生成配置文件：
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;切记是sda而不是sda1&lt;br /&gt;
+如此，安装彻底完成，现在我们可以重启了！&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;配置ArchLinux：
+    &lt;ul&gt;
+      &lt;li&gt;配置语言环境&lt;br /&gt;
+使用nano编辑器编辑配置文件：&lt;code class=&quot;highlighter-rouge&quot;&gt;nano /etc/locale.gen&lt;/code&gt;（Ctrl+v向下翻页，Ctrl+y向上翻页）&lt;br /&gt;
+去掉en_US.UTF-8和zh_CN.UTF-8的注释并保存退出&lt;br /&gt;
+然后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;locale-gen&lt;/code&gt;生成编码&lt;br /&gt;
+并配置优先为英文：&lt;code class=&quot;highlighter-rouge&quot;&gt;echo LANG=en_US.UTF-8 &amp;gt; /etc/locale.conf&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;配置时间
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+        &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt;查看时间对不对&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;配置主机名
+&lt;code class=&quot;highlighter-rouge&quot;&gt;echo name &amp;gt; /etc/hostname&lt;/code&gt;&lt;br /&gt;
+将name替换为你的主机名&lt;/li&gt;
+      &lt;li&gt;配置root密码
+&lt;code class=&quot;highlighter-rouge&quot;&gt;passwd&lt;/code&gt;输入root密码&lt;/li&gt;
+      &lt;li&gt;创建用户
+&lt;code class=&quot;highlighter-rouge&quot;&gt;useradd -m -G wheel -s /bin/bash name&lt;/code&gt;&lt;br /&gt;
+将name替换为你的用户名&lt;br /&gt;
+然后设置密码：&lt;code class=&quot;highlighter-rouge&quot;&gt;passwd name&lt;/code&gt;&lt;br /&gt;
+-为用户添加sudo权限&lt;br /&gt;
+安装sudo：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pacman -S sudo&lt;/code&gt;&lt;br /&gt;
+使用&lt;code class=&quot;highlighter-rouge&quot;&gt;visudo&lt;/code&gt;来编辑sudo配置文件&lt;br /&gt;
+将wheel用户组的权限注释去除&lt;br /&gt;
+按shift+zz保存退出&lt;br /&gt;
+使用&lt;code class=&quot;highlighter-rouge&quot;&gt;su name&lt;/code&gt;切换用户并使用&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo reboot&lt;/code&gt;测试sudo&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装桌面：&lt;br /&gt;
+第一步安装xorg：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -Syu xorg xorg-xinit xorg-utils dbus&lt;/code&gt;&lt;br /&gt;
+然后安装gnome:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -Syu gnome gnome-extra&lt;/code&gt;&lt;br /&gt;
+gnome-extra可不安装&lt;br /&gt;
+安装完毕之后，拷贝一份xinit的初始化配置文件到用户目录下
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cp /etc/X11/xinit/xinitrc ~/.xinitrc&lt;/code&gt;&lt;br /&gt;
+接下来用nano编辑它，翻到最后，把从twm &amp;amp;开始到末尾的信息全部注释掉，然后添加gnome的启动参数
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
+export GNOME_SHELL_SESSION_MODE=classic
+exec gnome-session --session=gnome-classic
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;接下来我们就可以&lt;code class=&quot;highlighter-rouge&quot;&gt;startx&lt;/code&gt;来启动桌面了，若启动不起来，安装xterm或对root的配置文件也进行同样操作&lt;br /&gt;
+下面，我们来安装自动登陆程序gdm：&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo pacman -Syu gdm
+sudo systemctl enable gdm
+sudo systemctl start gdm
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;环境设置：
+    &lt;ul&gt;
+      &lt;li&gt;字体&lt;br /&gt;
+使用&lt;code class=&quot;highlighter-rouge&quot;&gt;pacman -Ss font&lt;/code&gt;搜索你喜欢的字体&lt;br /&gt;
+推荐安装：&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -S ttf-dejavu wqy-microhei wqy-zenhei&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;输入法&lt;br /&gt;
+使用iBus：&lt;br /&gt;
+GNOME现在已经默认集成了IBus， 所以你只需要安装的输入法引擎并在Region &amp;amp; Language 添加输入源。默认切换输入法的快捷键是 Super+space;&lt;br /&gt;
+安装拼音：&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -Ss ibus-libpinyin&lt;/code&gt;&lt;br /&gt;
+配置：&lt;code class=&quot;highlighter-rouge&quot;&gt;ibus-setup&lt;/code&gt;&lt;br /&gt;
+在.bashrc末尾中加入以下参数：
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;祝你成功！&lt;/p&gt;</content><author><name></name></author><summary type="html">Arch Wiki Arch官网 Arch下载页面 Arch Wiki安装教程 Arch Linux, a lightweight and flexible Linux® distribution that tries to Keep It Simple.</summary></entry><entry><title type="html">XCH - 化学方程式配平程序</title><link href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html" rel="alternate" type="text/html" title="XCH - 化学方程式配平程序" /><published>2017-03-12T16:24:00+08:00</published><updated>2017-03-12T16:24:00+08:00</updated><id>/jekyll/update/2017/03/12/XCH%20-%20%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F</id><content type="html" xml:base="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">&lt;p&gt;技术方法由&lt;strong&gt;LEXUGE原创&lt;/strong&gt;，使用&lt;a href=&quot;https://www.gnu.org/licenses/fdl.txt&quot;&gt;GNU FDL协议&lt;/a&gt;发布&lt;br /&gt;
 本软件遵守&lt;a href=&quot;http://www.gnu.org/licenses/gpl.txt&quot;&gt;GPL协议&lt;/a&gt;发布&lt;br /&gt;
 本程序可以用来进行化学方程式配平，下载地址见About页面&lt;br /&gt;
 下面将介绍软件使用的核心算法：&lt;/p&gt;
@@ -282,11 +441,4 @@ ing专门为电影编写的。更能给予人真实感。&lt;/p&gt;
 绪。好景不长，帕西瓦尔来了。傲罗部长明显的几句话刺痛了克雷登斯的内心。蒂娜慌张地安抚着，可这已没有多大用
 处了。帕西瓦尔紧接着用魔咒电击着纽特。克雷登斯似乎越发愤怒地看着帕西瓦尔。终于，几乎在刹那间——克雷登斯
 化为默默然如风暴般席卷了整个地铁站。帕西瓦尔也略发害怕之色。可就在这时MCUSA的全体成员几乎都来到了这。
-主席命令杀死默默然。在千万魔杖地攻击下，默默然——克雷思登死了。最后疑虑灰烬飘出了地铁口……&lt;/p&gt;</content><author><name></name></author><summary type="html">街上反常地下着大雨。我撑起伞，行走在街上。不知未何,手紧紧地握着伞柄。生怕被雨淋湿,忘却了刚才的一 切奇妙经历…… 仿佛一切都是真实的。纽约的街上奔逃着各样的神奇生物，纽特紧张幽默得追回一只又一只逃窜的神奇生物。</summary></entry><entry><title type="html">ev3dev蓝牙联网</title><link href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html" rel="alternate" type="text/html" title="ev3dev蓝牙联网" /><published>2016-11-13T15:01:00+08:00</published><updated>2016-11-13T15:01:00+08:00</updated><id>/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91</id><content type="html" xml:base="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html">&lt;p&gt;&lt;a href=&quot;http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/&quot;&gt;官网原版教程&lt;/a&gt;&lt;br /&gt;
-ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。&lt;br /&gt;
-对于原版教程，做如下补充:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;ev3dev与Linux蓝牙配对时，要用ev3搜索、配对&lt;/li&gt;
-  &lt;li&gt;Linux端的蓝牙本地服务IP地址一定要填写&lt;code class=&quot;highlighter-rouge&quot;&gt;10.42.0.1&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;不要自动连接&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">官网原版教程 ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。 对于原版教程，做如下补充: ev3dev与Linux蓝牙配对时，要用ev3搜索、配对 Linux端的蓝牙本地服务IP地址一定要填写10.42.0.1 不要自动连接</summary></entry></feed>
+主席命令杀死默默然。在千万魔杖地攻击下，默默然——克雷思登死了。最后疑虑灰烬飘出了地铁口……&lt;/p&gt;</content><author><name></name></author><summary type="html">街上反常地下着大雨。我撑起伞，行走在街上。不知未何,手紧紧地握着伞柄。生怕被雨淋湿,忘却了刚才的一 切奇妙经历…… 仿佛一切都是真实的。纽约的街上奔逃着各样的神奇生物，纽特紧张幽默得追回一只又一只逃窜的神奇生物。</summary></entry></feed>
