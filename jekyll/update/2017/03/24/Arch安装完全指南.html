@@ -79,11 +79,20 @@ Arch的安装少不了网络。所以，在安装之前我们需要进行联网�
 <code class="highlighter-rouge">nano wifi.sh</code>
 在nano编辑器的界面中，我们写入如下命令，并按Ctrl+O保存，Ctrl+X退出：
     <div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#! /bin/bash</span>
+<span class="nb">echo</span> ---Init---
 rfkill unblock wifi
 rfkill unblock all
 ip link <span class="nb">set </span>wlp2s0 up
-wpa_passphrase <span class="o">(</span>SSID<span class="o">)</span> <span class="o">(</span>password<span class="o">)</span> &gt; wifi.conf
-wpa_supplicant -B -i wlp2s0 -c wifi.conf
+<span class="nb">echo</span> ---Input---
+<span class="nb">echo</span> -n SSID:
+<span class="nb">read </span>ssid
+<span class="nb">echo</span> -n password:
+<span class="nb">read</span> -s pass
+<span class="nb">echo </span>You will connect the <span class="nv">$ssid</span>
+<span class="nb">echo</span> ---state---
+<span class="nb">echo</span> <span class="s2">"(Connect the WLAN)"</span>
+wpa_supplicant -B -i wlp2s0 -c &lt;<span class="o">(</span>wpa_passphrase <span class="nv">$ssid</span> <span class="nv">$pass</span><span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">"(DHCP)"</span>
 dhcpcd wlp2s0
 </code></pre>
     </div>

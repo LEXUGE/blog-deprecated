@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-24T21:33:31+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">Arch安装完全指南</title><link href="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="Arch安装完全指南" /><published>2017-03-24T17:34:00+08:00</published><updated>2017-03-24T17:34:00+08:00</updated><id>/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97</id><content type="html" xml:base="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html">&lt;p&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Main_page&quot;&gt;Arch Wiki&lt;/a&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-03-25T16:16:17+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">Arch安装完全指南</title><link href="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="Arch安装完全指南" /><published>2017-03-24T17:34:00+08:00</published><updated>2017-03-24T17:34:00+08:00</updated><id>/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97</id><content type="html" xml:base="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html">&lt;p&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Main_page&quot;&gt;Arch Wiki&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://www.archlinux.org/&quot;&gt;Arch官网&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://www.archlinux.org/download/&quot;&gt;Arch下载页面&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://wiki.archlinux.org/index.php/Installation_guide&quot;&gt;Arch Wiki安装教程&lt;/a&gt;&lt;br /&gt;
@@ -21,11 +21,20 @@ Arch的安装少不了网络。所以，在安装之前我们需要进行联网�
 &lt;code class=&quot;highlighter-rouge&quot;&gt;nano wifi.sh&lt;/code&gt;
 在nano编辑器的界面中，我们写入如下命令，并按Ctrl+O保存，Ctrl+X退出：
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; ---Init---
 rfkill unblock wifi
 rfkill unblock all
 ip link &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;wlp2s0 up
-wpa_passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SSID&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &amp;gt; wifi.conf
-wpa_supplicant -B -i wlp2s0 -c wifi.conf
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; ---Input---
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n SSID:
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;ssid
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n password:
+&lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt; -s pass
+&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;You will connect the &lt;span class=&quot;nv&quot;&gt;$ssid&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; ---state---
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;(Connect the WLAN)&quot;&lt;/span&gt;
+wpa_supplicant -B -i wlp2s0 -c &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;wpa_passphrase &lt;span class=&quot;nv&quot;&gt;$ssid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$pass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;(DHCP)&quot;&lt;/span&gt;
 dhcpcd wlp2s0
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
