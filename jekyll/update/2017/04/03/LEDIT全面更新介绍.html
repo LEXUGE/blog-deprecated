@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>在Linux上使用VMware安装OS X</title>
-  <meta name="description" content="OS X一直以惊艳的外表，卓越的性能打动着人们。而人们却为价格望而却步，如何无风险地来安装一个稳定且高速的OS X呢？ VMware Player-Hackintosh组合包 OS X系统(Google Drive) 如何安装OS X，今天，我将手把手指导 安装VMware Player 首先以root身份安装组...">
+  <title>LEDIT全面更新介绍</title>
+  <meta name="description" content="今天，我对LEDIT进行了总计长达9小时的代码重构，将数据结构从二维数组迁移到更为便于管理的一维数组上。终于实现了基本编辑器的功能：读入，保存，编辑以及简易的加密功能。 将二维数组迁移到一维数组，这样，编辑模式就会更接近于现代的编辑器:gedit,vim,nano等。虽然目前功能十分简易，但是已经基本实现文本编辑...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/02/25/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8VMware%E5%AE%89%E8%A3%85OS-X.html">
+  <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/04/03/LEDIT%E5%85%A8%E9%9D%A2%E6%9B%B4%E6%96%B0%E4%BB%8B%E7%BB%8D.html">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -56,47 +56,17 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <p><img src="/image/OS X启动.png" alt="" /><br />
-<img src="/image/OS X.png" alt="" /><br />
-<img src="/image/OS X关于.png" alt="" /></p>
-
-<blockquote>
-  <p>OS X一直以惊艳的外表，卓越的性能打动着人们。而人们却为价格望而却步，如何无风险地来安装一个稳定且高速的OS X呢？</p>
+        <blockquote>
+  <p>今天，我对LEDIT进行了总计长达9小时的代码重构，将数据结构从二维数组迁移到更为便于管理的一维数组上。终于实现了基本编辑器的功能：读入，保存，编辑以及简易的加密功能。</p>
 </blockquote>
 
-<p><a href="/download/WMware-Hackintosh.zip">VMware Player-Hackintosh组合包</a><br />
-<a href="https://drive.google.com/open?id=0B-PSijxodhB1YTRRcU1CMEI2OEE">OS X系统(Google Drive)</a></p>
+<p><img src="/image/LEDIT-demo1.png" alt="" /></p>
 
-<p>如何安装OS X，今天，我将手把手指导</p>
-<ol>
-  <li>安装VMware Player
-    <ul>
-      <li>首先以root身份安装组合包中的bundle文件</li>
-      <li>为VMware打补丁，以root身份执行以下命令
-        <div class="highlighter-rouge"><pre class="highlight"><code>cd /usr/lib/vmware/modules/source
-cp /home/lexuge/下载/vmmon.tar .
-cp /home/lexuge/下载/vmmon.tar .
-vmware-modconfig --console --install-all
-</code></pre>
-        </div>
-      </li>
-      <li>安装Mac破解补丁<br />
-解压unlocker压缩包后以root身份执行lnx-install.sh<br />
-至此，VMware安装完成</li>
-    </ul>
-  </li>
-  <li>
-    <p>下载上面的安装镜像，请有耐心</p>
-  </li>
-  <li>安装OS X
-    <ul>
-      <li>新建一个虚拟机，选择稍后安装系统-OS X-存储虚拟硬盘为单文件</li>
-      <li>进入虚拟机设置，设置内存尽可能的大，CPU 4核，然后删除现有的虚拟硬盘，并添加一个虚拟硬盘(配置：SATA-然后选择下载的macOS Sierra 10.12 by wikigain.vmdk)</li>
-      <li>进入虚拟机，开始安装</li>
-    </ul>
-  </li>
-  <li>享受一切！</li>
-</ol>
+<p><img src="/image/LEDIT-demo2.png" alt="" /></p>
+
+<p>将二维数组迁移到一维数组，这样，编辑模式就会更接近于现代的编辑器:gedit,vim,nano等。虽然目前功能十分简易，但是已经基本实现文本编辑器的雏形。<br />
+以前的二维数组在进行文本插入时，你需要考虑大量的问题：是否到达行末等。处理起来十分麻烦，代码重用率也不高，代码编写起来极为拖沓。
+在更新之后，编辑器的整体感觉体验起来棒极了！LEDIT在处理极端文本格式(列数超长)等问题上，对</p>
 
       </div>
     </main>
