@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-09T15:53:35+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">生活总结</title><link href="/jekyll/update/2017/04/08/%E7%94%9F%E6%B4%BB%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="生活总结" /><published>2017-04-08T17:41:00+08:00</published><updated>2017-04-08T17:41:00+08:00</updated><id>/jekyll/update/2017/04/08/%E7%94%9F%E6%B4%BB%E6%80%BB%E7%BB%93</id><content type="html" xml:base="/jekyll/update/2017/04/08/%E7%94%9F%E6%B4%BB%E6%80%BB%E7%BB%93.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-09T16:40:44+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>既使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">生活总结</title><link href="/jekyll/update/2017/04/08/%E7%94%9F%E6%B4%BB%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="生活总结" /><published>2017-04-08T17:41:00+08:00</published><updated>2017-04-08T17:41:00+08:00</updated><id>/jekyll/update/2017/04/08/%E7%94%9F%E6%B4%BB%E6%80%BB%E7%BB%93</id><content type="html" xml:base="/jekyll/update/2017/04/08/%E7%94%9F%E6%B4%BB%E6%80%BB%E7%BB%93.html">&lt;blockquote&gt;
   &lt;p&gt;回顾过去，展望未来！&lt;br /&gt;
 过去的日子回不来，但可以回望。好多年过去了，不论是从计划上还是技术上，抑或是感悟，我一直在发生巨大的变化。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -15,7 +15,17 @@
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;编程与技术&lt;/strong&gt;&lt;br /&gt;
 这个的变化就更大了。事实上，大多数的项目都诞生在几年前——我还在读小学的时候。比如:LEDIT，GAMEOX。GAMEOX的诞生是因为我想把同学间的一个小游戏电子化。而LEDIT的诞生则是对文本编辑器以及终端界面的极致热爱。&lt;br /&gt;
-我的技术理念也在不断地发生变化&lt;/p&gt;
+我的技术理念也在不断地发生变化，例如:我会更偏向于模块化编程，以及通用解决方案。我对算法的依赖与重视也在逐步加强。事实上，初学者肯定感觉不到这些做法的好处，的确，这样很正常。但是，随着代码的逐渐增加，这些做法的好处会愈加明显。&lt;br /&gt;
+作为一个强迫症患者&amp;amp;&amp;amp;完美主义者，尽管我只有一个人，但是，我却根本无法容忍BUG的发生。一旦有BUG出现，我就会想尽一切办法去处理。但是，毕竟我只是一个人，要承担设计、编写、维护的所有工作。所以，我的项目很少——只有三个。我基本上会在一段时间内创建/维护一个项目，并将它保持到完美状态。这时候，再完成其他项目。所以，按照我的性格，BUG一定是会修复的，只是时间问题。我承诺，目前的三个项目我都会终身维护。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;学习&lt;/strong&gt;&lt;br /&gt;
+近段时间的学习有些吃力，但是很快就会好转。对我来说，其实学习的知识多难都没有问题，跨度多大也不是难点。很多时候，我缺少的是想要学习的动力，所以，我一直在日常生活中寻求竞争。因为，我觉得，竞争是有趣的。&lt;br /&gt;
+但是，对我而言，连续的失利抑或迎头痛击都会对我或多或少的带来一些影响。我的学习或许还是充满许多的心理/不稳定因素。『状态』在现阶段还是对我至关重要的。未来，我的学习『容错能力』还是需要不断地加强。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;未来&lt;/strong&gt;&lt;br /&gt;
+未来还是以学习为重吧，不论如何，我的兴趣永远不减。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</content><author><name></name></author><summary type="html">回顾过去，展望未来！ 过去的日子回不来，但可以回望。好多年过去了，不论是从计划上还是技术上，抑或是感悟，我一直在发生巨大的变化。</summary></entry><entry><title type="html">LEDIT全面更新介绍</title><link href="/jekyll/update/2017/04/03/LEDIT%E5%85%A8%E9%9D%A2%E6%9B%B4%E6%96%B0%E4%BB%8B%E7%BB%8D.html" rel="alternate" type="text/html" title="LEDIT全面更新介绍" /><published>2017-04-03T20:03:00+08:00</published><updated>2017-04-03T20:03:00+08:00</updated><id>/jekyll/update/2017/04/03/LEDIT%E5%85%A8%E9%9D%A2%E6%9B%B4%E6%96%B0%E4%BB%8B%E7%BB%8D</id><content type="html" xml:base="/jekyll/update/2017/04/03/LEDIT%E5%85%A8%E9%9D%A2%E6%9B%B4%E6%96%B0%E4%BB%8B%E7%BB%8D.html">&lt;blockquote&gt;
   &lt;p&gt;今天，我对LEDIT进行了总计长达9小时的代码重构，将数据结构从二维数组迁移到更为便于管理的一维数组上。终于实现了基本编辑器的功能：读入，保存，编辑以及简易的加密功能。&lt;/p&gt;
