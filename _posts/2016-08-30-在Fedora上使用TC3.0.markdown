@@ -1,0 +1,45 @@
+---
+layout: default
+title:  "在Fedora上使用TC3.0"
+date:   2016-08-30 08:41
+categories: jekyll update
+---
+>Turbo C是美国Borland公司的产品，Borland公司是一家专门从事软件开发、研制的大公司。该公司相继推出了一套 Turbo系列软件, 如Turbo BASIC, Turbo Pascal, Turbo Prolog, 这些软件很受用户欢迎。  
+
+[Turbo C3.0英文原版安装包](http://download.pchome.net/development/linetools/detail-9113.html)  
+如何在Linux上使用Turbo C3.0呢？  
+我们将下载的安装包解压在/home/{username}/TurboC3.0中  
+现在我们需要安装DOSBOX来模拟DOS环境:  
+```
+sudo dnf install dosbox.x86_64
+```
+安装完毕后我们打开dosbox，默认的提示符是Z，我们使用mount命令来挂载,使在dosbox内的程序将/home/{username}/TurboC3.0作为C:\  
+```
+mount c /home/{username}/TurboC3.0
+```
+
+打开C:\  
+```
+c:
+```
+
+进行安装:  
+```
+install
+```
+
+在安装界面中SOURCE drive选择C，也相当于/home/{username}/TurboC3.0  
+其余默认  
+最后选择start installation  
+完成后，TurboC3.0主程序会在/home/{username}/TurboC3.0/TC/BIN/TC.EXE  
+
+再次打开DOSBOX  
+```
+mount c /home/{username}/TurboC3.0
+c:
+cd /tc/bin
+tc
+```
+OK,可以编写程序进行测试，如果不行，可以**更改函数库路径**解决  
+
+**祝你成功！**

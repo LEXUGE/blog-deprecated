@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Arch安装完全指南</title>
+  <meta name="description" content="Arch Wiki Arch官网 Arch下载页面 Arch Wiki安装教程 Arch Linux, a lightweight and flexible Linux® distribution that tries to Keep It Simple.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html">
+  <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
+  
+  
+    <style>
+        body {
+	    width:100%;
+	    height:100%;
+            background: #f7fafc none repeat scroll 0 0;
+            color: #555;
+            font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+
+        #particles {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">BLOG|LEXUGE</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+   <div id="particles"></div>
+
+    <script src="/particles.js"></script>
+
+    <script type="text/javascript">
+        particlesJS("particles", {
+            "particles": {
+                "number": {
+                    "value": 20,
+                    "density": {
+                        "enable": true,
+                        "value_area": 1E3
+                    }
+                },
+                "color": {
+                    "value": "#e1e1e1"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 15,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 180,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 650,
+                    "color": "#cfcfcf",
+                    "opacity": 0.26,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        }
+);
+    </script>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <p><a href="https://wiki.archlinux.org/index.php/Main_page">Arch Wiki</a><br />
+<a href="https://www.archlinux.org/">Arch官网</a><br />
+<a href="https://www.archlinux.org/download/">Arch下载页面</a><br />
+<a href="https://wiki.archlinux.org/index.php/Installation_guide">Arch Wiki安装教程</a><br />
+<img src="/image/Arch桌面.png" alt="" /></p>
+
+<p><img src="/image/Arch-scr.png" alt="" /></p>
+<blockquote>
+  <p>Arch Linux, a lightweight and flexible Linux® distribution that tries to Keep It Simple.</p>
+</blockquote>
+
+<p>Arch是我最喜欢的Linux滚动发行版，在我心中的地位基本与Fedora一致。新手在安装Arch时会遇到大量的困难，当然，对于新手，我也不推荐你来使用Arch。事实上，只要你有过半年或几个月以上的Linux使用经验，你就一定能够顺利安装完成Arch，整个安装过程中你最大的问题是克服终端操作的心理障碍。<br />
+下面，我们就开始吧！</p>
+
+<ol>
+  <li>安装之前：<br />
+首先，我们在<a href="https://www.archlinux.org/download/">Arch下载页面</a>下载Arch的Live CD并烧录进U盘。开机U盘启动Live CD。<br />
+Arch的安装少不了网络。所以，在安装之前我们需要进行联网。<br />
+这里我们不进行有线网络的教程（在启动Arch Live CD之前插入网线即可），下面我们连接无线网络：<br />
+我们为了简便，创建一个shell脚本来进行连接。
+<code class="highlighter-rouge">nano wifi.sh</code>
+在nano编辑器的界面中，我们写入如下命令，并按Ctrl+O保存，Ctrl+X退出：
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#! /bin/bash</span>
+<span class="nb">echo</span> ---Init---
+rfkill unblock wifi
+rfkill unblock all
+ip link <span class="nb">set </span>wlp2s0 up
+<span class="nb">echo</span> ---Input---
+<span class="nb">echo</span> -n SSID:
+<span class="nb">read </span>ssid
+<span class="nb">echo</span> -n password:
+<span class="nb">read</span> -s pass
+<span class="nb">echo </span>You will connect the <span class="nv">$ssid</span>
+<span class="nb">echo</span> ---state---
+<span class="nb">echo</span> <span class="s2">"(Connect the WLAN)"</span>
+wpa_supplicant -B -i wlp2s0 -c &lt;<span class="o">(</span>wpa_passphrase <span class="nv">$ssid</span> <span class="nv">$pass</span><span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">"(DHCP)"</span>
+dhcpcd wlp2s0
+</code></pre>
+    </div>
+    <p>将SSID和password替换成你的Wi-Fi名称和密码。<br />
+输入<code class="highlighter-rouge">chmod a+x wifi.sh</code>并执行<code class="highlighter-rouge">./wifi.sh</code>来启动无线网络<br />
+使用ping来验证网络：<code class="highlighter-rouge">ping -c 3 archlinux.org</code></p>
+  </li>
+  <li>磁盘分区与挂载：<br />
+为了较为简便地进行分区，我们选用<code class="highlighter-rouge">cfdisk</code>来进行分区。<br />
+执行<code class="highlighter-rouge">cfdisk</code>进入界面，根据情况选择分区表，下面是我们的分区方案：
+    <ul>
+      <li>设置一个分区 100M～3G（标记为boot）<code class="highlighter-rouge">/dev/sda1</code></li>
+      <li>设置一个分区 大小与你的内存相等 <code class="highlighter-rouge">/dev/sda2</code></li>
+      <li>将剩余的空间都用于一个分区 <code class="highlighter-rouge">/dev/sda3</code><br />
+保存分区，退出<br />
+在我们格式化之前，我们需要执行<code class="highlighter-rouge">reboot</code>重启<br />
+重启完毕后执行：
+        <div class="highlighter-rouge"><pre class="highlight"><code>mkfs.ext4 /dev/sda1
+mkfs.ect4 /dev/sda3 
+mkswap /dev/sda2
+</code></pre>
+        </div>
+        <p>这样我们就格式化完毕了</p>
+        <div class="highlighter-rouge"><pre class="highlight"><code>swapon /dev/sda2
+mount /dev/sda3 /mnt
+cd /mnt
+mkdir boot
+mount /dev/sda1 /mnt/boot
+</code></pre>
+        </div>
+        <p>这样，我们就挂载上了分区<br />
+至此，这部分完毕</p>
+      </li>
+    </ul>
+  </li>
+  <li>安装ArchLinux：<br />
+为了加速安装，我们添加清华大学的软件源，使用这条命令：
+<code class="highlighter-rouge">nano /etc/pacman.d/mirrorlist</code><br />
+在开头添加：
+<code class="highlighter-rouge">Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</code><br />
+使用<code class="highlighter-rouge">pacman -Syy</code>更新软件源<br />
+最后使用<code class="highlighter-rouge">pacstrap /mnt base base-devel</code>来安装系统<br />
+安装完成后使用：<code class="highlighter-rouge">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code>建立挂载关系<br />
+自此，系统就安装好了，但因为没有安装引导程序，<strong>切勿重启</strong><br />
+首先我们进入新安装的系统：
+<code class="highlighter-rouge">arch-chroot /mnt /bin/bash</code><br />
+下载grub引导程序：
+<code class="highlighter-rouge">pacman -S grub</code><br />
+然后在sda设备上生成配置文件：
+    <div class="highlighter-rouge"><pre class="highlight"><code>grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+    </div>
+    <p>切记是sda而不是sda1<br />
+如此，安装彻底完成，现在我们可以重启了！</p>
+  </li>
+  <li>配置ArchLinux：
+    <ul>
+      <li>配置语言环境<br />
+使用nano编辑器编辑配置文件：<code class="highlighter-rouge">nano /etc/locale.gen</code>（Ctrl+v向下翻页，Ctrl+y向上翻页）<br />
+去掉en_US.UTF-8和zh_CN.UTF-8的注释并保存退出<br />
+然后使用<code class="highlighter-rouge">locale-gen</code>生成编码<br />
+并配置优先为英文：<code class="highlighter-rouge">echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</code></li>
+      <li>配置时间
+        <div class="highlighter-rouge"><pre class="highlight"><code>rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
+        </div>
+        <p>使用<code class="highlighter-rouge">date</code>查看时间对不对</p>
+      </li>
+      <li>配置主机名
+<code class="highlighter-rouge">echo name &gt; /etc/hostname</code><br />
+将name替换为你的主机名</li>
+      <li>配置root密码
+<code class="highlighter-rouge">passwd</code>输入root密码</li>
+      <li>创建用户
+<code class="highlighter-rouge">useradd -m -G wheel -s /bin/bash name</code><br />
+将name替换为你的用户名<br />
+然后设置密码：<code class="highlighter-rouge">passwd name</code><br />
+-为用户添加sudo权限<br />
+安装sudo：
+<code class="highlighter-rouge">pacman -S sudo</code><br />
+使用<code class="highlighter-rouge">visudo</code>来编辑sudo配置文件<br />
+将wheel用户组的权限注释去除<br />
+按shift+zz保存退出<br />
+使用<code class="highlighter-rouge">su name</code>切换用户并使用<code class="highlighter-rouge">sudo reboot</code>测试sudo</li>
+    </ul>
+  </li>
+  <li>安装桌面：<br />
+第一步安装xorg：
+<code class="highlighter-rouge">sudo pacman -Syu xorg xorg-xinit xorg-utils dbus</code><br />
+然后安装gnome:
+<code class="highlighter-rouge">sudo pacman -Syu gnome gnome-extra</code><br />
+gnome-extra可不安装<br />
+安装完毕之后，拷贝一份xinit的初始化配置文件到用户目录下
+<code class="highlighter-rouge">cp /etc/X11/xinit/xinitrc ~/.xinitrc</code><br />
+接下来用nano编辑它，翻到最后，把从twm &amp;开始到末尾的信息全部注释掉，然后添加gnome的启动参数
+    <div class="highlighter-rouge"><pre class="highlight"><code>export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
+export GNOME_SHELL_SESSION_MODE=classic
+exec gnome-session --session=gnome-classic
+</code></pre>
+    </div>
+    <p>接下来我们就可以<code class="highlighter-rouge">startx</code>来启动桌面了，若启动不起来，安装xterm或对root的配置文件也进行同样操作<br />
+下面，我们来安装自动登陆程序gdm：</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo pacman -Syu gdm
+sudo systemctl enable gdm
+sudo systemctl start gdm
+</code></pre>
+    </div>
+  </li>
+  <li>环境设置：
+    <ul>
+      <li>字体<br />
+使用<code class="highlighter-rouge">pacman -Ss font</code>搜索你喜欢的字体<br />
+推荐安装：<code class="highlighter-rouge">sudo pacman -S ttf-dejavu wqy-microhei wqy-zenhei</code></li>
+      <li>输入法<br />
+使用iBus：<br />
+GNOME现在已经默认集成了IBus， 所以你只需要安装的输入法引擎并在Region &amp; Language 添加输入源。默认切换输入法的快捷键是 Super+space;<br />
+安装拼音：<code class="highlighter-rouge">sudo pacman -Ss ibus-libpinyin</code><br />
+配置：<code class="highlighter-rouge">ibus-setup</code><br />
+在.bashrc末尾中加入以下参数：
+        <div class="highlighter-rouge"><pre class="highlight"><code>export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>祝你成功！</p>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">BLOG|LEXUGE</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              BLOG|LEXUGE
+            
+            </li>
+            
+            <li><a href="mailto:LEXUGEyky@outlook.com">LEXUGEyky@outlook.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/LEXUGE"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">LEXUGE</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>既使被全世界孤立，也要一个人笑得精彩！</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

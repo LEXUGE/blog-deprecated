@@ -1,0 +1,15 @@
+---
+layout: default
+title:  "Fedora系统升级方法"
+date:   2016-08-27 10:41
+categories: jekyll update
+---
+[Fedora官方教程](http://fedoraproject.org/wiki/DNF_system_upgrade)  
+```
+$ sudo dnf upgrade --refresh
+$ sudo dnf install dnf-plugin-system-upgrade
+$ sudo dnf system-upgrade download --refresh --releasever=XX
+$ sudo dnf system-upgrade reboot
+```
+
+其中```releasever=XX```中的XX为版本号

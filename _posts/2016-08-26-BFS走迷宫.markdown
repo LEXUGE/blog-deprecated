@@ -1,0 +1,81 @@
+---
+layout: default
+title:  "BFS走迷宫"
+date:   2016-08-26 8:54
+categories: jekyll update
+---
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>//链接头文件
+
+struct ser
+{
+  int x,y;
+  int trace;
+  int hx,hy;
+};//定义结构体ser，用于存储每个点的坐标，是否为障碍，和上一个点的坐标
+struct rec
+{
+  int x,y;
+};//定义结构体bs，用于存储当前进入搜索队列bs数组的点的坐标，有了坐标也可以访问用来a数组的这个节点从而获取更多的信息
+struct ser a[11][11];//二维的地图节点信息
+struct rec bs[11];//搜索队列
+int dic[5][3]={0};//方向数组，上下左右的顺序存放
+int n=0,m=0,xb=1;//xb用来更进bs搜索数组的节点存放（也就是搜索队列的尾）
+
+void bfs(int di,int x,int y);
+void out(int x,int y);//函数声明段
+
+void out(int x,int y)//输出函数，输出为(n,m)-(x,x)-(x,x)-……-(1,1)，原理为递归
+{
+  if ((x==1)&&(y==1))//如果当前坐标为起点就输出起点坐标，结束
+  {
+    printf("(%d,%d)",x,y);
+    getch();
+    exit(0);//退出整个程序，函数原型位于stdlib.h
+  }
+  printf("(%d,%d)-",x,y);//否则输出当前点的坐标
+  out(a[x][y].hx,a[x][y].hy);//输出当前点的前一个节点
+}
+void bfs(int di,int x,int y)//宽度优先搜索，程序核心
+{
+  int i=0,nx=0,ny=0;//nx为下一个肯能节点的行，ny为下一个肯能节点的列
+  if ((x==n)&&(y==m)) out(x,y);//如果到达终点就递归输出路径（调用out函数）
+  for (i=1;i<=4;i++)//以上下左右的顺序来搜索当前结点的四周的肯能节点
+  {
+    nx=x+dic[i][1];//肯能节点的行
+    ny=y+dic[i][2];//肯能节点的列
+    if ((nx>=1)&&(nx<=n)&&(ny>=1)&&(ny<=m)&&(a[nx][ny].trace==0))//如果肯能在地图范围内且肯能节点非障碍
+    {
+      ++xb;//搜索队列的尾下标加一
+      a[x][y].trace=1;//把当前点标为不能走，以防止走回头路从而产生无穷无尽的搜索
+      a[nx][ny].hx=x;
+      a[nx][ny].hy=y;//肯能节点的前一个节点为当前结点
+      bs[xb].x=nx;
+      bs[xb].y=ny;//将肯能节点添加到搜索队列
+    }
+  }
+  ++di;//搜索队列的头（也就是当前搜索点）加一
+  bfs(di,bs[di].x,bs[di].y);//遍历到下一个同层级或下一个层级的节点
+}
+void main()//主程序
+{
+  int i=0,j=0;
+  dic[1][1]=-1;dic[1][2]=0;
+  dic[2][1]=1;dic[2][2]=0;
+  dic[3][1]=0;dic[3][2]=-1;
+  dic[4][1]=0;dic[4][2]=1;//以上下左右的顺序初始化dic数组
+  scanf("%d %d",&n,&m);//输入当前迷宫的大小
+  for (i=1;i<=n;i++)//输入二维的迷宫地图
+    for (j=1;j<=m;j++)
+    {
+      scanf("%d",&a[i][j].trace);//输入当前结点，存放到当前结点的是否可行走信息中
+      a[i][j].x=i;//记录当前结点的行
+      a[i][j].y=j;//记录当前结点的列
+    }
+  bs[1].x=1;bs[1].y=1;//搜索队列的第一个点为起点
+  bfs(1,1,1);//宽度优先搜索第一个点周围的所有肯能节点
+}
+
+```

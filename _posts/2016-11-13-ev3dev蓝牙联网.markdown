@@ -1,0 +1,13 @@
+---
+layout: default
+title:  "ev3dev蓝牙联网"
+date:   2016-11-13 15:01
+categories: jekyll update
+---
+[官网原版教程](http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/)  
+ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。  
+对于原版教程，做如下补充:  
+- ev3dev与Linux蓝牙配对时，要用ev3搜索、配对  
+- Linux端的蓝牙本地服务IP地址一定要填写`10.42.0.1` 
+- 不要自动连接  
+
