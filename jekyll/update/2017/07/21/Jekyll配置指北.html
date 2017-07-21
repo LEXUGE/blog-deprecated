@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ev3dev蓝牙联网</title>
-  <meta name="description" content="官网原版教程 ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。 对于原版教程，做如下补充: ev3dev与Linux蓝牙配对时，要用ev3搜索、配对 Linux端的蓝牙本地服务IP地址一定要填写10.42.0.1 不要自动连接">
+  <title>Jekyll配置指北</title>
+  <meta name="description" content="Jekyll配置指北 本站的每一处都可以见到原子效果动态背景，科技感十足。实际上，这是一个JS脚本。 以Jekyll的原生主题minima为例，我们进行配置。 获取minima主题的绝对路径： 在高版本的Jekyll中，minima是隐藏的。所以我们需要获取绝对路径。 在你的BLOG的根目录下： bundle s...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html">
+  <link rel="canonical" href="/jekyll/update/2017/07/21/Jekyll%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97.html">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -192,15 +192,32 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <p><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/">官网原版教程</a><br />
-ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。<br />
-对于原版教程，做如下补充:</p>
-<ul>
-  <li>ev3dev与Linux蓝牙配对时，要用ev3搜索、配对</li>
-  <li>Linux端的蓝牙本地服务IP地址一定要填写<code class="highlighter-rouge">10.42.0.1</code></li>
-  <li>不要自动连接</li>
-</ul>
+        <h1>Jekyll配置指北</h1>
+<p><br /></p>
+<hr />
 
+<p><br />
+本站的每一处都可以见到原子效果动态背景，科技感十足。实际上，这是一个JS脚本。<br />
+以Jekyll的原生主题minima为例，我们进行配置。</p>
+<ol>
+  <li>获取minima主题的绝对路径：<br />
+在高版本的Jekyll中，minima是隐藏的。所以我们需要获取绝对路径。<br />
+在你的BLOG的根目录下：
+    <div class="highlighter-rouge"><pre class="highlight"><code>bundle show minima
+</code></pre>
+    </div>
+    <p>这会输出minima的绝对路径。</p>
+  </li>
+  <li>获取配置好的主题：<br />
+<a href="/download/minima-2.1.zip">Jekyll-minima-科技感配置</a><br />
+下载好后，解压，将particles.js剪切到BLOG的根目录，并将剩下的整个配置文件夹替换原来的minima。
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo rm -rf [minima的绝对路径]
+sudo cp -r minima-2.1.0 [minima的绝对路径减少一级]
+</code></pre>
+    </div>
+  </li>
+  <li>完成!</li>
+</ol>
 
       </div>
     </main>
