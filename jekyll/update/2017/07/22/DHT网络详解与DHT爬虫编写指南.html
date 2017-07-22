@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DHT网络详解与DHT爬虫编写指南</title>
+  <meta name="description" content="DHT网络详解与DHT爬虫编写指南 DHT-Spider项目主页 前言与背景： 随着网络的不断发展，我们中的大多数应该都下载过东西。如果你是一位电影爱好者或开源软件爱好者。那你一定使用过P2P下载。其中，主流的就是BT下载。 虽然，BT是P2P下载，但实际上，他并不是完全P2P的。它需要Tracker来通告节点，...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97.html">
+  <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
+  
+  
+    <style>
+        body {
+	    width:100%;
+	    height:100%;
+            background: #f7fafc none repeat scroll 0 0;
+            color: #555;
+            font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+
+        #particles {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">BLOG|LEXUGE</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+   <div id="particles"></div>
+
+    <script src="/particles.js"></script>
+
+    <script type="text/javascript">
+        particlesJS("particles", {
+            "particles": {
+                "number": {
+                    "value": 20,
+                    "density": {
+                        "enable": true,
+                        "value_area": 1E3
+                    }
+                },
+                "color": {
+                    "value": "#e1e1e1"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 15,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 180,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 650,
+                    "color": "#cfcfcf",
+                    "opacity": 0.26,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        }
+);
+    </script>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="dht网络详解与dht爬虫编写指南">DHT网络详解与DHT爬虫编写指南</h1>
+<p><br />
+<img src="/image/DHT-Spider.png" alt="" /></p>
+<hr />
+
+<p><br />
+<a href="https://github.com/LEXUGE/DHT-Spider">DHT-Spider项目主页</a><br />
+<br /></p>
+<ol>
+  <li>前言与背景：<br />
+随着网络的不断发展，我们中的大多数应该都下载过东西。如果你是一位电影爱好者或开源软件爱好者。那你一定使用过P2P下载。其中，主流的就是BT下载。<br />
+虽然，BT是P2P下载，但实际上，他并不是完全P2P的。它需要Tracker来通告节点，进行信息交换。所以，近年来的版权保护者与政府部门一直在封禁和打击Tracker。比较近的例子就是BT Sync的Tracker被封禁，导致0节点的惨剧。<br />
+那能否做到真正的P2P呢？当然可以，这需要的是DHT(Distributed Hash Table 分布式哈系表)来进行传输，这就是一种去中心化网络。每个加入这个网络的节点都要负责维护一张表格用来存储网络中其他人和资源的信息。任何一个节点的损坏都不足以对整个网络造成致命影响。<br />
+但是就是因为这种隐秘性的特点，资源也是不为人知。尽管目前有许多的BT分享网站(比如：海盗湾),但是他们的中心化意味着他们有随时被关停的可能。所以，拥有一个自己的DHT爬虫来进行资源嗅探是很重要的。
+<br /></li>
+  <li>Kademlia网络：
+    <ul>
+      <li>Kademlia一个分散式杂凑表实现的协议，专门为P2P计算机网络设计。<br />
+该网络规定了网络的结构与节点信息查询方式，节点与结点之间使用UDP进行通讯。每个结点都有一个唯一的身份标识(节点ID)，所有的节点都维护着一张覆盖网。网络上的文件散列与节点ID直接对应，表示着哪个节点存储着的文件和相关信息。</li>
+      <li>Kademlia是用XOR进行节点距离的计算的。这样可以快速得到与目标节点(target)最近的节点(也有可能就是target),XOR的算法是bit位如果相等就记作0，否则为1，这意味着:
+        <div class="highlighter-rouge"><pre class="highlight"><code>1.当两个节点高位数值越为相同，XOR的结果也就越小，距离也就越小(这点上，无论是数学还是实际都是如此)。  
+2.具有反向对称性(A XOR B与B XOR A是相等的)
+3.XOR符合三角形的性质(即：a+b&gt;c),这点对于路由表的寻路起着巨大作用
+</code></pre>
+        </div>
+        <p>所以，XOR是作为距离计算的最佳算法。此外，XOR还能大幅增加寻路速度：可以保证每次与目标节点(target)靠近1 bit，这意味着：对于一个n位的节点ID，我们只需要至多log2(N)就可以找到目标节点。</p>
+      </li>
+      <li>Kademlia的路由表采用的是列表-条目的方式。每个条目由节点ID对应其的IP:port或资源等。对于一个N位的节点ID，它会拥有N个K桶(也就是说每个桶只能有K个节点)。其中，第1个桶距离节点最远(也就是最高位与节点ID的最高位取反)，第二个就是第二位，以此类推。注意，这里的K不一定能存储下所有的节点(也就是说不是完全的)。这样的存储方式有别于二叉树，进行了很好的分类，这可以让FIND_NODE操作返回更为精确和快速：当无法找到一模一样节点ID时，直接返回可能节点(表中与目标ID最近的节点)所在K桶中的K个元素即可(因为K桶内的元素与可能节点最近，最有可能和可能节点一起存储有目标ID)。</li>
+      <li>Kademlia的节点查询(FIND_NODE)：
+        <div class="highlighter-rouge"><pre class="highlight"><code>1.发起者在自己路由表中寻找与目标ID最近的K个节点发起FIND_NODE请求。
+2.接受者在接到以后，如果在自己的路由表中找到了目标节点，则返回该条目，否则返回可能节点所在K桶的K个节点条目
+3.发起者在自己发起请求的目标所在的K桶中更新返回结果，使K桶始终保持最优状态。
+4.发起者递归发起，直到找到目标节点。(如果没有发现节点更为接近的情况，那么就终止查询)  
+</code></pre>
+        </div>
+      </li>
+      <li>Kademlia加入网络：<br />
+Kademlia网络中的新节点加入需要一个引导节点作为介绍人。也就是说你必须先知道引导节点的IP:port。当你连接上引导节点时，新节点会用FIND_NODE自己的方式来使引导节点去询问自己的邻居节点。之后，邻居节点继续询问邻居节点，直到引导节点找到新节点。这一操作会一路对邻居的K桶进行刷新。</li>
+    </ul>
+  </li>
+  <li>KPPC协议：<br />
+这是一种基于Kademlia的改进协议，支持四种消息格式：
+    <div class="highlighter-rouge"><pre class="highlight"><code>1.ping 检测节点是否可连接
+2.find_node 得到给定节点ID的对应信息(IP:port)
+3.get_peers 根据infohash提供对应信息(IP:port)
+4.announce_peer 宣布自己正在下载torrent文件
+</code></pre>
+    </div>
+    <p>还需要注意，这里的消息包传送用的是bencode加密后的结果，关于bencode的加密方式：</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>1.string: 字符是以这种方式编码的: &lt;字符串长度&gt;:&lt;字符串&gt;
+如 hell: 4:hell
+2.integer: 整数是一这种方式编码的: i&lt;整数&gt;e
+如 1999: i1999e
+3.list: 列表是一这种方式编码的: l[数据1][数据2][数据3][…]e
+如列表 [hello, world, 101]：l5:hello5:worldi101ee
+4.dictionary: 字典是一这种方式编码的: d[key1][value1][key2][value2][…]e，其中 key 必须是 string 而且按照字母顺序排序
+如字典 {aa:100, bb:bb, cc:200}： d2:aai100e2:bb2:bb2:cci200ee
+</code></pre>
+    </div>
+    <ul>
+      <li>KPPC消息包的基本元素：
+        <div class="highlighter-rouge"><pre class="highlight"><code>1.t关键字: 每条消息都包含 t 关键字，它是一个代表了 transaction ID 的字符串。transaction ID 由请求节点产生，并且回复中要包含回显该字段(挑战-响应模型)，所以回复可能对应一个节点的多个请求。transaction ID 应当被编码为一个短的二进制字符串，比如 2 个字节，这样就可以对应 2^16 个请求
+2.y关键字: 它由一个字节组成，表明这个消息的类型。y 对应的值有三种情况
+ 1) q 表示请求(请求Queries): q类型的消息它包含 2 个附加的关键字 q 和 a
+   1.1) 关键字 q: 是字符串类型，包含了请求的方法名字(get_peers/announce_peer/ping/find_node)
+   1.2) 关键字 a: 一个字典类型包含了请求所附加的参数(info_hash/id..)
+ 2) r 表示回复(回复 Responses): 包含了返回的值。发送回复消息是在正确解析了请求消息的基础上完成的，包含了一个附加的关键字 r。关键字 r 是字典类型
+   2.1) id: peer节点id号或者下一跳DHT节点
+           2.2) nodes": ""
+           2.3) token: token
+ 3) e 表示错误(错误 Errors): 包含一个附加的关键字 e，关键字 e 是列表类型
+   3.1) 第一个元素是数字类型，表明了错误码，当一个请求不能解析或出错时，错误包将被发送。下表描述了可能出现的错误码
+   201: 一般错误
+   202: 服务错误
+   203: 协议错误，比如不规范的包，无效的参数，或者错误的 toke
+   204: 未知方法
+   3.2) 第二个元素是字符串类型，表明了错误信息
+</code></pre>
+        </div>
+      </li>
+      <li>ping请求：<br />
+ping用于检测节点是否可连接，包含一个节点ID，回复也包含回复者的节点ID。</li>
+      <li>find_node请求：<br />
+给定请求节点(被find_node的节点)的ID和目标ID,回复目标ID的info或者是可能节0点所在K桶的K个节点。</li>
+      <li>get_peers请求：
+包含请求节点的ID和infohash,给出目标ID的info</li>
+      <li>announce_peer请求：
+包含4个参数：
+        <div class="highlighter-rouge"><pre class="highlight"><code>1.id:包含请求节点的ID
+2.info_hash:包含torrent文件的info_hash
+3.port:表示peer正在下载的端口
+4.token:这里的token要与get_peers中得到的token相同才可以证明该announce_peer不是伪造的
+</code></pre>
+        </div>
+        <p>相关链接:<br />
+<a href="http://www.bittorrent.org/beps/bep_0005.html">BEP_0005</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>DHT-Spider实现：<br />
+DHT这种P2P网络在对抗攻击与封锁的同时也有如下的缺点：
+    <div class="highlighter-rouge"><pre class="highlight"><code>1.伪造攻击: 有些不听话的用户可能会在DHT网络里捣乱，譬如说撒谎，明明自己不是奥巴马，却偏说自己是奥巴马，这样会误导其他人无法正常获取想要的资源
+2.嗅探攻击: 另外，用户在DHT网络里的隐私可能会被窃听，因为在DHT网络里跟其他用户交换资源的时候，难免会暴露自己的IP地址，所以别人就会知道你有什么资源，你在请求什么资源了。这也是目前DHT网络里一直存在的一个弱点
+</code></pre>
+    </div>
+    <p>我编写的<a href="https://github.com/LEXUGE/DHT-Spider">DHT-Spider</a>能够通过token和infohash的双重检查来解决第一种缺点。但目前无法解决第二种。<br />
+实际上，爬虫的主要思路是不断地主动find_node来扩充自己的路由表，然后积极回应get_peers和announce_peer,infohash的主要来源也是这两种请求。</p>
+  </li>
+  <li>
+    <p>BitTorrent文件编码与格式：<br />
+整个<code class="highlighter-rouge">.torrent</code>文件采用的是bencode加密，最主要的部分是info字段，是一个字典，包含了文件名，文件大小，infohash，以及sha1散列簇。torrent文件的核心也在此。<br />
+作为一个trackless的脚本，我们不需要添加其他的东西(announce等)，这样可以保证DHT的稳定性和隐蔽性。<br />
+值得注意的是：在编辑torrent文件时，请使用16进制编辑器(比如ghex)。</p>
+  </li>
+  <li>Peer Wire协议：<br />
+在BitTorrent中，节点的寻址通过DHT实现，但是，获取了IP:port之后，实际的数据交换需要Peer Wire协议。
+    <ul>
+      <li>握手：<br />
+Peer Wire协议是Peer之间的通信协议，通常由一个握手消息开始。
+<code class="highlighter-rouge">&lt;pstrlen&gt;&lt;pstr&gt;&lt;reserved&gt;&lt;info_hash&gt;&lt;peer_id&gt;</code><br />
+在BitTorrent协议的v1.0版本, pstrlen = 19, pstr = “BitTorrent protocol”，info_hash是上文中提到的磁力链接中的btih</li>
+    </ul>
+  </li>
+  <li>BitTorrent协议扩展与ut_metadata：<br />
+借助DHT的寻址以及Peer Wire的握手，接下来就可以获取metadata了(包含info字段)。<br />
+Metadata被分块，每个块有16KB(16384字节)，Metadata块从0开始索引，所有块的大小都是16KB，除了最后一个块可能比16KB小。
+    <ul>
+      <li>Extension头部：
+Metadata的扩展使用BEP_0010进行声明，在头部的m字典加入ut_metadata选项并制定metadata的字节数。</li>
+      <li>Extension消息：
+这里的消息采用bencode编码，有三种:
+        <div class="highlighter-rouge"><pre class="highlight"><code>0.request(请求):
+请求消息并不在字典中附加任何关键字，这个消息的回复应当来自支持这个扩展的peer，是一个reject或者data消息，回复必须和请求所指出的片相同
+Peer必须保证它所发送的每个片都通过了infohash的检测。即直到peer获得了整个metadata并通过了infohash的验证，才能够发送片(即一个peer应该保证自己已经完整从其他peer中拷贝了一份相同的资源文件后，才能继续响应其他节点的拷贝请求)。Peers没有获得整个metadata时，对收到的所有metadata请求都必须直接回复reject消息
+{'msg_type': 0, 'piece': 0}
+d8:msg_typei0e5:piecei0ee
+这代表请求消息在请求metadata的第一片
+1.data
+这个data消息需要在字典中添加一个新的字段，"total_size".这个关键字段和extension头的"metadata_size"有相同的含义，这是一个整型
+Metadata片被添加到bencode字典后面，他不是字典的一部分，但是是消息的一部分(必须包括长度前缀)。
+如果这个片是metadata的最后一个片，他可能小于16KB。如果它不是metadata的最后一片，那大小必须是16KB
+{'msg_type': 1, 'piece': 0, 'total_size': 3425}
+d8:msg_typei1e5:piecei0e10:total_sizei34256eexxxxxxxx...
+x表示二进制数据(metadata)
+2.reject
+Reject消息没有附件的关键字。它的意思是peer没有请求的这个metadata片信息
+在客户端收到收到一定数目的消息后，可以通过拒绝请求消息来进行洪泛攻击保护。尤其在metadata的数目乘上一个因子时
+{'msg_type': 2, 'piece': 0}
+d8:msg_typei1e5:piecei0ee
+</code></pre>
+        </div>
+      </li>
+      <li>Extension支持交互：<br />
+根据BEP_0010的规定，扩展消息在Peer Wire之后发出，为一个bencode编码的字典：
+        <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="err">e:0,</span><span class="w">
+ </span><span class="err">ipv4:xxx,</span><span class="w">
+ </span><span class="err">ipv6:xxx,</span><span class="w">
+ </span><span class="err">complete_ago:1,</span><span class="w">
+ </span><span class="err">m:</span><span class="w">
+ </span><span class="err">{</span><span class="w">
+   </span><span class="err">upload_only:3,</span><span class="w">
+   </span><span class="err">lt_donthave:7,</span><span class="w">
+   </span><span class="err">ut_holepunch:4,</span><span class="w">
+   </span><span class="err">ut_metadata:2,</span><span class="w">
+   </span><span class="err">ut_pex:1,</span><span class="w">
+   </span><span class="err">ut_comment:6</span><span class="w">
+ </span><span class="p">}</span><span class="err">,</span><span class="w">
+ </span><span class="err">matadata_size:</span><span class="mi">45377</span><span class="err">,</span><span class="w">
+ </span><span class="err">p:</span><span class="mi">33733</span><span class="err">,</span><span class="w">
+ </span><span class="err">reqq:</span><span class="mi">255</span><span class="err">,</span><span class="w">
+ </span><span class="err">v:BitTorrent</span><span class="w"> </span><span class="mf">7.9</span><span class="err">.</span><span class="mi">3</span><span class="w">
+ </span><span class="err">yp:</span><span class="mi">19616</span><span class="err">,</span><span class="w">
+ </span><span class="err">yourip:xxx</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span><span class="mi">1</span><span class="err">.m:是一个字典，表示客户端支持的所有扩展以及每个扩展的编号</span><span class="w">
+ </span><span class="mi">1</span><span class="err">)</span><span class="w"> </span><span class="err">ut_pex:表示该客户端支持PEX(Peer</span><span class="w"> </span><span class="err">Exchange)</span><span class="w">
+ </span><span class="mi">2</span><span class="err">)</span><span class="w"> </span><span class="err">ut_metadata表示支持BEP</span><span class="mi">-0009</span><span class="err">(也就是交换种子文件的metadata)</span><span class="w">
+</span></code></pre>
+        </div>
+        <p>通知交互完成之后，按[“msg_type”: 0, “piece”: piece]的格式逐块向对方请求metadata,最后进行拼接形成info字段。</p>
+      </li>
+    </ul>
+  </li>
+  <li>校验infohash&amp;收尾：<br />
+这一步比较简单，直接对获得的metadata进行转字符串再进行sha1处理即可。<br />
+之后再与已有infohash进行比对。<br />
+最后对信息进行输出和存储。</li>
+</ol>
+
+<p>最后，就完成了！<br />
+具体脚本使用指南参考我的项目，在此不再详述。</p>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">BLOG|LEXUGE</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              BLOG|LEXUGE
+            
+            </li>
+            
+            <li><a href="mailto:LEXUGEyky@outlook.com">LEXUGEyky@outlook.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/LEXUGE"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">LEXUGE</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>即使被全世界孤立，也要一个人笑得精彩！</p>
+      </div>
+      </div>
+      <center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本站所有作品（软件包及源代码除外）除特殊声明全部采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可</center>
+<br>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
