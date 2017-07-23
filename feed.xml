@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-07-22T17:40:23+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">DHT网络详解与DHT爬虫编写指南</title><link href="/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="DHT网络详解与DHT爬虫编写指南" /><published>2017-07-22T14:52:00+08:00</published><updated>2017-07-22T14:52:00+08:00</updated><id>/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97</id><content type="html" xml:base="/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97.html">&lt;h1 id=&quot;dht网络详解与dht爬虫编写指南&quot;&gt;DHT网络详解与DHT爬虫编写指南&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-07-23T22:19:33+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">海淘初体验</title><link href="/jekyll/update/2017/07/23/%E6%B5%B7%E6%B7%98%E5%88%9D%E4%BD%93%E9%AA%8C.html" rel="alternate" type="text/html" title="海淘初体验" /><published>2017-07-23T20:31:00+08:00</published><updated>2017-07-23T20:31:00+08:00</updated><id>/jekyll/update/2017/07/23/%E6%B5%B7%E6%B7%98%E5%88%9D%E4%BD%93%E9%AA%8C</id><content type="html" xml:base="/jekyll/update/2017/07/23/%E6%B5%B7%E6%B7%98%E5%88%9D%E4%BD%93%E9%AA%8C.html">&lt;h1 id=&quot;海淘初体验&quot;&gt;海淘初体验&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/image/包裹.JPG&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这是我第一次在美国亚马逊购物，这是我第一次海淘和收到外国包裹的经历。谨以此篇记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;       我很早就听闻说国外的电商平台质量好，价格比国内便宜。而亚马逊作为国外最大的电商平台，更是早早在我心中埋下了“国外电商=亚马逊”的种子。&lt;br /&gt;
+       但是对于清关、派送、支付等一系列麻烦的手续以及国际船运的慢速流程，我始终不敢下手，尽管我们已经有过许多国内的网购经历。最重要的是，每每想下单的时候，总是会在脑海中浮现出各种收不到，派送错误，扣款错误，对方未发货而联系不上的情景，宛如一盆冷水浇在我头上。&lt;br /&gt;
+       不过，亚马逊的低价实在是太诱人了，特别是对于国内的一些高附加值产品，不知道是利润翻了多少倍！这一次，我看中的是ALMY Alstar的一支限量色钢笔。在实体店的价格要580RMB，但是在美国亚马逊上只要$32.06，也就是说只要220.89RMB，这意味着可以便宜一半还要多140元！要知道，220元可是连LAMY Safari也买不起的。虽说比淘宝贵20元，但是可以绝对保证是正品。所以，我决定要买这支笔。&lt;br /&gt;
+       终于，我在价格和品质上说服了妈妈。但是，我也是第一次购买，心里很是没底。在填写收货地址的时候我就遇到了大麻烦，由于美国是有州以及明确的邮编(ZIP CODE)的，而且他们大多数不是住在小区中，都有自己的别墅。所以，在这么短的地址栏中如何用拼音填写详细地址，我又犯了难。最终，我决定填写为妈妈单位的地址。后面的过程很顺利，绑定了信用卡，完成了付款。&lt;br /&gt;
+       但是，我很不适应的是，我付款之后，银行并没有给我发来扣款信息，以至于我都无法确认我是否购买了。带着这种疑惑与焦虑，我匆匆度过了这一天。我忐忑地等待着扣款信息。&lt;br /&gt;
+       这一天晚上，我自作聪明地想——最近英国脱欧，欧洲与英国的经济都是持续低迷，能不能借着汇率省下一笔呢？我浏览了德国亚马逊的同款产品，的确便宜，只要170RMB左右。于是我偷着乐地取消了Preparing for package的订单。但是很快，我就发现，德国亚马逊并不支持International Shipment(国际直邮)，也就意味着需要转运公司。但是转运一来速度慢，不稳定，而来按重量计价，贵。真是沮丧，所以，我还是选择买个安心，又重新提交了订单。正是这一错误的抉择让我多等了好几天。&lt;br /&gt;
+       第二次的订单提交后，我又在交易记录上发现了问题——多扣了一美元？这是为什么？为什么我要凭白无故地多支付一美元？第二天，我对亚马逊的客服发了一封邮件，详细询问了情况。原来，这一美元是用来检测银行卡是否丢失以及卡内的余额，很快就会退还。&lt;br /&gt;
+       接下来就是漫长的等待。这次的国际直邮耗费了将近1个月的时间。我从开始每天焦急地查看到后来渐渐淡忘了这件事。突然有一天，通关网发来了一条信息，要求我进行报关信息地填写，我实在按捺不住自己的兴奋，在核对订单进行了填写。又过了许久，包裹终于到达中国了！最后的几天USPS很快就派送到了。&lt;br /&gt;
+       由于过了好些日子，收到包裹时没有那么兴奋了。但是真正看到笔时还是真心喜欢。说明，这次的选择是正确的。
+&lt;br /&gt;
+&lt;img src=&quot;/image/LAMY/LAMY-2.JPG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/image/LAMY/LAMY-1.JPG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/image/LAMY/LAMY-4.JPG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/image/LAMY/LAMY-3.JPG&quot; alt=&quot;&quot; /&gt;
+       每每想到这是大洋彼岸的快递，我总会感叹互联网的神奇，至今，我还是有点不可思议。但是亚马逊真的做到了，除了中国市场才进入1～2年，亚马逊在其他国家已经经营了15～20年之久了。而23年前，亚马逊诞生之时，阿里巴巴和京东根本就不存在。而亚马逊也以服务质量著称，客服有着十足的权力，而售后服务却是中国电商一直很头痛的问题，也是用户的痛点。只要亚马逊在中国能继续保持质优价低服务好的特点，再配备中国发达的快递业务，基本可以碾压淘宝和京东。&lt;br /&gt;
+       我一直认为只有国外好的产品不断给国内产业加压，才能刺激中国公司的不断成长。举一个反面例子：百度。自从2010年Google离开中国之后，近年来不知道横向发展成什么样子。一家没有样子的科技公司，竞价排名浪费我们时间也就算了，还闹出人民，除了整合本地化外也就真的没有优点了。再比如，腾讯。自己的QQ没有聊天软件的样子，除了用户基数，哪一个能有Messager或Telegram做得好？也是时候引进一下外资企业，让用户得到更优质的服务，让企业好好纵向发展一下了！&lt;/p&gt;</content><author><name></name></author><summary type="html">海淘初体验 这是我第一次在美国亚马逊购物，这是我第一次海淘和收到外国包裹的经历。谨以此篇记录。</summary></entry><entry><title type="html">DHT网络详解与DHT爬虫编写指南</title><link href="/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="DHT网络详解与DHT爬虫编写指南" /><published>2017-07-22T14:52:00+08:00</published><updated>2017-07-22T14:52:00+08:00</updated><id>/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97</id><content type="html" xml:base="/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97.html">&lt;h1 id=&quot;dht网络详解与dht爬虫编写指南&quot;&gt;DHT网络详解与DHT爬虫编写指南&lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;img src=&quot;/image/DHT-Spider.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -562,25 +587,4 @@ PS：励晓汐从未在路上骑过自行车，她把自己第一次骑车的经
 &lt;ul&gt;
   &lt;li&gt;总结&lt;br /&gt;
 这些展品都是具有革命性意义的，划时代性的。分别代表了旧石器时代、新时期时代、文艺复兴时期、第一次工业革命至第二次工业革命。每一次变革都将人类的发展推向新的高潮，纵观世界史，人们的技术发展正在以指数级的速度加快，人们发展的速度与高度也在一次次冲击新的高潮。这些浓缩的历史故事每一样的存在都会说明当时存在的问题以及解决方法。有趣的是，我们可以看到祖先们在应对相同问题时的不同解决方法与结果。让我们对新的问题产生新的看法，产生一定的反思。助力人类再攀巅峰，改变世界，产生新的划时代意义的作品。&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">前言 这是我时隔7年来第一次来到上海，也是第一次与同学一起出游。这次游历的主要目的是参观《大英博物馆百物展——浓缩的世界史》。当然，也总会发生一些有意思的事亦或误会。</summary></entry><entry><title type="html">向死而生，直面困难</title><link href="/jekyll/update/2017/06/25/%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F-%E7%9B%B4%E9%9D%A2%E5%9B%B0%E9%9A%BE.html" rel="alternate" type="text/html" title="向死而生，直面困难" /><published>2017-06-25T10:05:00+08:00</published><updated>2017-06-25T10:05:00+08:00</updated><id>/jekyll/update/2017/06/25/%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F,%E7%9B%B4%E9%9D%A2%E5%9B%B0%E9%9A%BE</id><content type="html" xml:base="/jekyll/update/2017/06/25/%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F-%E7%9B%B4%E9%9D%A2%E5%9B%B0%E9%9A%BE.html">&lt;p&gt;Try Everything: &lt;audio src=&quot;/music/Try Everything.mp3&quot; controls=&quot;controls&quot; loop=&quot;loop&quot;&gt;&lt;/audio&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;失败并非成功之母，但却是失败之父。掌握失败的规律，直面困难，这远比从失败中吸取教训要重要的多得多。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;那一天，期中考试随着英语的结束而落下帷幕。记得这是我自始至终最灰暗的一天，最昏沉与混沌的一个下午。我从未品尝过如此的沉沦与痛苦。&lt;/p&gt;
-
-&lt;p&gt;期中大考的结束，本应该是一件让人释然，心情愉悦的事情。而我也就要迎来久违的释然——我从学期开始就冥冥之中预感的最担心的事情，今天终于要发生了。我跟随我们班名列前茅的副班长向操场走去。虽然一路上我极力控制着我的情绪，但是我还是免不住抱怨几声。他似乎也看出了我的内心：“跑几圈吧，运动可以使人放松身心。”。我觉得有点道理，就和他一同上了跑道。&lt;/p&gt;
-
-&lt;p&gt;我抬起腿与他一同跑着，我是多么地卖力，希望能跑出现实的诅咒。想逃出现实的牢笼，彼时，即使是逃避现实再苟且，我也幻想着能实现。一圈又一圈，事实上，运动并为能给我带来放松，只是能宣泄我的愤怒。操场四周的篮球场和一旁的绿茵场上传来欢乐，而我，却如乌云一般跑着。跑不出失败，跑不出无助，跑不出渴望。&lt;/p&gt;
-
-&lt;p&gt;终于，跑完了，我的愤怒也宣泄殆尽，我跟随他进入了体育馆，虽然脚在走，但心却不在地上。看着他们打球，我发着呆，耳边充斥着嘈杂。而我却一遍一遍地计算着总分，一次一次地不相信，一次一次地期盼着算错，期盼着这只是一场梦。我无数次想哭泣，但却又哭不出来。&lt;/p&gt;
-
-&lt;p&gt;无助带来的空虚一次次像摄魂怪一般摄人心魂，而我早已没了知觉，也不再感到疼痛。&lt;/p&gt;
-
-&lt;p&gt;这一切的困难与挫折，是偶然，也是必然。都是源于我的自大与蔑视，事实上，任何事都重要但也都不重要——不可过分看重也不可过度轻视。回想起自己的过错，便懂得失败的警醒。&lt;/p&gt;
-
-&lt;p&gt;事后我再也不敢想象当初的感觉。但转念一想，这 其实并不可怕，因为经历过，自然就不会怕了，许多时候要学会忘去痛苦，吸取经验——“休对故人思故国，且将新火试新茶。诗酒趁年华。”。那一次，我没有退缩，而是选择直面。尽管，我输得很惨。在后续的半学期中，我无数次又被打倒，甚至怀疑这是否可能，但是每当遇到困难，我都会想到那次经历，这时，我又会站起来。&lt;/p&gt;
-
-&lt;p&gt;邻近期末，我又一次与他奔跑在跑道上，这一次，我不再无助，更不会逃避，我要向死而生，直面困难——“长风破浪会有时，直挂云帆济沧海！”&lt;/p&gt;</content><author><name></name></author><summary type="html">Try Everything:</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">前言 这是我时隔7年来第一次来到上海，也是第一次与同学一起出游。这次游历的主要目的是参观《大英博物馆百物展——浓缩的世界史》。当然，也总会发生一些有意思的事亦或误会。</summary></entry></feed>
