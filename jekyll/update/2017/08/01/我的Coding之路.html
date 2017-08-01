@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>我的Coding之路</title>
+  <meta name="description" content="我的Coding之路        从小，我就对人工的，机械的事物感兴趣。提起编程，就可以追溯到我与机器人的渊源。小时候，还是处于对看得见，摸得着的东西比较感兴趣。从搭积木开始一步步接触到可编程主机。为了操控主机就势必得对它进行编程。当然，是拖动模块的图形化编程。十分好理解，但是限制也非常多。此外，要是程序一大，...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/jekyll/update/2017/08/01/%E6%88%91%E7%9A%84Coding%E4%B9%8B%E8%B7%AF.html">
+  <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
+  
+  
+    <style>
+        body {
+	    width:100%;
+	    height:100%;
+            background: #f7fafc none repeat scroll 0 0;
+            color: #555;
+            font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+
+        #particles {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">BLOG|LEXUGE</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+   <div id="particles"></div>
+
+    <script src="/particles.js"></script>
+
+    <script type="text/javascript">
+        particlesJS("particles", {
+            "particles": {
+                "number": {
+                    "value": 20,
+                    "density": {
+                        "enable": true,
+                        "value_area": 1E3
+                    }
+                },
+                "color": {
+                    "value": "#e1e1e1"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 15,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 180,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 650,
+                    "color": "#cfcfcf",
+                    "opacity": 0.26,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        }
+);
+    </script>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1>我的Coding之路</h1>
+<p><br />
+<img src="/image/programmer-min.jpg" alt="" /></p>
+<hr />
+
+<p><br />
+       从小，我就对人工的，机械的事物感兴趣。提起编程，就可以追溯到我与机器人的渊源。小时候，还是处于对看得见，摸得着的东西比较感兴趣。从搭积木开始一步步接触到可编程主机。为了操控主机就势必得对它进行编程。当然，是拖动模块的图形化编程。十分好理解，但是限制也非常多。此外，要是程序一大，逻辑一复杂，就会很难更改和调试。<br />
+       这个时候我已经是小学三年级。偶尔听闻到学校有编程社团，以为也和图形化编程一般，不以为然。到了小学四年级，抱着看一看的心态，我进入了编程社团。我的第一门编程语言是Pascal，使用的IDE是FPC，记得版本是2.0.4（当然不是当时的最新版本）。<br />
+       我学起来很快，但是学校每星期一节的社团实在是不能让我学到什么。教起来拖沓迭代。也是四年级的暑假，我参加了区里的编程集训，这个夏令营虽然在现在看来没有教会我太多，但是醍醐灌顶地帮助我打下了基础，是不可或缺的。我对编程本身是真的有兴趣的，而绝非是对游戏或者电脑，在此期间，我会用每天新教的知识一步步搭建出一个游戏。这个游戏应该是我的第一个真真意义上可以玩的游戏，名字叫《星舰城市》。游戏做得是十分粗糙，不能存档，互动方式为“一问一答”……可以说缺点无数。这个游戏的源代码和可执行文件也已经丢失，无处可觅。但是这个游戏确实对我有划时代意义，很遗憾没能留下，它可以相当一些大一新生的游戏编程水平。<br />
+       随后，我又开发过一款游戏，名叫《二战风云》。想比起星舰城市，界面更为友好，采用了重新输出的方式来展现动画。虽说帧率低下，很晃眼睛，但是却也算是一个进步。这款游戏夭折，是我人生的第一场数据危机——当时，我又一个U盘，代码和可执行文件就只在U盘中有，到哪里就插上U盘开始编程，可谓十分方便。但是我对U盘的牢固性却疏忽了。一次，我的膝盖稍微一撇，把机箱上的U盘给撇断，我当时就傻了。整个人一怔，我的同班同学——当时帮我开发这个游戏的武器“数据库”，连忙帮我百度如何解决。可惜，因为物理损伤，已经没有任何挽回的余地了。大概出于对劳动付诸东流的悲痛，我的同学直呼我是骗子，而我也同样痛不欲生。<br />
+       此后是编程道路上略带黑暗色彩的时期。记得是某一年的五一节，我和我的同学被报上了一个编程培训班，老师据说是宁波市名师。事实上，第一节课开始，我对他的印象就不佳。<br />
+       当时在讲排序算法，在介绍选择排序的时候，老师直接打开画图，写上几个数字：“你们看，1小于3，所以把1放到这里。”讲了半天，我觉得只是人工执行一遍程序，也许是老师表达不出来。训练了半年，我的算法翻译（就是把步骤转化为代码）能力倒是得到了显著提升，这是在为未来成为码农做准备（苦笑）。当然，每一个接触编程的人最开始都会对枯燥的算法产生抵触情绪。而不幸的是，我恰恰是那种必须彻底理解才能牢记的人。这对我快速学习编程也是不利的。最让我发指的是，这里的人背离了我的原则，他们根本不热爱编程，也有着虚伪的人格，他们把编程当作升学的推进器，但是，这些人在升学之后又能学会什么？甚至有人问我：一年学编程能拿奖吗？我的答案是：不能也不要。我觉得，为了升学而学习自己不喜欢的东西还不如不学，这花费的时间和金钱比升学本身的价值更多。总之，我觉得这个培训班将近一年半的时间内，我学得并不舒服。<br />
+       在这一年半的时间里，我对外的探索也从未停止过。我学习了一门新语言——C，有了第一台自己的笔记本（虽然配置不佳）。我学习C的过程中，也受到过老师的批评，但是我并没有停止。如果我停下了，那今天我所有的项目都是不存在的。其中，有我至今还在支持的项目。比如GAMEOX和LEDIT。都是我在那时候开始写的。值得一提的是，我当时使用的是Turbo C作为IDE，而且还固执地认为Turbo C十分不错。的确，我在转到Linux之前都是那么认为的。这就牵扯到编程观念的变化，暂且不说。<br />
+       GAMEOX是同学之间流行的纸笔游戏的电子版本，当时功能十分简陋，不能判断胜负，只能算是一个电子棋盘。当时也只打算开发到这种程度。但是奈何有太多想法涌现，开始大规模的开发，开发总是一阵一阵的，而且出于强迫症，总会在一个功能没有BUG的情况下再开发下一个功能。所以我所有用C语言编写的项目都具有强劲的异常处理容错能力。不论用户输入什么，都不会轻易异常。（在此吐槽一下现在国内的软件、电器厂商，产品都是做到“能用”，随便乱按几下就会主板失效，做电子产品就是要皮实，不论是硬件还是软件）自己编写LEDIT时经常会出现莫名其妙的问题——比如光标乱跳，文字在上一行显示，光标却在下一行，方向键随便按一下就内存溢出。但是都被我一个个解决了，这个项目也代表着我当时的最高水平。<br />
+       时间很快来到了六年级的暑假。这是一个意义重大的时期，我来到了Linux平台。事实上，我对Linux系统很早就有耳闻。但是我却不敢去尝试，因为四五年级的时候我没有安装过操作系统，我也仅有这一台电脑，要是装坏了可真的神仙也无奈。
+但是，我终究是忍不住的。所以，我开始在虚拟机中尝试。很快，摸清楚套路后决定在真机上尝试。为了避免双系统的繁琐步骤（我在此之前安装过Ubuntu与Windows 10双系统），我一气之下把Windows给格式化了，从此我就再也没有回到过Windows。我的第一个Linux发行版是Fedora，的确，这是一个优秀个发行版。慢慢的，我更多的去使用shell而不是GUI，Linux带给我的感觉也非常棒。我将我的两个项目移植到了Linux上。这个时候，虽然我能模拟出Turbo C，但是我已经不再使用它了。我渐渐得更加喜欢gcc和gdb的组合。Linux带给我了开源和现代化的编程理念，是我编程道路上的重要拐点。<br />
+       Linux新手难免不会去尝试各种发行版本，用了Fedora三个月之后，我就准备跳槽了。Archlinux是我最喜欢的发行版，但是安装步骤完全命令行，对我很不友好。所以我决定使用Archlinux的亲戚发行版——Manjaro。它确实安装简单，但是却带有浓重的Ubuntu风味，我也不喜欢。遂我开始安装Redhat系的CentOS，但是CentOS的内核和驱动还是21世纪初的版本，无法完美驱动我的笔记本，所以，还没有到一个星期，我就又换到了Debian。Debian非常优秀，但Stable版本太陈旧，无法安装jekyll。于是我又回到了Fedora。但是，Archlinux的诱惑还是很大，我无法抵挡。终于在今年3月，我安装了。除了网络问题，还是非常顺利的，因为我已经使用了有半年的Linux了。至今，我还在使用Archlinux，这是我使用时间最长的发新版。<br />
+       我又对LEDIT进行大量重构，使它具有现代编辑器的使用习惯。对GAMEOX加入了AI和保存以及智能判断模块。暑假，我又使用Python开发了Telegram机器人、自动拆分词根脚本、DHT爬虫等现代化的程序。Python的确强大，但是，我还是喜欢C的简洁和深沉。<br />
+       伴随着项目的开发，我也渐渐意识到算法的重要性，而我自己探索出来的写法和理解模式，是终身不会忘记的。</p>
+
+<p>以上</p>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">BLOG|LEXUGE</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              BLOG|LEXUGE
+            
+            </li>
+            
+            <li><a href="mailto:LEXUGEyky@outlook.com">LEXUGEyky@outlook.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/LEXUGE"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">LEXUGE</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>即使被全世界孤立，也要一个人笑得精彩！</p>
+      </div>
+      </div>
+      <center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本站所有作品（软件包及源代码除外）除特殊声明全部采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可</center>
+<br>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
