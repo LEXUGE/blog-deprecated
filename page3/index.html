@@ -63,6 +63,8 @@
           
         
           
+        
+          
           <a class="page-link" href="/tags/">Tags</a>
           
         
@@ -86,6 +88,33 @@
         
           
         
+
+        <!-- Html Elements for Search -->
+        <div class="dropdown navbar-form navbar-right ">
+        <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        </div>
+        
+        <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="/bootstrap/bootstrap-theme.min.css"></script>
+        <script src="/bootstrap/jquery.min.js"></script>
+        <script src="/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Script pointing to jekyll-search.js -->
+        <script src="/jekyll-search.js" type="text/javascript"></script>
+        
+         <script type="text/javascript">
+           SimpleJekyllSearch({
+             searchInput: document.getElementById('dLabel'),
+             resultsContainer: document.getElementById('c'),
+             json: '/search.json',
+             searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+             noResultsText: 'No results found',
+             limit: 5,
+             fuzzy: false,
+             exclude: ['Welcome']
+           })
+         </script>
       </div>
     </nav>
 
@@ -216,7 +245,9 @@
         
 <div class="pagination">
   
-    <a href="/page2">&laquo; Prev</a>
+  
+    <a href="/page2/">&laquo; Prev</a>
+  
   
 
   
@@ -225,7 +256,7 @@
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
@@ -233,32 +264,32 @@
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
-      <a href="/page5">5</a>
+      <a href="/page5/">5</a>
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
-      <a href="/page8">8</a>
+      <a href="/page8/">8</a>
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page4">Next &raquo;</a>
+    <a href="/page4/">Next &raquo;</a>
   
 </div>
 
@@ -267,9 +298,8 @@
   <h1><a href="/jekyll/update/2017/07/10/%E4%B8%BA%E6%A2%A6%E4%BB%B0%E6%9C%9B.html">为梦仰望</a></h1>
   <p class="author">
     <span class="date">July 10, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -289,11 +319,10 @@
   <h1><a href="/jekyll/update/2017/07/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%B8%89%E7%AB%A0.html">幕后 第三章</a></h1>
   <p class="author">
     <span class="date">July 06, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">幕后系列 | </span>
+	<a href="/tags/#%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -316,11 +345,10 @@
   <h1><a href="/jekyll/update/2017/07/05/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%BA%8C%E7%AB%A0.html">幕后 第二章</a></h1>
   <p class="author">
     <span class="date">July 05, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">幕后系列 | </span>
+	<a href="/tags/#%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -343,11 +371,10 @@ S-M的设计和维护团队，《宇宙》系统的设计团队，以及元首�
   <h1><a href="/jekyll/update/2017/07/04/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%B8%80%E7%AB%A0.html">幕后 第一章</a></h1>
   <p class="author">
     <span class="date">July 04, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">幕后系列 | </span>
+	<a href="/tags/#%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -366,11 +393,10 @@ S-M的设计和维护团队，《宇宙》系统的设计团队，以及元首�
   <h1><a href="/jekyll/update/2017/07/03/%E5%B9%95%E5%90%8E-%E5%BA%8F%E7%AB%A0.html">幕后 序章</a></h1>
   <p class="author">
     <span class="date">July 03, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">幕后系列 | </span>
+	<a href="/tags/#%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -401,7 +427,9 @@ S-M的设计和维护团队，《宇宙》系统的设计团队，以及元首�
 
 <div class="pagination">
   
-    <a href="/page2">&laquo; Prev</a>
+  
+    <a href="/page2/">&laquo; Prev</a>
+  
   
 
   
@@ -410,7 +438,7 @@ S-M的设计和维护团队，《宇宙》系统的设计团队，以及元首�
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
@@ -418,32 +446,32 @@ S-M的设计和维护团队，《宇宙》系统的设计团队，以及元首�
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
-      <a href="/page5">5</a>
+      <a href="/page5/">5</a>
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
-      <a href="/page8">8</a>
+      <a href="/page8/">8</a>
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page4">Next &raquo;</a>
+    <a href="/page4/">Next &raquo;</a>
   
 </div>
 

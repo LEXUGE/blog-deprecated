@@ -63,6 +63,8 @@
           
         
           
+        
+          
           <a class="page-link" href="/tags/">Tags</a>
           
         
@@ -86,6 +88,33 @@
         
           
         
+
+        <!-- Html Elements for Search -->
+        <div class="dropdown navbar-form navbar-right ">
+        <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        </div>
+        
+        <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="/bootstrap/bootstrap-theme.min.css"></script>
+        <script src="/bootstrap/jquery.min.js"></script>
+        <script src="/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Script pointing to jekyll-search.js -->
+        <script src="/jekyll-search.js" type="text/javascript"></script>
+        
+         <script type="text/javascript">
+           SimpleJekyllSearch({
+             searchInput: document.getElementById('dLabel'),
+             resultsContainer: document.getElementById('c'),
+             json: '/search.json',
+             searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+             noResultsText: 'No results found',
+             limit: 5,
+             fuzzy: false,
+             exclude: ['Welcome']
+           })
+         </script>
       </div>
     </nav>
 
@@ -216,7 +245,7 @@
         
 <div class="pagination">
   
-    <span>&laquo; Prev</span>
+     <span>&laquo; Prev</span>
   
 
   
@@ -225,40 +254,40 @@
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
-      <a href="/page3">3</a>
+      <a href="/page3/">3</a>
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
-      <a href="/page5">5</a>
+      <a href="/page5/">5</a>
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
-      <a href="/page8">8</a>
+      <a href="/page8/">8</a>
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page2">Next &raquo;</a>
+    <a href="/page2/">Next &raquo;</a>
   
 </div>
 
@@ -267,11 +296,10 @@
   <h1><a href="/jekyll/update/2017/08/13/%E8%AE%B0%E9%9C%B2%E8%90%A5%E5%8F%8A%E8%A7%82%E7%9C%8B%E6%B5%81%E6%98%9F%E9%9B%A8%E7%9A%84%E7%BB%8F%E5%8E%86.html">记露营及观看流星雨的经历</a></h1>
   <p class="author">
     <span class="date">August 13, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">生活 | </span>
+	<a href="/tags/#%E7%94%9F%E6%B4%BB">生活</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -294,9 +322,8 @@
   <h1><a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由爆炸引起的』证明</a></h1>
   <p class="author">
     <span class="date">August 10, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">数学证明 | </span>
+	<a href="/tags/#%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E">数学证明</a>
     
   </p>
   <div class="content">
@@ -323,11 +350,10 @@
   <h1><a href="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html">英雄不问出处——可你不是英雄</a></h1>
   <p class="author">
     <span class="date">August 10, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">生活 | </span>
+	<a href="/tags/#%E7%94%9F%E6%B4%BB">生活</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -345,11 +371,10 @@
   <h1><a href="/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">幕后 第四章</a></h1>
   <p class="author">
     <span class="date">August 06, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">幕后系列 | </span>
+	<a href="/tags/#%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</a>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -372,11 +397,10 @@
   <h1><a href="/jekyll/update/2017/08/05/%E8%B1%A1%E5%8D%B0%E6%9D%AD%E5%B7%9E.html">象印杭州</a></h1>
   <p class="author">
     <span class="date">August 05, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
-       <span class="tags">生活 | </span>
+	<a href="/tags/#%E7%94%9F%E6%B4%BB">生活</a>
     
   </p>
   <div class="content">
@@ -399,7 +423,7 @@
 
 <div class="pagination">
   
-    <span>&laquo; Prev</span>
+     <span>&laquo; Prev</span>
   
 
   
@@ -408,40 +432,40 @@
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
-      <a href="/page3">3</a>
+      <a href="/page3/">3</a>
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
-      <a href="/page5">5</a>
+      <a href="/page5/">5</a>
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
-      <a href="/page8">8</a>
+      <a href="/page8/">8</a>
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page2">Next &raquo;</a>
+    <a href="/page2/">Next &raquo;</a>
   
 </div>
 

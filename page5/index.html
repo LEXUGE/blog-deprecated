@@ -63,6 +63,8 @@
           
         
           
+        
+          
           <a class="page-link" href="/tags/">Tags</a>
           
         
@@ -86,6 +88,33 @@
         
           
         
+
+        <!-- Html Elements for Search -->
+        <div class="dropdown navbar-form navbar-right ">
+        <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        </div>
+        
+        <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="/bootstrap/bootstrap-theme.min.css"></script>
+        <script src="/bootstrap/jquery.min.js"></script>
+        <script src="/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Script pointing to jekyll-search.js -->
+        <script src="/jekyll-search.js" type="text/javascript"></script>
+        
+         <script type="text/javascript">
+           SimpleJekyllSearch({
+             searchInput: document.getElementById('dLabel'),
+             resultsContainer: document.getElementById('c'),
+             json: '/search.json',
+             searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+             noResultsText: 'No results found',
+             limit: 5,
+             fuzzy: false,
+             exclude: ['Welcome']
+           })
+         </script>
       </div>
     </nav>
 
@@ -216,7 +245,9 @@
         
 <div class="pagination">
   
-    <a href="/page4">&laquo; Prev</a>
+  
+    <a href="/page4/">&laquo; Prev</a>
+  
   
 
   
@@ -225,15 +256,15 @@
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
-      <a href="/page3">3</a>
+      <a href="/page3/">3</a>
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
@@ -241,24 +272,24 @@
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
-      <a href="/page8">8</a>
+      <a href="/page8/">8</a>
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page6">Next &raquo;</a>
+    <a href="/page6/">Next &raquo;</a>
   
 </div>
 
@@ -267,11 +298,10 @@
   <h1><a href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">XCH - 化学方程式配平程序</a></h1>
   <p class="author">
     <span class="date">March 12, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">项目 | </span>
+	<a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
     
-       <span class="tags">编程 | </span>
+	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
     
   </p>
   <div class="content">
@@ -292,9 +322,8 @@
   <h1><a href="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html">普法战争</a></h1>
   <p class="author">
     <span class="date">March 05, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -314,11 +343,10 @@
   <h1><a href="/jekyll/update/2017/02/25/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8VMware%E5%AE%89%E8%A3%85OS-X.html">在Linux上使用VMware安装OS X</a></h1>
   <p class="author">
     <span class="date">February 25, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">计算机技巧 | </span>
+	<a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
   </p>
   <div class="content">
@@ -335,9 +363,8 @@
   <h1><a href="/jekyll/update/2017/02/23/%E4%B8%BA%E4%BD%A0-%E5%8D%83%E5%8D%83%E4%B8%87%E4%B8%87%E9%81%8D.html">为你，千千万万遍。</a></h1>
   <p class="author">
     <span class="date">February 23, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">随笔 | </span>
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
     
   </p>
   <div class="content">
@@ -353,13 +380,12 @@
   <h1><a href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">Python有道词典终端版</a></h1>
   <p class="author">
     <span class="date">January 30, 2017</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">Python | </span>
+	<a href="/tags/#Python">Python</a>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
-       <span class="tags">编程 | </span>
+	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
     
   </p>
   <div class="content">
@@ -377,7 +403,9 @@
 
 <div class="pagination">
   
-    <a href="/page4">&laquo; Prev</a>
+  
+    <a href="/page4/">&laquo; Prev</a>
+  
   
 
   
@@ -386,15 +414,15 @@
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
-      <a href="/page3">3</a>
+      <a href="/page3/">3</a>
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
@@ -402,24 +430,24 @@
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
-      <a href="/page8">8</a>
+      <a href="/page8/">8</a>
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page6">Next &raquo;</a>
+    <a href="/page6/">Next &raquo;</a>
   
 </div>
 

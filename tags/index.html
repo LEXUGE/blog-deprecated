@@ -63,6 +63,8 @@
           
         
           
+        
+          
           <a class="page-link" href="/tags/">Tags</a>
           
         
@@ -86,6 +88,33 @@
         
           
         
+
+        <!-- Html Elements for Search -->
+        <div class="dropdown navbar-form navbar-right ">
+        <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        </div>
+        
+        <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="/bootstrap/bootstrap-theme.min.css"></script>
+        <script src="/bootstrap/jquery.min.js"></script>
+        <script src="/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Script pointing to jekyll-search.js -->
+        <script src="/jekyll-search.js" type="text/javascript"></script>
+        
+         <script type="text/javascript">
+           SimpleJekyllSearch({
+             searchInput: document.getElementById('dLabel'),
+             resultsContainer: document.getElementById('c'),
+             json: '/search.json',
+             searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+             noResultsText: 'No results found',
+             limit: 5,
+             fuzzy: false,
+             exclude: ['Welcome']
+           })
+         </script>
       </div>
     </nav>
 
@@ -277,7 +306,7 @@
   
   </ul>
 
-  <h3 id="幕后系列">幕后系列</h3>
+  <h3 id="%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</h3>
   <ul>
   
     <li>August 06, 2017 <a href="/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">幕后 第四章</a></li>
@@ -292,14 +321,14 @@
   
   </ul>
 
-  <h3 id="数学证明">数学证明</h3>
+  <h3 id="%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E">数学证明</h3>
   <ul>
   
     <li>August 10, 2017 <a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由爆炸引起的』证明</a></li>
   
   </ul>
 
-  <h3 id="生活">生活</h3>
+  <h3 id="%E7%94%9F%E6%B4%BB">生活</h3>
   <ul>
   
     <li>August 13, 2017 <a href="/jekyll/update/2017/08/13/%E8%AE%B0%E9%9C%B2%E8%90%A5%E5%8F%8A%E8%A7%82%E7%9C%8B%E6%B5%81%E6%98%9F%E9%9B%A8%E7%9A%84%E7%BB%8F%E5%8E%86.html">记露营及观看流星雨的经历</a></li>
@@ -314,14 +343,14 @@
   
   </ul>
 
-  <h3 id="算法">算法</h3>
+  <h3 id="%E7%AE%97%E6%B3%95">算法</h3>
   <ul>
   
     <li>August 26, 2016 <a href="/jekyll/update/2016/08/26/BFS%E8%B5%B0%E8%BF%B7%E5%AE%AB.html">BFS走迷宫</a></li>
   
   </ul>
 
-  <h3 id="编程">编程</h3>
+  <h3 id="%E7%BC%96%E7%A8%8B">编程</h3>
   <ul>
   
     <li>August 01, 2017 <a href="/jekyll/update/2017/08/01/%E6%88%91%E7%9A%84Coding%E4%B9%8B%E8%B7%AF.html">我的Coding之路</a></li>
@@ -344,7 +373,7 @@
   
   </ul>
 
-  <h3 id="网络">网络</h3>
+  <h3 id="%E7%BD%91%E7%BB%9C">网络</h3>
   <ul>
   
     <li>July 22, 2017 <a href="/jekyll/update/2017/07/22/DHT%E7%BD%91%E7%BB%9C%E8%AF%A6%E8%A7%A3%E4%B8%8EDHT%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97.html">DHT网络详解与DHT爬虫编写指南</a></li>
@@ -359,7 +388,7 @@
   
   </ul>
 
-  <h3 id="计算机技巧">计算机技巧</h3>
+  <h3 id="%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</h3>
   <ul>
   
     <li>July 21, 2017 <a href="/jekyll/update/2017/07/21/Jekyll%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97.html">Jekyll配置指北</a></li>
@@ -384,7 +413,7 @@
   
   </ul>
 
-  <h3 id="随笔">随笔</h3>
+  <h3 id="%E9%9A%8F%E7%AC%94">随笔</h3>
   <ul>
   
     <li>August 13, 2017 <a href="/jekyll/update/2017/08/13/%E8%AE%B0%E9%9C%B2%E8%90%A5%E5%8F%8A%E8%A7%82%E7%9C%8B%E6%B5%81%E6%98%9F%E9%9B%A8%E7%9A%84%E7%BB%8F%E5%8E%86.html">记露营及观看流星雨的经历</a></li>
@@ -427,7 +456,7 @@
   
   </ul>
 
-  <h3 id="项目">项目</h3>
+  <h3 id="%E9%A1%B9%E7%9B%AE">项目</h3>
   <ul>
   
     <li>April 23, 2017 <a href="/jekyll/update/2017/04/23/LEDIT%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3&&%E7%A7%BB%E6%A4%8D%E6%8C%87%E5%8D%97.html">LEDIT代码详解&&移植指南</a></li>

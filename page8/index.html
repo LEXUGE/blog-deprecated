@@ -63,6 +63,8 @@
           
         
           
+        
+          
           <a class="page-link" href="/tags/">Tags</a>
           
         
@@ -86,6 +88,33 @@
         
           
         
+
+        <!-- Html Elements for Search -->
+        <div class="dropdown navbar-form navbar-right ">
+        <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        </div>
+        
+        <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="/bootstrap/bootstrap-theme.min.css"></script>
+        <script src="/bootstrap/jquery.min.js"></script>
+        <script src="/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Script pointing to jekyll-search.js -->
+        <script src="/jekyll-search.js" type="text/javascript"></script>
+        
+         <script type="text/javascript">
+           SimpleJekyllSearch({
+             searchInput: document.getElementById('dLabel'),
+             resultsContainer: document.getElementById('c'),
+             json: '/search.json',
+             searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+             noResultsText: 'No results found',
+             limit: 5,
+             fuzzy: false,
+             exclude: ['Welcome']
+           })
+         </script>
       </div>
     </nav>
 
@@ -216,7 +245,9 @@
         
 <div class="pagination">
   
-    <a href="/page7">&laquo; Prev</a>
+  
+    <a href="/page7/">&laquo; Prev</a>
+  
   
 
   
@@ -225,27 +256,27 @@
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
-      <a href="/page3">3</a>
+      <a href="/page3/">3</a>
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
-      <a href="/page5">5</a>
+      <a href="/page5/">5</a>
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
@@ -253,12 +284,12 @@
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page9">Next &raquo;</a>
+    <a href="/page9/">Next &raquo;</a>
   
 </div>
 
@@ -267,11 +298,10 @@
   <h1><a href="/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html">在Fedora上使用TC3.0</a></h1>
   <p class="author">
     <span class="date">August 30, 2016</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
-       <span class="tags">计算机技巧 | </span>
+	<a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
     
   </p>
   <div class="content">
@@ -289,11 +319,10 @@
   <h1><a href="/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html">使用mdk3+aircrack-ng攻击路由器</a></h1>
   <p class="author">
     <span class="date">August 28, 2016</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
-       <span class="tags">网络 | </span>
+	<a href="/tags/#%E7%BD%91%E7%BB%9C">网络</a>
     
   </p>
   <div class="content">
@@ -311,9 +340,8 @@
   <h1><a href="/jekyll/update/2016/08/27/Fedora%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95.html">Fedora系统升级方法</a></h1>
   <p class="author">
     <span class="date">August 27, 2016</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
   </p>
   <div class="content">
@@ -335,9 +363,8 @@ $ sudo dnf system-upgrade reboot
   <h1><a href="/jekyll/update/2016/08/27/%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9Linux.html">为何选择Linux?</a></h1>
   <p class="author">
     <span class="date">August 27, 2016</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
   </p>
   <div class="content">
@@ -357,11 +384,10 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
   <h1><a href="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html">如何在Github上搭建Jekyll博客</a></h1>
   <p class="author">
     <span class="date">August 26, 2016</span>
-    <span class="tags"> |</span>
     
-       <span class="tags">Linux | </span>
+	<a href="/tags/#Linux">Linux</a>
     
-       <span class="tags">计算机技巧 | </span>
+	<a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
     
   </p>
   <div class="content">
@@ -380,7 +406,9 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
 
 <div class="pagination">
   
-    <a href="/page7">&laquo; Prev</a>
+  
+    <a href="/page7/">&laquo; Prev</a>
+  
   
 
   
@@ -389,27 +417,27 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
     
   
     
-      <a href="/page2">2</a>
+      <a href="/page2/">2</a>
     
   
     
-      <a href="/page3">3</a>
+      <a href="/page3/">3</a>
     
   
     
-      <a href="/page4">4</a>
+      <a href="/page4/">4</a>
     
   
     
-      <a href="/page5">5</a>
+      <a href="/page5/">5</a>
     
   
     
-      <a href="/page6">6</a>
+      <a href="/page6/">6</a>
     
   
     
-      <a href="/page7">7</a>
+      <a href="/page7/">7</a>
     
   
     
@@ -417,12 +445,12 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
     
   
     
-      <a href="/page9">9</a>
+      <a href="/page9/">9</a>
     
   
 
   
-    <a href="/page9">Next &raquo;</a>
+    <a href="/page9/">Next &raquo;</a>
   
 </div>
 
