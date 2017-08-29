@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>LEDIT代码详解&amp;&amp;移植指南</title>
-  <meta name="description" content="LEDIT代码详解&amp;amp;&amp;amp;移植指南">
+  <meta name="description" content="伴随着LEDIT新版本的发布，代码发生了翻天覆地的重构。为了让使用者及改编者能更清晰地阅读和移植代码。特写此文。">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/jekyll/update/2017/04/23/LEDIT%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3&&%E7%A7%BB%E6%A4%8D%E6%8C%87%E5%8D%97.html">
@@ -58,6 +58,26 @@
         
           
           <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/tags/">Tags</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -192,9 +212,16 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1 id="ledit代码详解移植指南">LEDIT代码详解&amp;&amp;移植指南</h1>
-
-<blockquote>
+        
+        <span class="date">April 23, 2017</span>
+        
+           <span class="tags">编程 </span>
+        
+           <span class="tags">项目 </span>
+        
+        <br>
+        
+        <blockquote>
   <p>伴随着LEDIT新版本的发布，代码发生了翻天覆地的重构。为了让使用者及改编者能更清晰地阅读和移植代码。特写此文。</p>
 </blockquote>
 
@@ -210,8 +237,10 @@
 此函数用于为文本数组a创建对应的key point并储存在数组width中，以及创建行数(height)</li>
   <li><code class="highlighter-rouge">int sum(int x);</code><br />
 此函数用于获取到第x行最后一个字符为止(包括最后一个)，前面共有几个字符</li>
-  <li><code class="highlighter-rouge">void push(int temp);</code><br />
-此函数用于将从a数组第temp个元素(包括temp)开始的元素都往后移动一个位置</li>
+  <li>
+    <p><code class="highlighter-rouge">void push(int temp);</code><br />
+此函数用于将从a数组第temp个元素(包括temp)开始的元素都往后移动一个位置</p>
+  </li>
   <li><code class="highlighter-rouge">int conv(int x1,int y1);</code><br />
 此函数用于获取第x1行,第y1列表示数组a中的第几个字符。函数调用sum函数</li>
   <li><code class="highlighter-rouge">void fr();</code><br />
@@ -525,7 +554,7 @@
     <span class="p">}</span>
     <span class="k">else</span>
     <span class="k">if</span> <span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">))</span> <span class="p">{</span><span class="n">a</span><span class="p">[</span><span class="n">conv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">temp</span><span class="o">=</span><span class="n">width</span><span class="p">[</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span><span class="n">format</span><span class="p">();</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">y</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span><span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="p">(</span><span class="n">dstart</span><span class="p">))</span> <span class="n">dstart</span><span class="o">--</span><span class="p">;</span><span class="n">prin</span><span class="p">(</span><span class="mi">1</span><span class="p">);}</span>
-  <span class="p">}</span> 
+  <span class="p">}</span>
   <span class="k">else</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>XCH - 化学方程式配平程序</title>
-  <meta name="description" content="本软件遵守GPL协议发布 本程序可以用来进行化学方程式配平，下载地址见About页面 下面将介绍软件使用的核心算法： 程序通过暴力搜索化学方程式的各个分子式的系数来求解，纯数学解决">
+  <title>BLOG|LEXUGE</title>
+  <meta name="description" content="即使被全世界孤立，也要一个人笑得精彩！">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">
+  <link rel="canonical" href="/page6/">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -213,67 +213,224 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         
-        <span class="date">March 12, 2017</span>
         
-           <span class="tags">项目 </span>
-        
-           <span class="tags">编程 </span>
-        
-        <br>
-        
-        <p>本软件遵守<a href="http://www.gnu.org/licenses/gpl.txt">GPL协议</a>发布<br />
-本程序可以用来进行化学方程式配平，下载地址见About页面<br />
-下面将介绍软件使用的核心算法：</p>
-<blockquote>
-  <p>程序通过暴力搜索化学方程式的各个分子式的系数来求解，纯数学解决</p>
-</blockquote>
+<div class="pagination">
+  
+    <a href="/page5">&laquo; Prev</a>
+  
 
-<p>下面我们来看几组例子：</p>
+  
+    
+      <a href="/">1</a>
+    
+  
+    
+      <a href="/page2">2</a>
+    
+  
+    
+      <a href="/page3">3</a>
+    
+  
+    
+      <a href="/page4">4</a>
+    
+  
+    
+      <a href="/page5">5</a>
+    
+  
+    
+      <em>6</em>
+    
+  
+    
+      <a href="/page7">7</a>
+    
+  
+    
+      <a href="/page8">8</a>
+    
+  
+    
+      <a href="/page9">9</a>
+    
+  
+
+  
+    <a href="/page7">Next &raquo;</a>
+  
+</div>
+
+
+
+  <h1><a href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">reaver破解Wi-Fi密码</a></h1>
+  <p class="author">
+    <span class="date">December 31, 2016</span>
+    <span class="tags"> |</span>
+    
+       <span class="tags">网络 | </span>
+    
+       <span class="tags">Linux | </span>
+    
+  </p>
+  <div class="content">
+    <p><a href="https://github.com/t6x/reaver-wps-fork-t6x">reaver最新版主页</a><br />
+<a href="https://github.com/wiire/pixiewps">pixiewps主页</a><br />
+<a href="https://lexuge.github.io/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html">mdk3攻击路由器</a><br />
+借助最新的工具reaver可以破解WPA/WPA2（带有WPS）的路由器</p>
 <ol>
-  <li><strong>H2O=H2+O2</strong> 化学方程式配平：
-    <div class="highlighter-rouge"><pre class="highlight"><code>[lexuge@localhost XCH]$ ./XCH
-XCH - Chemical Equation Balancer
-By LEXUGE
-Copyright (2017-2017) LEXUGE
-The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
-------Input------
-输入有几种元素种类,几个分子式，等号左边，右边的分子式个数：
-2 3 1 2 //拥有两种元素：H和O；三个分子式：H2O，H2，O2；左边有一个分子式：H2O；右边有两个分子式：H2和O2
-输入每种元素包含的原子在方程式中各个分子式的个数：
-2 2 0 //H2O中拥有2两个H原子，H2中有2个，O2中没有
-1 0 2 //同上
-输入搜索最大值:
-100 //最大暴力搜索范围
-------Output------
-各分子式系数分别为：
-2 2 1
-</code></pre>
-    </div>
-  </li>
-  <li><strong>As2O3+Zn+HCl=AsH3+ZnCl2+H2O</strong> 化学方程式配平：
-    <div class="highlighter-rouge"><pre class="highlight"><code>[lexuge@localhost XCH]$ ./XCH
-XCH - Chemical Equation Balancer
-By LEXUGE
-Copyright (2017-2017) LEXUGE
-The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
-------Input------
-输入有几种元素种类,几个分子式，等号左边，右边的分子式个数：
-5 6 3 3
-输入每种元素包含的原子在方程式中各个分子式的个数：
-2 0 0 1 0 0
-3 0 0 0 0 1
-0 1 0 0 1 0
-0 0 1 3 0 2
-0 0 1 0 2 0
-输入搜索最大值:
-50
-------Output------
-各分子式系数分别为：
-1 6 12 2 6 3
+  <li>编译reaver
+    <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/t6x/reaver-wps-fork-t6x
+cd reaver-wps-fork-t6x*/
+cd src/
+./configure
+make
+sudo make install
 </code></pre>
     </div>
   </li>
 </ol>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
+
+  <h1><a href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">LEDIT及EDIT简述</a></h1>
+  <p class="author">
+    <span class="date">December 22, 2016</span>
+    <span class="tags"> |</span>
+    
+       <span class="tags">项目 | </span>
+    
+       <span class="tags">编程 | </span>
+    
+  </p>
+  <div class="content">
+    <p><strong>LEDIT及EDIT简述</strong><br />
+<img src="/image/LEDIT宣传.png" alt="" /></p>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
+
+  <h1><a href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">GAMEOX详述</a></h1>
+  <p class="author">
+    <span class="date">December 17, 2016</span>
+    <span class="tags"> |</span>
+    
+       <span class="tags">项目 | </span>
+    
+       <span class="tags">编程 | </span>
+    
+  </p>
+  <div class="content">
+    <p><strong>GAMEOX详述</strong><br />
+Copyright (“2015-2017”) LEXUGE<br />
+The software is using <a href="http://www.gnu.org/licenses/gpl.txt">GPL</a></p>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
+
+  <h1><a href="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html">神奇动物在哪里</a></h1>
+  <p class="author">
+    <span class="date">November 27, 2016</span>
+    <span class="tags"> |</span>
+    
+       <span class="tags">随笔 | </span>
+    
+  </p>
+  <div class="content">
+    <p><img src="/image/神奇动物在哪里海报.jpg" alt="" /></p>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2016/11/27/%E7%A5%9E%E5%A5%87%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
+
+  <h1><a href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html">ev3dev蓝牙联网</a></h1>
+  <p class="author">
+    <span class="date">November 13, 2016</span>
+    <span class="tags"> |</span>
+    
+       <span class="tags">Linux | </span>
+    
+       <span class="tags">计算机技巧 | </span>
+    
+  </p>
+  <div class="content">
+    <p><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/">官网原版教程</a><br />
+ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。</p>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
+
+
+
+<div class="pagination">
+  
+    <a href="/page5">&laquo; Prev</a>
+  
+
+  
+    
+      <a href="/">1</a>
+    
+  
+    
+      <a href="/page2">2</a>
+    
+  
+    
+      <a href="/page3">3</a>
+    
+  
+    
+      <a href="/page4">4</a>
+    
+  
+    
+      <a href="/page5">5</a>
+    
+  
+    
+      <em>6</em>
+    
+  
+    
+      <a href="/page7">7</a>
+    
+  
+    
+      <a href="/page8">8</a>
+    
+  
+    
+      <a href="/page9">9</a>
+    
+  
+
+  
+    <a href="/page7">Next &raquo;</a>
+  
+</div>
+
 
       </div>
     </main>

@@ -63,6 +63,26 @@
           
         
           
+          <a class="page-link" href="/tags/">Tags</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -192,6 +212,15 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+        
+        <span class="date">August 28, 2016</span>
+        
+           <span class="tags">Linux </span>
+        
+           <span class="tags">网络 </span>
+        
+        <br>
+        
         <blockquote>
   <p>mdk3是一款Linux下的终端网络攻击工具，需要配合强大的aircrack -ng使用</p>
 </blockquote>
@@ -217,15 +246,15 @@ mdk3的攻击过程中是不需要网络连接的，也就是在无网络的状�
     <p><code class="highlighter-rouge">dnf install aircrack-ng.x86_64</code><br />
 现在我们来安装mdk3和aircrack-ng(aircrack-ng可能名称会发生变动，具体请使用<code class="highlighter-rouge">$ dnf search aircrack-ng</code>搜索软件包)</p>
   </li>
-  <li>
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd /mdk3-master
+</ol>
+
+<p>4.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /mdk3-master
 make
 sudo make install
 </code></pre>
-    </div>
-    <p>下载完mdk3并解压完毕后，即可进行编译安装，在<code class="highlighter-rouge">make</code>时会有gcc的编译警告，忽略即可，不必担心</p>
-  </li>
-</ol>
+</div>
+<p>下载完mdk3并解压完毕后，即可进行编译安装，在<code class="highlighter-rouge">make</code>时会有gcc的编译警告，忽略即可，不必担心</p>
 
 <p>5.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>cd /usr/local/sbin
@@ -253,7 +282,7 @@ cd /usr/local/sbin
 beacon flood mode：<br />
      这个模式可以产生大量死亡SSID来充斥无线客户端的无线列表，从而扰乱无线使用者；我们甚至还可以自定义发送死亡SSID的BSSID和ESSID、加密方式（如wep/wpa2）等。<br />
 详细命令如下：</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>./mdk3 mon0 b 
+<div class="highlighter-rouge"><pre class="highlight"><code>./mdk3 mon0 b
 
       -n &lt;ssid&gt;        #自定义ESSID
       -f &lt;filename&gt;            #读取ESSID列表文件

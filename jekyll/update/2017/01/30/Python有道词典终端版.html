@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Python有道词典终端版</title>
-  <meta name="description" content="为提高作业工作效力，我运用有道词典API与Python编写了一个小程序 输入英文，显示各种解释，直到输入lexuge退出 源代码： ```python #!/usr/bin/env python – coding: UTF-8 – import codecs import re import urllib2 im...">
+  <meta name="description" content="为提高作业工作效力，我运用有道词典API与Python编写了一个小程序 输入英文，显示各种解释，直到输入lexuge退出">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">
@@ -58,6 +58,26 @@
         
           
           <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/tags/">Tags</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -192,11 +212,23 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+        
+        <span class="date">January 30, 2017</span>
+        
+           <span class="tags">Python </span>
+        
+           <span class="tags">Linux </span>
+        
+           <span class="tags">编程 </span>
+        
+        <br>
+        
         <p>为提高作业工作效力，我运用有道词典API与Python编写了一个小程序<br />
-输入英文，显示各种解释，直到输入<code class="highlighter-rouge">lexuge</code>退出<br />
-源代码：</p>
+输入英文，显示各种解释，直到输入<code class="highlighter-rouge">lexuge</code>退出</p>
+
+<p>源代码：</p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#!/usr/bin/env python  </span>
-<span class="c"># -- coding: UTF-8 -- </span>
+<span class="c"># -- coding: UTF-8 --</span>
 <span class="kn">import</span> <span class="nn">codecs</span>
 <span class="kn">import</span> <span class="nn">re</span>  
 <span class="kn">import</span> <span class="nn">urllib2</span>  
@@ -213,24 +245,24 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">'http://fanyi.youdao.com/openapi.do'</span>  
         <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s">'API KEY'</span>   
         <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">=</span> <span class="s">'keyfrom'</span>  
-  
+
     <span class="k">def</span> <span class="nf">get_translation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">words</span><span class="p">):</span>  
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s">'?keyfrom='</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyfrom</span> <span class="o">+</span> <span class="s">'&amp;key='</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">+</span> <span class="s">'&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q='</span> <span class="o">+</span> <span class="n">quote</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>  
         <span class="n">result</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>   
         <span class="n">json_result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
-        <span class="k">try</span> <span class="p">:</span> 
+        <span class="k">try</span> <span class="p">:</span>
             <span class="n">json_result2</span> <span class="o">=</span> <span class="n">json_result</span><span class="p">[</span><span class="s">"basic"</span><span class="p">]</span>
-           
+
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span>    
         <span class="k">try</span> <span class="p">:</span>
             <span class="n">json_result3</span> <span class="o">=</span> <span class="n">json_result2</span><span class="p">[</span><span class="s">"uk-phonetic"</span><span class="p">]</span>
-       
+
         <span class="k">except</span> <span class="p">:</span>
-            <span class="k">pass</span> 
+            <span class="k">pass</span>
         <span class="k">try</span> <span class="p">:</span>
             <span class="n">json_result</span> <span class="o">=</span> <span class="n">json_result</span><span class="p">[</span><span class="s">"translation"</span><span class="p">]</span>
-      
+
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">json_result</span><span class="p">:</span>  
@@ -239,12 +271,12 @@
             <span class="k">print</span> <span class="s">u'英式发音:'</span><span class="o">+</span><span class="n">json_result3</span>
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span>
-        <span class="k">try</span> <span class="p">:</span> 
+        <span class="k">try</span> <span class="p">:</span>
             <span class="k">print</span> <span class="s">u'解释:'</span><span class="o">+</span><span class="n">json_result2</span><span class="p">[</span><span class="s">"explains"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>  
         <span class="k">except</span> <span class="p">:</span>
             <span class="k">pass</span>
-    
-  
+
+
 <span class="n">youdao</span> <span class="o">=</span> <span class="n">Youdao</span><span class="p">()</span>  
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span>
