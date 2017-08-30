@@ -154,7 +154,7 @@ pre {
 .site-title {
   font-size: 26px;
   font-weight: 300;
-  line-height: 56px;
+  line-height: 73px;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left; }
@@ -168,7 +168,7 @@ pre {
     display: none; }
   .site-nav .page-link {
     color: #111;
-    line-height: 1.5; }
+    line-height: 73px; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
   @media screen and (max-width: 600px) {
@@ -234,8 +234,7 @@ pre {
   width: calc(35% - (30px / 2)); }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (30px / 2));
-  width: calc(20% - (30px / 2)); }
+  width: auto; }
 
 .footer-col-3 {
   width: -webkit-calc(45% - (30px / 2));
