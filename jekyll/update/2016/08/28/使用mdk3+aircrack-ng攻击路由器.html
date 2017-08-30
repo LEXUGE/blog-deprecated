@@ -276,43 +276,39 @@ mdk3的攻击过程中是不需要网络连接的，也就是在无网络的状�
     <p><code class="highlighter-rouge">dnf install aircrack-ng.x86_64</code><br />
 现在我们来安装mdk3和aircrack-ng(aircrack-ng可能名称会发生变动，具体请使用<code class="highlighter-rouge">$ dnf search aircrack-ng</code>搜索软件包)</p>
   </li>
-</ol>
-
-<p>4.</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>cd /mdk3-master
+  <li>进入目录并编译:
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /mdk3-master
 make
 sudo make install
 </code></pre>
-</div>
-<p>下载完mdk3并解压完毕后，即可进行编译安装，在<code class="highlighter-rouge">make</code>时会有gcc的编译警告，忽略即可，不必担心</p>
-
-<p>5.</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>cd /usr/local/sbin
+    </div>
+    <p>下载完mdk3并解压完毕后，即可进行编译安装，在<code class="highlighter-rouge">make</code>时会有gcc的编译警告，忽略即可，不必担心</p>
+  </li>
+  <li>验证安装:
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /usr/local/sbin
 ./mdk3
 </code></pre>
-</div>
+    </div>
+    <p><br /></p>
+  </li>
+</ol>
+
 <ul>
-  <li>
-    <p>如果正确安装就可以看到mdk3输出的帮助</p>
-  </li>
-  <li>
-    <p>安装过程到此就完毕了</p>
-  </li>
+  <li>如果正确安装就可以看到mdk3输出的帮助</li>
+  <li>安装过程到此就完毕了</li>
 </ul>
 
-<p>现在，我们来介绍如何攻击</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>su
+<p>现在，我们来介绍如何攻击  ```
+su
 airmon-ng start {你的接口，在第一步中可以找到}
-cd /usr/local/sbin
-</code></pre>
-</div>
-<p>第二条命令时，系统会自动关闭冲突进程，在最后会有监听端口，<strong>注意，接下来的mon0就使用监听端口代替</strong></p>
+cd /usr/local/sbin</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>第二条命令时，系统会自动关闭冲突进程，在最后会有监听端口，**注意，接下来的mon0就使用监听端口代替**  
 
-<p>第一种模式：<br />
-beacon flood mode：<br />
-     这个模式可以产生大量死亡SSID来充斥无线客户端的无线列表，从而扰乱无线使用者；我们甚至还可以自定义发送死亡SSID的BSSID和ESSID、加密方式（如wep/wpa2）等。<br />
-详细命令如下：</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>./mdk3 mon0 b
+第一种模式：  
+beacon flood mode：  
+     这个模式可以产生大量死亡SSID来充斥无线客户端的无线列表，从而扰乱无线使用者；我们甚至还可以自定义发送死亡SSID的BSSID和ESSID、加密方式（如wep/wpa2）等。  
+详细命令如下：  ```
+./mdk3 mon0 b
 
       -n &lt;ssid&gt;        #自定义ESSID
       -f &lt;filename&gt;            #读取ESSID列表文件
@@ -330,20 +326,18 @@ beacon flood mode：<br />
 
 <p>第二种模式：<br />
 Authentication DoS：<br />
-这是一种验证请求攻击模式：在这个模式里，软件自动模拟随机产生的mac向目标AP发起大量验证请求，可以导致AP忙于处理过多的请求而停止对正常连接客户端的响应；这个模式常见的使用是在reaver穷据路由PIN码，当遇到AP被“pin死”时，可以用这个模式来直接让AP停止正常响应，迫使AP主人重启路由！</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>./mdk3 mon0 a
-      -a &lt;ap_mac&gt;              #测试指定BSS
+这是一种验证请求攻击模式：在这个模式里，软件自动模拟随机产生的mac向目标AP发起大量验证请求，可以导致AP忙于处理过多的请求而停止对正常连接客户端的响应；这个模式常见的使用是在reaver穷据路由PIN码，当遇到AP被“pin死”时，可以用这个模式来直接让AP停止正常响应，迫使AP主人重启路由！  ```
+./mdk3 mon0 a
+      -a <ap_mac>              #测试指定BSS
       -m              #使用有效数据库中的客户端mac地址
       -c          #对应 -a ，不检查是否测试成功
-      -i  &lt;ap_mac&gt;           #对指定BSS进行智能攻击
-      -s &lt;pps&gt;               #速率，默认50
-</code></pre>
-</div>
-
-<p>第三种模式：<br />
-Deauthentication/Disassociation Amok：<br />
-强制解除验证解除连接！在这个模式下，软件会向周围所有可见AP发起循环攻击……可以造成一定范围内的无线网络瘫痪（当然有白名单，黑名单模式），直到手动停止攻击！</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>mdk3 mon0 d
+      -i  <ap_mac>           #对指定BSS进行智能攻击
+      -s <pps>               #速率，默认50</pps></ap_mac></ap_mac></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+第三种模式：  
+Deauthentication/Disassociation Amok：  
+强制解除验证解除连接！在这个模式下，软件会向周围所有可见AP发起循环攻击......可以造成一定范围内的无线网络瘫痪（当然有白名单，黑名单模式），直到手动停止攻击！  ```
+mdk3 mon0 d
       -w &lt;filename&gt;             #白名单mac地址列表文件
       -b &lt;filename&gt;              #黑名单mac地址列表文件
       -s &lt;pps&gt;                        #速率，这个模式下默认无限制
@@ -352,24 +346,24 @@ Deauthentication/Disassociation Amok：<br />
 </div>
 
 <p>第四种模式：<br />
-802.1X test:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>mdk3 mon0 x  
-      0 - EAPOL Start packet flooding   #EAPOL格式的报文洪水攻击
+802.1X test:  ```
+mdk3 mon0 x<br />
+      0 - EAPOL Start packet flooding   #EAPOL格式的报文洪水攻击</p>
 
-            -n &lt;ssid&gt;               
-            -t &lt;bssid&gt;        #目标客户端的mac地址               
+<div class="highlighter-rouge"><pre class="highlight"><code>        -n &lt;ssid&gt;               
+        -t &lt;bssid&gt;        #目标客户端的mac地址               
 
-            -w &lt;WPA type&gt;
-               Set WPA type (1: WPA, 2: WPA2/RSN; default: WPA)
-            -u &lt;unicast cipher&gt;
-               Set unicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
-            -m &lt;multicast cipher&gt;
-               Set multicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
-            -s &lt;pps&gt;      #速率，默认400               
-      1 - EAPOL Logoff test       #注销认证攻击
-            -t &lt;bssid&gt;        #目标客户端的mac地址             
-            -c &lt;bssid&gt;         #目标ap的合法客户端mac               
-            -s &lt;pps&gt;         #速率，默认400               
+        -w &lt;WPA type&gt;
+           Set WPA type (1: WPA, 2: WPA2/RSN; default: WPA)
+        -u &lt;unicast cipher&gt;
+           Set unicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
+        -m &lt;multicast cipher&gt;
+           Set multicast cipher type (1: TKIP, 2: CCMP; default: TKIP)
+        -s &lt;pps&gt;      #速率，默认400               
+  1 - EAPOL Logoff test       #注销认证攻击
+        -t &lt;bssid&gt;        #目标客户端的mac地址             
+        -c &lt;bssid&gt;         #目标ap的合法客户端mac               
+        -s &lt;pps&gt;         #速率，默认400                ```
 </code></pre>
 </div>
 
