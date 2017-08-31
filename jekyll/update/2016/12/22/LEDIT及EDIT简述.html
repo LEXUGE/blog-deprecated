@@ -25,6 +25,9 @@
             line-height: 1.7;
         }
 
+        ::-webkit-scrollbar{
+            display:none;
+        }
 
         #particles {
             position: fixed;
@@ -94,7 +97,7 @@
         <!-- Html Elements for Search -->
         <div class="dropdown navbar-form navbar-right ">
         <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
-        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c" style="max-height:300px;overflow:scroll;overflow-x:hidden">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
            <li><a href="#" onclick="return false;">搜索任意关键词</a></li>
         </ul>
         </div>
