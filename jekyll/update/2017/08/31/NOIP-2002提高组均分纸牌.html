@@ -94,14 +94,14 @@
         <!-- Html Elements for Search -->
         <div class="dropdown navbar-form navbar-right ">
         <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
-        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c">
+           <li><a href="#" onclick="return false;">搜索任意关键词</a></li>
+        </ul>
         </div>
 
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
-        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
         <script src="/jekyll-search.js" type="text/javascript"></script>
@@ -112,7 +112,7 @@
              resultsContainer: document.getElementById('c'),
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-             noResultsText: ' 未搜索到相关内容',
+             noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
              limit: 33,
              fuzzy: false,
              exclude: ['Welcome']
@@ -244,6 +244,7 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+        <br>
         
         <span class="date">August 31, 2017</span>
         
@@ -253,6 +254,8 @@
         
           <a href="/tags/#OI">OI</a>
         
+        <br>
+        <hr>
         <br>
         
         <blockquote>
@@ -306,8 +309,8 @@
 <hr />
 
 <p>然后呢？我一开始想过进一步关于a+b进行分类，但其实完全不必要，这里篇幅有限，不再赘述。有兴趣可以自己想想如果考虑a+b，那么该如何进一步做题。<br />
-对于除<code class="highlighter-rouge">a=0且b!=0</code>以外的所有情况，我们都可以这样处理，将a,b相加（a移动到b），并对移动次数加1，这时候再与下一个数做处理。<br />
-为什么要排除<code class="highlighter-rouge">a=0且b!=0</code>？因为在a=0的时候不需要移动。那为什么<code class="highlighter-rouge">a!=0且b=0</code>时需要？因为是从左向右移动，a必须移动。<br />
+对于除<code class="highlighter-rouge">a=0</code>以外的所有情况，我们都可以这样处理，将a,b相加（a移动到b），并对移动次数加1，这时候再与下一个数做处理。<br />
+为什么要排除<code class="highlighter-rouge">a=0</code>？因为在a=0的时候不需要移动。那为什么<code class="highlighter-rouge">a!=0且b=0</code>时需要？因为是从左向右移动，a必须移动。<br />
 最后，本题的解法就是：</p>
 <ul>
   <li>对所有数据转换为与平均数的差值。</li>

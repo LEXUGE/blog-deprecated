@@ -94,14 +94,14 @@
         <!-- Html Elements for Search -->
         <div class="dropdown navbar-form navbar-right ">
         <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
-        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c">
+           <li><a href="#" onclick="return false;">搜索任意关键词</a></li>
+        </ul>
         </div>
 
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
-        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
         <script src="/jekyll-search.js" type="text/javascript"></script>
@@ -112,7 +112,7 @@
              resultsContainer: document.getElementById('c'),
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-             noResultsText: ' 未搜索到相关内容',
+             noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
              limit: 33,
              fuzzy: false,
              exclude: ['Welcome']
@@ -244,6 +244,7 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+        <br>
         
         
 <div class="pagination">
@@ -259,23 +260,15 @@
     
   
     
-      <a href="/page2/">2</a>
+  
     
   
     
-      <a href="/page3/">3</a>
+  
     
   
     
-      <a href="/page4/">4</a>
-    
-  
-    
-      <a href="/page5/">5</a>
-    
-  
-    
-      <a href="/page6/">6</a>
+         <em>...</em><a href="/page6/">6</a>
     
   
     
@@ -283,11 +276,9 @@
     
   
     
-      <a href="/page8/">8</a>
+         <a href="/page8/">8</a><em>...</em>
     
   
-    
-      <a href="/page9/">9</a>
     
   
     
@@ -301,6 +292,26 @@
 </div>
 
 
+
+  <h1><a href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">LEDIT及EDIT简述</a></h1>
+  <p class="author">
+    <span class="date">December 22, 2016</span>
+    
+	<a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
+    
+	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
+    
+  </p>
+  <div class="content">
+    <p><strong>LEDIT及EDIT简述</strong><br />
+<img src="/image/LEDIT宣传.png" alt="" /></p>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
 
   <h1><a href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">GAMEOX详述</a></h1>
   <p class="author">
@@ -387,28 +398,6 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
   <br>
   <br>
 
-  <h1><a href="/jekyll/update/2016/10/04/%E4%BA%BA.html">人</a></h1>
-  <p class="author">
-    <span class="date">October 04, 2016</span>
-    
-	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
-    
-  </p>
-  <div class="content">
-    <ul>
-  <li>纠正<br />
-很多时候，生活中总有人会提出我们看来亦或愚蠢亦或无知乃至无可救药的想法、意见。<br />
-本能总会趋势我们去纠正他的观点。何必呢？世界上，宇宙中，有多少人会提出愚蠢无知无可救药的想法，何必理会之？<br />
-再者，难道我们的观点一定正确？何必当这个可能传达错误思想的“传教士”？</li>
-</ul>
-
-
-  </div>
-  <h2><b><a href="/jekyll/update/2016/10/04/%E4%BA%BA.html">......</a></b></h2>
-  <hr size=5 noshade="noshade"/>
-  <br>
-  <br>
-
 
 
 <div class="pagination">
@@ -424,23 +413,15 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
     
   
     
-      <a href="/page2/">2</a>
+  
     
   
     
-      <a href="/page3/">3</a>
+  
     
   
     
-      <a href="/page4/">4</a>
-    
-  
-    
-      <a href="/page5/">5</a>
-    
-  
-    
-      <a href="/page6/">6</a>
+         <em>...</em><a href="/page6/">6</a>
     
   
     
@@ -448,11 +429,9 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
     
   
     
-      <a href="/page8/">8</a>
+         <a href="/page8/">8</a><em>...</em>
     
   
-    
-      <a href="/page9/">9</a>
     
   
     

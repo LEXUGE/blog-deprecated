@@ -94,14 +94,14 @@
         <!-- Html Elements for Search -->
         <div class="dropdown navbar-form navbar-right ">
         <input  id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="搜索">
-        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c"></ul>
+        <ul class="dropdown-menu" aria-labelledby="dLabel" id="c">
+           <li><a href="#" onclick="return false;">搜索任意关键词</a></li>
+        </ul>
         </div>
 
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
-        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
         <script src="/jekyll-search.js" type="text/javascript"></script>
@@ -112,7 +112,7 @@
              resultsContainer: document.getElementById('c'),
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-             noResultsText: ' 未搜索到相关内容',
+             noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
              limit: 33,
              fuzzy: false,
              exclude: ['Welcome']
@@ -244,6 +244,7 @@
     </script>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+        <br>
         
         
 <div class="pagination">
@@ -257,35 +258,21 @@
     
   
     
-      <a href="/page2/">2</a>
+         <a href="/page2/">2</a><em>...</em>
     
   
     
-      <a href="/page3/">3</a>
+  
     
   
     
-      <a href="/page4/">4</a>
+  
     
   
     
-      <a href="/page5/">5</a>
-    
   
     
-      <a href="/page6/">6</a>
-    
   
-    
-      <a href="/page7/">7</a>
-    
-  
-    
-      <a href="/page8/">8</a>
-    
-  
-    
-      <a href="/page9/">9</a>
     
   
     
@@ -299,6 +286,32 @@
 </div>
 
 
+
+  <h1><a href="/jekyll/update/2017/08/31/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%BA%94%E7%AB%A0.html">幕后 第五章</a></h1>
+  <p class="author">
+    <span class="date">August 31, 2017</span>
+    
+	<a href="/tags/#%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</a>
+    
+	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
+    
+  </p>
+  <div class="content">
+    <p>坐标：中国东北-黑龙江鸭绿江沿岸某村庄 地球纪元2036年夏<br />
+这天，老大照旧出来打水。突然，不知怎么，整个地面一晃，老大一个不小心摔在了地上。<br />
+“嘿哟，咋整的，今个还摔了”，老大刚起身，提起水桶来抱怨道。然而，还没等他回过神来，又是一阵猛烈的摇晃。老大慌了身，在冰面上拖着被打湿的外套疯跑回屋。<br />
+老二与老三也在屋里感觉到了异样，慌得呆住了。见平日风光的老大惊慌失措地跑回，二人又回过神来，想笑又不敢。<br />
+三人就这样傻傻得呆在屋里，也没处好躲。<br />
+“是不是地震啊，哥？”，老三先说。<br />
+“也没个准哩。”老大替老二回答。<br />
+三人要是出了小屋就是冰面，真要地震起来，估摸着冰面撑不住。可试想一下，冬天松花江的水，谁受得了？不是被冻死就是淹死。</p>
+
+
+  </div>
+  <h2><b><a href="/jekyll/update/2017/08/31/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%BA%94%E7%AB%A0.html">......</a></b></h2>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
 
   <h1><a href="/jekyll/update/2017/08/31/USACO-Broken-Necklace.html">USACO Broken Necklace</a></h1>
   <p class="author">
@@ -399,34 +412,6 @@
   <br>
   <br>
 
-  <h1><a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由爆炸引起的』证明</a></h1>
-  <p class="author">
-    <span class="date">August 10, 2017</span>
-    
-	<a href="/tags/#%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E">数学证明</a>
-    
-  </p>
-  <div class="content">
-    <h3>【地理学】</h3>
-<ul>
-  <li>1.碳循环和河流没有多大关系，参见wikipedia条目碳循环【1】<br />
-<br /></li>
-  <li>2.”先回答，汇聚一起的碳元素是地球内部固有，还是外部河流运移造成的，或还有其他原因？”<br />
-答：地球固有，参见wikipedia条目核合成【2】<br />
-原因：恒星核合成发生在恒星演化过程中的恒星，经由核聚变的过程负责形成从碳到钙的元素。恒星是将氢和氦聚变成更重元素的核子炉，在温度比太阳低的恒星内进行质子-质子链反应，比太阳热的恒星进行碳氮氧循环。<br />
-地球上的碳元素是原始行星发出的可以衰变为碳元素的元素到地球之后再衰变为碳元素从而形成的。<br />
-太阳也不可以生成碳元素，只能生成氢元素之类的元素，而地球更是连氢元素也生成不了。所以不难得出，生物的能量无法生成碳元素。<br />
-换句话说：元素不能从恒星內部或核反应堆以外的地方生成。地球固有的碳元素来自于元素衰变。<br />
-<br /></li>
-</ul>
-
-
-  </div>
-  <h2><b><a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">......</a></b></h2>
-  <hr size=5 noshade="noshade"/>
-  <br>
-  <br>
-
 
 
 <div class="pagination">
@@ -440,35 +425,21 @@
     
   
     
-      <a href="/page2/">2</a>
+         <a href="/page2/">2</a><em>...</em>
     
   
     
-      <a href="/page3/">3</a>
+  
     
   
     
-      <a href="/page4/">4</a>
+  
     
   
     
-      <a href="/page5/">5</a>
-    
   
     
-      <a href="/page6/">6</a>
-    
   
-    
-      <a href="/page7/">7</a>
-    
-  
-    
-      <a href="/page8/">8</a>
-    
-  
-    
-      <a href="/page9/">9</a>
     
   
     
