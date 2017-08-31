@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Jekyll配置指北</title>
-  <meta name="description" content="本站的每一处都可以见到原子效果动态背景，科技感十足。实际上，这是一个JS脚本。 以Jekyll的原生主题minima为例，我们进行配置。 获取minima主题的绝对路径： 在高版本的Jekyll中，minima是隐藏的。所以我们需要获取绝对路径。 在你的BLOG的根目录下： bundle show minima ...">
+  <title>NOIP 2002提高组均分纸牌</title>
+  <meta name="description" content="NOIP2002提高组均分纸牌题解分析">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/jekyll/update/2017/07/21/Jekyll%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97.html">
+  <link rel="canonical" href="/jekyll/update/2017/08/31/NOIP-2002%E6%8F%90%E9%AB%98%E7%BB%84%E5%9D%87%E5%88%86%E7%BA%B8%E7%89%8C.html">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -245,35 +245,114 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         
-        <span class="date">July 21, 2017</span>
+        <span class="date">August 31, 2017</span>
         
-          <a href="/tags/#%E7%BD%91%E7%BB%9C">网络</a>
+          <a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
         
-          <a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
+          <a href="/tags/#%E7%AE%97%E6%B3%95">算法</a>
+        
+          <a href="/tags/#OI">OI</a>
         
         <br>
         
-        <p>本站的每一处都可以见到原子效果动态背景，科技感十足。实际上，这是一个JS脚本。<br />
-以Jekyll的原生主题minima为例，我们进行配置。</p>
+        <blockquote>
+  <p>NOIP2002提高组均分纸牌题解分析</p>
+</blockquote>
+
 <ol>
-  <li>获取minima主题的绝对路径：<br />
-在高版本的Jekyll中，minima是隐藏的。所以我们需要获取绝对路径。<br />
-在你的BLOG的根目录下：
-    <div class="highlighter-rouge"><pre class="highlight"><code>bundle show minima
-</code></pre>
-    </div>
-    <p>这会输出minima的绝对路径。</p>
+  <li>题目：
+    <ul>
+      <li>题目描述 Description<br />
+       有 N 堆纸牌，编号分别为 1，2，…, N。每堆上有若干张，但纸牌总数必为 N 的倍数。可以在任一堆上取若于张纸牌，然后移动。<br />
+       移牌规则为：在编号为 1 堆上取的纸牌，只能移到编号为 2 的堆上；在编号为 N 的堆上取的纸牌，只能移到编号为 N-1 的堆上；其他堆上取的纸牌，可以移到相邻左边或右边的堆上。<br />
+       现在要求找出一种移动方法，用最少的移动次数使每堆上纸牌数都一样多。<br />
+       例如 N=4，4 堆纸牌数分别为：<br />
+       ①　9　②　8　③　17　④　6<br />
+       移动3次可达到目的：<br />
+       从 ③ 取 4 张牌放到 ④ （9 8 13 10） -&gt; 从 ③ 取 3 张牌放到 ②（9 11 10 10）-&gt; 从 ② 取 1 张牌放到①（10 10 10 10）。</li>
+      <li>输入描述 Input Description<br />
+       第一行N（N 堆纸牌，1 &lt;= N &lt;= 100）<br />
+       第二行A1 A2 … An （N 堆纸牌，每堆纸牌初始数，l&lt;= Ai &lt;=10000）</li>
+      <li>输出描述 Output Description
+       输出至屏幕。格式为：<br />
+       所有堆均达到相等时的最少移动次数。</li>
+      <li>样例输入 Sample Input<br />
+       4<br />
+       9 8 17 6</li>
+      <li>样例输出 Sample Output<br />
+       3<br />
+<br />
+<br /></li>
+    </ul>
   </li>
-  <li>获取配置好的主题：<br />
-<a href="/download/minima-2.1.zip">Jekyll-minima-科技感配置</a><br />
-下载好后，解压，将particles.js剪切到BLOG的根目录，并将剩下的整个配置文件夹替换原来的minima。
-    <div class="highlighter-rouge"><pre class="highlight"><code>sudo rm -rf [minima的绝对路径]
-sudo cp -r minima-2.1.0 [minima的绝对路径减少一级]
-</code></pre>
-    </div>
+  <li>思路与想法：<br />
+本题是一道贪心题，一开始看可能不会有太明显的解法出现。<br />
+先来看贪心的描述：
+贪心法，又称贪心算法、贪婪算法、或称贪婪法，是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。<br />
+所以是要用每一步的最优解来达到结果是最好或最优。这时候我就想到能否按照两个数一组，得到局部最优解后变为一个数，再与下一个数进行相同操作，形成递归。<br />
+那么局部最优解是怎么产生的呢？我一开始想的是平均数，但实际上并不是这样。因为这道题我们可以保证纸牌数据是一定可以均分的，这样我们就不需要考虑移动的具体方案。<br />
+所以我们先求出所有纸牌的平均数avg，然后计算出所有数据与avg之间存在的差值。对任意两个经过差值处理的数据a,b，存在以下情况：
+    <ul>
+      <li>a&lt;0且b&lt;0</li>
+      <li>a&lt;0且b&gt;0</li>
+      <li>a&gt;0且b&lt;0</li>
+      <li>a&gt;0且b&gt;0</li>
+      <li>a=0且b!=0（包括了b&gt;0和b&lt;0两种情况）</li>
+      <li>a!=0且b=0（包括了a&gt;0和a&lt;0两种情况）<br />
+<br /></li>
+    </ul>
   </li>
-  <li>完成!</li>
 </ol>
+<hr />
+
+<p>然后呢？我一开始想过进一步关于a+b进行分类，但其实完全不必要，这里篇幅有限，不再赘述。有兴趣可以自己想想如果考虑a+b，那么该如何进一步做题。<br />
+对于除<code class="highlighter-rouge">a=0且b!=0</code>以外的所有情况，我们都可以这样处理，将a,b相加（a移动到b），并对移动次数加1，这时候再与下一个数做处理。<br />
+为什么要排除<code class="highlighter-rouge">a=0且b!=0</code>？因为在a=0的时候不需要移动。那为什么<code class="highlighter-rouge">a!=0且b=0</code>时需要？因为是从左向右移动，a必须移动。<br />
+最后，本题的解法就是：</p>
+<ul>
+  <li>对所有数据转换为与平均数的差值。</li>
+  <li>在a=0且b!=0的情况下，移动次数加1。并无论什么情况，进行b=a+b的操作。之后以b作a,与下一个b进行相同处理</li>
+  <li>到递归结束时，移动次数就是解。</li>
+</ul>
+
+<p><br /></p>
+<hr />
+
+<p>C程序实现：</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">101</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="n">avg</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="n">n</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="n">t</span><span class="o">++</span><span class="p">;</span>
+  <span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+  <span class="n">solve</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">sum</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="n">avg</span><span class="o">=</span><span class="n">sum</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">avg</span><span class="p">;</span>
+  <span class="n">solve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
       </div>
     </main>
