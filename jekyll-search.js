@@ -133,7 +133,7 @@
 
     function findMatches (data, crit, strategy, opt) {
       var matches = []
-      for (var i = 0; i < data.length && matches.length < opt.limit; i++) {
+      for (var i = 0; i < data.length; i++) {
         var match = findMatchesInObject(data[i], crit, strategy, opt)
         if (match) {
           matches.push(match)
