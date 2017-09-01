@@ -255,7 +255,14 @@
         <hr>
         <br>
         
-        <p><img src="/image/共享单车.jpg" alt="" />
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">漫话“共享”</h1>
+  </header>
+
+  <div class="post-content">
+    <p><img src="/image/共享单车.jpg" alt="" />
 <br /></p>
 <blockquote>
   <p>共享经济为人们带来许多生活上的方便，我们可以随时享受出行的便利，直接扫玛骑上共享单车。更早的，2016年时的“互联网出租车”、“专车”等服务也是共享经济的体现。好处不必多说，实实在在的作用也在生活中有所体现。但是，“共享”真的能“经济化”吗？这篇文章将不会谈论表象上的问题，诸如单车乱丢等，而是会窥探共享经济的本质，共享经济究竟是不是披着羊皮的狼？</p>
@@ -273,6 +280,56 @@
 试想一下，共享单车的总使用人数总是要比投放数量多的，这意味着公司可以有一大笔并不受到风险的资金可以去做别的事，一目前的用户基数来看，这不会是一笔小数目，这笔钱他们在干什么，怎么干，我们清楚吗，我们能监管吗？我们甚至在放弃自己的监管权力。共享经济背后的公司们以非共享公开的理念做事，打着共享的幌子，进行融资回扣。这样的公司本身就是背道而驰的。<br />
 <br />
 如同同时期许多的互联网泡沫一样，我们人类社会的发展还没能发展到如此乌邦托的地步，我们的自身水平还为如此发达。我们最终还是需要法律来规范共享经济的行为，让一切又归可循。共享经济并不一定是错的，真正的成功是在未来的某一刻。</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/1/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/1"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

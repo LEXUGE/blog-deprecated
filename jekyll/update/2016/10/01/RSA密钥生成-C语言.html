@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <blockquote>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">RSA密钥生成（C语言）</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
   <p>RSA公钥加密算法是1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。1987年首次公布，当时他们三人都在麻省理工学院工作。RSA就是他们三人姓氏开头字母拼在一起组成的。
 RSA是目前最有影响力的公钥加密算法，它能够抵抗到目前为止已知的绝大多数密码攻击，已被ISO推荐为公钥数据加密标准。
 今天只有短的RSA钥匙才可能被强力方式解破。到2008年为止，世界上还没有任何可靠的攻击RSA算法的方式。只要其钥匙的长度足够长，用RSA加密的信息实际上是不能被解破的。但在分布式计算和量子计算机理论日趋成熟的今天，RSA加密安全性受到了挑战。
@@ -325,6 +332,56 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
 <span class="p">}</span>
 </code></pre>
 </div>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/48/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/48"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

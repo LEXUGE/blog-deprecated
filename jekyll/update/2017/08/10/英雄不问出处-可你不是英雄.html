@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <blockquote>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">英雄不问出处——可你不是英雄</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
   <p>这几天与民科展开了激烈的论战，除了接受的教育水平低外，我还发现了许多『有趣』的社会现象。</p>
 </blockquote>
 
@@ -324,6 +331,56 @@
 最后再来说说老干部文化。可以说这是中国独有的文化，也是中国学术界中『污浊教授』老后的再升级。不过也无可厚非，只有那些目的不纯的学术研究者才会抛弃科学的大船转而利用各种逻辑谬论对大众洗脑，因为他们的眼中是永远的金钱与利益。学术界怎么样，中国怎么样，中国学术界怎么样他并不在乎，他只在乎能不能坐稳这个位，收稳这个钱。可能这也是中国学术界之前声誉不好的原因吧。<br />
 <br />
 就是这样，记住，社会中的人渣一定存在，只要自己follow the master就可以了，不用关系人渣的命运，你也不可能从人渣那里汲取什么。无论谁怎么说，地球，宇宙总会按照着原本的样子运转着。</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/15/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/15"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

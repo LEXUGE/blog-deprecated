@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <p>与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。<br />
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Fedora关闭合上笔记本屏幕挂起</h1>
+  </header>
+
+  <div class="post-content">
+    <p>与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。<br />
 如何解决这个问题呢？</p>
 <ul>
   <li>我们需要编辑<code class="highlighter-rouge">/etc/systemd/logind.conf</code>这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
@@ -266,13 +273,11 @@
     </div>
   </li>
   <li>这样我们就有了更改配置文件的权限</li>
-  <li>接下来我们打开并编辑它</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/systemd/logind.conf
+  <li>接下来我们打开并编辑它
+    <div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/systemd/logind.conf
 </code></pre>
-</div>
-<ul>
+    </div>
+  </li>
   <li>找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
     <div class="highlighter-rouge"><pre class="highlight"><code>HandleLidSwitch=ignore
 </code></pre>
@@ -283,6 +288,56 @@
 <p>reboot<br />
 OK，这个问题就完美解决了!<br />
 PS:资源下载已搬迁至about页面</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/37/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/37"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

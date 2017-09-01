@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <p><img src="/image/杭州-鸟.jpg" alt="" /></p>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">象印杭州</h1>
+  </header>
+
+  <div class="post-content">
+    <p><img src="/image/杭州-鸟.jpg" alt="" /></p>
 <hr />
 
 <p><br /></p>
@@ -277,6 +284,56 @@
 <p>来到杭州就不得不提及西湖。杭州之美，美离不开自然景致，却也少不了人文风韵。如果西湖失去文化色泽，那它的自然风光估摸着只能算得上是一公园罢。大不及太湖，深不及钱湖。但是白居易与苏轼相继来此做官为政，并为西湖的历史涂抹上浓重的一笔。以及历来文人骚客的诗词歌赋加之民间传说，使得西湖——虽不及太湖之大，却诗篇众多；虽不及钱湖之深，但白苏二人却对她一往情深。<br />
 苏堤，是苏轼在治理西湖时用湖泥堆积而成。留下“水光潋滟晴方好，山色空蒙雨亦奇”的完美比喻。白堤，为储蓄湖水灌溉农田而建，原名白沙堤，白居易曾作有“最爱湖东行不足，绿杨阴里白沙堤”抒发情怀。
 游船环湖一周,我拂着迎面吹来的风，看着三潭映月，苏堤白提，如今的游人如织，看着雷峰塔以及回荡在空中的传说，再看看西湖四周现代化的建筑。一种古今交织的错觉出现在我的脑海中，奇妙而美好，这就是杭州的感觉，杭州的印象。</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/4/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/4"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

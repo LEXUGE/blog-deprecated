@@ -379,7 +379,16 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
     </div>
   </li>
   <li>这样我们就有了更改配置文件的权限</li>
-  <li>接下来我们打开并编辑它</li>
+  <li>接下来我们打开并编辑它
+    <div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/systemd/logind.conf
+</code></pre>
+    </div>
+  </li>
+  <li>找到关键字 HandleLidSwitch 将其值改为 ignore。并把本行头的注释去掉：
+    <div class="highlighter-rouge"><pre class="highlight"><code>HandleLidSwitch=ignore
+</code></pre>
+    </div>
+  </li>
 </ul>
 
 

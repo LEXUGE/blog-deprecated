@@ -255,7 +255,14 @@
         <hr>
         <br>
         
-        <blockquote>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">《监视者》影评</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
   <p>《监视者们》翻拍自香港电影《跟踪》，是由赵义硕，金秉瑞联合执导，薛景求，郑雨盛，韩孝珠，李俊昊等主演的动作剧情片。<br />
 该片描写了隐蔽真实身份的监视专家们与每次受到危机四伏的追踪却都能幸运逃脱的秘密犯罪者之间惊心动魄的对决。以监视特定对象的警察内部特殊组织部门监视班为背景，讲述特殊犯罪科监视班队员与银行盗窃团伙之间发生的故事。于2013年7月3日在韩国上映，票房突破550万，并受邀参展多伦多国际电影节。2014年9月16日在中国大陆上映，并更名为《绝密跟踪》。</p>
 </blockquote>
@@ -268,6 +275,56 @@
 <p>       这一段的情节紧凑连贯，细节缜密，小说意味极强，也是整部电影中极其精彩的一段。原片对这一段的节奏感控制的很恰当，很详细的描写出了“影子”当时的眼神。从而刻画出了人物心理，而并不是像国内二三流电视剧，滥用心理独白。<br />
        事实上，这篇电影中有很多的黑客元素（不关于技术方面）。可以说，黑客在理想化状态中就是如同“影子”般冷漠、冷酷、冷静的，计划缜密，天衣无缝。从另一种角度来解析，也有另一层含义——不要相信自己以外的任何人。<br />
        <strong>人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。</strong></p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/24/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/24"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

@@ -255,7 +255,14 @@
         <hr>
         <br>
         
-        <p>The Sound Of Silence: <audio src="/music/The Sound Of Silence.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">为你，千千万万遍。</h1>
+  </header>
+
+  <div class="post-content">
+    <p>The Sound Of Silence: <audio src="/music/The Sound Of Silence.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
 
 <p>灿烂千阳之中，你，我都追随着那只风筝。 ——题记<br />
 时间并不会冲去过去的事情，不论人们怎么说，这一定不会，也永远不会。往事，过错会不断地在你的脑海里重现，如同梦魇，挥之不去，无法逃离。<br />
@@ -266,6 +273,56 @@
 小说从第十六章就开始就开始描写阿米尔的救赎，阿米尔从当初先是逃离，再到重返阿富汗，故事的背景中充斥着战争。正是战争的危险，阿米尔却不顾，冒死也要救出哈桑的儿子。无论如何，因为这是阿米尔最后的机会，一定要冒这个险。<br />
 阿米尔如同大多数孩子乃至成年人一般，被社会贴上了标签。人们当指出你的缺点时，你一定会极力改正这个问题，避免人们第二次对你说三道四，这也是典型的中国东方式的“塑造”，不同于西方的“挖掘”，“塑造”看的是你可以改正什么，而不是你有什么好的。这样久而久之的社会环境之下，你逐渐就会丧失你的优点，成为平庸之人，正如那句话：<strong>我们都变成了自己当初所讨厌的模样。</strong><br />
 感性有时比理性更重要，我们并不需要客观上的完美，只需要心灵上的无悔。我们必须承认，人性的缺失与丑恶,阿米尔对哈桑见而不救，我想，我们并不能就此断定他的无情。阿米尔为了这个错误，努力了终生，用他毕生的经历，来赎罪，只为完成心灵上的无悔，我们何不在当初就认真对待当下？这一切正如当初。</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/5/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/5"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

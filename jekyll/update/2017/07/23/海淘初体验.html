@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <p><img src="/image/包裹.JPG" alt="" />
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">海淘初体验</h1>
+  </header>
+
+  <div class="post-content">
+    <p><img src="/image/包裹.JPG" alt="" />
 <br /></p>
 <hr />
 
@@ -283,6 +290,56 @@
 <img src="/image/LAMY/LAMY-3.JPG" alt="" />
        每每想到这是大洋彼岸的快递，我总会感叹互联网的神奇，至今，我还是有点不可思议。但是亚马逊真的做到了，除了中国市场才进入1～2年，亚马逊在其他国家已经经营了15～20年之久了。而23年前，亚马逊诞生之时，阿里巴巴和京东根本就不存在。而亚马逊也以服务质量著称，客服有着十足的权力，而售后服务却是中国电商一直很头痛的问题，也是用户的痛点。只要亚马逊在中国能继续保持质优价低服务好的特点，再配备中国发达的快递业务，基本可以碾压淘宝和京东。<br />
        我一直认为只有国外好的产品不断给国内产业加压，才能刺激中国公司的不断成长。举一个反面例子：百度。自从2010年Google离开中国之后，近年来不知道横向发展成什么样子。一家没有样子的科技公司，竞价排名浪费我们时间也就算了，还闹出人民，除了整合本地化外也就真的没有优点了。再比如，腾讯。自己的QQ没有聊天软件的样子，除了用户基数，哪一个能有Messager或Telegram做得好？也是时候引进一下外资企业，让用户得到更优质的服务，让企业好好纵向发展一下了！</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/25/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/25"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

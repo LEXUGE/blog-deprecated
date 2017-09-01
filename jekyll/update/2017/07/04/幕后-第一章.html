@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <blockquote>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">幕后 第一章</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
   <p>我现在做的事情，要么毫无意义，要么可能成为牛顿以后物理学上最大的发现。<br />
 ——马克思·普朗克</p>
 </blockquote>
@@ -306,6 +313,56 @@
 “今天，我要告诉大家一个残酷且严肃的事实。我们可能生活在梦中，我们可能正在意识到梦魇的发生与出现，随时可以被别人所轻而易举地抹杀。而且，似乎我们有足够的理由。”扎克伯格道：“我认为我们在一个计算机模拟的‘游戏’中。我们知道，在计算机中保存浮点数并非真正的实数，而是离散的i.e.存在最小的在正浮点数。我们的宇宙也是如此，早在1900年，马克斯·普朗克发现普朗克常数并推生出量子力学时，就意味着我们的世界并不是无限可分的，而是存在最小的i.e.普朗克常数。”<br />
 “编写过大型游戏的都知道，为我们不可能在同时预处理和渲染所有的画面，为了性能，我们通常把玩家非关注的部分作优化处理，而玩家聚焦的部分精确渲染与绘制。如果第一个观点是正确的话——也就是说，我们的世界是渲染的，那就意味系统的计算能力有限，那它应该会采用这种优化方式。的确，它采用了，有力的证明就是光的波粒二象性，当我们观察时，根据不确定性理论，光会精确变成粒子模型，而当我们不关注时，系统会用简单的波动模型来渲染，以节省能耗。”<br />
 “最后一点证明也是最简单的，我们知道，任何一台计算机具有运算上限，这也就是所谓的光速存在的理由，这是一个硬伤，当然从一种角度来说，也保护了系统。”扎克伯格说：“虽然，我们处境不容乐观，但是，我们还没有到灭绝的地步，因为设计这个系统的文明还没有强大到如此般的地步。而且，我们既然存在，这就意味着系统很早就该发现我们的想法——他们具有上帝视角，因此，我们可以继续发展，只要在这个系统内扩张，我们都不会有太大的问题。但我们必须紧张起来。这是自由人以及整个人类的关键节点——我们发现了另一个文明，不是他死，就是我亡。”</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/26/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/26"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

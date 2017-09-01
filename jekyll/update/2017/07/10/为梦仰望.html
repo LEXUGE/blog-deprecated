@@ -255,7 +255,14 @@
         <hr>
         <br>
         
-        <p>No Fear In My Heart: <audio src="/music/No Fear In My Heart.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">为梦仰望</h1>
+  </header>
+
+  <div class="post-content">
+    <p>No Fear In My Heart: <audio src="/music/No Fear In My Heart.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
 <br />
 这是一个关于信仰的故事，这是一个关于每个生命内心的呐喊，这是一段对追随信仰的记录。<br />
 电影讲述了一支真实的朝圣队伍，在藏历新年从芒康朝拜去拉萨，尔后又去往神山冈仁波齐朝圣的故事。这一年正是神山冈仁波齐的本命年。每一个人都怀揣着自己的梦想、希望与抱负，但却走在了一起，11人踏上了历时一年，长达2000公里的朝圣之路。<br />
@@ -267,6 +274,56 @@
 信仰，可以是任何东西，可以是一个项目，一门技术，一个伟人等等。但它必须超脱功利价值的存在，这样，信仰才会“有趣”。为梦想二存在的信仰才是有价值的。<br />
 如同影片中屠夫的赎罪，他要为自己的灵魂的赎罪，这就是对自己价值的提升，所以，他信仰了。<br />
 若干年后，我们可能会嘲笑自己幼稚，但是无论如何，为梦仰望，接受平凡而又不甘平凡，努力活出最好的我，不为未来留下遗憾。</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/43/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/43"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

@@ -257,7 +257,14 @@
         <hr>
         <br>
         
-        <p>坐标：美国-华盛顿·哥伦比亚特区-五角大楼 地球纪元2033年冬<br />
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">幕后 第四章</h1>
+  </header>
+
+  <div class="post-content">
+    <p>坐标：美国-华盛顿·哥伦比亚特区-五角大楼 地球纪元2033年冬<br />
 最终，汤姆·惠灵顿方面决定采用曲速引擎作为最终的解决方案。但是这也具有极大的风险，毕竟，曲速引擎的理论还为得到过完全验证，如果出点闪失，整个舰队都有可能回不来，当然地球也是，因为引擎方面全都是北约与泛亚太联盟在负责。<br />
 实际上，全人类只有一次机会，要是行动不完美，曲速引擎如此进行空间折叠一会被GN-z11文明发现，这个时候可能真的没有机会了。所以北约希望这一仗能够打得出其不意，也唯有如此。<br />
 <br /></p>
@@ -281,6 +288,56 @@
 最可怕的是老大还天天做着发财的美梦，周围的人都嘲笑他说简直不可能，确实，按照老大现如今的自身水平和周围环境，还真是不可能。为了生计，每日，老大和老二都会去打狍子，留一只自己吃，其余的去卖了买酒喝。</p>
 
 <h2 id="未完待续">未完待续</h2>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/10/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/10"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>

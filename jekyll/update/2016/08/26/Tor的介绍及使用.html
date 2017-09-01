@@ -255,7 +255,14 @@
         <hr>
         <br>
         
-        <blockquote>
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Tor的介绍及使用</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
   <p>Tor究竟是如何运行的呢？其实很简单。你用Tor client（客户端）发送一个多层加密网络请求，
 随机指向一台Tor node（节点）帮你传送到目标主机上。node把这个请求的最外层解密，
 再随机发送到第二台node……这样重复经过3个node，最后到达目标主机。
@@ -280,32 +287,32 @@
     <p>给bridges@torproject.org 发送一封邮件（用纯文本格式），邮件
 的标题和正文写上get bridges（注意当中有空格）。这样就可以获得
 bridge（网桥）中继，也就是node。如需指定网桥类型在get bridges
-后面加上类型即可。如：get bridges obfs3(在正文中也要这么写)</p>
-  </li>
-</ol>
-
-<p>获得了这些后，我们就要开始设置了。
-首先，安装好Tor（卸载时直接删除其文件夹即可）。</p>
-
-<p>然后在安装完成后勾选运行（默认勾选），进入设置页面。</p>
-
-<p>它首先会询问你当前连接互联网是否受限，因为我们被block了，所以
-在Connect（直接连接）与Configure（配置）中选则Configure。</p>
-
-<p>进入下一步，他会询问你ISP（电信运营商）有没有屏蔽互联网接入
-因为被block了，所以我们选择Yes（是），点击Next（下一步）。</p>
-
-<p>下面到了最关键的一步，我们要设置node了，这时候我们需要用到之前
+后面加上类型即可。如：get bridges obfs3(在正文中也要这么写)
+<br />
+获得了这些后，我们就要开始设置了。
+首先，安装好Tor（卸载时直接删除其文件夹即可）。
+<br />
+然后在安装完成后勾选运行（默认勾选），进入设置页面。
+<br />
+它首先会询问你当前连接互联网是否受限，因为我们被block了，所以
+在Connect（直接连接）与Configure（配置）中选则Configure。
+<br />
+进入下一步，他会询问你ISP（电信运营商）有没有屏蔽互联网接入
+因为被block了，所以我们选择Yes（是），点击Next（下一步）。
+<br />
+下面到了最关键的一步，我们要设置node了，这时候我们需要用到之前
 发送邮件得到的bridges，复制邮件中所有的bridges（通常是3个）
 通常是这样的格式：IP地址:端口 hash值校验码（数字与大写字母混合）
 复制好后我们在这一步中选择Enter custon bridges（自定义网桥中继）
-在文本框中粘贴我们复制的bridges。单击Next（下一步）</p>
-
-<p>最后，他会询问我们是否通过代理连接，这通常是在公司等内部网络使用
-我们不需要，选择No（否），最后点击Connect（连接）</p>
-
-<p>这时，Tor会开始连接，耐心等待后就可以了。
+在文本框中粘贴我们复制的bridges。单击Next（下一步）
+<br />
+最后，他会询问我们是否通过代理连接，这通常是在公司等内部网络使用
+我们不需要，选择No（否），最后点击Connect（连接）
+<br />
+这时，Tor会开始连接，耐心等待后就可以了。
 成功后会跳出浏览器，显示Congratulations（成功）</p>
+  </li>
+</ol>
 
 <p>接下来就交给大家了，如是通过邮件得到的就是英文版本，有不懂得单词
 翻译一下。</p>
@@ -315,6 +322,56 @@ https://www.torproject.org/ （被block）<br />
 https://www.theonionrouter.com/ （目前可用）<br />
 在Download Tor的页面中把English改成简体字，然后下载
 获取网桥过程与使用过程参照上述。</p>
+
+
+  <link rel="stylesheet" href="/github-markdown.css">
+  <br>
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript">
+            function loadComments(data) {
+  for (var i=0; i<data.length; i++) {
+    var cuser = data[i].user.login;
+    var cuserlink = data[i].user.html_url;
+    var clink = data[i].html_url;
+    var cbody = data[i].body_html;
+    var cavatarlink = data[i].user.avatar_url;
+    var cdate = new Date(data[i].created_at);
+    var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
+    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
+     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
+     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
+     + cbody + '</article>');
+  }
+}
+$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/21/comments", {
+  headers: {Accept: "application/vnd.github.v3.html+json"},
+  dataType: "json",
+  success: function(msg){
+    loadComments(msg);
+ }
+});
+
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/21"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+  </div>
+</article>
 
       </div>
     </main>
