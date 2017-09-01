@@ -10,9 +10,16 @@ from urllib.parse import quote
 from time import sleep
 
 GITHUB_REPO = "LEXUGE/LEXUGE-comment"
-GH_TOKEN = "60832a7bf26105e3348bd989ef362e757ac7d19a"
+GH_TOKEN = ""
 
 s = requests.Session()
+
+def startup():
+    global GH_TOKEN
+    try:
+        GH_TOKEN=sys.argv[1]
+    except:
+        sys.exit()
 
 def delete_string_in_file(path,string):
     line=None
@@ -86,6 +93,7 @@ def find_title():
         yield extract_title(filepath)
 
 def main():
+  startup()
   title2ids = github_list_issues()
   print("These are all the title and the id on repo %s,check it and continue." % GITHUB_REPO)
   print(title2ids)
