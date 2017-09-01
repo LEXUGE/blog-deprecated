@@ -24,9 +24,11 @@ def startup():
 def delete_string_in_file(path,string):
     line=None
     lines=[]
+    t=0
     with open(path) as fd:
         for line in fd:
-            if line.startswith(string):
+            if (line.startswith(string))and(t==0):
+                t=1
                 continue
             else:
                 lines+=line
