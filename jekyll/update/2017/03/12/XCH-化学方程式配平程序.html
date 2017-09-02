@@ -320,6 +320,7 @@ The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
 
 
   <link rel="stylesheet" href="/github-markdown.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -332,7 +333,16 @@ The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
         <div class="modal-body">
           <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
             <script type="text/javascript">
-            function loadComments(data) {
+            var reaction_fa = {
+  "+1": "thumbs-o-up",
+  "-1": "thumbs-o-down",
+  "laugh": "smile-o",
+  "hooray": "gift",
+  "confused": "frown-o",
+  "heart": "heart-o"
+};
+
+function loadComments(data,textStatus, jqXHR,page_id) {
   for (var i=0; i<data.length; i++) {
     var cuser = data[i].user.login;
     var cuserlink = data[i].user.html_url;
@@ -341,25 +351,61 @@ The software is using GPL(http://www.gnu.org/licenses/gpl.txt)
     var cavatarlink = data[i].user.avatar_url;
     var cdate = new Date(data[i].created_at);
     var dopts = { month: 'short', day: 'numeric', year: 'numeric' }
-    $("#comments").append('<div class="post-header bg-"><a class="post-link" href="'
-     + cuserlink + '"><h3 class="h3 post-title">' + cuser +' '+'<span class="post-meta">'
-     + 'left a comment on '+cdate.toLocaleDateString("en", dopts) + '</span>'+ '</h3></a>'+'</div><article class="markdown-body">'
-     + cbody + '</article>');
+    var reactions = data[i].reactions;
+    var creactions = "";
+    if(reactions){
+      for(reactionkey in reaction_fa){
+        if(reactions[reactionkey] > 0) {
+            creactions += '<i class="fa fa-'+ reaction_fa[reactionkey]+'"></i>' + reactions[reactionkey] + "&nbsp;";
+        }
+      }
+    }
+    $("#comments").append(
+     '<div class="post-header bg-"><hr><h4><a class="post-link" href="'
+     + cuserlink + '" style="display:inline">' + cuser + '</a>'+'<small style="display:inline">'
+     + '&nbsp; left a comment on '+cdate.toLocaleDateString("en", dopts) +'</small>'
+     + '&nbsp;' + creactions + '</h4>'
+     + '</div><article class="markdown-body"  style="white-space: pre-wrap;">' + cbody + '</article>');
+  }
+  // Email toggle
+  $(".email-hidden-toggle > a").on("click", function (e){
+    e.preventDefault();
+    $(".email-hidden-reply", this.parent).toggle();
+  });
+  // Comments Pagination
+  if (data.length === 30)
+  {
+      $("#gh-load-comments").attr("onclick", "DoGithubComments("+ (page_id + 1) + ");");
+      $("#gh-load-comments").show();
+  }
+  else
+  {
+      $("#gh-load-comments").hide();
   }
 }
-$.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/41/comments", {
-  headers: {Accept: "application/vnd.github.v3.html+json"},
-  dataType: "json",
-  success: function(msg){
-    loadComments(msg);
- }
-});
 
+function DoGithubComments( page_id)
+{
+  if (page_id === undefined)
+        page_id = 1;
+  $.ajax("https://api.github.com/repos/LEXUGE/LEXUGE-comment/issues/41/comments"+"?page="+page_id, {
+    headers: {Accept: "application/vnd.github.squirrel-girl-preview.full+json"},
+    dataType: "json",
+    success: function(msg,textStatus,jqXHR){
+      loadComments(msg,textStatus, jqXHR,page_id);
+   },
+  });
+}
+
+            </script>
+	    <script type="text/javascript">
+               DoGithubComments(1);
             </script>
           </div>
         </div>
         <div class="modal-footer">
-          <p>Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/41"> this post's issue page on GitHub</a></p>
+          <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none;">Load more comments</a>
+          <p style="display:inline;">Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/41"> this post's issue page on GitHub</a></p>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
