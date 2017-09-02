@@ -7,6 +7,14 @@ var reaction_fa = {
   "heart": "heart-o"
 };
 
+function email_toggle(i) {
+  // Email toggle
+  $("#article"+i+" > .email-hidden-toggle > a").on("click", function (e){
+    e.preventDefault();
+    $("#article"+i+" > .email-hidden-reply", this.parent).toggle();
+  });
+}
+
 function loadComments(data,textStatus, jqXHR,comment_id,page_id,page_num) {
   for (var i=0; i<data.length; i++) {
     var cuser = data[i].user.login;
@@ -30,16 +38,12 @@ function loadComments(data,textStatus, jqXHR,comment_id,page_id,page_num) {
      + cuserlink + '" style="display:inline">' + cuser + '</a>'+'<small style="display:inline">'
      + '&nbsp; left a comment on '+cdate.toLocaleDateString("en", dopts) +'</small>'
      + '&nbsp;' + creactions + '</h4>'
-     + '</div><article class="markdown-body"  style="white-space: pre-wrap;">' + cbody + '</article>');
+     + '</div><article id="article'+i+'" class="markdown-body"  style="white-space: pre-wrap;">' + cbody + '</article>');
+     email_toggle(i);
   }
-  // Email toggle
-  $(".email-hidden-toggle > a").on("click", function (e){
-    e.preventDefault();
-    $(".email-hidden-reply", this.parent).toggle();
-  });
   // Comments Pagination
-  console.log(data.length);
-  console.log(page_num);
+  console.log("data.length: "+data.length);
+  console.log("per page num: "+page_num);
   if (data.length === page_num)
   {
       $("#gh-load-comments").attr("onclick", "DoGithubComments("+ comment_id+","+(page_id + 1) + ");");
