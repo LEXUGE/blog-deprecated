@@ -55,16 +55,17 @@ def fix_issueid_in_file(path,correct_id):
 def github_list_issues():
     title2ids = {}
     page_num=0
+    per_page=30
     token = GH_TOKEN
     headers = {'Authorization': "token " + token}
     while 1:
         page_num+=1
-        url = 'https://api.github.com/repos/%s/issues?page=%d' % (GITHUB_REPO,page_num)
+        url = 'https://api.github.com/repos/%s/issues?page=%d&per_page=%d' % (GITHUB_REPO,page_num,per_page)
         resp = s.get(url, headers=headers)
         content = json.loads(resp.content.decode('utf-8'))
         for issue in content:
             title2ids[issue["title"]] = int(issue["number"])
-        if len(content)<30:
+        if len(content)<per_page:
             break
     return title2ids
 
