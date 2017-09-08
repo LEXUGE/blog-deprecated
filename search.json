@@ -469,6 +469,17 @@
   
    {
      
+        "title"    : "Project",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/project/",
+        "date"     : "",
+        "content"  : "<h1>Overview</h1>\n<p>这里是我个人所有的项目合集，所有源代码全部开源在<a href=\"https://github.com/LEXUGE\">我的Github</a>。\n<br /></p>\n<hr />\n\n<p><br /></p>\n<ul>\n  <li><a href=\"https://github.com/LEXUGE/GAMEOX\">GAMEOX</a><br />\n<img src=\"https://github.com/LEXUGE/GAMEOX/raw/master/2017-09-08-202822_654x390_scrot.png\" alt=\"\" />\n从2015年左右开始开发的一个独立棋类游戏。采用C语言写成，具有可移植性。项目本身以追求运行的速度与安全性为首要目标进行开发。目前（2017年9月）已基本停止新功能的开发，着力于提升程序稳定性。<br />\n这款游戏是<a href=\"https://en.wikipedia.org/wiki/Ataxx\">Ataxx</a>的一个精简版本，保留了精华让游戏更简单且富有对抗性。<br />\n<br /></li>\n</ul>\n<hr />\n\n<p><br /></p>\n<ul>\n  <li><a href=\"https://github.com/LEXUGE/L-Spider\">L-Spider</a><br />\n<img src=\"https://github.com/LEXUGE/L-Spider/raw/master/2017-07-24-204708_680x336_scrot.png\" alt=\"\" />\nDHT网络爬虫。被动式资源搜集爬虫，采用Python编写，纯协议实现并带有解析功能。目前已基本做到使用级别，为单进程多线程状态。<br />\n<br /></li>\n</ul>\n<hr />\n\n<p><br /></p>\n<ul>\n  <li><a href=\"https://github.com/LEXUGE/LEDIT\">LEDIT</a><br />\n<script type=\"text/javascript\" src=\"https://asciinema.org/a/43rh0ovp7hpr0bwuhr6nfpskg.js\" id=\"asciicast-43rh0ovp7hpr0bwuhr6nfpskg\" async=\"\"></script>\n从2016年开始实现的C语言文本编辑器，不使用NCurses。具有可移植性，目前只具备极为基本的编辑功能。<br />\n<br /></li>\n</ul>\n<hr />\n\n<p><br /></p>\n<ul>\n  <li><a href=\"https://github.com/LEXUGE/Craft-L\">Craft-L</a><br />\n<img src=\"https://github.com/LEXUGE/Craft-L/raw/master/2017-08-25-143402_654x390_scrot.png\" alt=\"\" />\n一个使用NCurses的开源Minecraft复刻。<br />\n这是一个Minecraft和Dwarf Fortress的3D结合，与其他所有的复刻版不同的是——它是运行在终端的。它采用类似Dwarf Fortress的3D显示模式，虽然表面上看上去是2D的，但是通过各个切面视角的转换，你能够清楚的想象出所处的3D环境。<br />\n这个项目的最终目标是实现Minecraft和Dwarf Fortress的完美结合，并且不使用任何图形库。由于画面不直观的原因，我们会尽可能地提高游戏性和可玩性，增加更为令人激动的游戏机制。目前，这个项目正处于开发初期。</li>\n</ul>\n"
+     
+   } ,
+  
+   {
+     
    } ,
   
    {
