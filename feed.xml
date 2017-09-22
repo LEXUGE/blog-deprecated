@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-09-22T18:41:00+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">为梦起航</title><link href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" rel="alternate" type="text/html" title="为梦起航" /><published>2017-09-02T10:26:00+08:00</published><updated>2017-09-02T10:26:00+08:00</updated><id>/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA</id><content type="html" xml:base="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-09-23T06:20:46+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">为梦起航</title><link href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" rel="alternate" type="text/html" title="为梦起航" /><published>2017-09-02T10:26:00+08:00</published><updated>2017-09-02T10:26:00+08:00</updated><id>/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA</id><content type="html" xml:base="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">&lt;blockquote&gt;
   &lt;p&gt;剑已佩妥，执剑走天涯！酒尚余温，温酒颠乾坤！&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -507,16 +507,17 @@ PROG: milk2
 
 &lt;h3&gt;客观事实&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;东北地方太平洋近海地震是指2011年3月11日14时46分（当地时间）发生于日本东北地方外海三陆冲的矩震级9.0（USGS修正为矩震级9.1 【1】）的大型逆冲区地震。震中位于宫城县首府仙台市以东的太平洋海域，震源深度测得数据为24千米（14.9英里），并引发最大溯上高40.1米的海啸。此次地震是日本有观测纪录以来规模最大的地震，引起的海啸也是最为严重的，加上其引发的一系列灾害及核泄漏事故，导致大规模的地方机能瘫痪和经济活动停止，东北地方部分城市更遭受毁灭性破坏。&lt;/li&gt;
+  &lt;li&gt;东北地方太平洋近海地震是指2011年3月11日14时46分（当地时间）发生于日本东北地方外海三陆冲的矩震级9.0（USGS修正为矩震级9.1 [1]）的大型逆冲区地震。震中位于宫城县首府仙台市以东的太平洋海域，震源深度测得数据为24千米（14.9英里），并引发最大溯上高40.1米的海啸。此次地震是日本有观测纪录以来规模最大的地震，引起的海啸也是最为严重的，加上其引发的一系列灾害及核泄漏事故，导致大规模的地方机能瘫痪和经济活动停止，东北地方部分城市更遭受毁灭性破坏。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;h3&gt;证明部分&lt;/h3&gt;
+&lt;p&gt;下列部分相对独立，没有先后顺序&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;1.日本天然气储量爆炸后的能量转换为爆炸当量&lt;br /&gt;
-日本天然气储量为：357亿立方米（35.7 bcm），数据来源【2】&lt;br /&gt;
+日本天然气储量为：357亿立方米（35.7 bcm），数据来源[2]&lt;br /&gt;
 按照38/4200的比率折合为TNT爆炸当量（吨）计算
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;35.7 bcm *38/4200
 = 323000000.0 t
@@ -524,7 +525,7 @@ PROG: milk2
     &lt;/div&gt;
     &lt;p&gt;计算表达式：&lt;code class=&quot;highlighter-rouge&quot;&gt;357*pow(10,8)*38/4200&lt;/code&gt;&lt;br /&gt;
 &lt;br /&gt;
-另：如果数据是现有产量总计，数据是29亿立方米（2.9 bcm）数据来源【3】&lt;br /&gt;
+另：如果数据是现有产量总计，数据是29亿立方米（2.9 bcm）数据来源[2]&lt;br /&gt;
 按照38/4200的比率折合为TNT爆炸当量（吨）计算&lt;/p&gt;
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2.9 bcm *38/4200
 = 26238095.23809524 t
@@ -533,8 +534,8 @@ PROG: milk2
     &lt;p&gt;计算表达式：&lt;code class=&quot;highlighter-rouge&quot;&gt;29*pow(10,8)*38/4200&lt;/code&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;日本2011年（平成23年）3月11日东北地方太平洋近海地震直接转换为TNT当量&lt;br /&gt;
-将&lt;code class=&quot;highlighter-rouge&quot;&gt;MW = 2/3 log10(MO) - 10.7&lt;/code&gt;的地震矩(MO)与矩震级(MW)的换算公式 【4】进行转换 &lt;br /&gt;
+  &lt;li&gt;2.日本2011年（平成23年）3月11日东北地方太平洋近海地震直接转换为TNT当量&lt;br /&gt;
+将&lt;code class=&quot;highlighter-rouge&quot;&gt;MW = 2/3 log10(MO) - 10.7&lt;/code&gt;的地震矩(MO)与矩震级(MW)的换算公式 [3]进行转换 &lt;br /&gt;
 可的&lt;code class=&quot;highlighter-rouge&quot;&gt;MO = [(MW + 10.7)*3/2]^10&lt;/code&gt;，单位为erg(尔格)，相当于10^-7 J&lt;br /&gt;
 代入计算
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MO = [(9.1 + 10.7)*3/2]^10
@@ -545,7 +546,7 @@ PROG: milk2
     &lt;/div&gt;
     &lt;p&gt;计算表达式：&lt;code class=&quot;highlighter-rouge&quot;&gt;pow(10,(9.1 + 10.7)*3/2-7)&lt;/code&gt;&lt;br /&gt;
 现在我们将能量转换为TNT当量&lt;br /&gt;
-按照一吨TNT4.184×10^9 J的能量【5】计算&lt;/p&gt;
+按照一吨TNT4.184×10^9 J的能量[4]计算&lt;/p&gt;
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5.011872336272673e+22 J /(4.184×10^9 J)
 = 12082623761505.965 t
 &lt;/code&gt;&lt;/pre&gt;
@@ -553,8 +554,8 @@ PROG: milk2
     &lt;p&gt;计算表达式：&lt;code class=&quot;highlighter-rouge&quot;&gt;5.011872336272673e+22/(4.148*pow(10,9))&lt;/code&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;3.计算9.1级地震需要多少的天然气？&lt;br /&gt;
-将&lt;code class=&quot;highlighter-rouge&quot;&gt;MW = 2/3 log10(MO) - 10.7&lt;/code&gt;的地震矩(MO)与矩震级(MW)的换算公式 【4】进行转换 &lt;br /&gt;
+  &lt;li&gt;3.9.1级地震的能量转换为天然气&lt;br /&gt;
+将&lt;code class=&quot;highlighter-rouge&quot;&gt;MW = 2/3 log10(MO) - 10.7&lt;/code&gt;的地震矩(MO)与矩震级(MW)的换算公式 [3]进行转换 &lt;br /&gt;
 可的&lt;code class=&quot;highlighter-rouge&quot;&gt;MO = [(MW + 10.7)*3/2]^10&lt;/code&gt;，单位为erg(尔格)，相当于10^-7 J&lt;br /&gt;
 代入计算
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MO = [(9.1 + 10.7)*3/2]^10
@@ -574,32 +575,31 @@ PROG: milk2
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;【结论】&lt;br /&gt;
-将1和2进行对比：&lt;br /&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h3&gt;结论&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;将1和2进行对比：&lt;br /&gt;
 将323000000.0（吨）(或12082623761505.965 t)和12082623761505.965（吨）对比，得到——就算整个日本的天然气全部进行爆炸，也不可能支持这一场地震的能量，而日本又前后发生了大量7.0级以上的特大地震。&lt;br /&gt;
 所以，『地震是由爆炸引起』的理论通过证明可得出是错误。&lt;br /&gt;
-&lt;br /&gt;
-将3和大概数据对比：&lt;br /&gt;
-如果大概数据是357亿立方米（35.7 bcm），数据来源【2】- 3的结论是大概数据的36944.3633810458倍。&lt;br /&gt;
-如果大概数据是数据是29亿立方米（2.9 bcm）数据来源【3】- 3的结论是大概数据的454797.8526563224倍。&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;将3和大概数据对比：&lt;br /&gt;
+如果大概数据是357亿立方米（35.7 bcm），数据来源[2] - 3的结论是大概数据的36944.3633810458倍。&lt;br /&gt;
+如果大概数据是数据是29亿立方米（2.9 bcm）数据来源[2] - 3的结论是大概数据的454797.8526563224倍。&lt;br /&gt;
 通过反向计算证明，『地震是由爆炸引起』的理论也可得出是错误的。
+&lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3&gt;【引用链接&amp;amp;数据】&lt;/h3&gt;
+&lt;h3&gt;引用&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;【1】 Earthquake.usgs.gov. (2017). M 9.1 - near the east coast of Honshu, Japan. [online] Available at: &lt;a href=&quot;https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30#origin&quot;&gt;https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30#origin&lt;/a&gt; [Accessed 22 Sep. 2017].&lt;/li&gt;
-  &lt;li&gt;【2】&lt;a href=&quot;http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesJapan2016.pdf&quot;&gt;PDF - IEA（国际能源署）2016年日本能源总览（Japan Energy Outlook 2016）&lt;/a&gt;&lt;br /&gt;
-   第78页（页脚页数），DOMESTIC PRODUCTION：” According to the Ministry of Economy, Trade and Industry (METI), proven reserves
-of natural gas were estimated at 35.7 bcm in March 2015.”&lt;/li&gt;
-  &lt;li&gt;【3】&lt;a href=&quot;http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesJapan2016.pdf&quot;&gt;PDF - IEA（国际能源署）2016年日本能源总览（Japan Energy Outlook 2016）&lt;/a&gt;&lt;br /&gt;
-   第78页（页脚页数），DOMESTIC PRODUCTION：”Domestic production of natural gas in 2015 was 2.9 billion cubic metres (bcm),
-equivalent to around 2.2 million tonnes (Mt) of liquefied natural gas (LNG). “&lt;/li&gt;
-  &lt;li&gt;【4】 Earthquake.usgs.gov. (2017). Measuring the Size of an Earthquake. [online] Available at: &lt;a href=&quot;https://earthquake.usgs.gov/learn/topics/measure.php&quot;&gt;https://earthquake.usgs.gov/learn/topics/measure.php&lt;/a&gt; [Accessed 22 Sep. 2017].&lt;/li&gt;
-  &lt;li&gt;【5】 NIST. (2017). Special Publication 811. [online] Available at: &lt;a href=&quot;http://physics.nist.gov/Pubs/SP811/appenB8.html&quot;&gt;http://physics.nist.gov/Pubs/SP811/appenB8.html&lt;/a&gt; [Accessed 22 Sep. 2017].&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="数学证明" /><summary type="html">客观事实 东北地方太平洋近海地震是指2011年3月11日14时46分（当地时间）发生于日本东北地方外海三陆冲的矩震级9.0（USGS修正为矩震级9.1 【1】）的大型逆冲区地震。震中位于宫城县首府仙台市以东的太平洋海域，震源深度测得数据为24千米（14.9英里），并引发最大溯上高40.1米的海啸。此次地震是日本有观测纪录以来规模最大的地震，引起的海啸也是最为严重的，加上其引发的一系列灾害及核泄漏事故，导致大规模的地方机能瘫痪和经济活动停止，东北地方部分城市更遭受毁灭性破坏。</summary></entry><entry><title type="html">英雄不问出处——可你不是英雄</title><link href="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html" rel="alternate" type="text/html" title="英雄不问出处——可你不是英雄" /><published>2017-08-10T18:33:00+08:00</published><updated>2017-08-10T18:33:00+08:00</updated><id>/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84</id><content type="html" xml:base="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html">&lt;blockquote&gt;
+  &lt;li&gt;[1] &lt;i&gt;M 9.1 - near the east coast of Honshu, Japan.&lt;/i&gt; (2011). Earthquake.usgs.gov. Retrieved 22 September 2017, from &lt;a href=&quot;https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30#origin&quot;&gt;https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30#origin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[2] &lt;i&gt;Energy Policies of IEA Countries Japan 2016 [PDF file].&lt;/i&gt; (2016). IEA. Retrieved 22 September 2017, from &lt;a href=&quot;http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesJapan2016.pdf&quot;&gt;http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesJapan2016.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[3] &lt;i&gt;Measuring the Size of an Earthquake.&lt;/i&gt; (1989). Earthquake.usgs.gov. Retrieved 22 September 2017, from &lt;a href=&quot;https://earthquake.usgs.gov/learn/topics/measure.php&quot;&gt;https://earthquake.usgs.gov/learn/topics/measure.php&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[4] &lt;i&gt;Guide for the Use of the International System of Units (SI).&lt;/i&gt; (2008). NIST. Retrieved 22 September 2017, from &lt;a href=&quot;http://physics.nist.gov/Pubs/SP811/appenB8.html&quot;&gt;http://physics.nist.gov/Pubs/SP811/appenB8.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="数学证明" /><summary type="html">客观事实 东北地方太平洋近海地震是指2011年3月11日14时46分（当地时间）发生于日本东北地方外海三陆冲的矩震级9.0（USGS修正为矩震级9.1 [1]）的大型逆冲区地震。震中位于宫城县首府仙台市以东的太平洋海域，震源深度测得数据为24千米（14.9英里），并引发最大溯上高40.1米的海啸。此次地震是日本有观测纪录以来规模最大的地震，引起的海啸也是最为严重的，加上其引发的一系列灾害及核泄漏事故，导致大规模的地方机能瘫痪和经济活动停止，东北地方部分城市更遭受毁灭性破坏。</summary></entry><entry><title type="html">英雄不问出处——可你不是英雄</title><link href="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html" rel="alternate" type="text/html" title="英雄不问出处——可你不是英雄" /><published>2017-08-10T18:33:00+08:00</published><updated>2017-08-10T18:33:00+08:00</updated><id>/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84</id><content type="html" xml:base="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html">&lt;blockquote&gt;
   &lt;p&gt;这几天与民科展开了激烈的论战，除了接受的教育水平低外，我还发现了许多『有趣』的社会现象。&lt;/p&gt;
 &lt;/blockquote&gt;
 
