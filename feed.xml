@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-09-23T12:36:29+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">为梦起航</title><link href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" rel="alternate" type="text/html" title="为梦起航" /><published>2017-09-02T10:26:00+08:00</published><updated>2017-09-02T10:26:00+08:00</updated><id>/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA</id><content type="html" xml:base="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-09-23T12:39:05+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">为梦起航</title><link href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" rel="alternate" type="text/html" title="为梦起航" /><published>2017-09-02T10:26:00+08:00</published><updated>2017-09-02T10:26:00+08:00</updated><id>/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA</id><content type="html" xml:base="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">&lt;blockquote&gt;
   &lt;p&gt;剑已佩妥，执剑走天涯！酒尚余温，温酒颠乾坤！&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -547,7 +547,7 @@ PROG: milk2
     &lt;p&gt;计算表达式：&lt;code class=&quot;highlighter-rouge&quot;&gt;3.5481338923357315e+19/(4.148*pow(10,9))&lt;/code&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;3.9.1级地震的能量转换为天然气&lt;br /&gt;
+  &lt;li&gt;3.7.0级地震的能量转换为天然气&lt;br /&gt;
 将&lt;img src=&quot;/image/矩震级.svg&quot; alt=&quot;&quot; /&gt;的地震矩(MO)与矩震级(MW)的换算公式 [3]进行转换 &lt;br /&gt;
 可得&lt;img src=&quot;/image/地震矩.svg&quot; alt=&quot;&quot; /&gt;，单位为erg(尔格)，相当于10^-7 J&lt;br /&gt;
 代入计算
