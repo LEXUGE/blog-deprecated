@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "XCH新版发布",
+      "category" : "",
+      "tags"     : "项目, 编程, XCH",
+      "url"      : "/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html",
+      "date"     : "2017-10-02 15:58:00 +0800",
+      "content"  : "<p><img src=\"/image/XCH-shot-2.png\" alt=\"\" /></p>\n\n<hr />\n<h3 id=\"相关链接\">相关链接</h3>\n\n<ul>\n  <li><a href=\"https://github.com/LEXUGE/XCH\">XCH项目主页</a></li>\n  <li><a href=\"/download/XCH.zip\">XCH下载</a></li>\n</ul>\n\n<hr />\n<h3 id=\"简介\">简介</h3>\n\n<blockquote>\n  <p>XCH专为强大、稳定而生。强调灵活、快速、智能，带给你别样的求解体验。</p>\n</blockquote>\n\n<hr />\n<h3 id=\"功能\">功能</h3>\n\n<p>XCH更新后增加了许多功能：</p>\n<ul>\n  <li>化学方程式解析器</li>\n  <li>语法检查</li>\n  <li>智能纠错</li>\n  <li>SGN安全输入技术</li>\n</ul>\n\n<p>其中，化学方程式解析器具备以下特点：</p>\n<ul>\n  <li>不依赖元素周期表，自动学习新元素</li>\n  <li>支持无限括号递归</li>\n  <li>稳定性保护</li>\n</ul>\n\n<p>当求解失败时，会显示解析器的解析结果以供参考和排错。同时，智能纠错技术可以进一步提高输入效率。</p>\n\n<hr />\n<h3 id=\"安装\">安装</h3>\n\n<p>您可以采用两种方式使用：</p>\n<ol>\n  <li>获取编译完成的<a href=\"/download/XCH.zip\">Linux x64版本</a></li>\n  <li>自行编译（需要GCC&gt;=7.2支持）\n    <ul>\n      <li>只需运行以下命令即可编译：<br />\n<code class=\"highlighter-rouge\">gcc -o XCH XCH.C -Wall</code></li>\n    </ul>\n  </li>\n</ol>\n\n<p>注：因为代码中使用了GCC的内建函数检查溢出，所以请务必使用GCC（建议&gt;=7.2）编译</p>\n\n<hr />\n<h3 id=\"功能演示\">功能演示</h3>\n<p>普通求解：</p>\n<div class=\"highlighter-rouge\"><pre class=\"highlight\"><code>XCH - Chemical Equation Balancer\n&lt;&gt; by LEXUGE\nCopyright (C) 2017 LEXUGE\nLicense GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;\n\n[INPUT] Input the equation:\nAs2O3+Zn+HCl=AsH3+ZnCl2+H2O\n[INPUT] Input the search depth:\n50\n[OUTPUT] 1 6 12 2 6 3\n</code></pre>\n</div>\n\n<p>无限括号递归支持：</p>\n<div class=\"highlighter-rouge\"><pre class=\"highlight\"><code>XCH - Chemical Equation Balancer\n&lt;&gt; by LEXUGE\nCopyright (C) 2017 LEXUGE\nLicense GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;\n\n[INPUT] Input the equation:\nO2(((O2)2)3)+Zn4(Fe(H2)4)2)=O+Zn2FeH8\n[INPUT] Input the search depth:\n50\n[OUTPUT] 1 1 14 2\n</code></pre>\n</div>\n\n<p>智能纠错：\n我们将第一例的方程式中部分分子式前加入错误/正确的系数</p>\n<div class=\"highlighter-rouge\"><pre class=\"highlight\"><code>XCH - Chemical Equation Balancer\n&lt;&gt; by LEXUGE\nCopyright (C) 2017 LEXUGE\nLicense GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;\n\n[INPUT] Input the equation:\nAs2O3+7Zn+12HCl=AsH3+ZnCl2+123H2O\n[INPUT] Input the search depth:\n50\n[OUTPUT] 1 6 12 2 6 3\n</code></pre>\n</div>\n<p>可以看到，XCH识别并规避了它们。这项技术可以让您求解“补全化学式系数”这类题时大胆输入，无需顾忌。</p>\n\n<p>语法检查：</p>\n<div class=\"highlighter-rouge\"><pre class=\"highlight\"><code>XCH - Chemical Equation Balancer\n&lt;&gt; by LEXUGE\nCopyright (C) 2017 LEXUGE\nLicense GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;\n\n[INPUT] Input the equation:\nH2O=((H2)+O2   \n[INPUT] Input the search depth:\n10\n[ERROR] Illegal equation.\n</code></pre>\n</div>\n<p>XCH对括号进行了匹配，发现了错误。值得注意的是在类似<code class=\"highlighter-rouge\">(X))</code>的写法中，XCH不会报错，而是通过智能纠错规避。<br />\nXCH的语法检查还会检查是否具有<code class=\"highlighter-rouge\">=</code>以及其个数，是否存在非法字符等。</p>\n"
+    } ,
+  
+    {
       "title"    : "为梦起航",
       "category" : "",
       "tags"     : "随笔",
@@ -228,7 +237,7 @@
     {
       "title"    : "XCH - 化学方程式配平程序",
       "category" : "",
-      "tags"     : "项目, 编程",
+      "tags"     : "项目, 编程, XCH",
       "url"      : "/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html",
       "date"     : "2017-03-12 16:24:00 +0800",
       "content"  : "<p>本软件遵守<a href=\"http://www.gnu.org/licenses/gpl.txt\">GPL协议</a>发布<br />\n本程序可以用来进行化学方程式配平，下载地址见About页面<br />\n下面将介绍软件使用的核心算法：</p>\n<blockquote>\n  <p>程序通过暴力搜索化学方程式的各个分子式的系数来求解，纯数学解决</p>\n</blockquote>\n\n<p>下面我们来看几组例子：</p>\n<ol>\n  <li><strong>H2O=H2+O2</strong> 化学方程式配平：\n    <div class=\"highlighter-rouge\"><pre class=\"highlight\"><code>[lexuge@localhost XCH]$ ./XCH\nXCH - Chemical Equation Balancer\nBy LEXUGE\nCopyright (2017-2017) LEXUGE\nThe software is using GPL(http://www.gnu.org/licenses/gpl.txt)\n------Input------\n输入有几种元素种类,几个分子式，等号左边，右边的分子式个数：\n2 3 1 2 //拥有两种元素：H和O；三个分子式：H2O，H2，O2；左边有一个分子式：H2O；右边有两个分子式：H2和O2\n输入每种元素包含的原子在方程式中各个分子式的个数：\n2 2 0 //H2O中拥有2两个H原子，H2中有2个，O2中没有\n1 0 2 //同上\n输入搜索最大值:\n100 //最大暴力搜索范围\n------Output------\n各分子式系数分别为：\n2 2 1\n</code></pre>\n    </div>\n  </li>\n  <li><strong>As2O3+Zn+HCl=AsH3+ZnCl2+H2O</strong> 化学方程式配平：\n    <div class=\"highlighter-rouge\"><pre class=\"highlight\"><code>[lexuge@localhost XCH]$ ./XCH\nXCH - Chemical Equation Balancer\nBy LEXUGE\nCopyright (2017-2017) LEXUGE\nThe software is using GPL(http://www.gnu.org/licenses/gpl.txt)\n------Input------\n输入有几种元素种类,几个分子式，等号左边，右边的分子式个数：\n5 6 3 3\n输入每种元素包含的原子在方程式中各个分子式的个数：\n2 0 0 1 0 0\n3 0 0 0 0 1\n0 1 0 0 1 0\n0 0 1 3 0 2\n0 0 1 0 2 0\n输入搜索最大值:\n50\n------Output------\n各分子式系数分别为：\n1 6 12 2 6 3\n</code></pre>\n    </div>\n  </li>\n</ol>\n"
@@ -501,6 +510,10 @@
         "url"      : "/tags/",
         "date"     : "",
         "content"  : "{% capture tags %}\n  {% for tag in site.tags %}\n    {{ tag[0] }}\n  {% endfor %}\n{% endcapture %}\n{% assign sortedtags = tags | split:' ' | sort %}\n\n{% for tag in sortedtags %}\n  <h3 id=\"{{ tag | url_encode}}\">{{ tag }}</h3>\n  <ul>\n  {% for post in site.tags[tag] %}\n    <li>{{ post.date |date:\"%B %d, %Y\"}} <a href=\"{{ post.url }}\">{{ post.title }}</a></li>\n  {% endfor %}\n  </ul>\n{% endfor %}\n"
+     
+   } ,
+  
+   {
      
    } ,
   

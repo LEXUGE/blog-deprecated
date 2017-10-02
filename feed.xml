@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-10-02T00:43:18+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">为梦起航</title><link href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" rel="alternate" type="text/html" title="为梦起航" /><published>2017-09-02T10:26:00+08:00</published><updated>2017-09-02T10:26:00+08:00</updated><id>/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA</id><content type="html" xml:base="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-10-02T17:16:16+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">XCH新版发布</title><link href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html" rel="alternate" type="text/html" title="XCH新版发布" /><published>2017-10-02T15:58:00+08:00</published><updated>2017-10-02T15:58:00+08:00</updated><id>/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83</id><content type="html" xml:base="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html">&lt;p&gt;&lt;img src=&quot;/image/XCH-shot-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/LEXUGE/XCH&quot;&gt;XCH项目主页&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/download/XCH.zip&quot;&gt;XCH下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;XCH专为强大、稳定而生。强调灵活、快速、智能，带给你别样的求解体验。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;功能&quot;&gt;功能&lt;/h3&gt;
+
+&lt;p&gt;XCH更新后增加了许多功能：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;化学方程式解析器&lt;/li&gt;
+  &lt;li&gt;语法检查&lt;/li&gt;
+  &lt;li&gt;智能纠错&lt;/li&gt;
+  &lt;li&gt;SGN安全输入技术&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其中，化学方程式解析器具备以下特点：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;不依赖元素周期表，自动学习新元素&lt;/li&gt;
+  &lt;li&gt;支持无限括号递归&lt;/li&gt;
+  &lt;li&gt;稳定性保护&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当求解失败时，会显示解析器的解析结果以供参考和排错。同时，智能纠错技术可以进一步提高输入效率。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
+
+&lt;p&gt;您可以采用两种方式使用：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;获取编译完成的&lt;a href=&quot;/download/XCH.zip&quot;&gt;Linux x64版本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;自行编译（需要GCC&amp;gt;=7.2支持）
+    &lt;ul&gt;
+      &lt;li&gt;只需运行以下命令即可编译：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gcc -o XCH XCH.C -Wall&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注：因为代码中使用了GCC的内建函数检查溢出，所以请务必使用GCC（建议&amp;gt;=7.2）编译&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;功能演示&quot;&gt;功能演示&lt;/h3&gt;
+&lt;p&gt;普通求解：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;XCH - Chemical Equation Balancer
+&amp;lt;&amp;gt; by LEXUGE
+Copyright (C) 2017 LEXUGE
+License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt;
+
+[INPUT] Input the equation:
+As2O3+Zn+HCl=AsH3+ZnCl2+H2O
+[INPUT] Input the search depth:
+50
+[OUTPUT] 1 6 12 2 6 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;无限括号递归支持：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;XCH - Chemical Equation Balancer
+&amp;lt;&amp;gt; by LEXUGE
+Copyright (C) 2017 LEXUGE
+License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt;
+
+[INPUT] Input the equation:
+O2(((O2)2)3)+Zn4(Fe(H2)4)2)=O+Zn2FeH8
+[INPUT] Input the search depth:
+50
+[OUTPUT] 1 1 14 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;智能纠错：
+我们将第一例的方程式中部分分子式前加入错误/正确的系数&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;XCH - Chemical Equation Balancer
+&amp;lt;&amp;gt; by LEXUGE
+Copyright (C) 2017 LEXUGE
+License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt;
+
+[INPUT] Input the equation:
+As2O3+7Zn+12HCl=AsH3+ZnCl2+123H2O
+[INPUT] Input the search depth:
+50
+[OUTPUT] 1 6 12 2 6 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;可以看到，XCH识别并规避了它们。这项技术可以让您求解“补全化学式系数”这类题时大胆输入，无需顾忌。&lt;/p&gt;
+
+&lt;p&gt;语法检查：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;XCH - Chemical Equation Balancer
+&amp;lt;&amp;gt; by LEXUGE
+Copyright (C) 2017 LEXUGE
+License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt;
+
+[INPUT] Input the equation:
+H2O=((H2)+O2   
+[INPUT] Input the search depth:
+10
+[ERROR] Illegal equation.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;XCH对括号进行了匹配，发现了错误。值得注意的是在类似&lt;code class=&quot;highlighter-rouge&quot;&gt;(X))&lt;/code&gt;的写法中，XCH不会报错，而是通过智能纠错规避。&lt;br /&gt;
+XCH的语法检查还会检查是否具有&lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;以及其个数，是否存在非法字符等。&lt;/p&gt;</content><author><name></name></author><category term="项目" /><category term="编程" /><category term="XCH" /><summary type="html"></summary></entry><entry><title type="html">为梦起航</title><link href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" rel="alternate" type="text/html" title="为梦起航" /><published>2017-09-02T10:26:00+08:00</published><updated>2017-09-02T10:26:00+08:00</updated><id>/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA</id><content type="html" xml:base="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">&lt;blockquote&gt;
   &lt;p&gt;剑已佩妥，执剑走天涯！酒尚余温，温酒颠乾坤！&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -597,23 +710,4 @@ PROG: milk2
 陆宇航，当年高考落榜，回家，也不跟着父母务农狩猎，就颓废丧志。陆峰从小就好着狩猎，整天和傻狍子玩，脑袋里恐怕也就装着些许对付狍子的傻办法。不过，三个人因为有了个打猎好手，也就不愁吃肉问题。陆昂，曾经被家里抱有众望的一子，虽说高考是考上了，但是也是混得一个三本的垃圾大学，瞒着家里人三本也至少算是大学，总比老大落榜好，就交了学费。大学里也就学着富二代吃喝玩乐，四年下来，可谓是半点机灵都没学会。回了家可是连打狍子都不会了。&lt;br /&gt;
 最可怕的是老大还天天做着发财的美梦，周围的人都嘲笑他说简直不可能，确实，按照老大现如今的自身水平和周围环境，还真是不可能。为了生计，每日，老大和老二都会去打狍子，留一只自己吃，其余的去卖了买酒喝。&lt;/p&gt;
 
-&lt;h2 id=&quot;未完待续&quot;&gt;未完待续&lt;/h2&gt;</content><author><name></name></author><category term="幕后系列" /><category term="随笔" /><summary type="html">坐标：美国-华盛顿·哥伦比亚特区-五角大楼 地球纪元2033年冬 最终，汤姆·惠灵顿方面决定采用曲速引擎作为最终的解决方案。但是这也具有极大的风险，毕竟，曲速引擎的理论还为得到过完全验证，如果出点闪失，整个舰队都有可能回不来，当然地球也是，因为引擎方面全都是北约与泛亚太联盟在负责。 实际上，全人类只有一次机会，要是行动不完美，曲速引擎如此进行空间折叠一会被GN-z11文明发现，这个时候可能真的没有机会了。所以北约希望这一仗能够打得出其不意，也唯有如此。 坐标：美国-俄亥俄州空军基地 地球纪元2033年冬</summary></entry><entry><title type="html">象印杭州</title><link href="/jekyll/update/2017/08/05/%E8%B1%A1%E5%8D%B0%E6%9D%AD%E5%B7%9E.html" rel="alternate" type="text/html" title="象印杭州" /><published>2017-08-05T14:03:00+08:00</published><updated>2017-08-05T14:03:00+08:00</updated><id>/jekyll/update/2017/08/05/%E8%B1%A1%E5%8D%B0%E6%9D%AD%E5%B7%9E</id><content type="html" xml:base="/jekyll/update/2017/08/05/%E8%B1%A1%E5%8D%B0%E6%9D%AD%E5%B7%9E.html">&lt;p&gt;&lt;img src=&quot;/image/杭州-鸟.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;杭州，一个静与动的完美结合；一段现代与古代的姻缘；一处自然与发展融洽相处的圣地。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;center&gt;（一）浙江省博物馆&lt;/center&gt;
-&lt;p&gt;浙江省博物馆与杭州其他许多的博物馆坐落在一个广场。我十分赞赏这种设计。博物馆，作为历史的诉说者，也作为城市的名片。从人类的出现到近代历史，浙江省博物馆很好地讲述着这一切，并且保有着十大镇馆之宝。用藏品和文字一步步揭开千年来的历史面纱，其中包括玉琮在内的珍品，都标志着人类文明的一次又一次的进步。从浙江作为全国文化的中心到浙江的衰落，再到兴起，无不向人类诉说着杭州的历史变迁、人文情怀。&lt;/p&gt;
-&lt;center&gt;（二）灵隐古刹&lt;/center&gt;
-&lt;p&gt;清泉潺潺，古树斜倚，一旁“飞来山上千寻塔”，一旁千年古刹禅意深。灵隐寺坐落在西湖的西北面，靠山面山，是江南禅宗“五山”之一。由西印度僧人慧理修建。曾经与灵隐寺一同诞生的有五座古刹，但是都不同程度的被破坏和捣毁。现如今只剩下灵隐寺这唯一的一座了。清乾隆帝曾亲笔赐名“云林禅寺”。现如今的灵隐寺有着络绎不绝的香客、游客，欣然接受着天底下善男信女的虔诚。灵隐寺这一座千年古刹经历了一代又一代的兴衰，曾经面临过寺毁僧散的厄运，也曾兴盛至极，成为乾隆下江南的必经之所。我学着当年乾隆在山顶古泉用泉水洗手，品龙井，再到灵隐寺静心参禅。品位茶与佛与禅三者和一的境界。&lt;/p&gt;
-
-&lt;center&gt;(三)浙江大学&lt;/center&gt;
-&lt;p&gt;浙大，是杭州也是浙江省内最好的大学之一。这次我造访的是浙江大学数个校区中历史最悠久的玉泉校区。玉泉校区很有百年老校的风貌。此时的浙大，正好处于120周年校庆之际。校区内的建筑都是红砖瓦修葺而成。采用三角形的尖顶。很有民国建筑风格。青色的爬山虎爬遍了整堵墙。满地长着绿色植物，高及脚踝。校园的路边都种着大树，似乎是白杨或是垂柳，遮着半边天。从校门口望去就可以看到毛泽东挥手的铜像。我来时，正好天空有几番下雨的意思。阴云密布，铜像在此之中，恰似一番拨云见日的意象，别有一番趣味与威严。&lt;br /&gt;
-校区似乎修在斜坡之上。在学校中骑着自行车，可以看到许多名人募捐修建的建筑，如：邵逸夫体育馆。作为一座百年名校，浙大可能是我到过的最有学术气氛的大学。加之杭州深厚的文化底蕴，更是一所独一无二的大学。&lt;/p&gt;
-&lt;center&gt;（四）西湖印象 &lt;/center&gt;
-&lt;p&gt;来到杭州就不得不提及西湖。杭州之美，美离不开自然景致，却也少不了人文风韵。如果西湖失去文化色泽，那它的自然风光估摸着只能算得上是一公园罢。大不及太湖，深不及钱湖。但是白居易与苏轼相继来此做官为政，并为西湖的历史涂抹上浓重的一笔。以及历来文人骚客的诗词歌赋加之民间传说，使得西湖——虽不及太湖之大，却诗篇众多；虽不及钱湖之深，但白苏二人却对她一往情深。&lt;br /&gt;
-苏堤，是苏轼在治理西湖时用湖泥堆积而成。留下“水光潋滟晴方好，山色空蒙雨亦奇”的完美比喻。白堤，为储蓄湖水灌溉农田而建，原名白沙堤，白居易曾作有“最爱湖东行不足，绿杨阴里白沙堤”抒发情怀。
-游船环湖一周,我拂着迎面吹来的风，看着三潭映月，苏堤白提，如今的游人如织，看着雷峰塔以及回荡在空中的传说，再看看西湖四周现代化的建筑。一种古今交织的错觉出现在我的脑海中，奇妙而美好，这就是杭州的感觉，杭州的印象。&lt;/p&gt;</content><author><name></name></author><category term="随笔" /><category term="生活" /><summary type="html">杭州，一个静与动的完美结合；一段现代与古代的姻缘；一处自然与发展融洽相处的圣地。</summary></entry></feed>
+&lt;h2 id=&quot;未完待续&quot;&gt;未完待续&lt;/h2&gt;</content><author><name></name></author><category term="幕后系列" /><category term="随笔" /><summary type="html">坐标：美国-华盛顿·哥伦比亚特区-五角大楼 地球纪元2033年冬 最终，汤姆·惠灵顿方面决定采用曲速引擎作为最终的解决方案。但是这也具有极大的风险，毕竟，曲速引擎的理论还为得到过完全验证，如果出点闪失，整个舰队都有可能回不来，当然地球也是，因为引擎方面全都是北约与泛亚太联盟在负责。 实际上，全人类只有一次机会，要是行动不完美，曲速引擎如此进行空间折叠一会被GN-z11文明发现，这个时候可能真的没有机会了。所以北约希望这一仗能够打得出其不意，也唯有如此。 坐标：美国-俄亥俄州空军基地 地球纪元2033年冬</summary></entry></feed>
