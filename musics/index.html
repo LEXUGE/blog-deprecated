@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NOIP 2002提高组均分纸牌</title>
-  <meta name="description" content="NOIP2002提高组均分纸牌题解分析">
+  <title>Musics</title>
+  <meta name="description" content="即使被全世界孤立，也要一个人笑得精彩！">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/jekyll/update/2017/08/31/NOIP-2002%E6%8F%90%E9%AB%98%E7%BB%84%E5%9D%87%E5%88%86%E7%BA%B8%E7%89%8C.html">
+  <link rel="canonical" href="/musics/">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -251,152 +251,74 @@
     <br>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    	<article class="post">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">NOIP 2002提高组均分纸牌</h1>
-    <p class="post-meta">
-	<time datetime="2017-08-31T09:18:00+08:00" itemprop="datePublished">Aug 31, 2017</time>
-	
-    	
-          <a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
-        
-          <a href="/tags/#%E7%AE%97%E6%B3%95">算法</a>
-        
-          <a href="/tags/#OI">OI</a>
-        
-    </p>
+    <h1 class="post-title">Musics</h1>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
-    <blockquote>
-  <p>NOIP2002提高组均分纸牌题解分析</p>
-</blockquote>
-
-<ol>
-  <li>题目：
-    <ul>
-      <li>题目描述 Description<br />
-       有 N 堆纸牌，编号分别为 1，2，…, N。每堆上有若干张，但纸牌总数必为 N 的倍数。可以在任一堆上取若于张纸牌，然后移动。<br />
-       移牌规则为：在编号为 1 堆上取的纸牌，只能移到编号为 2 的堆上；在编号为 N 的堆上取的纸牌，只能移到编号为 N-1 的堆上；其他堆上取的纸牌，可以移到相邻左边或右边的堆上。<br />
-       现在要求找出一种移动方法，用最少的移动次数使每堆上纸牌数都一样多。<br />
-       例如 N=4，4 堆纸牌数分别为：<br />
-       ①　9　②　8　③　17　④　6<br />
-       移动3次可达到目的：<br />
-       从 ③ 取 4 张牌放到 ④ （9 8 13 10） -&gt; 从 ③ 取 3 张牌放到 ②（9 11 10 10）-&gt; 从 ② 取 1 张牌放到①（10 10 10 10）。</li>
-      <li>输入描述 Input Description<br />
-       第一行N（N 堆纸牌，1 &lt;= N &lt;= 100）<br />
-       第二行A1 A2 … An （N 堆纸牌，每堆纸牌初始数，l&lt;= Ai &lt;=10000）</li>
-      <li>输出描述 Output Description
-       输出至屏幕。格式为：<br />
-       所有堆均达到相等时的最少移动次数。</li>
-      <li>样例输入 Sample Input<br />
-       4<br />
-       9 8 17 6</li>
-      <li>样例输出 Sample Output<br />
-       3<br />
-<br />
-<br /></li>
-    </ul>
-  </li>
-  <li>思路与想法：<br />
-本题是一道贪心题，一开始看可能不会有太明显的解法出现。<br />
-先来看贪心的描述：
-贪心法，又称贪心算法、贪婪算法、或称贪婪法，是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。<br />
-所以是要用每一步的最优解来达到结果是最好或最优。这时候我就想到能否按照两个数一组，得到局部最优解后变为一个数，再与下一个数进行相同操作，形成递归。<br />
-那么局部最优解是怎么产生的呢？我一开始想的是平均数，但实际上并不是这样。因为这道题我们可以保证纸牌数据是一定可以均分的，这样我们就不需要考虑移动的具体方案。<br />
-所以我们先求出所有纸牌的平均数avg，然后计算出所有数据与avg之间存在的差值。对任意两个经过差值处理的数据a,b，存在以下情况：
-    <ul>
-      <li>a&lt;0且b&lt;0</li>
-      <li>a&lt;0且b&gt;0</li>
-      <li>a&gt;0且b&lt;0</li>
-      <li>a&gt;0且b&gt;0</li>
-      <li>a=0且b!=0（包括了b&gt;0和b&lt;0两种情况）</li>
-      <li>a!=0且b=0（包括了a&gt;0和a&lt;0两种情况）<br />
-<br /></li>
-    </ul>
-  </li>
-</ol>
-<hr />
-
-<p>然后呢？我一开始想过进一步关于a+b进行分类，但其实完全不必要，这里篇幅有限，不再赘述。有兴趣可以自己想想如果考虑a+b，那么该如何进一步做题。<br />
-对于除<code class="highlighter-rouge">a=0</code>以外的所有情况，我们都可以这样处理，将a,b相加（a移动到b），并对移动次数加1，这时候再与下一个数做处理。<br />
-为什么要排除<code class="highlighter-rouge">a=0</code>？因为在a=0的时候不需要移动。那为什么<code class="highlighter-rouge">a!=0且b=0</code>时需要？因为是从左向右移动，a必须移动。<br />
-最后，本题的解法就是：</p>
+  <div class="post-content">
+    <p><img src="/image/耳机图标.ico" alt="" />  <strong>| Music Zone</strong></p>
 <ul>
-  <li>对所有数据转换为与平均数的差值。</li>
-  <li>在a=0且b!=0的情况下，移动次数加1。并无论什么情况，进行b=a+b的操作。之后以b作a,与下一个b进行相同处理</li>
-  <li>到递归结束时，移动次数就是解。</li>
+  <li>
+    <p><strong>Coldplay:</strong><br />
+  Hymn For The Weekend [Remix]: <audio src="/music/Hymn For The Weekend.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Maroon 5:</strong><br />
+  Maps: <audio src="/music/Maps.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  Sugar: <audio src="/music/Sugar.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  Moves Like Jagger: <audio src="/music/Moves Like Jagger.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>One Direction:</strong><br />
+  What Makes You Beautiful: <audio src="/music/What Makes You Beautiful.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Alan Walker:</strong><br />
+  Fade: <audio src="/music/Fade.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  Alone: <audio src="/music/Alone.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Taylor Swift:</strong><br />
+  I knew you were trouble: <audio src="/music/I knew you were trouble.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Simon &amp; Garfunkel:</strong><br />
+  The Sound Of Silence: <audio src="/music/The Sound Of Silence.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Chinese Pop Music:</strong><br />
+  蓝莲花: <audio src="/music/蓝莲花.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  平凡之路: <audio src="/music/平凡之路.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  No Fear In My Heart: <audio src="/music/No Fear In My Heart.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Pop music:</strong><br />
+  The Greatest: <audio src="/music/The Greatest.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  Immortals: <audio src="/music/Immortals.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  See You Again: <audio src="/music/See You Again.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  Dream It Possible: <audio src="/music/Dream It Possible.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  Try Everything: <audio src="/music/Try Everything.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  We Are Young: <audio src="/music/We Are Young.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>Guardians of the Galaxy原声精选:</strong><br />
+  Mr. Blue Sky: <audio src="/music/Guardians of the Galaxy/Mr. Blue Sky.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  The Chain: <audio src="/music/Guardians of the Galaxy/The Chain.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+  My Sweet Lord: <audio src="/music/Guardians of the Galaxy/My Sweet Lord.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+  </li>
+  <li>
+    <p><strong>纯音乐：</strong><br />
+  A First Star: <audio src="/music/A First Star.mp3" controls="controls" loop="loop" preload="meta"></audio><br />
+<br />
+<strong>上述所有资源及音乐均仅供学习交流,不得传播,如有侵权，请告知LEXUGE后删除</strong></p>
+  </li>
 </ul>
 
 <p><br /></p>
-<hr />
-
-<p>C程序实现：</p>
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
-</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">101</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="n">avg</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="n">n</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="n">t</span><span class="o">++</span><span class="p">;</span>
-  <span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-  <span class="n">solve</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-  <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="n">sum</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="n">avg</span><span class="o">=</span><span class="n">sum</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">avg</span><span class="p">;</span>
-  <span class="n">solve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
 
   </div>
-
-<link rel="stylesheet" href="/github-markdown.css">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-  <br>
-  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Comments</h4>
-        </div>
-        <div class="modal-body">
-          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
-            <script type="text/javascript" src="/comment.js"></script>
-	    <script type="text/javascript">
-               DoGithubComments(17,1);
-            </script>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none;">Load more comments</a>
-          <p style="display:inline;">Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/17"> this post's issue page on GitHub</a></p>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-  </div>
-  <br>
 
 </article>
 
