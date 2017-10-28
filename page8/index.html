@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,58 +248,55 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        
-<div class="pagination">
-  <ul class="pagination">
-    
-    
-      <li><a href="/page7/"><</a></li>
-    
-    
+    	
+<ul class="pagination">
+  
+  
+    <li><a href="/page7/">&laquo;</a></li>
+  
+  
 
+  
     
-      
-        <li><a href="/">1</a></li>
-      
+      <li><a href="/">1</a></li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-           <li><a href="/page7/">7</a></li>
-      
+  
     
-      
-        <li class="active"><a href="#">8</a></li>
-      
+         <li><a href="/page7/">7</a></li>
     
-      
-           <li><a href="/page9/">9</a></li>
-      
+  
     
-      
+      <li class="active"><a href="#">8</a></li>
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+         <li><a href="/page9/">9</a><li>
+    
+  
+    
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page9/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page9/">&raquo;</a></li>
+  
+</ul>
 
 
 
@@ -323,8 +315,7 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
 
 
   </div>
-    <a href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/11/13/ev3dev%E8%93%9D%E7%89%99%E8%81%94%E7%BD%91.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -351,8 +342,7 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
 
 
   </div>
-    <a href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/11/06/ArchLinux%E4%B8%8B%E5%AE%89%E8%A3%85QQ.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -374,8 +364,7 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
 
 
   </div>
-    <a href="/jekyll/update/2016/10/04/%E4%BA%BA.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/10/04/%E4%BA%BA.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -399,8 +388,7 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
 
 
   </div>
-    <a href="/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90-C%E8%AF%AD%E8%A8%80.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/10/01/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90-C%E8%AF%AD%E8%A8%80.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -420,66 +408,62 @@ RSA算法基于一个十分简单的数论事实：将两个大质数相乘十�
 
 
   </div>
-    <a href="/jekyll/update/2016/09/30/%E7%9B%91%E8%A7%86%E8%80%85-%E5%BD%B1%E8%AF%84.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/09/30/%E7%9B%91%E8%A7%86%E8%80%85-%E5%BD%B1%E8%AF%84.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
 
 
 
-<div class="pagination">
-  <ul class="pagination">
-    
-    
-      <li><a href="/page7/"><</a></li>
-    
-    
+<ul class="pagination">
+  
+  
+    <li><a href="/page7/">&laquo;</a></li>
+  
+  
 
+  
     
-      
-        <li><a href="/">1</a></li>
-      
+      <li><a href="/">1</a></li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-           <li><a href="/page7/">7</a></li>
-      
+  
     
-      
-        <li class="active"><a href="#">8</a></li>
-      
+         <li><a href="/page7/">7</a></li>
     
-      
-           <li><a href="/page9/">9</a></li>
-      
+  
     
-      
+      <li class="active"><a href="#">8</a></li>
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+         <li><a href="/page9/">9</a><li>
+    
+  
+    
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page9/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page9/">&raquo;</a></li>
+  
+</ul>
 
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

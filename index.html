@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,52 +248,49 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        
-<div class="pagination">
-  <ul class="pagination">
-    
-      <li><a href="#"><</a></li>
-    
+    	
+<ul class="pagination">
+  
+     <li class="disabled"><a href="#">&laquo;</a></li>
+  
 
+  
     
-      
-        <li class="active"><a href="#">1</a></li>
-      
+      <li class="active"><a href="#">1</a></li>
     
-      
-           <li><a href="/page2/">2</a></li>
-      
+  
     
-      
+         <li><a href="/page2/">2</a><li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page2/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page2/">&raquo;</a></li>
+  
+</ul>
 
 
 
@@ -308,18 +300,13 @@
     
 	<a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
     
-	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
-    
-	<a href="/tags/#XCH">XCH</a>
-    
   </p>
   <div class="content">
     <p><img src="/image/XCH-shot-2.png" alt="" /></p>
 
 
   </div>
-    <a href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -338,8 +325,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/09/02/%E4%B8%BA%E6%A2%A6%E8%B5%B7%E8%88%AA.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -365,8 +351,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/31/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%BA%94%E7%AB%A0.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/31/%E5%B9%95%E5%90%8E-%E7%AC%AC%E4%BA%94%E7%AB%A0.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -391,8 +376,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/31/USACO-Broken-Necklace.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/31/USACO-Broken-Necklace.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -417,60 +401,56 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/31/USACO-Milking-Cows.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/31/USACO-Milking-Cows.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
 
 
 
-<div class="pagination">
-  <ul class="pagination">
-    
-      <li><a href="#"><</a></li>
-    
+<ul class="pagination">
+  
+     <li class="disabled"><a href="#">&laquo;</a></li>
+  
 
+  
     
-      
-        <li class="active"><a href="#">1</a></li>
-      
+      <li class="active"><a href="#">1</a></li>
     
-      
-           <li><a href="/page2/">2</a></li>
-      
+  
     
-      
+         <li><a href="/page2/">2</a><li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page2/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page2/">&raquo;</a></li>
+  
+</ul>
 
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

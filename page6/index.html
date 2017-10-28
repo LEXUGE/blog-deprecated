@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,58 +248,55 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        
-<div class="pagination">
-  <ul class="pagination">
-    
-    
-      <li><a href="/page5/"><</a></li>
-    
-    
+    	
+<ul class="pagination">
+  
+  
+    <li><a href="/page5/">&laquo;</a></li>
+  
+  
 
+  
     
-      
-        <li><a href="/">1</a></li>
-      
+      <li><a href="/">1</a></li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-           <li><a href="/page5/">5</a></li>
-      
+  
     
-      
-        <li class="active"><a href="#">6</a></li>
-      
+         <li><a href="/page5/">5</a></li>
     
-      
-           <li><a href="/page7/">7</a></li>
-      
+  
     
-      
+      <li class="active"><a href="#">6</a></li>
     
-      
+  
     
-      
+         <li><a href="/page7/">7</a><li>
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+  
+    
+  
+    
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page7/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page7/">&raquo;</a></li>
+  
+</ul>
 
 
 
@@ -326,8 +318,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/03/24/Arch%E5%AE%89%E8%A3%85%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -340,8 +331,6 @@
     
 	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
     
-	<a href="/tags/#XCH">XCH</a>
-    
   </p>
   <div class="content">
     <p>本软件遵守<a href="http://www.gnu.org/licenses/gpl.txt">GPL协议</a>发布<br />
@@ -353,8 +342,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -375,8 +363,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/03/05/%E6%99%AE%E6%B3%95%E6%88%98%E4%BA%89%E6%84%9F%E6%82%9F.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -396,8 +383,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/02/25/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8VMware%E5%AE%89%E8%A3%85OS-X.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/02/25/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8VMware%E5%AE%89%E8%A3%85OS-X.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -414,66 +400,62 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/02/23/%E4%B8%BA%E4%BD%A0-%E5%8D%83%E5%8D%83%E4%B8%87%E4%B8%87%E9%81%8D.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/02/23/%E4%B8%BA%E4%BD%A0-%E5%8D%83%E5%8D%83%E4%B8%87%E4%B8%87%E9%81%8D.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
 
 
 
-<div class="pagination">
-  <ul class="pagination">
-    
-    
-      <li><a href="/page5/"><</a></li>
-    
-    
+<ul class="pagination">
+  
+  
+    <li><a href="/page5/">&laquo;</a></li>
+  
+  
 
+  
     
-      
-        <li><a href="/">1</a></li>
-      
+      <li><a href="/">1</a></li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-           <li><a href="/page5/">5</a></li>
-      
+  
     
-      
-        <li class="active"><a href="#">6</a></li>
-      
+         <li><a href="/page5/">5</a></li>
     
-      
-           <li><a href="/page7/">7</a></li>
-      
+  
     
-      
+      <li class="active"><a href="#">6</a></li>
     
-      
+  
     
-      
+         <li><a href="/page7/">7</a><li>
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+  
+    
+  
+    
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page7/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page7/">&raquo;</a></li>
+  
+</ul>
 
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

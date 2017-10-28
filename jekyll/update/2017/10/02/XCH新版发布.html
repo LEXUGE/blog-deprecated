@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,49 +248,43 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date">October 02, 2017</span>
-        
-          <a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
-        
-          <a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
-        
-          <a href="/tags/#XCH">XCH</a>
-        
-        <br>
-        <hr>
-        <br>
-        
-        <article class="post">
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">XCH新版发布</h1>
+    <h1 class="post-title" itemprop="name headline">XCH新版发布</h1>
+    <p class="post-meta">
+	<time datetime="2017-10-02T10:00:00+08:00" itemprop="datePublished">Oct 2, 2017</time>
+	
+    	
+          <a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
+        
+    </p>
   </header>
 
-  <div class="post-content">
+  <div class="post-content" itemprop="articleBody">
     <p><img src="/image/XCH-shot-2.png" alt="" /></p>
 
 <hr />
-<h3 id="相关链接">相关链接</h3>
 
+<h3>相关链接</h3>
 <ul>
   <li><a href="https://github.com/LEXUGE/XCH">XCH项目主页</a></li>
-  <li><a href="/download/XCH.zip">XCH下载</a></li>
+  <li><a href="https://lexuge.github.io/download/XCH.zip">XCH下载</a></li>
 </ul>
 
 <hr />
-<h3 id="简介">简介</h3>
 
+<h3>简介</h3>
 <blockquote>
   <p>XCH专为强大、稳定而生。强调灵活、快速、智能，带给你别样的求解体验。</p>
 </blockquote>
 
 <hr />
-<h3 id="功能">功能</h3>
 
+<h3>功能</h3>
 <p>XCH更新后增加了许多功能：</p>
 <ul>
   <li>化学方程式解析器</li>
@@ -308,21 +297,20 @@
 <ul>
   <li>不依赖元素周期表，自动学习新元素</li>
   <li>支持无限括号递归</li>
-  <li>稳定性保护</li>
+  <li>稳定性保护
+当求解失败时，会显示解析器的解析结果以供参考和排错。同时，智能纠错技术可以进一步提高输入效率。</li>
 </ul>
 
-<p>当求解失败时，会显示解析器的解析结果以供参考和排错。同时，智能纠错技术可以进一步提高输入效率。</p>
-
 <hr />
-<h3 id="安装">安装</h3>
 
+<h3>安装</h3>
 <p>您可以采用两种方式使用：</p>
+
 <ol>
-  <li>获取编译完成的<a href="/download/XCH.zip">Linux x64版本</a></li>
+  <li>获取编译完成的Linux x64版本</li>
   <li>自行编译（需要GCC&gt;=7.2支持）
     <ul>
-      <li>只需运行以下命令即可编译：<br />
-<code class="highlighter-rouge">gcc -o XCH XCH.C -Wall</code></li>
+      <li>只需运行以下命令即可编译：<code class="highlighter-rouge">gcc -o XCH XCH.C -Wall</code></li>
     </ul>
   </li>
 </ol>
@@ -330,7 +318,8 @@
 <p>注：因为代码中使用了GCC的内建函数检查溢出，所以请务必使用GCC（建议&gt;=7.2）编译</p>
 
 <hr />
-<h3 id="功能演示">功能演示</h3>
+
+<h3>功能演示</h3>
 <p>普通求解：</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>XCH - Chemical Equation Balancer
 &lt;&gt; by LEXUGE
@@ -344,7 +333,6 @@ As2O3+Zn+HCl=AsH3+ZnCl2+H2O
 [OUTPUT] 1 6 12 2 6 3
 </code></pre>
 </div>
-
 <p>无限括号递归支持：</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>XCH - Chemical Equation Balancer
 &lt;&gt; by LEXUGE
@@ -358,9 +346,7 @@ O2(((O2)2)3)+Zn4(Fe(H2)4)2)=O+Zn2FeH8
 [OUTPUT] 1 1 14 2
 </code></pre>
 </div>
-
-<p>智能纠错：
-我们将第一例的方程式中部分分子式前加入错误/正确的系数</p>
+<p>智能纠错： 我们将第一例的方程式中部分分子式前加入错误/正确的系数</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>XCH - Chemical Equation Balancer
 &lt;&gt; by LEXUGE
 Copyright (C) 2017 LEXUGE
@@ -373,9 +359,8 @@ As2O3+7Zn+12HCl=AsH3+ZnCl2+123H2O
 [OUTPUT] 1 6 12 2 6 3
 </code></pre>
 </div>
-<p>可以看到，XCH识别并规避了它们。这项技术可以让您求解“补全化学式系数”这类题时大胆输入，无需顾忌。</p>
-
-<p>语法检查：</p>
+<p>可以看到，XCH识别并规避了它们。这项技术可以让您求解“补全化学式系数”这类题时大胆输入，无需顾忌。<br />
+语法检查：</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>XCH - Chemical Equation Balancer
 &lt;&gt; by LEXUGE
 Copyright (C) 2017 LEXUGE
@@ -388,11 +373,11 @@ H2O=((H2)+O2
 [ERROR] Illegal equation.
 </code></pre>
 </div>
-<p>XCH对括号进行了匹配，发现了错误。值得注意的是在类似<code class="highlighter-rouge">(X))</code>的写法中，XCH不会报错，而是通过智能纠错规避。<br />
-XCH的语法检查还会检查是否具有<code class="highlighter-rouge">=</code>以及其个数，是否存在非法字符等。</p>
+<p>XCH对括号进行了匹配，发现了错误。XCH的语法检查还会检查是否具有<code class="highlighter-rouge">=</code>以及其个数，是否存在非法字符等。</p>
 
+  </div>
 
-  <link rel="stylesheet" href="/github-markdown.css">
+<link rel="stylesheet" href="/github-markdown.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
@@ -418,13 +403,12 @@ XCH的语法检查还会检查是否具有<code class="highlighter-rouge">=</cod
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
   </div>
+  <br>
 
-  </div>
 </article>
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

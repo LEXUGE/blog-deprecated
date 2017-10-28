@@ -78,6 +78,15 @@ def github_create_issue(subject, message):
   content = json.loads(resp.content.decode('utf-8'))
   return content["number"]
 
+def github_close_issue(subject):
+  token = GH_TOKEN
+  data = {'state': "closed"}
+  headers = {'Authorization': "token " + token}
+  url = 'https://api.github.com/repos/%s/issues/%s' % (GITHUB_REPO,subject)
+  resp = s.patch(url, headers=headers, data=json.dumps(data))
+  content = json.loads(resp.content.decode('utf-8'))
+  return content["number"]
+
 def extract_title(path):
   title, issueid = None, None
   with open(path) as fd:
@@ -96,6 +105,8 @@ def find_title():
         yield extract_title(filepath)
 
 def main():
+  counter = 0
+  counter2 = 0
   startup()
   title2ids = github_list_issues()
   print("These are all the title and the id on repo %s,check it and continue." % GITHUB_REPO)
@@ -103,7 +114,9 @@ def main():
   input()
   for path, issueid ,title in find_title():
     sleep(2)
-    print("Processing File path:"+path)
+    counter2+=1
+    print("No."+str(counter2)+" Processing File path:"+path)
+    counter+=1
     if title == None:
       print("ERROR: file %s don't have title" % path)
       continue
@@ -135,7 +148,20 @@ def main():
       title2ids[title] = newissueid
       continue
     print("Nothing to process.")
+    counter-=1
     print(" ")
+
+  for titles in title2ids:
+      temp=0
+      closeissueid=0
+      for path, issueid ,title in find_title():
+          if title==titles:
+            temp=1
+      if temp==0:
+          counter+=1
+          closeissueid=github_close_issue(title2ids[titles])
+          print("%s closed with issueid %s" %(titles,closeissueid))
+  print("Processed "+str(counter)+" file(s)")
 
 if __name__ == '__main__':
   main()

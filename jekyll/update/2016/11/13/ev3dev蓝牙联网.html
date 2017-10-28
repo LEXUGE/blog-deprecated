@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,27 +248,25 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date">November 13, 2016</span>
-        
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">ev3dev蓝牙联网</h1>
+    <p class="post-meta">
+	<time datetime="2016-11-13T15:01:00+08:00" itemprop="datePublished">Nov 13, 2016</time>
+	
+    	
           <a href="/tags/#Linux">Linux</a>
         
           <a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
         
-        <br>
-        <hr>
-        <br>
-        
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">ev3dev蓝牙联网</h1>
+    </p>
   </header>
 
-  <div class="post-content">
+  <div class="post-content" itemprop="articleBody">
     <p><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/">官网原版教程</a><br />
 ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利器。</p>
 
@@ -284,8 +277,9 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
   <li>不要自动连接</li>
 </ul>
 
+  </div>
 
-  <link rel="stylesheet" href="/github-markdown.css">
+<link rel="stylesheet" href="/github-markdown.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
@@ -311,13 +305,12 @@ ev3dev是一款优秀的基于Debian的ev3下的Linux系统。是程序员的利
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
   </div>
+  <br>
 
-  </div>
 </article>
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

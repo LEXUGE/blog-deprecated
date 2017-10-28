@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,56 +248,53 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        
-<div class="pagination">
-  <ul class="pagination">
-    
-    
-      <li><a href="/"><</a></li>
-    
-    
+    	
+<ul class="pagination">
+  
+  
+    <li><a href="/">&laquo;</a></li>
+  
+  
 
+  
     
-      
-        <li><a href="/">1</a></li>
-      
+      <li><a href="/">1</a></li>
     
-      
-        <li class="active"><a href="#">2</a></li>
-      
+  
     
-      
-           <li><a href="/page3/">3</a></li>
-      
+      <li class="active"><a href="#">2</a></li>
     
-      
+  
     
-      
+         <li><a href="/page3/">3</a><li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+  
+    
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page3/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page3/">&raquo;</a></li>
+  
+</ul>
 
 
 
@@ -324,8 +316,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/31/NOIP-2002%E6%8F%90%E9%AB%98%E7%BB%84%E5%9D%87%E5%88%86%E7%BA%B8%E7%89%8C.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/31/NOIP-2002%E6%8F%90%E9%AB%98%E7%BB%84%E5%9D%87%E5%88%86%E7%BA%B8%E7%89%8C.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -351,13 +342,12 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/13/%E8%AE%B0%E9%9C%B2%E8%90%A5%E5%8F%8A%E8%A7%82%E7%9C%8B%E6%B5%81%E6%98%9F%E9%9B%A8%E7%9A%84%E7%BB%8F%E5%8E%86.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/13/%E8%AE%B0%E9%9C%B2%E8%90%A5%E5%8F%8A%E8%A7%82%E7%9C%8B%E6%B5%81%E6%98%9F%E9%9B%A8%E7%9A%84%E7%BB%8F%E5%8E%86.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
 
-  <h1><a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E5%A4%A9%E7%84%B6%E6%B0%94%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由天然气爆炸引起的』证明</a></h1>
+  <h1><a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由爆炸引起的』证明</a></h1>
   <p class="author">
     <span class="date">August 10, 2017</span>
     
@@ -366,13 +356,12 @@
   </p>
   <div class="content">
     <blockquote>
-  <p>本文是关于『地震不是由天然气爆炸引起的』证明，提供页面内PDF查看和下载</p>
+  <p>这是关于『地震不是由天然气爆炸引起的』证明</p>
 </blockquote>
 
 
   </div>
-    <a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E5%A4%A9%E7%84%B6%E6%B0%94%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -393,8 +382,7 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
@@ -420,64 +408,60 @@
 
 
   </div>
-    <a href="/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E5%9B%9B%E7%AB%A0.html" style="color:white;"
-     class="btn btn-primary btn-sm" role="button">继续阅读</a>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">阅读全文</a>
   <hr size=5 noshade="noshade"/>
   <br>
   <br>
 
 
 
-<div class="pagination">
-  <ul class="pagination">
-    
-    
-      <li><a href="/"><</a></li>
-    
-    
+<ul class="pagination">
+  
+  
+    <li><a href="/">&laquo;</a></li>
+  
+  
 
+  
     
-      
-        <li><a href="/">1</a></li>
-      
+      <li><a href="/">1</a></li>
     
-      
-        <li class="active"><a href="#">2</a></li>
-      
+  
     
-      
-           <li><a href="/page3/">3</a></li>
-      
+      <li class="active"><a href="#">2</a></li>
     
-      
+  
     
-      
+         <li><a href="/page3/">3</a><li>
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
+  
     
-      
-        <li><a href="/page11/">11</a></li>
-      
+  
     
+  
+    
+  
+    
+      <li><a href="/page11/">11</a></li>
+    
+  
 
-    
-      <li><a href="/page3/">></a></li>
-    
-  </ul>
-</div>
+  
+    <li><a href="/page3/">&raquo;</a></li>
+  
+</ul>
 
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

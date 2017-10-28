@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,25 +248,23 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date">March 05, 2017</span>
-        
-          <a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
-        
-        <br>
-        <hr>
-        <br>
-        
-        <article class="post">
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">普法战争</h1>
+    <h1 class="post-title" itemprop="name headline">普法战争</h1>
+    <p class="post-meta">
+	<time datetime="2017-03-05T11:32:00+08:00" itemprop="datePublished">Mar 5, 2017</time>
+	
+    	
+          <a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
+        
+    </p>
   </header>
 
-  <div class="post-content">
+  <div class="post-content" itemprop="articleBody">
     <blockquote>
   <p>普法战争是欧洲传统意义上的一场新旧帝国之争，决定着欧洲的霸主是谁的问题。<br />
 这场战争的成因并不是法国的主动进攻，很大一部分是德国（普鲁士）制造争端。德国人希望以此团结德意志名族。<br />
@@ -295,8 +288,9 @@
 所以，理性是世界的造物主，而感性，让是人与造物主之间的翻译者。</li>
 </ol>
 
+  </div>
 
-  <link rel="stylesheet" href="/github-markdown.css">
+<link rel="stylesheet" href="/github-markdown.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
@@ -322,13 +316,12 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
   </div>
+  <br>
 
-  </div>
 </article>
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,25 +248,23 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date">September 30, 2016</span>
-        
-          <a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
-        
-        <br>
-        <hr>
-        <br>
-        
-        <article class="post">
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">《监视者》影评</h1>
+    <h1 class="post-title" itemprop="name headline">《监视者》影评</h1>
+    <p class="post-meta">
+	<time datetime="2016-09-30T19:29:00+08:00" itemprop="datePublished">Sep 30, 2016</time>
+	
+    	
+          <a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
+        
+    </p>
   </header>
 
-  <div class="post-content">
+  <div class="post-content" itemprop="articleBody">
     <blockquote>
   <p>《监视者们》翻拍自香港电影《跟踪》，是由赵义硕，金秉瑞联合执导，薛景求，郑雨盛，韩孝珠，李俊昊等主演的动作剧情片。<br />
 该片描写了隐蔽真实身份的监视专家们与每次受到危机四伏的追踪却都能幸运逃脱的秘密犯罪者之间惊心动魄的对决。以监视特定对象的警察内部特殊组织部门监视班为背景，讲述特殊犯罪科监视班队员与银行盗窃团伙之间发生的故事。于2013年7月3日在韩国上映，票房突破550万，并受邀参展多伦多国际电影节。2014年9月16日在中国大陆上映，并更名为《绝密跟踪》。</p>
@@ -286,8 +279,9 @@
        事实上，这篇电影中有很多的黑客元素（不关于技术方面）。可以说，黑客在理想化状态中就是如同“影子”般冷漠、冷酷、冷静的，计划缜密，天衣无缝。从另一种角度来解析，也有另一层含义——不要相信自己以外的任何人。<br />
        <strong>人们通常只会记住自己所关注的东西，去发现别人注意与不注意的一切————你，就是上帝。</strong></p>
 
+  </div>
 
-  <link rel="stylesheet" href="/github-markdown.css">
+<link rel="stylesheet" href="/github-markdown.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
@@ -313,13 +307,12 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
   </div>
+  <br>
 
-  </div>
 </article>
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

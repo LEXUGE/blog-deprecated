@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,27 +248,25 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date">August 26, 2016</span>
-        
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Fedora 启动U盘制作和安装教程</h1>
+    <p class="post-meta">
+	<time datetime="2016-08-26T07:45:00+08:00" itemprop="datePublished">Aug 26, 2016</time>
+	
+    	
           <a href="/tags/#Linux">Linux</a>
         
           <a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
         
-        <br>
-        <hr>
-        <br>
-        
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Fedora 启动U盘制作和安装教程</h1>
+    </p>
   </header>
 
-  <div class="post-content">
+  <div class="post-content" itemprop="articleBody">
     <blockquote>
   <p>Fedora是一个不错的Linux发行版，它界面清爽，安装简洁，稳定性高，驱动自适应性能强。由社区开发维护，Red Hat公司资助。</p>
 </blockquote>
@@ -298,8 +291,9 @@
 接下来的设置用户就不再烦述<br />
 安装完成，享受Linux之乐趣吧！</p>
 
+  </div>
 
-  <link rel="stylesheet" href="/github-markdown.css">
+<link rel="stylesheet" href="/github-markdown.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
@@ -325,13 +319,12 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
   </div>
+  <br>
 
-  </div>
 </article>
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

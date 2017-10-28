@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,17 +248,10 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date"></span>
-        
-        <br>
-        <hr>
-        <br>
-        
-        
+    	
 
 
 
@@ -343,15 +331,6 @@
   
   </ul>
 
-  <h3 id="XCH">XCH</h3>
-  <ul>
-  
-    <li>October 02, 2017 <a href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html">XCH新版发布</a></li>
-  
-    <li>March 12, 2017 <a href="/jekyll/update/2017/03/12/XCH-%E5%8C%96%E5%AD%A6%E6%96%B9%E7%A8%8B%E5%BC%8F%E9%85%8D%E5%B9%B3%E7%A8%8B%E5%BA%8F.html">XCH - 化学方程式配平程序</a></li>
-  
-  </ul>
-
   <h3 id="%E5%B9%95%E5%90%8E%E7%B3%BB%E5%88%97">幕后系列</h3>
   <ul>
   
@@ -372,7 +351,7 @@
   <h3 id="%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E">数学证明</h3>
   <ul>
   
-    <li>August 10, 2017 <a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E5%A4%A9%E7%84%B6%E6%B0%94%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由天然气爆炸引起的』证明</a></li>
+    <li>August 10, 2017 <a href="/jekyll/update/2017/08/10/%E5%85%B3%E4%BA%8E-%E5%9C%B0%E9%9C%87%E4%B8%8D%E6%98%AF%E7%94%B1%E7%88%86%E7%82%B8%E5%BC%95%E8%B5%B7%E7%9A%84-%E8%AF%81%E6%98%8E.html">关于『地震不是由爆炸引起的』证明</a></li>
   
   </ul>
 
@@ -406,8 +385,6 @@
 
   <h3 id="%E7%BC%96%E7%A8%8B">编程</h3>
   <ul>
-  
-    <li>October 02, 2017 <a href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html">XCH新版发布</a></li>
   
     <li>August 31, 2017 <a href="/jekyll/update/2017/08/31/USACO-Broken-Necklace.html">USACO Broken Necklace</a></li>
   
@@ -541,8 +518,7 @@
 
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">

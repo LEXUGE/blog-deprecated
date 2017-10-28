@@ -25,9 +25,6 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar{
-            display:none;
-        }
 
         #particles {
             position: fixed;
@@ -70,10 +67,6 @@
           
         
           
-          <a class="page-link" href="/project/">Project</a>
-          
-        
-          
         
           
           <a class="page-link" href="/tags/">Tags</a>
@@ -113,7 +106,7 @@
         </div>
 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Script pointing to jekyll-search.js -->
@@ -126,7 +119,9 @@
              json: '/search.json',
              searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
              noResultsText: '<li><a href="#" onclick="return false;">搜索任意关键词</a></li>',
-             fuzzy: false
+             limit: 33,
+             fuzzy: false,
+             exclude: ['Welcome']
            })
          </script>
       </div>
@@ -253,45 +248,44 @@
         }
 );
     </script>
-    <main class="page-content" aria-label="Content">
+    <br>
+<main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <br>
-        
-        <span class="date">September 02, 2017</span>
-        
-          <a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
-        
-        <br>
-        <hr>
-        <br>
-        
-        <article class="post">
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">为梦起航</h1>
+    <h1 class="post-title" itemprop="name headline">为梦起航</h1>
+    <p class="post-meta">
+	<time datetime="2017-09-02T10:00:00+08:00" itemprop="datePublished">Sep 2, 2017</time>
+	
+    	
+          <a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
+        
+    </p>
   </header>
 
-  <div class="post-content">
+  <div class="post-content" itemprop="articleBody">
     <blockquote>
   <p>剑已佩妥，执剑走天涯！酒尚余温，温酒颠乾坤！</p>
 </blockquote>
 
-<p>        暑假，似乎并不能给我带来多少欢愉的心情。很快就要开学了，我对暑假似乎有点留恋，但我更期待开学。</p>
+<p>暑假，似乎并不能给我带来多少欢愉的心情。很快就要开学了，我对暑假似乎有点留恋，但我更期待开学。</p>
 
-<p>        这个暑假更多的是在不断的奔波中度过，或许失去了很多的时间来达成自己的目标，让我感觉整个暑假都如同浸没在雾霾之中——喘不过气来，也有点迷茫。因此我更期待开学后有规律的生活，稳定的安排。<br />
-<br />
-        初二，是我学业压力增长最快的时候。总有人建议我在兴趣爱好和学业中取舍一个，但是我不想这没做，因为我失去了爱好就没有动力学习，而且这样的初二我觉得也是不完整的。人生只有一个初二，虽说学业为重，但是如果失去了生活的佐料也会索然无味。只有取舍有道才能不负韶华。<br />
-<br />
-        当然，学习永远是放在首位的。学习需要高效，专注。高效专著有些时候并不一定能从态度上看得出来，高效专著的定义永远是你能够吸收多少。或许有些人能够做出精工雕琢的笔记本，但是我想这一定是所学之物并不使他感兴趣，导致消遣在这样的细枝末节上。一个无心听课的人高效专著吗？一定不是的。当然，适当的整洁有助于你的理解，能够让你更好的吸收来达到效果，更重要的是往往能带给你内心的愉悦，让你不会因为繁杂而急躁、分心。所以，完美契合速度与整洁才是高效之道。<br />
-<br />
-        人就是江湖。在如此大的课业压力之下，竞争非常明显。甚至有点令人作恶。可以看的出人们勾心斗角，努力争取甚至是抢夺机遇。但是，实际上即使他们有了机遇，照样得不到最后成功的机会。『Justice delayed is justice denied』，正义迟到莫如拒绝正义。正义的不作为正暗示着在这里永远没有所谓的正义。只有保护与掠夺。你应该尽可能多得获取你应得的，但倘若你抢走了别人的，你迟早也是要还的。对于狼子野心的家伙，你不必充当正义，因为没有正义。<br />
-<br />
-        心态平和才能做事果断，专注点滴才能稳住全局。往往做事的态度会影响你的心情，从而影响最终的结果。而且往往第二次重来你会更为急躁，效果更差。因此，对人来说『只做一次，一次做好』是无比重要的，第一遍是不可重来的。<br />
-<br />
-        又到一年开学时分，一年的时光转瞬即逝。又到一年金秋时节，可努力！</p>
+<p>这个暑假更多的是在不断的奔波中度过，或许失去了很多的时间来达成自己的目标，让我感觉整个暑假都如同浸没在雾霾之中——喘不过气来，也有点迷茫。因此我更期待开学后有规律的生活，稳定的安排。</p>
 
+<p>初二，是我学业压力增长最快的时候。总有人建议我在兴趣爱好和学业中取舍一个，但是我不想这没做，因为我失去了爱好就没有动力学习，而且这样的初二我觉得也是不完整的。人生只有一个初二，虽说学业为重，但是如果失去了生活的佐料也会索然无味。只有取舍有道才能不负韶华。</p>
 
-  <link rel="stylesheet" href="/github-markdown.css">
+<p>当然，学习永远是放在首位的。学习需要高效，专注。高效专著有些时候并不一定能从态度上看得出来，高效专著的定义永远是你能够吸收多少。或许有些人能够做出精工雕琢的笔记本，但是我想这一定是所学之物并不使他感兴趣，导致消遣在这样的细枝末节上。一个无心听课的人高效专著吗？一定不是的。当然，适当的整洁有助于你的理解，能够让你更好的吸收来达到效果，更重要的是往往能带给你内心的愉悦，让你不会因为繁杂而急躁、分心。所以，完美契合速度与整洁才是高效之道。</p>
+
+<p>人就是江湖。在如此大的课业压力之下，竞争非常明显。甚至有点令人作恶。可以看的出人们勾心斗角，努力争取甚至是抢夺机遇。但是，实际上即使他们有了机遇，照样得不到最后成功的机会。『Justice delayed is justice denied』，正义迟到莫如拒绝正义。正义的不作为正暗示着在这里永远没有所谓的正义。只有保护与掠夺。你应该尽可能多得获取你应得的，但倘若你抢走了别人的，你迟早也是要还的。对于狼子野心的家伙，你不必充当正义，因为没有正义。</p>
+
+<p>心态平和才能做事果断，专注点滴才能稳住全局。往往做事的态度会影响你的心情，从而影响最终的结果。而且往往第二次重来你会更为急躁，效果更差。因此，对人来说『只做一次，一次做好』是无比重要的，第一遍是不可重来的。</p>
+
+<p>又到一年开学时分，一年的时光转瞬即逝。又到一年金秋时节，可努力！</p>
+
+  </div>
+
+<link rel="stylesheet" href="/github-markdown.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
   <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
@@ -317,13 +311,12 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal -->
   </div>
+  <br>
 
-  </div>
 </article>
 
       </div>
-    </main>
-
+</main>
     <footer class="site-footer">
 
   <div class="wrapper">
