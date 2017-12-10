@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-11-26T13:52:13+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">XCH新版发布</title><link href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html" rel="alternate" type="text/html" title="XCH新版发布" /><published>2017-10-02T10:00:00+08:00</published><updated>2017-10-02T10:00:00+08:00</updated><id>/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83</id><content type="html" xml:base="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html">&lt;p&gt;&lt;img src=&quot;/image/XCH-shot-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-12-10T16:36:17+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">XCH in Rust!</title><link href="/jekyll/update/2017/12/10/XCH-in-Rust!.html" rel="alternate" type="text/html" title="XCH in Rust!" /><published>2017-12-10T16:12:00+08:00</published><updated>2017-12-10T16:12:00+08:00</updated><id>/jekyll/update/2017/12/10/XCH%20in%20Rust!</id><content type="html" xml:base="/jekyll/update/2017/12/10/XCH-in-Rust!.html">&lt;blockquote&gt;
+  &lt;p&gt;这一次，我们重获新生！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/LEXUGE/XCH&quot;&gt;XCH项目-Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;发生了什么&quot;&gt;发生了什么？&lt;/h3&gt;
+&lt;p&gt;XCH作为强大的化学方程式求解器，怎能不拥有极强的安全性能与速度？&lt;br /&gt;
+为进一步提高XCH的稳定性与安全性，且不丢失其性能。我们用&lt;a href=&quot;https://www.rust-lang.org/zh-CN/&quot;&gt;Rust语言&lt;/a&gt;对XCH进行了100%的重写。&lt;br /&gt;
+在能力提升的情况下，还有效实现代码量的减少——从483行到370行——而且还不缩行，保持了代码格式。&lt;/p&gt;
+
+&lt;h3 id=&quot;这意味着什么&quot;&gt;这意味着什么？&lt;/h3&gt;
+&lt;p&gt;XCH的Bug出现率将会因为&lt;a href=&quot;https://www.rust-lang.org/zh-CN/&quot;&gt;Rust语言&lt;/a&gt;的高安全性而直线下降。&lt;br /&gt;
+整个项目也没有使用任何一个第三方crate(Rust软件包)，从而将Bug出现率降到最低。&lt;/p&gt;
+
+&lt;h3 id=&quot;缺陷与不足&quot;&gt;缺陷与不足？&lt;/h3&gt;
+&lt;p&gt;XCH的其他Bug可以说都能被彻底消除，但是当您在使用&lt;code class=&quot;highlighter-rouge&quot;&gt;无限括号解析&lt;/code&gt;这个特性时，当括号层级过多，可能出现栈溢出错误。&lt;br /&gt;
+我们为更好的利用性能而没有限制递归解析层数，故您需要自己对此做把握与评估。&lt;br /&gt;
+不过，在日常使用范围内大可不必担心。&lt;/p&gt;
+
+&lt;h3 id=&quot;那c的实现版本呢&quot;&gt;那C的实现版本呢？&lt;/h3&gt;
+&lt;p&gt;我们将冻结C版本的开发，不过，你依然可以下载到最后一个版本。&lt;br /&gt;
+当然，我们不推荐使用。&lt;/p&gt;
+
+&lt;h3 id=&quot;如何安装新版本&quot;&gt;如何安装新版本？&lt;/h3&gt;
+&lt;p&gt;在安装了&lt;code class=&quot;highlighter-rouge&quot;&gt;cargo&lt;/code&gt;的情况下，你只需要：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cargo install xch-ceb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;详见&lt;a href=&quot;https://doc.rust-lang.org/book/second-edition/ch14-04-installing-binaries.html&quot;&gt;install binaries&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="项目" /><summary type="html">这一次，我们重获新生！</summary></entry><entry><title type="html">XCH新版发布</title><link href="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html" rel="alternate" type="text/html" title="XCH新版发布" /><published>2017-10-02T10:00:00+08:00</published><updated>2017-10-02T10:00:00+08:00</updated><id>/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83</id><content type="html" xml:base="/jekyll/update/2017/10/02/XCH%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html">&lt;p&gt;&lt;img src=&quot;/image/XCH-shot-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -681,27 +710,4 @@ PROG: milk2
 &lt;br /&gt;
 最后再来说说老干部文化。可以说这是中国独有的文化，也是中国学术界中『污浊教授』老后的再升级。不过也无可厚非，只有那些目的不纯的学术研究者才会抛弃科学的大船转而利用各种逻辑谬论对大众洗脑，因为他们的眼中是永远的金钱与利益。学术界怎么样，中国怎么样，中国学术界怎么样他并不在乎，他只在乎能不能坐稳这个位，收稳这个钱。可能这也是中国学术界之前声誉不好的原因吧。&lt;br /&gt;
 &lt;br /&gt;
-就是这样，记住，社会中的人渣一定存在，只要自己follow the master就可以了，不用关系人渣的命运，你也不可能从人渣那里汲取什么。无论谁怎么说，地球，宇宙总会按照着原本的样子运转着。&lt;/p&gt;</content><author><name></name></author><category term="生活" /><category term="随笔" /><summary type="html">这几天与民科展开了激烈的论战，除了接受的教育水平低外，我还发现了许多『有趣』的社会现象。</summary></entry><entry><title type="html">幕后 第四章</title><link href="/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E5%9B%9B%E7%AB%A0.html" rel="alternate" type="text/html" title="幕后 第四章" /><published>2017-08-06T11:05:00+08:00</published><updated>2017-08-06T11:05:00+08:00</updated><id>/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E%20%E7%AC%AC%E5%9B%9B%E7%AB%A0</id><content type="html" xml:base="/jekyll/update/2017/08/06/%E5%B9%95%E5%90%8E-%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">&lt;p&gt;坐标：美国-华盛顿·哥伦比亚特区-五角大楼 地球纪元2033年冬&lt;br /&gt;
-最终，汤姆·惠灵顿方面决定采用曲速引擎作为最终的解决方案。但是这也具有极大的风险，毕竟，曲速引擎的理论还为得到过完全验证，如果出点闪失，整个舰队都有可能回不来，当然地球也是，因为引擎方面全都是北约与泛亚太联盟在负责。&lt;br /&gt;
-实际上，全人类只有一次机会，要是行动不完美，曲速引擎如此进行空间折叠一会被GN-z11文明发现，这个时候可能真的没有机会了。所以北约希望这一仗能够打得出其不意，也唯有如此。&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;
-坐标：美国-俄亥俄州空军基地 地球纪元2033年冬&lt;/p&gt;
-
-&lt;p&gt;今天，是曲速引擎进行总装和地面试验的日子。美军提前花费了1个月的时间用概率云把整个基地包裹得严严实实。同时在外大量驻军。曲速引擎实际上并不是一个单纯的推进器，它需要将空间进行折叠，这才是技术的关键。这次，马克·瑟里奇和汤姆他们专门设置了一堆装置来进行空间折叠。这些装置将被铺装在舰队的表面，就像20世纪末美军的隐形涂料一样，受舰船的控制，来对周围的时空进行扭曲、折叠。而最后的推进器只不过是普通的核聚变推进器而已。&lt;br /&gt;
-冬日的俄亥俄，大雪纷飞，却终究抵不住寂寞。如今虽是大雪依旧，但是当年下雪时的欣喜已断然全无，当年下雪时的心情也回不来了。&lt;br /&gt;
-亚瑟三人在冰天雪地里坐着，等待着工程师们的总装，也开始怀念现在的地球。终于，他们躺在雪地里，全身陷进松软的雪堆，对着灰蒙蒙的天空不住发呆，痴痴地望着，什么都不去想，三人都不愿相信这个世界是假的，至少这一刻，他们的心是真实的。未来要开启的征程，至少要让自己真实存在过。&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;
-坐标：中国东北-黑龙江鸭绿江沿岸某村庄 地球纪元2033年冬&lt;br /&gt;
-同样是大雪纷飞，这一年的冬天对于陆家来说没有什么不寻常的地方。但是或许陆家是唯一几家“坚守”在这个村庄。出于被迫的“坚守”。村里其余的人家大都搬去城里镇上住了。就算其他几家还在的，年轻人也都外出去打工了。&lt;br /&gt;
-唯独陆家几个年轻人很不争气，个个都屯在家中，啥事情也不干。以前其他几家的老人和年轻人们总对他们议论纷纷，后来也就都习惯了。&lt;br /&gt;
-这三个年轻人分别是：陆宇航，陆峰和陆昂。三个人整日要么是热在炕上玩手机，要么是有一阵没一阵的在鸭绿江冰面上闲晃，逛累的时候就喝小贩从老毛子那走私来的便宜烈酒。实际上是伏特加，但是质量极差，酒除了烈就没别的了，喝下去整个人简直就要烧起来。三个人喝酒喝混了，深一脚浅一脚地在雪地上走会家。整日悠闲是悠闲，日子却是过的天昏地暗，看见哥三个，脸上蒙着一层猪油似的困意。&lt;br /&gt;
-陆宇航，当年高考落榜，回家，也不跟着父母务农狩猎，就颓废丧志。陆峰从小就好着狩猎，整天和傻狍子玩，脑袋里恐怕也就装着些许对付狍子的傻办法。不过，三个人因为有了个打猎好手，也就不愁吃肉问题。陆昂，曾经被家里抱有众望的一子，虽说高考是考上了，但是也是混得一个三本的垃圾大学，瞒着家里人三本也至少算是大学，总比老大落榜好，就交了学费。大学里也就学着富二代吃喝玩乐，四年下来，可谓是半点机灵都没学会。回了家可是连打狍子都不会了。&lt;br /&gt;
-最可怕的是老大还天天做着发财的美梦，周围的人都嘲笑他说简直不可能，确实，按照老大现如今的自身水平和周围环境，还真是不可能。为了生计，每日，老大和老二都会去打狍子，留一只自己吃，其余的去卖了买酒喝。&lt;/p&gt;
-
-&lt;h2 id=&quot;未完待续&quot;&gt;未完待续&lt;/h2&gt;</content><author><name></name></author><category term="幕后系列" /><category term="随笔" /><summary type="html">坐标：美国-华盛顿·哥伦比亚特区-五角大楼 地球纪元2033年冬 最终，汤姆·惠灵顿方面决定采用曲速引擎作为最终的解决方案。但是这也具有极大的风险，毕竟，曲速引擎的理论还为得到过完全验证，如果出点闪失，整个舰队都有可能回不来，当然地球也是，因为引擎方面全都是北约与泛亚太联盟在负责。 实际上，全人类只有一次机会，要是行动不完美，曲速引擎如此进行空间折叠一会被GN-z11文明发现，这个时候可能真的没有机会了。所以北约希望这一仗能够打得出其不意，也唯有如此。 坐标：美国-俄亥俄州空军基地 地球纪元2033年冬</summary></entry></feed>
+就是这样，记住，社会中的人渣一定存在，只要自己follow the master就可以了，不用关系人渣的命运，你也不可能从人渣那里汲取什么。无论谁怎么说，地球，宇宙总会按照着原本的样子运转着。&lt;/p&gt;</content><author><name></name></author><category term="生活" /><category term="随笔" /><summary type="html">这几天与民科展开了激烈的论战，除了接受的教育水平低外，我还发现了许多『有趣』的社会现象。</summary></entry></feed>

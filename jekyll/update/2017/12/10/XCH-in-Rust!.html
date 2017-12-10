@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>BLOG|LEXUGE</title>
-  <meta name="description" content="即使被全世界孤立，也要一个人笑得精彩！">
+  <title>XCH in Rust!</title>
+  <meta name="description" content="这一次，我们重获新生！">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/page7/">
+  <link rel="canonical" href="/jekyll/update/2017/12/10/XCH-in-Rust!.html">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
   
   
@@ -251,217 +251,82 @@
     <br>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
+    	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">XCH in Rust!</h1>
+    <p class="post-meta">
+	<time datetime="2017-12-10T16:12:00+08:00" itemprop="datePublished">Dec 10, 2017</time>
+	
     	
-<ul class="pagination">
-  
-  
-    <li><a href="/page6/">&laquo;</a></li>
-  
-  
+          <a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
+        
+    </p>
+  </header>
 
-  
-    
-      <li><a href="/">1</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-         <li><a href="/page6/">6</a></li>
-    
-  
-    
-      <li class="active"><a href="#">7</a></li>
-    
-  
-    
-         <li><a href="/page8/">8</a><li>
-    
-  
-    
-  
-    
-  
-    
-      <li><a href="/page11/">11</a></li>
-    
-  
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>这一次，我们重获新生！</p>
+</blockquote>
 
-  
-    <li><a href="/page8/">&raquo;</a></li>
-  
-</ul>
+<p><a href="https://github.com/LEXUGE/XCH">XCH项目-Github</a></p>
 
+<h3 id="发生了什么">发生了什么？</h3>
+<p>XCH作为强大的化学方程式求解器，怎能不拥有极强的安全性能与速度？<br />
+为进一步提高XCH的稳定性与安全性，且不丢失其性能。我们用<a href="https://www.rust-lang.org/zh-CN/">Rust语言</a>对XCH进行了100%的重写。<br />
+在能力提升的情况下，还有效实现代码量的减少——从483行到370行——而且还不缩行，保持了代码格式。</p>
 
+<h3 id="这意味着什么">这意味着什么？</h3>
+<p>XCH的Bug出现率将会因为<a href="https://www.rust-lang.org/zh-CN/">Rust语言</a>的高安全性而直线下降。<br />
+整个项目也没有使用任何一个第三方crate(Rust软件包)，从而将Bug出现率降到最低。</p>
 
-  <h1><a href="/jekyll/update/2017/02/23/%E4%B8%BA%E4%BD%A0-%E5%8D%83%E5%8D%83%E4%B8%87%E4%B8%87%E9%81%8D.html">为你，千千万万遍。</a></h1>
-  <p class="author">
-    <span class="date">February 23, 2017</span>
-    
-	<a href="/tags/#%E9%9A%8F%E7%AC%94">随笔</a>
-    
-  </p>
-  <div class="content">
-    <p>The Sound Of Silence: <audio src="/music/The Sound Of Silence.mp3" controls="controls" loop="loop" preload="meta"></audio></p>
+<h3 id="缺陷与不足">缺陷与不足？</h3>
+<p>XCH的其他Bug可以说都能被彻底消除，但是当您在使用<code class="highlighter-rouge">无限括号解析</code>这个特性时，当括号层级过多，可能出现栈溢出错误。<br />
+我们为更好的利用性能而没有限制递归解析层数，故您需要自己对此做把握与评估。<br />
+不过，在日常使用范围内大可不必担心。</p>
 
+<h3 id="那c的实现版本呢">那C的实现版本呢？</h3>
+<p>我们将冻结C版本的开发，不过，你依然可以下载到最后一个版本。<br />
+当然，我们不推荐使用。</p>
 
-  </div>
-  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/02/23/%E4%B8%BA%E4%BD%A0-%E5%8D%83%E5%8D%83%E4%B8%87%E4%B8%87%E9%81%8D.html">阅读全文</a>
-  <hr size=5 noshade="noshade"/>
-  <br>
-  <br>
-
-  <h1><a href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">Python有道词典终端版</a></h1>
-  <p class="author">
-    <span class="date">January 30, 2017</span>
-    
-	<a href="/tags/#Python">Python</a>
-    
-	<a href="/tags/#Linux">Linux</a>
-    
-	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
-    
-  </p>
-  <div class="content">
-    <p>为提高作业工作效力，我运用有道词典API与Python编写了一个小程序<br />
-输入英文，显示各种解释，直到输入<code class="highlighter-rouge">lexuge</code>退出</p>
-
-
-  </div>
-  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2017/01/30/Python%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%BB%88%E7%AB%AF%E7%89%88.html">阅读全文</a>
-  <hr size=5 noshade="noshade"/>
-  <br>
-  <br>
-
-  <h1><a href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">reaver破解Wi-Fi密码</a></h1>
-  <p class="author">
-    <span class="date">December 31, 2016</span>
-    
-	<a href="/tags/#%E7%BD%91%E7%BB%9C">网络</a>
-    
-	<a href="/tags/#Linux">Linux</a>
-    
-  </p>
-  <div class="content">
-    <p><a href="https://github.com/t6x/reaver-wps-fork-t6x">reaver最新版主页</a><br />
-<a href="https://github.com/wiire/pixiewps">pixiewps主页</a><br />
-<a href="https://lexuge.github.io/jekyll/update/2016/08/28/%E4%BD%BF%E7%94%A8mdk3+aircrack-ng%E6%94%BB%E5%87%BB%E8%B7%AF%E7%94%B1%E5%99%A8.html">mdk3攻击路由器</a><br />
-借助最新的工具reaver可以破解WPA/WPA2（带有WPS）的路由器</p>
-<ol>
-  <li>编译reaver
-    <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/t6x/reaver-wps-fork-t6x
-cd reaver-wps-fork-t6x*/
-cd src/
-./configure
-make
-sudo make install
+<h3 id="如何安装新版本">如何安装新版本？</h3>
+<p>在安装了<code class="highlighter-rouge">cargo</code>的情况下，你只需要：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cargo install xch-ceb
 </code></pre>
-    </div>
-  </li>
-</ol>
-
+</div>
+<p>详见<a href="https://doc.rust-lang.org/book/second-edition/ch14-04-installing-binaries.html">install binaries</a></p>
 
   </div>
-  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/12/31/reaver%E7%A0%B4%E8%A7%A3Wi-Fi%E5%AF%86%E7%A0%81.html">阅读全文</a>
-  <hr size=5 noshade="noshade"/>
+
+<link rel="stylesheet" href="/github-markdown.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
   <br>
-  <br>
-
-  <h1><a href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">LEDIT及EDIT简述</a></h1>
-  <p class="author">
-    <span class="date">December 22, 2016</span>
-    
-	<a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
-    
-	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
-    
-  </p>
-  <div class="content">
-    <p><strong>LEDIT及EDIT简述</strong><br />
-<img src="/image/LEDIT宣传.png" alt="" /></p>
-
-
+  <center><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Comment</button></center>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Comments</h4>
+        </div>
+        <div class="modal-body">
+          <div id="comments" style="max-height:300px;overflow:scroll;overflow-x:hidden;">
+            <script type="text/javascript" src="/comment.js"></script>
+	    <script type="text/javascript">
+               DoGithubComments(59,1);
+            </script>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none;">Load more comments</a>
+          <p style="display:inline;">Want to leave a comment? Visit <a href="https://github.com/LEXUGE/LEXUGE-comment/issues/59"> this post's issue page on GitHub</a></p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
   </div>
-  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/12/22/LEDIT%E5%8F%8AEDIT%E7%AE%80%E8%BF%B0.html">阅读全文</a>
-  <hr size=5 noshade="noshade"/>
-  <br>
   <br>
 
-  <h1><a href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">GAMEOX详述</a></h1>
-  <p class="author">
-    <span class="date">December 17, 2016</span>
-    
-	<a href="/tags/#%E9%A1%B9%E7%9B%AE">项目</a>
-    
-	<a href="/tags/#%E7%BC%96%E7%A8%8B">编程</a>
-    
-  </p>
-  <div class="content">
-    <p><strong>GAMEOX详述</strong><br />
-Copyright (“2015-2017”) LEXUGE<br />
-The software is using <a href="http://www.gnu.org/licenses/gpl.txt">GPL</a></p>
-
-
-  </div>
-  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/12/17/GAMEOX%E8%AF%A6%E8%BF%B0.html">阅读全文</a>
-  <hr size=5 noshade="noshade"/>
-  <br>
-  <br>
-
-
-
-<ul class="pagination">
-  
-  
-    <li><a href="/page6/">&laquo;</a></li>
-  
-  
-
-  
-    
-      <li><a href="/">1</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-         <li><a href="/page6/">6</a></li>
-    
-  
-    
-      <li class="active"><a href="#">7</a></li>
-    
-  
-    
-         <li><a href="/page8/">8</a><li>
-    
-  
-    
-  
-    
-  
-    
-      <li><a href="/page11/">11</a></li>
-    
-  
-
-  
-    <li><a href="/page8/">&raquo;</a></li>
-  
-</ul>
-
+</article>
 
       </div>
 </main>
