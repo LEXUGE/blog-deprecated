@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-12-10T16:36:17+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">XCH in Rust!</title><link href="/jekyll/update/2017/12/10/XCH-in-Rust!.html" rel="alternate" type="text/html" title="XCH in Rust!" /><published>2017-12-10T16:12:00+08:00</published><updated>2017-12-10T16:12:00+08:00</updated><id>/jekyll/update/2017/12/10/XCH%20in%20Rust!</id><content type="html" xml:base="/jekyll/update/2017/12/10/XCH-in-Rust!.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-12-31T15:16:49+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">New Year’s Resolution</title><link href="/jekyll/update/2017/12/31/New-Year's-Resolution.html" rel="alternate" type="text/html" title="New Year's Resolution" /><published>2017-12-31T14:24:00+08:00</published><updated>2017-12-31T14:24:00+08:00</updated><id>/jekyll/update/2017/12/31/New%20Year's%20Resolution</id><content type="html" xml:base="/jekyll/update/2017/12/31/New-Year's-Resolution.html">&lt;blockquote&gt;
+  &lt;p&gt;今天是2017年的最后一天，总结一下这一年干过什么，以及明年的目标。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;概述&quot;&gt;概述：&lt;/h3&gt;
+&lt;p&gt;2017年的前半年过的并不是怎样顺利，在前半年的博客中都有写到。&lt;br /&gt;
+后半年的过的时好时坏，也就不做什么评价吧。&lt;br /&gt;
+这一年来明显可以感觉到自己不如以前那么稳重了，与同学也有摩擦，心态在前半年也是完全崩溃。&lt;br /&gt;
+2018年决定重塑一下自己的性格。让自己变得沉稳与成熟一点。&lt;/p&gt;
+&lt;h3 id=&quot;性格与做事&quot;&gt;性格与做事：&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;尽量少去做一些嘻嘻哈哈的事情&lt;/li&gt;
+  &lt;li&gt;提高一下自己的修养，不要沉迷于低级趣味&lt;/li&gt;
+  &lt;li&gt;表达之前经过思考&lt;/li&gt;
+  &lt;li&gt;做一个负责任的人&lt;/li&gt;
+  &lt;li&gt;考虑一下别人的感受&lt;/li&gt;
+  &lt;li&gt;大方而不失尊严&lt;/li&gt;
+  &lt;li&gt;永远不要拐弯抹角地办事&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;能力与技能&quot;&gt;能力与技能：&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;在数学与语文上能有所进步&lt;/li&gt;
+  &lt;li&gt;实现少而精的项目&lt;/li&gt;
+  &lt;li&gt;在新的一年里读完20本书&lt;/li&gt;
+  &lt;li&gt;看完10部电影（当然要有《Star Wars》)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="年终总结" /><summary type="html">今天是2017年的最后一天，总结一下这一年干过什么，以及明年的目标。</summary></entry><entry><title type="html">XCH in Rust!</title><link href="/jekyll/update/2017/12/10/XCH-in-Rust!.html" rel="alternate" type="text/html" title="XCH in Rust!" /><published>2017-12-10T16:12:00+08:00</published><updated>2017-12-10T16:12:00+08:00</updated><id>/jekyll/update/2017/12/10/XCH%20in%20Rust!</id><content type="html" xml:base="/jekyll/update/2017/12/10/XCH-in-Rust!.html">&lt;blockquote&gt;
   &lt;p&gt;这一次，我们重获新生！&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -644,70 +670,4 @@ PROG: milk2
   &lt;p&gt;这是关于『地震不是由天然气爆炸引起的』证明&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;iframe src=&quot;/download/eq-proof.pdf&quot; style=&quot;width:718px; height:700px;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</content><author><name></name></author><category term="数学证明" /><summary type="html">这是关于『地震不是由天然气爆炸引起的』证明</summary></entry><entry><title type="html">英雄不问出处——可你不是英雄</title><link href="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html" rel="alternate" type="text/html" title="英雄不问出处——可你不是英雄" /><published>2017-08-10T18:33:00+08:00</published><updated>2017-08-10T18:33:00+08:00</updated><id>/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84</id><content type="html" xml:base="/jekyll/update/2017/08/10/%E8%8B%B1%E9%9B%84%E4%B8%8D%E9%97%AE%E5%87%BA%E5%A4%84-%E5%8F%AF%E4%BD%A0%E4%B8%8D%E6%98%AF%E8%8B%B1%E9%9B%84.html">&lt;blockquote&gt;
-  &lt;p&gt;这几天与民科展开了激烈的论战，除了接受的教育水平低外，我还发现了许多『有趣』的社会现象。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;民科，民间科学家，一直被人鄙视的人群。指的是那些没有受过或接受不系统的专业教育的科学爱好者。这个词语本不应该作为贬义词使用。&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;
-(一) 背景&lt;br /&gt;
-这些天和我论战的是一位老干部，具体姓名我虽知道但不方便透露，是上世纪80年代的老一辈大学生，曾在上世纪末做过高中数学老师，后来在党校工作至今。很难以置信吧，出生于上世纪六十年代中期的一位党校工作者是一位民科。&lt;br /&gt;
-先不说争论的是什么，我们先说说中国固有的一种有趣现象，来听一段故事：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;当时可口可乐引进中国&lt;br /&gt;
-北京各大报做出激烈反弹。《北京日报》的“内参”以“可口未必可乐”为题发表文章，认为国家缺少外汇，引进可口可乐浪费国家大量外汇资源。政治局常委陈云在这份内参上批示：只准卖给外国人，不准卖给中国人一瓶。其他中央领导也都圈阅了。外经贸部根据批示，只好通知北京停止内销。一夜之间，所有可口可乐都从商店的柜台里撤下来了。&lt;br /&gt;
-这就是老干部对于有力的新潮势力进入或产生导致自己无法控制整个领域时的典型做法——无理由地禁止，甚至有是原因还很可笑：
-有一个地方的卫生部门提出，“可口可乐含有咖啡因，不符合卫生要求。”他们的根据是，东北一个研究所给白鼠喂了可口可乐之后，白鼠十分兴奋。
-最后是中粮公司有理由据地反驳才让中央信服，继续销售可口可乐。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这一段故事说的其实就是原先主导某个领域地老干部无法忍受新势力进入使他丧失对这个领域的控制，从而无端的禁止的现象。
-换在科研界——不断有新的研究生、博士等高材生从国外回来，带来新的理论，而这些理论干部无法接受。在长期国外学术领先的情况下，很难在中国禁止一切学术期刊。所以，干部们就换了一种方式——向大众洗脑。&lt;br /&gt;
-2013～2014年期间，民科在科学网极度盛行，ID多为XX老翁，XX居士这样的。而这些民科多数是我国的老干部。他们批评国人崇尚西方自然科学，推出了“东方科学”之类的概念。这种路线的民科其实都是失意退休老人，还很可能是高校教职工。因为90年代到2000年77、78届的优秀国外留学生回国，改变了我国高校的现状，从那时起开始讲求SCI，科学研究也不再闭门造车，而是迅速跟国际接轨，所以有一部分老教工的老本不够吃，他们会看到学校和学院大量向这种新人牛人倾斜，自己则悻悻退休，抑郁成症，所以才成为这样的民科。他们明面上是批判“西方科学”，实际上心里是在鄙视那些国外回来，纠正我国科研状况，主导了科研的主流的“官科”们。他们提出的“东方科学”也及其可笑——诸如『量子佛学』之类的书籍不在少数。将佛教和被曲解了的科学搭配在一起。&lt;br /&gt;
-更为有趣的是，他们所宣传的『东方科学』还有大批民众相信，虽然民众们看不懂，但是搭配上专业的科学名词，让人觉得权威，可靠。加之“老祖宗”，“东方文化”之类的词语更是激发了民众内心的先贤崇拜。使得人们不得不信服。&lt;br /&gt;
-可以说，这是『看似科学的谣言』的祖先。
-&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;
-（二）细节&lt;br /&gt;
-这位老干部的观点是什么呢？他认为：『地球上的生物体内含有的碳元素在生物死亡之后被释放，由河流进入地球内部，然后变为天然气、瓦斯气体、煤炭等。这些物质越积越多，最后爆炸使他们的能量释放，形成了地震』。这就是他的观点，简单的说就是地震是由天然气之类的爆炸引起的。&lt;br /&gt;
-如果我不事先知道是民科，乍看我可能真的会相信。但是稍微对地理学的知识进行涉及，就会发现许多问题——比如：碳元素是地球固有的，生物碳是生物在碳循环过程中将地球固有的碳元素吸收。爆炸真的能产生这没大的能量？为什么煤矿图与地震分布图不同？这一切实际上都是疑点。&lt;br /&gt;
-我曾试图和它说过一会理，但是他却对一段已经被我整段反驳的措辞执迷不悟。很具有戏剧性的是，这段内容还是一段『不相干谬论』，到处充满『红鲱鱼』和『稻草人』。简述一下：他认为人在循环，会排泄，同时，地球和人应该有相似之处，所以地球在碳循环（他终于承认碳循环了）也会排泄（地震）。&lt;br /&gt;
-实际上，碳循环并不是生命循环，谈和相似。&lt;br /&gt;
-很快，我就意识到和一个不会地理学且不肯看的人说地理没有用。所以我决定进行数学演算，按照他的理论和现实数据来进行计算，看看能不能得到现实的结果。&lt;br /&gt;
-第一次，我采用的是镇海的例子，但是计算错误了。随后我又使用了四川，但是有一个细节没有考虑全。&lt;br /&gt;
-这些都是我的失误，我也就没说什么。第三次，我采用日本作为例子，进行了三层校验，没有任何的计算失误。但是，这次却被意想不到的驳回——说我第一次的数据引用的不可考。我引用的是CIA世界概况。鉴于CIA是美国政府机构，数据不客观也在质疑的情理之中。所以我几经周折，使用了国际能源署（IEA）的权威数据。总想着这次是中立的权威数据，应该是无可置疑的。&lt;br /&gt;
-后面他就说了一个让人愤怒而啼笑皆非的理由：『你的数据是统计数据，不是科学数据，不能用作科学计算』。后面还用了一堆粗俗的语言。很难想象一个老干部会有这般的胡闹。&lt;br /&gt;
-我的数据是IEA取自METI（日本经济产业省）的，是METI测量的，与实验室实验测量的数据根本上是没有区别的。况且地理学测量很难像物理学一样精准，数据的有效数字和误差就是那个水平，是可以作为计算依据的。&lt;br /&gt;
-为了让他彻底心服口服，我按照地震级数反推天然气数量，结果更是与他的理论相差甚远。&lt;br /&gt;
-这是我的&lt;a href=&quot;/jekyll/update/2017/08/10/关于-地震不是由爆炸引起的-证明.html&quot;&gt;证明&lt;/a&gt;。&lt;br /&gt;
-这下，他不再对计算置评，而转而抛出更为可笑的事：
-『他否定板块学说，引用的是“真理居士”的文章』且不说文章的可笑。既然你否认，那就得拿出新的可自洽，符合范式，能说明客观事实的理论来。后来的他连理论都没有，净贴那篇文章……』&lt;br /&gt;
-最后虽是自己知道被反驳的完全无理，但还是有劲没劲地自我安慰。&lt;br /&gt;
-再后来开始预测地震……
-&lt;br /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;
-（三）总结&lt;br /&gt;
-这次反驳民科的经历其实揭露了许多有趣而深刻的社会道理，其实也是反映出社会教育层面的一些问题。&lt;br /&gt;
-首先，这让我意识到，民科并不是缺少专业知识，而是缺乏科学素养，这是十分可怕的。&lt;br /&gt;
-科学素养是什么？说到底就是敢于质疑也敢于接受别人的见解。但是民科呢？根本不具有科学素养，闹出很多啼笑皆非的事情来：比如：『我的理论在你的实验里是错的，那一定是你的实验做错了，我的理论一定是对的；还有，我为什么要听你的，你的科学整个都是错误的，但是自己却又提不出个半点理论来，更不用说自洽了……』&lt;br /&gt;
-如果一个民科有了科学素养，那他一定能够接受别人的见解，同时也敢于质疑。这样的人一定不会成为民科。&lt;br /&gt;
-我一向不反对推翻，但是推翻之后你得提出，且得有依据的提出。很多时候，与民科之间的学术讨论往往会变成吵架的原因就是民科的蛮不讲理。&lt;br /&gt;
-关于民科，就是这样，现在我们来说一下基础教育。&lt;br /&gt;
-&lt;br /&gt;
-我一直认为教育的中心思想应该培养的就是学生的思辨精神，能质疑也可接受。最佳的状态就是能在两者之间完美权衡，这样的学生无论在怎样的学习内容、环境面前都可以游刃有余。当然，事实上并不是这样的，偏向总是存在的。但是极端一定会导致严重的问题。举两个例子：&lt;br /&gt;
-民科：严重偏向于质疑，还自认为是西式化的先进表现，虽然西方的教育一直强调质疑，但是并不意味着没有接受的过程，不接受又何谈质疑？&lt;br /&gt;
-传统：严重偏向接受，尽管这样的学生或人已经很少了，但是严重偏向接受只会让人变成『会说话的电脑』。&lt;br /&gt;
-这两个反面例子可以看出瘸腿的后果。&lt;br /&gt;
-这就是我对基础教育的核心看法。&lt;br /&gt;
-&lt;br /&gt;
-最后再来说说老干部文化。可以说这是中国独有的文化，也是中国学术界中『污浊教授』老后的再升级。不过也无可厚非，只有那些目的不纯的学术研究者才会抛弃科学的大船转而利用各种逻辑谬论对大众洗脑，因为他们的眼中是永远的金钱与利益。学术界怎么样，中国怎么样，中国学术界怎么样他并不在乎，他只在乎能不能坐稳这个位，收稳这个钱。可能这也是中国学术界之前声誉不好的原因吧。&lt;br /&gt;
-&lt;br /&gt;
-就是这样，记住，社会中的人渣一定存在，只要自己follow the master就可以了，不用关系人渣的命运，你也不可能从人渣那里汲取什么。无论谁怎么说，地球，宇宙总会按照着原本的样子运转着。&lt;/p&gt;</content><author><name></name></author><category term="生活" /><category term="随笔" /><summary type="html">这几天与民科展开了激烈的论战，除了接受的教育水平低外，我还发现了许多『有趣』的社会现象。</summary></entry></feed>
+&lt;iframe src=&quot;/download/eq-proof.pdf&quot; style=&quot;width:718px; height:700px;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</content><author><name></name></author><category term="数学证明" /><summary type="html">这是关于『地震不是由天然气爆炸引起的』证明</summary></entry></feed>
