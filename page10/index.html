@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="/page10/">
   <link rel="alternate" type="application/rss+xml" title="BLOG|LEXUGE" href="/feed.xml">
-  
+  <link rel="music-rec" type="text/css" href="/css/music.css">
+
   
     <style>
         body {
@@ -33,6 +34,7 @@
             height: 100%;
             z-index: -1;
         }
+	
     </style>
 </head>
 
@@ -58,6 +60,8 @@
         
           
           <a class="page-link" href="/about/">About</a>
+          
+        
           
         
           
@@ -287,7 +291,11 @@
     
   
     
-      <li><a href="/page11/">11</a></li>
+         <li><a href="/page11/">11</a><li>
+    
+  
+    
+      <li><a href="/page12/">12</a></li>
     
   
 
@@ -297,6 +305,35 @@
 </ul>
 
 
+
+  <h1><a href="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html">Fedora关闭合上笔记本屏幕挂起</a></h1>
+  <p class="author">
+    <span class="date">September 23, 2016</span>
+    
+	<a href="/tags/#Linux">Linux</a>
+    
+	<a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
+    
+  </p>
+  <div class="content">
+    <p>与众多的Linux版本一样，因为内核的缘故，Fedora笔记本在合上屏幕时会自动挂起，很有可能无法唤醒。<br />
+如何解决这个问题呢？</p>
+<ul>
+  <li>我们需要编辑<code class="highlighter-rouge">/etc/systemd/logind.conf</code>这个配置文件，但是它属于系统文件，所以是只读的，我们要执行以下命令：
+    <div class="highlighter-rouge"><pre class="highlight"><code>chmod a+w /etc/systemd/logind.conf
+</code></pre>
+    </div>
+  </li>
+  <li>这样我们就有了更改配置文件的权限</li>
+  <li>接下来我们打开并编辑它</li>
+</ul>
+
+
+  </div>
+  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/09/23/Fedora%E5%85%B3%E9%97%AD%E5%90%88%E4%B8%8A%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%B1%8F%E5%B9%95%E6%8C%82%E8%B5%B7.html">阅读全文</a>
+  <hr size=5 noshade="noshade"/>
+  <br>
+  <br>
 
   <h1><a href="/jekyll/update/2016/08/30/%E5%9C%A8Fedora%E4%B8%8A%E4%BD%BF%E7%94%A8TC3.0.html">在Fedora上使用TC3.0</a></h1>
   <p class="author">
@@ -384,27 +421,6 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
   <br>
   <br>
 
-  <h1><a href="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html">如何在Github上搭建Jekyll博客</a></h1>
-  <p class="author">
-    <span class="date">August 26, 2016</span>
-    
-	<a href="/tags/#Linux">Linux</a>
-    
-	<a href="/tags/#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E5%B7%A7">计算机技巧</a>
-    
-  </p>
-  <div class="content">
-    <blockquote>
-  <p>Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。</p>
-</blockquote>
-
-
-  </div>
-  <a class="btn btn-primary btn-sm" style="color:white;" href="/jekyll/update/2016/08/26/%E5%A6%82%E4%BD%95%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAJekyll%E5%8D%9A%E5%AE%A2.html">阅读全文</a>
-  <hr size=5 noshade="noshade"/>
-  <br>
-  <br>
-
 
 
 <ul class="pagination">
@@ -442,7 +458,11 @@ Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公�
     
   
     
-      <li><a href="/page11/">11</a></li>
+         <li><a href="/page11/">11</a><li>
+    
+  
+    
+      <li><a href="/page12/">12</a></li>
     
   
 
