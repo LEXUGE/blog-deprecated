@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "特殊的年夜饭",
+      "category" : "",
+      "tags"     : "随笔",
+      "url"      : "/jekyll/update/2018/02/20/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%B9%B4%E5%A4%9C%E9%A5%AD.html",
+      "date"     : "2018-02-20 14:30:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n        \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
       "title"    : "#Music UP# Day 1",
       "category" : "",
       "tags"     : "",
@@ -527,10 +536,10 @@
   
    {
      
-        "title"    : "Musics",
+        "title"    : "Music",
         "category" : "",
         "tags"     : "",
-        "url"      : "/musics/",
+        "url"      : "/music/",
         "date"     : "",
         "content"   : "<p><img src=\"/image/耳机图标.ico\" alt=\"\" />  <strong>| Music Zone</strong></p>\n<ul>\n  <li>\n    <p><strong>Coldplay:</strong><br />\n  Hymn For The Weekend [Remix]: <audio src=\"/music/Hymn For The Weekend.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Maroon 5:</strong><br />\n  Maps: <audio src=\"/music/Maps.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  Sugar: <audio src=\"/music/Sugar.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  Moves Like Jagger: <audio src=\"/music/Moves Like Jagger.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>One Direction:</strong><br />\n  What Makes You Beautiful: <audio src=\"/music/What Makes You Beautiful.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Alan Walker:</strong><br />\n  Fade: <audio src=\"/music/Fade.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  Alone: <audio src=\"/music/Alone.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Taylor Swift:</strong><br />\n  I knew you were trouble: <audio src=\"/music/I knew you were trouble.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Simon &amp; Garfunkel:</strong><br />\n  The Sound Of Silence: <audio src=\"/music/The Sound Of Silence.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Chinese Pop Music:</strong><br />\n  蓝莲花: <audio src=\"/music/蓝莲花.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  平凡之路: <audio src=\"/music/平凡之路.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  No Fear In My Heart: <audio src=\"/music/No Fear In My Heart.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Pop music:</strong><br />\n  The Greatest: <audio src=\"/music/The Greatest.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  Immortals: <audio src=\"/music/Immortals.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  See You Again: <audio src=\"/music/See You Again.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  Dream It Possible: <audio src=\"/music/Dream It Possible.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  Try Everything: <audio src=\"/music/Try Everything.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  We Are Young: <audio src=\"/music/We Are Young.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>Guardians of the Galaxy原声精选:</strong><br />\n  Mr. Blue Sky: <audio src=\"/music/Guardians of the Galaxy/Mr. Blue Sky.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  The Chain: <audio src=\"/music/Guardians of the Galaxy/The Chain.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n  My Sweet Lord: <audio src=\"/music/Guardians of the Galaxy/My Sweet Lord.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio></p>\n  </li>\n  <li>\n    <p><strong>纯音乐：</strong><br />\n  A First Star: <audio src=\"/music/A First Star.mp3\" controls=\"controls\" loop=\"loop\" preload=\"meta\"></audio><br />\n<br />\n<strong>上述所有资源及音乐均仅供学习交流,不得传播,如有侵权，请告知LEXUGE后删除</strong></p>\n  </li>\n</ul>\n\n<p><br /></p>\n"
      
