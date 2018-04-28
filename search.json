@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "几件伤心事",
+      "category" : "",
+      "tags"     : "随笔",
+      "url"      : "/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B.html",
+      "date"     : "2018-04-27 20:38:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n        \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
       "title"    : "《挪威的森林》读书笔记",
       "category" : "",
       "tags"     : "随笔, 读书笔记",
@@ -588,6 +597,10 @@
         "url"      : "/tags/",
         "date"     : "",
         "content"   : "{% capture tags %}\n  {% for tag in site.tags %}\n    {{ tag[0] }}\n  {% endfor %}\n{% endcapture %}\n{% assign sortedtags = tags | split:' ' | sort %}\n\n{% for tag in sortedtags %}\n  <h3 id=\"{{ tag | url_encode}}\">{{ tag }}</h3>\n  <ul>\n  {% for post in site.tags[tag] %}\n    <li>{{ post.date |date:\"%B %d, %Y\"}} <a href=\"{{ post.url }}\">{{ post.title }}</a></li>\n  {% endfor %}\n  </ul>\n{% endfor %}\n"
+     
+   } ,
+  
+   {
      
    } ,
   
