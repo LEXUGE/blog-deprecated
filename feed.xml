@@ -1,4 +1,213 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-05-11T20:00:07+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">几件伤心事</title><link href="/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B.html" rel="alternate" type="text/html" title="几件伤心事" /><published>2018-04-27T20:38:00+08:00</published><updated>2018-04-27T20:38:00+08:00</updated><id>/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B</id><content type="html" xml:base="/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-25T15:45:27+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">lib_blaster优化笔记</title><link href="/jekyll/update/2018/07/24/lib_blaster%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0.html" rel="alternate" type="text/html" title="lib_blaster优化笔记" /><published>2018-07-24T16:10:00+08:00</published><updated>2018-07-24T16:10:00+08:00</updated><id>/jekyll/update/2018/07/24/lib_blaster%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="/jekyll/update/2018/07/24/lib_blaster%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0.html">&lt;p&gt;&lt;img src=&quot;/image/rust-logo.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;lib_blaster 是一个我用 Rust 编写的 SYN flood 概念验证（Proof of Concept） 的库。为追求极致的性能，我对它作了大量优化，达到了一定的效果。这是我对优化过程的记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-瓶颈分析与优化&quot;&gt;1. 瓶颈分析与优化&lt;/h2&gt;
+&lt;p&gt;为了能够做好优化，首先得找出性能瓶颈所在。而其中一步就是回顾和进一步理解自己写的代码究竟在做什么。&lt;br /&gt;
+（优化前的&lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt;目录↓）&lt;br /&gt;
+&lt;img src=&quot;/image/optimization-log/v0.1.2.png&quot; alt=&quot;&quot; /&gt;
+整个 lib 使用了&lt;a href=&quot;https://github.com/libpnet/libpnet&quot;&gt;libpnet&lt;/a&gt; (A cross-platform, low level network framework)作为网络部分的框架。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;builder.rs&lt;/code&gt; 实现了IP header和TCP header的构建&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sender.rs&lt;/code&gt; 包括了网络层（Network Layer）的Transport Channel的建立以及包的发送&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;collector.rs&lt;/code&gt; 包括了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;struct&lt;/code&gt;来分装需要构建的包的信息&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tools.ts&lt;/code&gt; 包括了随机IP生成函数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;为分析代码的性能瓶颈所在，我使用了火焰图（flamegraph）。使用了一个叫做&lt;a href=&quot;https://github.com/TyOverby/flame&quot;&gt;flame&lt;/a&gt;的Rust火焰图生成库。&lt;br /&gt;
+以下是我第一次生成的结果：
+&lt;img src=&quot;/image/optimization-log/flame1.png&quot; alt=&quot;&quot; /&gt;
+可以看到 Create Collector的耗时非常的夸张。在这个操作中，我调用了&lt;code class=&quot;highlighter-rouge&quot;&gt;random::&amp;lt;u16&amp;gt;()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;rand_ipv4()&lt;/code&gt;这两个函数。&lt;br /&gt;
+其中，&lt;code class=&quot;highlighter-rouge&quot;&gt;rand_ipv4()&lt;/code&gt;的定义如下（&lt;code class=&quot;highlighter-rouge&quot;&gt;v0.1.2&lt;/code&gt;时）:&lt;/p&gt;
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rand_ipv4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ipv4Addr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Ipv4Addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;u8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+        &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;u8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+        &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;u8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+        &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;u8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;非常夸张地使用了4个&lt;code class=&quot;highlighter-rouge&quot;&gt;random&amp;lt;T&amp;gt;()&lt;/code&gt;。通过查看&lt;a href=&quot;https://docs.rs/crate/rand/&quot;&gt;rand的文档&lt;/a&gt;，可以看到&lt;code class=&quot;highlighter-rouge&quot;&gt;random&amp;lt;T&amp;gt;()&lt;/code&gt;的定义：&lt;/p&gt;
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Standard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Distribution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;thread_rng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.gen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;而&lt;code class=&quot;highlighter-rouge&quot;&gt;thread_rng()&lt;/code&gt;所返回的&lt;code class=&quot;highlighter-rouge&quot;&gt;ThreadRng&lt;/code&gt;（&lt;code class=&quot;highlighter-rouge&quot;&gt;rand::rngs::ThreadRng&lt;/code&gt;）按照文档所述：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Like StdRng, ThreadRng is a cryptographically secure PRNG.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;显然，因为是加密安全（cryptographically secure）的，所需的耗时也会相应增多。但是我在这里并不需要加密安全的随机数生成算法，我的目的是IP欺骗（IP spoofing），即使端口号和IP地址是递减的也没关系，只要不同即可。&lt;br /&gt;
+这样的耗时显然是没有意义的，通过查阅资料发现，一种非常快的非加密安全的伪随机数生成（Pseudorandom number generator）算法——&lt;a href=&quot;https://en.wikipedia.org/wiki/Xorshift&quot;&gt;Xorshift算法&lt;/a&gt;。关于速度的介绍：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Xorshift generators are among the fastest non-cryptographically-secure random number generators, requiring very small code and state.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因为&lt;code class=&quot;highlighter-rouge&quot;&gt;rand&lt;/code&gt;库已经提供了Xorshift算法的实现，所以我只需要调用即可。据此，我实现了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;fast_random&amp;lt;T&amp;gt;()&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fast_random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;where&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PartialOrd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SampleUniform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Standard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Distribution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rng&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;XorShiftRng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from_rng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;EntropyRng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;Ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rng&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.gen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;相应的，我用&lt;code class=&quot;highlighter-rouge&quot;&gt;fast_random&amp;lt;T&amp;gt;()&lt;/code&gt;重写了&lt;code class=&quot;highlighter-rouge&quot;&gt;rand_ipv4()&lt;/code&gt;。此时，重写生成的火焰图如下：&lt;br /&gt;
+&lt;img src=&quot;/image/optimization-log/flame2.png&quot; alt=&quot;&quot; /&gt;
+可以看到，&lt;code class=&quot;highlighter-rouge&quot;&gt;build_pkt()&lt;/code&gt;方法（method）的耗时非常的长。当时的代码中，&lt;code class=&quot;highlighter-rouge&quot;&gt;send_syn()&lt;/code&gt;的定义如下：&lt;/p&gt;
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;send_syn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transport_channel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Layer3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Tcp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0u8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;build_pkt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tx&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.send_to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;packet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;IpAddr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;V4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collector&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;.dst_ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;Ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()),&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;Err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;每一次发包，都会用&lt;code class=&quot;highlighter-rouge&quot;&gt;collector&lt;/code&gt;提供的信息重新构建一个封包，但是绝大多是的内容是重复的，这就非常的多余。&lt;br /&gt;
+因此，我把&lt;code class=&quot;highlighter-rouge&quot;&gt;build_pkt()&lt;/code&gt;写成了一个面向对象（Object-Oriented）的&lt;code class=&quot;highlighter-rouge&quot;&gt;struct&lt;/code&gt;。暴露了几个修改需要字段的方法。如下：&lt;/p&gt;
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/// The mutable packet container&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ipv4_pkt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MutableIpv4Packet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tcp_pkt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MutableTcpPacket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;src_ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ipv4Addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dst_ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ipv4Addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pkt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;/// Create a `Pkt` by providing `Collector`&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;/// Convert `Pkt` to a immutable `TcpPacket`&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;to_one_packet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TcpPacket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;/// set the source IP address of IP header&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;set_src_ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src_ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ipv4Addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;/// set the source port of TCP header&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;set_src_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;u16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;/// Get the destination IP address&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_dst_ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ipv4Addr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_checksum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;进一步进行火焰图分析，我发现&lt;code class=&quot;highlighter-rouge&quot;&gt;send_syn&lt;/code&gt;中一直再重复创建TransportChannel对。这非常的多余且耗时，所以我也将它OO化（面向对象化）了。&lt;br /&gt;
+&lt;strong&gt;至此，优化算是部分完成了。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2-benchmark&quot;&gt;2. Benchmark!&lt;/h2&gt;
+&lt;p&gt;优化完毕后，就应该进行Benchmark了。&lt;br /&gt;
+关于Benchmark，我这次走了不少弯路。从一开始单纯的使用&lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt;来测试时间到后面的使用&lt;a href=&quot;https://github.com/japaric/criterion.rs&quot;&gt;Criterion库&lt;/a&gt;以及&lt;a href=&quot;https://en.wikipedia.org/wiki/Mock_object&quot;&gt;Mock object&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;一开始，我使用了非常简单粗暴的&lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt;来测试，测试出来的数据也都不怎么稳定，没有什么意义。&lt;br /&gt;
+后来，通过各Rustaceans的帮助，我发现了Criterion库，一个Benchmark用的库。配合&lt;code class=&quot;highlighter-rouge&quot;&gt;cargo bench&lt;/code&gt;，来进行Benchmark。&lt;br /&gt;
+但是，测试出来的数据优化前后变化并不明显且波动较大。&lt;br /&gt;
+经过&lt;code class=&quot;highlighter-rouge&quot;&gt;Criterion&lt;/code&gt;所做线性回归（Linear regression）得出的&lt;script type=&quot;math/tex&quot;&gt;R^{2}&lt;/script&gt;（&lt;a href=&quot;https://en.wikipedia.org/wiki/Coefficient_of_determination&quot;&gt;决定系数，Coefficient of determination&lt;/a&gt;），大约为0.06左右，非常的小。&lt;br /&gt;
+其中，Wikipedia上决定系数的意义：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;In statistics, the coefficient of determination, denoted R2 or r2 and pronounced “R squared”, is the proportion of the variance in the dependent variable that is predictable from the independent variable(s).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这意味着，&lt;script type=&quot;math/tex&quot;&gt;R^{2}&lt;/script&gt;越小，相关方程的参考价值也就越低，反之，&lt;script type=&quot;math/tex&quot;&gt;R^{2}&lt;/script&gt;越接近于&lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;，相关方程的参考价值也就越大。另外根据Criterion文档上所写的：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;If the R^2 value is low, this may indicate the benchmark isn’t doing the same amount of work on each iteration. You may wish to examine the plot output and consider improving the consistency of your benchmark routine.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可以说每一个Iteration里，耗时十分不一致（consist）。那这是什么导致的呢？&lt;br /&gt;
+整个库其实可以分为两个工作：拼包（build packet）和发包（send packet）。我认为这种耗时的不稳定和测试数据动辄30%的波动基本上都应该是由发包造成的。&lt;br /&gt;
+那如何避免这个不确定因素呢？&lt;br /&gt;
+这里就要用到一个单元测试（Unit test）中常用的方法——mock。mock测试的定义就不在这里详细展开了。在我的这个情况中，应该mock发包这个步骤。因为不需要mock对象（Mock object）做出返回，所以这里的mock非常简单——直接不发包就可以了!&lt;br /&gt;
+为什么不发包呢？因为实际上网络的不稳定性是非常大的。而且发包往往是做内核调用的，因此，这里对发包行为做Benchmark反而是意义不大的。真正需要Benchmark的应该是我们自己写的代码，也就是拼包部分。&lt;br /&gt;
+mock发包后，我们得到了测试数据：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/image/optimization-log/criterion result.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到，&lt;script type=&quot;math/tex&quot;&gt;R^2&lt;/script&gt;的数值达到了0.9左右，算是实测中非常稳定的水平了。&lt;br /&gt;
+进一步看Criterion生成的详细报告：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;↓概率密度函数（PDF, Probability Density Function）
+&lt;img src=&quot;/image/optimization-log/pdf.svg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;↓线性回归（Linear regression）
+&lt;img src=&quot;/image/optimization-log/regression.svg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为我也没有深入学习和了解过统计学（Statistics）和概率学（Probability theory），也就不在此分析上述图表以免误人子弟。&lt;br /&gt;
+我们可以根据上述的Benchmark计算出拼包的速率，单位为pps（Packet Per Second），符号为&lt;script type=&quot;math/tex&quot;&gt;\mu'&lt;/script&gt;。&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\mu' &amp;= \frac{1s}{3.2731\mu{}s}\\
+&amp;\approx{} 305530.094714329 pps
+\end{align} %]]&gt;&lt;/script&gt;&lt;br /&gt;
+当然，在不同的硬件条件下，速度也是不同的（甚至插拔笔记本的电源会对速度造成影响），感兴趣的可以自己做一下Benchmark。&lt;/p&gt;
+
+&lt;p&gt;同时，我还对优化前的版本做了Benchmark（相同的测试条件和代码），得出如下数据：&lt;br /&gt;
+&lt;img src=&quot;/image/optimization-log/compare.png&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+可以看到各方面数据相较于优化前的是全面落后的（无论是耗时还是数据的稳定性）&lt;/p&gt;
+
+&lt;p&gt;实际上，上面的Benchmark并不能完全显示出优化的效果。上面的Benchmark只能体现出随机数算法优化后的效果。因为两个版本都完整地创建了一次包，但在实际情况中，大规模拼包时，优化后的&lt;code class=&quot;highlighter-rouge&quot;&gt;lib_blaster&lt;/code&gt;只需要小幅度地修改封包即可。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;可以计算一下这个差别在一定条件下的影响：（&lt;script type=&quot;math/tex&quot;&gt;t_{b}&lt;/script&gt;表示创建包的耗时，&lt;script type=&quot;math/tex&quot;&gt;t_{e}&lt;/script&gt;表示修改包所占的耗时，&lt;script type=&quot;math/tex&quot;&gt;t_{b},t_{e}\in\mathbb{N}^{+}&lt;/script&gt;）&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;优化后创建包时间所占总拼包时间的百分比：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\begin{align}t_{1}\%=\frac{t_{b}}{t_{b}+n\cdot{}t_{e}}\end{align}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;优化前创建包时间所占总拼包时间的百分比：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\begin{align}t_{2}\%=\frac{n\cdot{}t_{b}}{n\cdot{}t_{b}}=100\%\end{align}&lt;/script&gt;&lt;br /&gt;
+（↑因为优化前没有修改包的概念，故占拼包时间的&lt;script type=&quot;math/tex&quot;&gt;100\%&lt;/script&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当&lt;script type=&quot;math/tex&quot;&gt;n\to+\infty&lt;/script&gt;时，&lt;script type=&quot;math/tex&quot;&gt;t_{1}\%&lt;/script&gt;的极限为：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\begin{align}\lim\limits_{n\to+\infty}\frac{t_{b}}{t_{b}+n\cdot{}t_{e}}=0=0\%\end{align}&lt;/script&gt;&lt;br /&gt;
+可以看出，当&lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;趋于正无穷时，差别还是非常明显的（简直太明显了）&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;还可以计算一下两个拼包总耗时之比（当&lt;script type=&quot;math/tex&quot;&gt;n\to+\infty&lt;/script&gt;）：&lt;br /&gt;
+（↓因为优化前没有修改包的概念，所以修改前的耗时为&lt;script type=&quot;math/tex&quot;&gt;n\cdot{}(t_{b}+t_{e})&lt;/script&gt;）&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align}
+k&amp;=\frac{t_{b}+n\cdot{}t_{e}}{n\cdot{}(t_{b}+t_{e})}
+\end{align} %]]&gt;&lt;/script&gt;&lt;br /&gt;
+求当&lt;script type=&quot;math/tex&quot;&gt;n\to+\infty&lt;/script&gt;时的极限：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\lim\limits_{n\to+\infty}k&amp;=\lim\limits_{n\to+\infty}[\frac{t_{b}}{n\cdot{}(t_{b}+t_{e})}+\frac{n\cdot{}t_{e}}{n\cdot{}(t_{b}+t_{e})}]\\
+&amp;=\lim\limits_{n\to+\infty}\frac{t_{b}}{n\cdot{}(t_{b}+t_{e})}+\lim\limits_{n\to+\infty}\frac{n\cdot{}t_{e}}{n\cdot{}(t_{b}+t_{e})}\\
+&amp;=0+\frac{t_{e}}{t_{b}+t_{e}}\\
+&amp;=\frac{t_{e}}{t_{b}+t_{e}}\\
+\end{align} %]]&gt;&lt;/script&gt;&lt;br /&gt;
+显然，根据实际，&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+t_{e}&lt;t_{b} %]]&gt;&lt;/script&gt;，所以这个耗时之比的比值是非常小的。&lt;/p&gt;
+
+&lt;p&gt;所以&lt;code class=&quot;highlighter-rouge&quot;&gt;lib_blaster&lt;/code&gt;在实际中的发包速度&lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;是多少呢？（&lt;script type=&quot;math/tex&quot;&gt;t_{network}&lt;/script&gt;表示发包耗时）&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\mu&amp;=\frac{1s}{\frac{1s}{\mu'}+t_{network}}
+\end{align} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-总结&quot;&gt;3. 总结&lt;/h2&gt;
+&lt;p&gt;根据上述演算，可以基本得出本次优化的结果已经达成了。当然，这只是拼包部分的优化，在发包部分，还可以使用&lt;a href=&quot;https://www.dpdk.org/&quot;&gt;DPDK&lt;/a&gt;和&lt;a href=&quot;http://info.iet.unipi.it/~luigi/netmap/&quot;&gt;netmap&lt;/a&gt;等黑魔法优化，达到无与伦比的速度。&lt;br /&gt;
+但是限于这些方法过于底层，相关的Rust Binding还不成熟以及自身水平，所以这次并没有优化。&lt;/p&gt;</content><author><name></name></author><category term="Rust笔记" /><category term="项目" /><category term="网络" /><category term="Linux" /><summary type="html">lib_blaster 是一个我用 Rust 编写的 SYN flood 概念验证（Proof of Concept） 的库。为追求极致的性能，我对它作了大量优化，达到了一定的效果。这是我对优化过程的记录。</summary></entry><entry><title type="html">几件伤心事</title><link href="/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B.html" rel="alternate" type="text/html" title="几件伤心事" /><published>2018-04-27T20:38:00+08:00</published><updated>2018-04-27T20:38:00+08:00</updated><id>/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B</id><content type="html" xml:base="/jekyll/update/2018/04/27/%E5%87%A0%E4%BB%B6%E4%BC%A4%E5%BF%83%E4%BA%8B.html">&lt;blockquote&gt;
   &lt;p&gt;以下几段文字力求真实表现出考试一步步走向失败，以及揭晓结果时的复杂心态。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -170,33 +379,4 @@
   &lt;li&gt;实现少而精的项目&lt;/li&gt;
   &lt;li&gt;在新的一年里读完20本书&lt;/li&gt;
   &lt;li&gt;看完10部电影（当然要有《Star Wars》)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="年终总结" /><summary type="html">今天是2017年的最后一天，总结一下这一年干过什么，以及明年的目标。</summary></entry><entry><title type="html">XCH in Rust!</title><link href="/jekyll/update/2017/12/10/XCH-in-Rust!.html" rel="alternate" type="text/html" title="XCH in Rust!" /><published>2017-12-10T16:12:00+08:00</published><updated>2017-12-10T16:12:00+08:00</updated><id>/jekyll/update/2017/12/10/XCH%20in%20Rust!</id><content type="html" xml:base="/jekyll/update/2017/12/10/XCH-in-Rust!.html">&lt;blockquote&gt;
-  &lt;p&gt;这一次，我们重获新生！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/LEXUGE/XCH&quot;&gt;XCH项目-Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;发生了什么&quot;&gt;发生了什么？&lt;/h3&gt;
-&lt;p&gt;XCH作为强大的化学方程式求解器，怎能不拥有极强的安全性能与速度？&lt;br /&gt;
-为进一步提高XCH的稳定性与安全性，且不丢失其性能。我们用&lt;a href=&quot;https://www.rust-lang.org/zh-CN/&quot;&gt;Rust语言&lt;/a&gt;对XCH进行了100%的重写。&lt;br /&gt;
-在能力提升的情况下，还有效实现代码量的减少——从483行到370行——而且还不缩行，保持了代码格式。&lt;/p&gt;
-
-&lt;h3 id=&quot;这意味着什么&quot;&gt;这意味着什么？&lt;/h3&gt;
-&lt;p&gt;XCH的Bug出现率将会因为&lt;a href=&quot;https://www.rust-lang.org/zh-CN/&quot;&gt;Rust语言&lt;/a&gt;的高安全性而直线下降。&lt;br /&gt;
-整个项目也没有使用任何一个第三方crate(Rust软件包)，从而将Bug出现率降到最低。&lt;/p&gt;
-
-&lt;h3 id=&quot;缺陷与不足&quot;&gt;缺陷与不足？&lt;/h3&gt;
-&lt;p&gt;XCH的其他Bug可以说都能被彻底消除，但是当您在使用&lt;code class=&quot;highlighter-rouge&quot;&gt;无限括号解析&lt;/code&gt;这个特性时，当括号层级过多，可能出现栈溢出错误。&lt;br /&gt;
-我们为更好的利用性能而没有限制递归解析层数，故您需要自己对此做把握与评估。&lt;br /&gt;
-不过，在日常使用范围内大可不必担心。&lt;/p&gt;
-
-&lt;h3 id=&quot;那c的实现版本呢&quot;&gt;那C的实现版本呢？&lt;/h3&gt;
-&lt;p&gt;我们将冻结C版本的开发，不过，你依然可以下载到最后一个版本。&lt;br /&gt;
-当然，我们不推荐使用。&lt;/p&gt;
-
-&lt;h3 id=&quot;如何安装新版本&quot;&gt;如何安装新版本？&lt;/h3&gt;
-&lt;p&gt;在安装了&lt;code class=&quot;highlighter-rouge&quot;&gt;cargo&lt;/code&gt;的情况下，你只需要：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cargo install xch-ceb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;详见&lt;a href=&quot;https://doc.rust-lang.org/book/second-edition/ch14-04-installing-binaries.html&quot;&gt;install binaries&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="项目" /><summary type="html">这一次，我们重获新生！</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="年终总结" /><summary type="html">今天是2017年的最后一天，总结一下这一年干过什么，以及明年的目标。</summary></entry></feed>
