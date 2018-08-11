@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "中国的野心，美国的反击——我看贸易战何去何从",
+      "category" : "",
+      "tags"     : "随笔, 经济, 政治",
+      "url"      : "/jekyll/update/2018/08/11/%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%87%8E%E5%BF%83-%E7%BE%8E%E5%9B%BD%E7%9A%84%E5%8F%8D%E5%87%BB-%E6%88%91%E7%9C%8B%E8%B4%B8%E6%98%93%E6%88%98%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E.html",
+      "date"     : "2018-08-11 13:03:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n        \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
       "title"    : "关于中医和传统文化？",
       "category" : "",
       "tags"     : "随笔",
