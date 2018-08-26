@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-08-25T18:01:58+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">孤独的造梦者</title><link href="/jekyll/update/2018/08/25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E9%80%A0%E6%A2%A6%E8%80%85.html" rel="alternate" type="text/html" title="孤独的造梦者" /><published>2018-08-25T16:13:00+08:00</published><updated>2018-08-25T16:13:00+08:00</updated><id>/jekyll/update/2018/08/25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E9%80%A0%E6%A2%A6%E8%80%85</id><content type="html" xml:base="/jekyll/update/2018/08/25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E9%80%A0%E6%A2%A6%E8%80%85.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-08-26T20:42:24+08:00</updated><id>/</id><title type="html">BLOG|LEXUGE</title><subtitle>即使被全世界孤立，也要一个人笑得精彩！</subtitle><entry><title type="html">迭代</title><link href="/jekyll/update/2018/08/26/%E8%BF%AD%E4%BB%A3.html" rel="alternate" type="text/html" title="迭代" /><published>2018-08-26T19:24:00+08:00</published><updated>2018-08-26T19:24:00+08:00</updated><id>/jekyll/update/2018/08/26/%E8%BF%AD%E4%BB%A3</id><content type="html" xml:base="/jekyll/update/2018/08/26/%E8%BF%AD%E4%BB%A3.html">&lt;blockquote&gt;
+  &lt;p&gt;伴随着“Updating”的字样，昨天，我完成了一个我迭代了两年的项目第一阶段的所有预期。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;　　两年前的一次课外补习班上，原本就心猿意马的我呆滞地听着老师讲化学方程式的配平——不知超纲多少了。&lt;br /&gt;
+　　“观察法，有时方程式中会出现一种化学式比较复杂的物质，我们可通过这个复杂的分子去推其它……但是和其它一样，这也有限制……”，这已经是老师讲述的第四种方法了，而且还有八种。当别的同学都认真听老师讲述各种各样的奇淫异巧时，我却想：这都什么破方法，毫无学习意义，如果一种方法有缺陷，那它就不足以被拿出来误人子弟，甚至不能被称为方法！化学作为一门自然科学，它应当是符合数学的简洁之美的，至少也是部分符合。既然是方程式，我一定能够通过数学以一敌众，研究出没有缺陷的方法！&lt;br /&gt;
+　　于是，接下来的所有时间，我就一直在作业纸的背面演算。因为质量守恒，所以我就想能否通过相对原子质量作为突破口来解。于是我列了一堆数字复杂的方程组，却很难下手解决。我托腮冥想怎么化简，却没头绪。翻过来看作业纸上一大堆的方程式，我萌生出了用程序强解的念头。&lt;br /&gt;
+　　一路上，我望着车窗外黑漆漆的夜，摇摇晃晃中构思出了简陋的原型。&lt;br /&gt;
+　　一回到家，我马上赶工，不到20分钟就写出了第一个版本——手动输入方程组的系数——杂乱无章的相对原子质量，然后使用暴力搜索解决。我兴奋地验证了它的正确性，然后不停查表，缓慢输入，最终用它完成了我的作业。妈妈似懂非懂地观望着，只留下一句“太慢了，还不如自己算来的快。”与我在黑夜中&lt;br /&gt;
+　　往后的日子里，我不断对它做了改进。&lt;br /&gt;
+　　但是，它存在两个严重缺陷：无法“理解”正常的方程式，而是要手动输入复杂的系数，严重拖慢效率。且使用了耗时费力的暴力搜索来解方程，速度慢。&lt;br /&gt;
+　　我在接下来的几个月里发着呆，想摸出方程的规律，让程序能理解它。&lt;br /&gt;
+　　断断续续地想着又写着，推倒重来了许多次。终于，当一晚躺在床上苦想时，我理顺了所有的逻辑，一条条清晰明了的规则与定义浮现在我眼前。我知道，过去我认为不可能的任务要实现了！一朵笼罩在头顶上的乌云将就此消逝！&lt;br /&gt;
+　　后续的很长时间，我都只是修修补补。&lt;br /&gt;
+　　直到去年寒假，我开始关注头上的第二朵阴云，研究如何高效地解决方程组。这是一个数学问题，我开始不断地翻找查阅所有相关的资料，并下了狠功夫理解了相关领域的大多数概念。这相当于我自学了矩阵以及其它部分的线性代数内容。在一次次搜寻的无果与生硬的概念下，我依然坚持着，因为我热爱。研读了近半个月，写出了相对稳定的算法。尽管多次面临失败和不理解的懊恼，但我终究战胜了这些，成就了我的目标。这再次印证了——“我想成，定能就”。&lt;br /&gt;
+　　直到今年的五月，我偶遇了一位前辈，他也曾在初中时做着和我一样的项目，并一直到了大学，因此斩获了诸多奖项也得到了青睐。但他因为对国内的失望，最终没有再做下去，决定将他的项目送给一个他认可的人。&lt;br /&gt;
+　　而这个人，正是我。&lt;br /&gt;
+　　再他过去在此方面撰写的论文和收集的资料中，我重新认识到了不足，并再度燃起了热爱之火。他为我指明方向后，通过暑假中再度的苦学，我填补了过去的空白。前瞻性的架构，优越的算法以及无可比拟的速度，使两年前这一20分钟的项目成为了全开源社区乃至整个互联网中公开同类项目中最为出色的，没有之一！&lt;br /&gt;
+　　迭代，是路在走，心不变；是无可比拟的勇气，也是踏实跃进的每一步。这是我迭代着它，更是自我的迭代。&lt;/p&gt;</content><author><name></name></author><category term="随笔" /><summary type="html">伴随着“Updating”的字样，昨天，我完成了一个我迭代了两年的项目第一阶段的所有预期。</summary></entry><entry><title type="html">孤独的造梦者</title><link href="/jekyll/update/2018/08/25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E9%80%A0%E6%A2%A6%E8%80%85.html" rel="alternate" type="text/html" title="孤独的造梦者" /><published>2018-08-25T16:13:00+08:00</published><updated>2018-08-25T16:13:00+08:00</updated><id>/jekyll/update/2018/08/25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E9%80%A0%E6%A2%A6%E8%80%85</id><content type="html" xml:base="/jekyll/update/2018/08/25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E9%80%A0%E6%A2%A6%E8%80%85.html">&lt;blockquote&gt;
   &lt;p&gt;“黑黑的窗口里面输入几个字，再跳出来几个字，这有什么用啊。”，“切，这种黑白的垃圾玩意一看就知道没有技术含量。”&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -406,21 +424,4 @@ t_{e}&lt;t_{b} %]]&gt;&lt;/script&gt;，所以这个耗时之比的比值是非�
 　　吃了好一会，外公终于醒来了。看着外公像小孩一样被搀扶着做起来，我心里既好笑，又为外公感到惋惜与可怜。外公闻着菜香，沙哑地嚷嚷着要吃，但是又怎么能吃呢，他全身上下插满了各种医疗器械，脸瘦得皮包骨头，双腿无力得蜷缩着。尽管替他感到可怜，但又有何办法？&lt;br /&gt;
 　　人到晚年，卧倒病床，享不了晚年之福也罢，还得忍受病痛之苦。&lt;br /&gt;
 　　中国人过的是团圆年，团圆就是家人的团聚，而家又是什么？无非是一群人，无时无刻都不抛下任何一人于不顾。这就是家的意义。而过年，也并不是表面上的红火与热闹，任何时候，只要人团圆了，家就在了，家在了，年就到了。正如妈妈所说：过年，过得是舒坦。&lt;br /&gt;
-　　尽管菜并不是那么好吃，桌子也很小，但这一次，却让我格外有“年味”，也有家的味道。我想，这才是过年本该有的样子吧。&lt;/p&gt;</content><author><name></name></author><category term="随笔" /><summary type="html">　　农历戊戌年的新年将至，雪也飘了几场，终于，快要到除夕了。</summary></entry><entry><title type="html">#Music UP# Day 1</title><link href="/jekyll/update/2018/01/31/Music-UP-Day-1.html" rel="alternate" type="text/html" title="#Music UP# Day 1" /><published>2018-01-31T10:47:00+08:00</published><updated>2018-01-31T10:47:00+08:00</updated><id>/jekyll/update/2018/01/31/#Music%20UP%23%20Day%201</id><content type="html" xml:base="/jekyll/update/2018/01/31/Music-UP-Day-1.html">&lt;blockquote&gt;
-  &lt;p&gt;浩瀚；璀璨；缥缈；清澈 ——空灵问候&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;1-faded&quot;&gt;1. Faded&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/MusicUP_image/faded.jpg&quot; /&gt;&lt;/p&gt;
-&lt;audio src=&quot;/music/Faded.mp3&quot; controls=&quot;controls&quot; loop=&quot;loop&quot; preload=&quot;meta&quot;&gt;&lt;/audio&gt;
-&lt;h4 id=&quot;iselin-solheim清澈动人的声音电音多样的音色与富有张力的表现力很全面地表现出了寻觅的迷茫渴求无助窗外的雪和它更配哦&quot;&gt;　　Iselin Solheim清澈动人的声音，电音多样的音色与富有张力的表现力。很全面地表现出了“寻觅”的迷茫，渴求，无助。窗外的雪和它更配哦!&lt;/h4&gt;
-
-&lt;h3 id=&quot;2-a-sky-full-of-stars&quot;&gt;2. A Sky Full of Stars&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/MusicUP_image/A Sky Full of Stars.jpg&quot; /&gt;&lt;/p&gt;
-&lt;audio src=&quot;/music/A Sky Full of Stars.mp3&quot; controls=&quot;controls&quot; loop=&quot;loop&quot; preload=&quot;meta&quot;&gt;&lt;/audio&gt;
-&lt;h4 id=&quot;coldplay的歌曲似乎都具有向全宇宙表白的胸怀尤其是这一首chris-martin的声音很具有磁性开头渐强恰到好处得推向高潮全歌词不多与一般的流行歌曲相比更有宏大的感觉愿你徜徉在宇宙中&quot;&gt;　　Coldplay的歌曲似乎都具有向全宇宙表白的胸怀，尤其是这一首。Chris Martin的声音很具有磁性，开头渐强，恰到好处得推向高潮。全歌词不多，与一般的流行歌曲相比更有宏大的感觉。愿你徜徉在宇宙中！&lt;/h4&gt;
-
-&lt;h3 id=&quot;3-across-the-stars&quot;&gt;3. Across The Stars&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/MusicUP_image/Across The Stars.jpg&quot; /&gt;&lt;/p&gt;
-&lt;audio src=&quot;/music/Across The Stars.mp3&quot; controls=&quot;controls&quot; loop=&quot;loop&quot; preload=&quot;meta&quot;&gt;&lt;/audio&gt;
-&lt;h4 id=&quot;star-wars不解释&quot;&gt;　　Star Wars不解释&lt;/h4&gt;</content><author><name></name></author><summary type="html">浩瀚；璀璨；缥缈；清澈 ——空灵问候</summary></entry></feed>
+　　尽管菜并不是那么好吃，桌子也很小，但这一次，却让我格外有“年味”，也有家的味道。我想，这才是过年本该有的样子吧。&lt;/p&gt;</content><author><name></name></author><category term="随笔" /><summary type="html">　　农历戊戌年的新年将至，雪也飘了几场，终于，快要到除夕了。</summary></entry></feed>
