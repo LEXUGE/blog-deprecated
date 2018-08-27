@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+    Hi, there:<br>
+    I'm Harry Ying. Because of the danger of the SMS, I'll change the way of communication.<br>
+    <br>
+    And you should follow the following steps to generate a key which can encrypt and decrypt the message.<br>
+    Before we start, I define \(p=30\), \(g=7\), \(A=13\).<br>
+    <br>
+    <hr>
+    <br>
+    step 1) select an arbitrary number(as big as you can) \(b\) (e.g. \(5\) or \(34\)). calculate $$B=g^{b}\ mod\ p$$
+    Then tell me the \(B\) by SMS.<br>
+    (mod is a kind of calculation, \(7\ mod\ 3=1\), \(6\ mod\ 3=0\), \(8\ mod\ 2=0\), \(17\ mod\ 3=2\). I think you know what it is.)<br>
+    <br>
+    <br>
+    step 2) And you can get the key by this equation:
+    $$K=A^{b}\ mod\ p$$
+    The \(K\) you've got will be the key. We'll get the same key which can't be stolen. Maths proves it.<br>
+    <br>
+    <hr>
+    <br>
+    That's it! It's really easy, isn't it?<br>
+    Now, go <a href="https://cryptobin.co/">here</a>. Type the message and input the key below, set the Expiration Time as never.<br>
+    Just click "bin it" below.
+    Give me the link of the page, then I can decrypt it by the key. The message is encrypted by the AES-256 method so no one can decrypt it unless he knows the key.<br>
+    <br>
+    I've encrypted a message, the key is 30's prime factors.
+    <a href="https://cryptobin.co/j452q0j4">The encrypted message</a>
+    <br>
+    <br>
+    中文注释： mod的含义是取一个数除以另一个数的余数<br>
+    prime factor的含义是质因数
+</body>
+</html>
