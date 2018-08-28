@@ -1,6 +1,33 @@
 [
   
     {
+      "title"    : "迈出每一步",
+      "category" : "",
+      "tags"     : "随笔",
+      "url"      : "/jekyll/update/2018/08/28/%E8%BF%88%E5%87%BA%E6%AF%8F%E4%B8%80%E6%AD%A5.html",
+      "date"     : "2018-08-28 21:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n        \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "语文？",
+      "category" : "",
+      "tags"     : "随笔",
+      "url"      : "/jekyll/update/2018/08/28/%E8%AF%AD%E6%96%87.html",
+      "date"     : "2018-08-28 19:54:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n        \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "再话“共享”",
+      "category" : "",
+      "tags"     : "随笔",
+      "url"      : "/jekyll/update/2018/08/28/%E5%86%8D%E8%AF%9D-%E5%85%B1%E4%BA%AB.html",
+      "date"     : "2018-08-28 19:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n        \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
       "title"    : "中式监管",
       "category" : "",
       "tags"     : "随笔",
@@ -669,6 +696,10 @@
         "url"      : "/tags/",
         "date"     : "",
         "content"   : "{% capture tags %}\n  {% for tag in site.tags %}\n    {{ tag[0] }}\n  {% endfor %}\n{% endcapture %}\n{% assign sortedtags = tags | split:' ' | sort %}\n\n{% for tag in sortedtags %}\n  <h3 id=\"{{ tag | url_encode}}\">{{ tag }}</h3>\n  <ul>\n  {% for post in site.tags[tag] %}\n    <li>{{ post.date |date:\"%B %d, %Y\"}} <a href=\"{{ post.url }}\">{{ post.title }}</a></li>\n  {% endfor %}\n  </ul>\n{% endfor %}\n"
+     
+   } ,
+  
+   {
      
    } ,
   
